@@ -1,15 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%
+    String path8 = request.getContextPath();
+    String sid = (String) session.getAttribute("id");
+%>
 <div class="tnb_wrap">
     <nav class="tnb">
         <ul class="menu">
-            <li><a href=""> 로그인 </a></li>
+            <li><a href="<%=path8 %>/member/login.jsp"> 로그인 </a></li>
             <li><a href=""> 회원가입 </a></li>
         </ul>
     </nav>
 </div>
 <div class="hd_wrap">
     <a href="/" class="logo">
-        <img src="./images/corn_edu_400-256.png" alt="CORN EDU 로고 타입">
+        <img src="<%=path8%>/images/corn_edu_400-256.png" alt="CORN EDU 로고 타입">
     </a>
     <nav class="gnb">
         <ul class="menu">
