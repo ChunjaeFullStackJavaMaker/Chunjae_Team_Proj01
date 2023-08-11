@@ -49,7 +49,7 @@
                 <a href="" class="dp1"> 커뮤니티 </a>
                 <ul class="sub">
                     <li><a href=""> 학생 커뮤니티 </a></li>
-                    <li><a href=""> 학부모 커뮤니티 </a></li>
+                    <li><a href="<%=path8 %>/board/ModerBoard.jsp"> 학부모 커뮤니티 </a></li>
                 </ul>
             </li>
             <li class="item6">
