@@ -21,7 +21,7 @@
   <!-- 필요한 플러그인 연결 -->
   <script src="https://code.jquery.com/jquery-latest.js"></script>
   <link rel="stylesheet" href="<%=path3%>/css/common.css">
-  <link rel="stylesheet" href="<%=path3%>/css/hd.css">
+  <link rel="stylesheet" href="<%=path3%>/css/header.css">
   <style>
     /* 본문 영역 스타일 */
     .contents { clear:both; min-height:100vh;
