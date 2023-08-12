@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>학부모 커뮤니티 게시판</title>
     <%@ include file="/setting/head.jsp" %>
 
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
@@ -21,7 +21,8 @@
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="<%=path3%>/css/common.css">
-    <link rel="stylesheet" href="<%=path3%>/css/hd.css">
+    <link rel="stylesheet" href="<%=path3%>/css/header.css">
+    <link rel="stylesheet" href="<%=path3%>/css/board.css">
     <style>
         /* 본문 영역 스타일 */
         .contents { clear:both; min-height:100vh;
@@ -61,7 +62,51 @@
     <header class="hd" id="hd">
         <%@ include file="/layout/header.jsp" %>
     </header>
-
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>공지사항</strong>
+            <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
+        </div>
+        <div class="board_view_wrap">
+            <div class="board_view">
+                <div class="title">
+                    글 제목이 들어갑니다.
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>번호</dt>
+                        <dd>1</dd>
+                    </dl>
+                    <dl>
+                        <dt>글쓴이</dt>
+                        <dd>김이름</dd>
+                    </dl>
+                    <dl>
+                        <dt>작성일</dt>
+                        <dd>2021.1.16</dd>
+                    </dl>
+                    <dl>
+                        <dt>조회</dt>
+                        <dd>33</dd>
+                    </dl>
+                </div>
+                <div class="cont">
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <a href="<%=path3%>/board/MotherBoard/MotherBoardList.jsp" class="on">목록</a>
+                <a href="<%=path3%>/board/MotherBoard/MotherBoardEdit.jsp">수정</a>
+            </div>
+        </div>
+    </div>
     <footer class="ft" id="ft">
         <%@ include file="/layout/footer.jsp" %>
     </footer>

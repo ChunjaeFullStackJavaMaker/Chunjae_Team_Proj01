@@ -17,6 +17,6 @@
 <!-- 필요한 플러그인 연결 -->
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <link rel="stylesheet" href="/css/common.css">
-<link rel="stylesheet" href="/css/hd.css">
+<link rel="stylesheet" href="/css/header.css">
 <link rel="stylesheet" href="/css/footer.css">
 

@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>학부모 커뮤니티 게시판</title>
     <%@ include file="/setting/head.jsp" %>
 
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
@@ -22,6 +22,7 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="<%=path3%>/css/common.css">
     <link rel="stylesheet" href="<%=path3%>/css/header.css">
+    <link rel="stylesheet" href="<%=path3%>/css/board.css">
     <style>
         /* 본문 영역 스타일 */
         .contents { clear:both; min-height:100vh;
@@ -61,7 +62,39 @@
     <header class="hd" id="hd">
         <%@ include file="/layout/header.jsp" %>
     </header>
-
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>공지사항</strong>
+            <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
+        </div>
+        <div class="board_write_wrap">
+            <div class="board_write">
+                <div class="title">
+                    <dl>
+                        <dt>제목</dt>
+                        <dd><input type="text" placeholder="제목 입력"></dd>
+                    </dl>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>글쓴이</dt>
+                        <dd><input type="text" placeholder="글쓴이 입력"></dd>
+                    </dl>
+                    <dl>
+                        <dt>비밀번호</dt>
+                        <dd><input type="password" placeholder="비밀번호 입력"></dd>
+                    </dl>
+                </div>
+                <div class="cont">
+                    <textarea placeholder="내용 입력"></textarea>
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <a href="<%=path3%>/board/MotherBoard/MotherBoardEdit.jsp" class="on">등록</a>
+                <a href="<%=path3%>/board/MotherBoard/MotherBoardVIew.jsp">취소</a>
+            </div>
+        </div>
+    </div>
     <footer class="ft" id="ft">
         <%@ include file="/layout/footer.jsp" %>
     </footer>

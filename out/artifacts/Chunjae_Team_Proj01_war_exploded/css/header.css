@@ -120,14 +120,14 @@
 
 .hd_wrap:hover .gnb .menu li .sub {
     visibility: visible;
-    height: 300px;
+    height: 190px;
     opacity: 1;
 }
 
 .gnb .menu li a.dp1 {
     display: block;
     width: 100%;
-    line-height: 70px;
+    line-height: 68px;
     border-bottom: 2px solid #fff;
     text-align: center;
     background-color: #fff;
