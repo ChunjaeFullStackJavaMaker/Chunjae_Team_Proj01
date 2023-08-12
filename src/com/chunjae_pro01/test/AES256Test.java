@@ -1,5 +1,7 @@
 package com.chunjae_pro01.test;
 
+import com.chunjae_pro01.util.AES256;
+
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
@@ -16,7 +18,7 @@ public class AES256Test {
         String key = "%02x";
 
         System.out.println("원래 데이터 : "+oriText);
-        System.out.println("MD5 : "+AES256.md5(oriText));
+        System.out.println("MD5 : "+ AES256.md5(oriText));
         System.out.println("SHA256 : "+AES256.sha256(oriText));
         String aes = AES256.encryptAES256(oriText, key);
         System.out.println("AES256 암호화 : "+AES256.encryptAES256(oriText, key));
