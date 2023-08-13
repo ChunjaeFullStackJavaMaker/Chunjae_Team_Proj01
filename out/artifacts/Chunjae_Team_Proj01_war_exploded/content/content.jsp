@@ -9,14 +9,14 @@
                     아자차카타파하</h2>
             </li>
             <li class="item2">
-                <input type="radio" name="vs_ra" id="vs_ra1" class="vs_ra" checked>
+                <input type="radio" name="vs_ra" id="vs_ra2" class="vs_ra" checked>
                 <div class="bg_box"></div>
                 <h2 class="vs_tit">ABCDEFGHIJKLMN<br>
                     OPQRSTUVWXYZ</h2>
             </li>
             <ul class="btn_box">
                 <li class="item1 active"><label for="vs_ra1" class="vs_btn"></label></li>
-                <li class="item2"><label for="vs_ra2" class="vs_btn"></label></li>
+                <li class="item2"><label for="vs_ra1" class="vs_btn"></label></li>
             </ul>
             <button type="button" class="play_btn"></button>
             <script>
