@@ -1,6 +1,46 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.text.*" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="com.chunjae_pro01.util.*" %>
+<%@ page import="com.chunjae_pro01.vo.*" %>
+<%@ include file="/setting/encoding.jsp" %>
 <%
-    String path8 = request.getContextPath();
+    String path20 = request.getContextPath();
+%>
+<%
+    String id = (String) session.getAttribute("id");
+
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+
+    DBC conn = new MariaDBCon();
+    con = conn.connect();
+
+    //select * a.bno as bno, a.title as title, a.content as content, a.author as author, a.resdate as resdate, a.cnt as cnt,
+    //b.name as name, b.id as id, from board a, member b where a.author = b.id and id=?
+    //order by a.qno asc;
+    String sql = "select * from motherboardlist where id=? ";
+    pstmt = con.prepareStatement(sql);
+    rs = pstmt.executeQuery();
+
+    List<MotherBoardList> boardList = new ArrayList();
+    while(rs.next()){
+        MotherBoardList b = new MotherBoardList();
+        b.setBno(rs.getInt("bno"));
+        b.setTitle(rs.getString("title"));
+        b.setContent(rs.getString("content"));
+        b.setAuthor(rs.getString("author"));
+        b.setId(rs.getString("id"));
+        b.setName(rs.getString("name"));
+        b.setResdate(rs.getString("resdate"));
+        b.setCnt(rs.getInt("cnt"));
+        boardList.add(b);
+    }
+    conn.close(rs, pstmt, con);
+
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,13 +56,13 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path8 %>/css/google.css">
-    <link rel="stylesheet" href="<%=path8 %>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path20 %>/css/google.css">
+    <link rel="stylesheet" href="<%=path20 %>/css/fonts.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path8 %>/css/common.css">
-    <link rel="stylesheet" href="<%=path8 %>/css/hd.css">
+    <link rel="stylesheet" href="<%=path20 %>/css/common.css">
+    <link rel="stylesheet" href="<%=path20 %>/css/hd.css">
     <style>
         .contents { clear:both; height:100vh;}
         .contents::after { content:""; clear:both; display:block; width:100%; }
@@ -67,7 +107,7 @@
         .inbtn:last-child { float:right; }
     </style>
 
-    <link rel="stylesheet" href="<%=path8 %>/css/footer.css">
+    <link rel="stylesheet" href="<%=path20 %>/css/footer.css">
 
 </head>
 <body>
@@ -86,7 +126,11 @@
             <div class="page_wrap">
                 <div class="box_myboard">
                     <a href="myBoardListQna.jsp" class="btn_myboard">QnA</a>
-                    <a href="myBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <%//if(아이디 ==학생){ %>
+                    <a href=/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <%//}else(아이디 == 부모){ %>
+                    <!--<a href=/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>-->
+                    <%//} %>
                 </div>
                 <hr>
                 <br><br><h2 class="content_tit"> 내가 쓴글 </h2>
@@ -99,13 +143,24 @@
                     <th class="item5">조회</th>
                     </thead>
                     <tbody>
+                    <%if(boardList != null){%>
+                    <div style="font-size: 17px; font-weight: bold;">작성글이 없습니다.</div>
+                    <% }else{
+                        SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
+                        for(MotherBoardList b: boardList){
+                            Date d= ymd.parse(b.getResdate());
+                            String date = ymd.format(d);
+                    %>
                     <tr>
-                        <td class="item1">1</td>
-                        <td class="item1">제목1</td>
-                        <td class="item1">글쓴이1</td>
-                        <td class="item1">작성일</td>
-                        <td class="item1">조회수</td>
+                        <td class="item1"><%=b.getBno() %></td>
+                        <td class="item1">
+                            <a href="/board/motherboard/MotherBoardVIew.jsp?qno=<%=b.getBno()%>"><%=b.getTitle() %></a>
+                        </td>
+                        <td class="item1"><%=b.getName() %></td>
+                        <td class="item1"><%=date %></td>
+                        <td class="item1"><%=b.getCnt() %></td>
                     </tr>
+                    <%}} %>
                     </tbody>
                 </table>
             </div>
