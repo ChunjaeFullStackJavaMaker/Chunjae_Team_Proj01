@@ -54,7 +54,7 @@
 <body>
   <div class="wrap">
     <div class="hd" id="hd">
-      <%@ include file="layout/header.jsp" %>
+      <%@ include file="/layout/header.jsp" %>
     </div>
     <!-- 컨텐츠 상단 부분 content.jsp-->
     <%@ include file="/content/content.jsp"%>
