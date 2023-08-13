@@ -7,7 +7,7 @@
     <nav class="tnb">
         <ul class="menu">
             <li><a href="<%=path8 %>/member/login.jsp"> 로그인 </a></li>
-            <li><a href=""> 회원가입 </a></li>
+            <li><a href="<%=path8 %>/"> 회원가입 </a></li>
         </ul>
     </nav>
 </div>
@@ -50,7 +50,7 @@
                 <a href="" class="dp1"> 커뮤니티 </a>
                 <ul class="sub">
                     <li><a href=""> 학생 커뮤니티 </a></li>
-                    <li><a href="<%=path8 %>/board/ModerBoard.jsp"> 학부모 커뮤니티 </a></li>
+                    <li><a href="<%=path8 %>/board/motherboard/MotherBoardList.jsp"> 학부모 커뮤니티 </a></li>
                 </ul>
             </li>
             <li class="item6">
