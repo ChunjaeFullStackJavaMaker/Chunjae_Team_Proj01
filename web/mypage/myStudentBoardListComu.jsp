@@ -7,7 +7,7 @@
 <%@ page import="com.chunjae_pro01.vo.*" %>
 <%@ include file="/setting/encoding.jsp" %>
 <%
-    String path7 = request.getContextPath();
+    String path8 = request.getContextPath();
 %>
 <%
     String id = (String) session.getAttribute("id");
@@ -19,27 +19,25 @@
     DBC conn = new MariaDBCon();
     con = conn.connect();
 
-    //select * a.qno as qno, a.title as title, a.content as content, a.author as author, a.resdate as resdate, a.cnt as cnt,
-    //a.lev as lev, a.par as par, b.name as name, b.id as id, from qna a, member b where a.author = b.id and id=?
-    //order by a.par desc, a.lev asc, a.qno asc;
-    String sql = "select * from qnalist where id=? ";
+    //select * a.bno as bno, a.title as title, a.content as content, a.author as author, a.resdate as resdate, a.cnt as cnt,
+    //b.name as name, b.id as id, from board a, member b where a.author = b.id and id=?
+    //order by a.qno asc;
+    String sql = "select * from studentboardlist where id=? ";
     pstmt = con.prepareStatement(sql);
     rs = pstmt.executeQuery();
 
-    List<Qna> qnaList = new ArrayList();
+    List<StudentBoardList> boardList = new ArrayList();
     while(rs.next()){
-        Qna q = new Qna();
-        q.setQno(rs.getInt("qno"));
-        q.setTitle(rs.getString("title"));
-        q.setContent(rs.getString("content"));
-        q.setAuthor(rs.getString("author"));
-        q.setId(rs.getString("id"));
-        q.setName(rs.getString("name"));
-        q.setRegdate(rs.getString("regdate"));
-        q.setCnt(rs.getInt("cnt"));
-        q.setLev(rs.getInt("lev"));
-        q.setPar(rs.getInt("par"));
-        qnaList.add(q);
+        StudentBoardList b = new StudentBoardList();
+        b.setBno(rs.getInt("bno"));
+        b.setTitle(rs.getString("title"));
+        b.setContent(rs.getString("content"));
+        b.setAuthor(rs.getString("author"));
+        b.setId(rs.getString("id"));
+        b.setName(rs.getString("name"));
+        b.setResdate(rs.getString("resdate"));
+        b.setCnt(rs.getInt("cnt"));
+        boardList.add(b);
     }
     conn.close(rs, pstmt, con);
 
@@ -49,7 +47,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내가 쓴 글-qna</title>
+    <title>내가쓴글-comunity</title>
+
     <%@ include file="/setting/encoding.jsp" %>
     <%@ include file="/setting/head.jsp" %>
 
@@ -57,13 +56,13 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path7 %>/css/google.css">
-    <link rel="stylesheet" href="<%=path7 %>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path8 %>/css/google.css">
+    <link rel="stylesheet" href="<%=path8 %>/css/fonts.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path7 %>/css/common.css">
-    <link rel="stylesheet" href="<%=path7 %>/css/hd.css">
+    <link rel="stylesheet" href="<%=path8 %>/css/common.css">
+    <link rel="stylesheet" href="<%=path8 %>/css/hd.css">
     <style>
         .contents { clear:both; height:100vh;}
         .contents::after { content:""; clear:both; display:block; width:100%; }
@@ -108,7 +107,8 @@
         .inbtn:last-child { float:right; }
     </style>
 
-    <link rel="stylesheet" href="<%=path7 %>/css/footer.css">
+    <link rel="stylesheet" href="<%=path8 %>/css/footer.css">
+
 </head>
 <body>
 <div class="wrap">
@@ -125,7 +125,7 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <div class="box_myboard">
-                    <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA</a>
+                    <a href="myBoardListQna.jsp" class="btn_myboard">QnA</a>
                     <%//if(아이디 ==학생){ %>
                     <a href=/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
                     <%//}else(아이디 == 부모){ %>
@@ -133,7 +133,7 @@
                     <%//} %>
                 </div>
                 <hr>
-                <br><br><p class="content_tit"> QnA </p>
+                <br><br><h2 class="content_tit"> 내가 쓴글 </h2>
                 <table class="tb1" id="myTable">
                     <thead>
                     <th class="item1">번호</th>
@@ -143,22 +143,22 @@
                     <th class="item5">조회</th>
                     </thead>
                     <tbody>
-                    <%if(qnaList != null){%>
+                    <%if(boardList != null){%>
                     <div style="font-size: 17px; font-weight: bold;">작성글이 없습니다.</div>
                     <% }else{
                         SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
-                        for(Qna q: qnaList){
-                            Date d= ymd.parse(q.getRegdate());
+                        for(StudentBoardList b: boardList){
+                            Date d= ymd.parse(b.getResdate());
                             String date = ymd.format(d);
                     %>
                     <tr>
-                        <td class="item1"><%=q.getQno() %></td>
+                        <td class="item1"><%=b.getBno() %></td>
                         <td class="item1">
-                            <a href="/qna/getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
+                            <a href="/baord/studentboard/StudentBoardVIew.jsp?qno=<%=b.getBno()%>"><%=b.getTitle() %></a>
                         </td>
-                        <td class="item1"><%=q.getName() %></td>
+                        <td class="item1"><%=b.getName() %></td>
                         <td class="item1"><%=date %></td>
-                        <td class="item1"><%=q.getCnt() %></td>
+                        <td class="item1"><%=b.getCnt() %></td>
                     </tr>
                     <%}} %>
                     </tbody>
