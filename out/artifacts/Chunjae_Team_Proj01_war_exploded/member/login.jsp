@@ -63,14 +63,14 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="">HOME</a> &gt; <span>로그인</span></p>
+            <p><a href="/">HOME</a> &gt; <span>로그인</span></p>
         </div>
         <section class="page" id="page1">
             <div class="login-wrapper">
                 <h2>Login</h2>
                 <form method="post" action="서버의url" id="login-form">
-                    <input type="text" name="userName" placeholder="Email">
-                    <input type="password" name="userPassword" placeholder="Password">
+                    <input type="text" name="userId" placeholder="ID" autofocus required>
+                    <input type="password" name="userPassword" placeholder="Password" required>
                     <label for="remember-check">
                         <input type="checkbox" id="remember-check">아이디 저장하기
                     </label>
