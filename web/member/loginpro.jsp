@@ -24,7 +24,7 @@
         if(rs.next()){
             session.setAttribute("id", id);
             session.setAttribute("name",rs.getString("name"));
-            session.setAttribute("per",rs.getString("per"));
+            session.setAttribute("per",rs.getInt("per"));
             response.sendRedirect("/");
         } else {
             response.sendRedirect("/member/login.jsp");

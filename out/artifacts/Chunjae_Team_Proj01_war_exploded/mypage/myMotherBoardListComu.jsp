@@ -11,7 +11,7 @@
 %>
 <%
     String id = (String) session.getAttribute("id");
-    String per =(String) session.getAttribute("per");
+    int per =(Integer) session.getAttribute("per");
 
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -125,9 +125,9 @@
             <div class="page_wrap">
                 <div class="box_myboard">
                     <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA</a>
-                    <% if(id.equals("kimhk")){%>
+                    <% if(per == 1){%>
                     <a href="/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
-                    <%}else if(id.equals("park")){ %>
+                    <%}else if(per==2){ %>
                     <a href="/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
                     <%} %>
                 </div>

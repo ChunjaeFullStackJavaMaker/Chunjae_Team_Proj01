@@ -8,6 +8,7 @@
 %>
 <%
     String id = (String) session.getAttribute("id");
+    int per = (Integer) session.getAttribute("per");
 
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -29,6 +30,7 @@
         m.setTel(rs.getString("tel"));
         m.setResdate(rs.getString("resdate"));
         m.setPoint(rs.getInt("point"));
+        m.setPer(rs.getInt("per"));
     }else{
         response.sendRedirect("/member/login.jsp");
     }

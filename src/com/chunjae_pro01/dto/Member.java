@@ -9,7 +9,7 @@ public class Member {
     private String tel;
     private String resdate;
     private int point;
-    private String per;
+    private int per;
 
     public String getId() { return id; }
 
@@ -43,7 +43,7 @@ public class Member {
 
     public void setPoint(int point) { this.point = point; }
 
-    public String getPer() { return per; }
+    public int getPer() { return per; }
 
-    public void setPer(String per) { this.per = per; }
+    public void setPer(int per) { this.per = per;}
 }
