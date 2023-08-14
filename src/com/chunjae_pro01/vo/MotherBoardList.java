@@ -6,7 +6,6 @@ public class MotherBoardList {
     private String content;
     private String author;
     private String id;
-    private String name;
     private String resdate;
     private int cnt;
 
@@ -48,14 +47,6 @@ public class MotherBoardList {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getResdate() {

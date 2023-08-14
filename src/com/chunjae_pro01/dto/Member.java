@@ -7,7 +7,7 @@ public class Member {
     private String name;
     private String email;
     private String tel;
-    private String regdate;
+    private String resdate;
     private int point;
     private String per;
 
@@ -31,9 +31,13 @@ public class Member {
 
     public void setTel(String tel) { this.tel = tel; }
 
-    public String getRegdate() { return regdate; }
+    public String getResdate() {
+        return resdate;
+    }
 
-    public void setRegdate(String regdate) { this.regdate = regdate; }
+    public void setResdate(String resdate) {
+        this.resdate = resdate;
+    }
 
     public int getPoint() { return point; }
 
