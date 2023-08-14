@@ -38,8 +38,8 @@
             <div class="login-wrapper">
                 <h2>Login</h2>
                 <form method="post" action="<%=path3%>/member/loginpro.jsp" id="login-form">
-                    <input type="text" name="userId" placeholder="아이디" autofocus required>
-                    <input type="password" name="userPassword" placeholder="비밀번호" required>
+                    <input type="text" name="id" placeholder="아이디" autofocus required>
+                    <input type="password" name="pw" placeholder="비밀번호" required>
                     <label for="remember-check">
                         <input type="checkbox" id="remember-check">아이디 저장하기
                     </label>
