@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="com.chunjae_pro01.dto.*" %>
 <%@ page import="com.chunjae_pro01.util.*" %>
 <%
     String id = request.getParameter("id");
@@ -26,7 +25,7 @@
             out.println("<a href='idcheck.jsp?id="+id+"'>아이디 중복 재시도</a>");
         } else {
             out.println("<p>사용 가능한 아이디</p>");
-            out.println("<button type='button' onclick='fnc1("\"+id+"\")'>"+id+"</button>");
+            out.println("<button type='button' onclick='fnc1(\""+id+"\")'>"+id+"</button>");
         }
     } catch(SQLException e) {
         System.out.println("SQL 구문이 처리되지 못했습니다.");

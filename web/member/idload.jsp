@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="com.chunjae_pro01.dto.*" %>
 <%@ page import="com.chunjae_pro01.util.*" %>
 <%
     String id = request.getParameter("id");
