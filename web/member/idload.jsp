@@ -4,19 +4,18 @@
 <%
     String id = request.getParameter("id");
 
-    Connection conn = null;
+    Connection con = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
 
-    DBC con = new MariaDBCon();
-    conn = con.connect();
-
-    if(conn != null){
+    DBC conn = new MariaDBCon();
+    con = conn.connect();
+    if(con != null){
         System.out.println("DB 연결 성공");
     }
     try {
         String sql = "select * from member where id=?";
-        pstmt = conn.prepareStatement(sql);
+        pstmt = con.prepareStatement(sql);
         pstmt.setString(1, id);
         rs = pstmt.executeQuery();
 
@@ -30,7 +29,7 @@
     } catch(SQLException e) {
         System.out.println("SQL 구문이 처리되지 못했습니다.");
     } finally {
-        con.close(rs, pstmt, conn);
+        conn.close(rs, pstmt, con);
     }
 %>
 <script>

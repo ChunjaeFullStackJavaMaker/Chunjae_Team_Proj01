@@ -31,7 +31,7 @@
     String id = request.getParameter("id");
 %>
 <div class="container">
-    <form name="child" action="./idload.jsp" method="post" onsubmit="return invalidCheck(this)">
+    <form name="child" action="idload.jsp" method="post" onsubmit="return invalidCheck(this)">
         <label for="id">아이디</label>
         <input type="text" name="id" id="id" value="<%=id %>" placeholder="12글자 이내">
         <br>
