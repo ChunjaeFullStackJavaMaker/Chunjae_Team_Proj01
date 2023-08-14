@@ -11,7 +11,7 @@
             <li><a href="<%=path8 %>/member/mypage.jsp">마이페이지</a></li>
             <li><a href="map.jsp">오시는길</a></li>
             <% if(sid.equals("admin")) { %>
-            <li><a href="<%=path8 %>/admin/index.jsp">관리자페이지로</a></li>
+            <li><a href="<%=path8 %>/admin/adminPage.jsp">관리자페이지로</a></li>
             <% } %>
             <% } else { %>
             <li><a href="<%=path8 %>/member/login.jsp">로그인</a></li>
