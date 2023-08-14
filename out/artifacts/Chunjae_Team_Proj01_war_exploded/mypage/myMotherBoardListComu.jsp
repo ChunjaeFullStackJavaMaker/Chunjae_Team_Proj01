@@ -11,6 +11,7 @@
 %>
 <%
     String id = (String) session.getAttribute("id");
+    String per =(String) session.getAttribute("per");
 
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -19,11 +20,10 @@
     DBC conn = new MariaDBCon();
     con = conn.connect();
 
-    //select * a.bno as bno, a.title as title, a.content as content, a.author as author, a.resdate as resdate, a.cnt as cnt,
-    //b.name as name, b.id as id, from board a, member b where a.author = b.id and id=?
-    //order by a.qno asc;
+
     String sql = "select * from motherboardlist where id=? ";
     pstmt = con.prepareStatement(sql);
+    pstmt.setString(1,id);
     rs = pstmt.executeQuery();
 
     List<MotherBoardList> boardList = new ArrayList();
@@ -34,7 +34,6 @@
         b.setContent(rs.getString("content"));
         b.setAuthor(rs.getString("author"));
         b.setId(rs.getString("id"));
-        b.setName(rs.getString("name"));
         b.setResdate(rs.getString("resdate"));
         b.setCnt(rs.getInt("cnt"));
         boardList.add(b);
@@ -126,11 +125,11 @@
             <div class="page_wrap">
                 <div class="box_myboard">
                     <a href="myBoardListQna.jsp" class="btn_myboard">QnA</a>
-                    <%//if(아이디 ==학생){ %>
+                    <%if(per.equals("학생")){ %>
                     <a href=/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
-                    <%//}else(아이디 == 부모){ %>
-                    <!--<a href=/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>-->
-                    <%//} %>
+                    <%}else if(per.equals("부모")){ %>
+                    <a href=/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <%} %>
                 </div>
                 <hr>
                 <br><br><h2 class="content_tit"> 내가 쓴글 </h2>
@@ -154,9 +153,9 @@
                     <tr>
                         <td class="item1"><%=b.getBno() %></td>
                         <td class="item1">
-                            <a href="/board/motherboard/MotherBoardVIew.jsp?qno=<%=b.getBno()%>"><%=b.getTitle() %></a>
+                            <a href="/board/motherboard/MotherBoardVIew.jsp?bno=<%=b.getBno()%>"><%=b.getTitle() %></a>
                         </td>
-                        <td class="item1"><%=b.getName() %></td>
+                        <td class="item1"><%=b.getAuthor() %></td>
                         <td class="item1"><%=date %></td>
                         <td class="item1"><%=b.getCnt() %></td>
                     </tr>

@@ -59,7 +59,7 @@
             <li class="item5">
                 <a href="" class="dp1"> 커뮤니티 </a>
                 <ul class="sub">
-                    <li><a href=""> 학생 커뮤니티 </a></li>
+                    <li><a href="<%=path8 %>/board/studentboard/StudentBoardList.jsp"> 학생 커뮤니티 </a></li>
                     <li><a href="<%=path8 %>/board/motherboard/MotherBoardList.jsp"> 학부모 커뮤니티 </a></li>
                 </ul>
             </li>
