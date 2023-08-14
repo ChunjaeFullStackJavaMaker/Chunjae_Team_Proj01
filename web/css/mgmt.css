@@ -12,9 +12,10 @@ a {
     color: inherit;
 }
 
-.board_wrap {
+.board_list_wrap {
     width: 1000px;
-    margin: 100px auto;
+    margin: 0px auto;
+    padding-bottom: 150px;
 }
 
 .board_title {
@@ -28,31 +29,6 @@ a {
 .board_title p {
     margin-top: 5px;
     font-size: 1rem;
-}
-
-.bt_wrap {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 0;
-}
-
-.bt_wrap a {
-    display: inline-block;
-    min-width: 80px;
-    margin-left: 10px;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 2px;
-    font-size: 1.2rem;
-}
-
-.bt_wrap a:first-child {
-    margin-left: 0;
-}
-
-.bt_wrap a.on {
-    background: #000;
-    color: #fff;
 }
 
 .board_list {
@@ -102,7 +78,7 @@ a {
     height: 30px;
 }
 
-.board_list .kick button {
+.board_list button {
     width: 90%;
     height: 100%;
     border-radius: 10px;
@@ -110,6 +86,38 @@ a {
     border: 1px solid #8CB964;
     color: #fff;
     cursor: pointer;
+}
+
+.board_list .result {
+    padding: 25px;
+    text-align: center;
+    font-size: 13pt;
+}
+
+.board_list .bno {
+    width: 10%;
+}
+
+.board_list .title {
+    width: 35%;
+}
+
+.board_list .author {
+    width: 15%;
+}
+
+.board_list .resdate {
+    width: 20%;
+}
+
+.board_list .modify {
+    width: 10%;
+    height: 30px;
+}
+
+.board_list .delete {
+    width: 10%;
+    height: 30px;
 }
 
 .board_page {

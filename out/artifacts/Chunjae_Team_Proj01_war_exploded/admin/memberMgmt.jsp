@@ -64,7 +64,7 @@
         .content_tit {
             font-weight: bold;
             font-size: 25px;
-            margin: 50px 30px 30px 10px;
+            margin: 80px 30px 30px 10px;
         }
     </style>
 
@@ -72,10 +72,10 @@
     int pageNo = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 0;
     // 총 페이지 수
     int totalPage = 0;
-    // 시작 페이지
-    int startPage = pageNo-2 < 1 ? 1 : pageNo-2;
     // 마지막 페이지
     int endPage = pageNo+2 < 5 ? 5 : pageNo+2;
+    // 전체 회원 수
+    int count = 0;
 
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -88,8 +88,10 @@
     pstmt = conn.prepareStatement(sql);
     rs = pstmt.executeQuery();
     if(rs.next()) {
-        int count = rs.getInt("count");
+        count = rs.getInt("count");
         totalPage = count % 10 == 0 ? count / 10 : (count / 10) + 1;
+        // 전체 페이지가 0일 경우 (=회원이 없는 경우)
+        totalPage = (totalPage == 0) ? 1 : totalPage;
     }
     rs.close();
     pstmt.close();
@@ -99,9 +101,6 @@
         endPage = totalPage;
     }
     List<Integer> pageList = new ArrayList<>();
-//    if((endPage-startPage+1) < 5) {
-//        startPage = startPage - (endPage-startPage+2);
-//    }
     for(int p=(endPage-4 > 0 ? endPage-4 : 1); p<=endPage; p++) {
         pageList.add(p);
     }
@@ -158,6 +157,11 @@
                                     <div class="kick"><button onclick="javascript:location.href='<%=path%>/admin/kickpro.jsp?id=<%=member.getId()%>&pageNo=<%=pageNo%>'">강퇴</button></div>
                                 </div>
                             <% } %>
+                            <% if(count == 0) { %>
+                                <div>
+                                    <p class="result"> 회원가입한 회원이 존재하지 않습니다 :( </p>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="board_page">
                             <a href="<%=path%>/admin/memberMgmt.jsp?page=1" class="bt first"> &lt;&lt; </a>
@@ -175,6 +179,12 @@
         <footer class="ft" id="ft">
             <%@ include file="/layout/footer.jsp" %>
         </footer>
+        <script>
+            <% if(sid == null || !sid.equals("admin")) { %>
+            alert("관리자만 접근 가능한 페이지입니다.");
+            history.go(-1);
+            <% } %>
+        </script>
     </div>
 </body>
 </html>

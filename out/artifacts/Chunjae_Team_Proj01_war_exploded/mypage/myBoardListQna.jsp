@@ -24,9 +24,9 @@
     pstmt = con.prepareStatement(sql);
     rs = pstmt.executeQuery();
 
-    List<Qna> qnaList = new ArrayList();
+    List<QnA> qnaList = new ArrayList();
     while(rs.next()){
-        Qna q = new Qna();
+        QnA q = new QnA();
         q.setQno(rs.getInt("qno"));
         q.setTitle(rs.getString("title"));
         q.setContent(rs.getString("content"));
@@ -144,7 +144,7 @@
                     <div style="font-size: 17px; font-weight: bold;">작성글이 없습니다.</div>
                     <% }else{
                         SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
-                        for(Qna q: qnaList){
+                        for(QnA q: qnaList){
                             Date d= ymd.parse(q.getResdate());
                             String date = ymd.format(d);
                     %>

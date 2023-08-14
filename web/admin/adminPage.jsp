@@ -106,8 +106,9 @@
                     <div class="item_wrap">
                         <a href="<%=path%>/admin/modifyInfo.jsp" class="item"><img src="/images/admin_page.jpg" alt="개인정보 변경 이미지"><br> 개인정보 변경 </a>
                         <a href="<%=path%>/admin/memberMgmt.jsp?page=1" class="item"><img src="/images/admin_page.jpg" alt="회원 관리 이미지"><br> 회원 관리 </a>
-                        <a href="<%=path%>/admin/boardMgmt.jsp" class="item"><img src="/images/admin_page.jpg" alt="커뮤니티 관리 이미지"><br> 커뮤니티 관리 </a>
                         <a href="<%=path%>/admin/csMgmt.jsp" class="item"><img src="/images/admin_page.jpg" alt="고객지원 관리 이미지"><br> 고객지원 관리 </a>
+                        <a href="<%=path%>/admin/motherboardMgmt.jsp?page=1" class="item"><img src="/images/admin_page.jpg" alt="학부모 게시판 관리 이미지"><br> 학부모 게시판 관리 </a>
+                        <a href="<%=path%>/admin/studentboardMgmt.jsp?page=1" class="item"><img src="/images/admin_page.jpg" alt="학생 게시판 관리 이미지"><br> 학생 게시판 관리 </a>
                     </div>
                 </div>
             </section>
@@ -115,6 +116,13 @@
         <footer class="ft" id="ft">
             <%@ include file="/layout/footer.jsp" %>
         </footer>
+
+        <% if(sid == null || !sid.equals("admin")) { %>
+            <script>
+                alert("관리자만 접근 가능한 페이지입니다.");
+                history.go(-1);
+            </script>
+        <% } %>
     </div>
 </body>
 </html>

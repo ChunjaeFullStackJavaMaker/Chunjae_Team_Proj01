@@ -1,52 +1,43 @@
 package com.chunjae_pro01.dto;
 
 public class StudentBoard {
-    private String id;
-    private String pw;
-    private String name;
-    private String email;
-    private String tel;
+    private int bno;
+    private String title;
+    private String content;
+    private String author;
     private String resdate;
-    private int point;
+    private int cnt;
 
-    public String getId() {
-        return id;
+    public int getBno() {
+        return bno;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setBno(int bno) {
+        this.bno = bno;
     }
 
-    public String getPw() {
-        return pw;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPw(String pw) {
-        this.pw = pw;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getName() {
-        return name;
+    public String getContent() {
+        return content;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public String getEmail() {
-        return email;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getResdate() {
@@ -57,24 +48,23 @@ public class StudentBoard {
         this.resdate = resdate;
     }
 
-    public int getPoint() {
-        return point;
+    public int getCnt() {
+        return cnt;
     }
 
-    public void setPoint(int point) {
-        this.point = point;
+    public void setCnt(int cnt) {
+        this.cnt = cnt;
     }
 
     @Override
     public String toString() {
-        return "StudentBoard{" +
-                "id='" + id + '\'' +
-                ", pw='" + pw + '\'' +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", tel='" + tel + '\'' +
+        return "MotherBoard{" +
+                "bno=" + bno +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", author='" + author + '\'' +
                 ", resdate='" + resdate + '\'' +
-                ", point=" + point +
+                ", cnt=" + cnt +
                 '}';
     }
 }

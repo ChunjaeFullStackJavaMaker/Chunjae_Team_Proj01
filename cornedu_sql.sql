@@ -104,7 +104,7 @@ SELECT * FROM motherboard;
 -- 학생 게시판 생성
 CREATE TABLE studentboard(
 	bno INT PRIMARY KEY AUTO_INCREMENT,
-	title VARCHAR(200studentboard) NOT NULL,
+	title VARCHAR(200) NOT NULL,
 	content VARCHAR(1000),
 	author VARCHAR(16),
 	resdate TIMESTAMP NOT NULL default CURRENT_TIMESTAMP,

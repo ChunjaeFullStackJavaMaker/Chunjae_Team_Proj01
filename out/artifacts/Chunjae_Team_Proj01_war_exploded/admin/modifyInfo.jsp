@@ -110,7 +110,7 @@
 
     DBC con = new MariaDBCon();
     conn = con.connect();
-    String sql = "SELECT id, pw, name, email, tel, regdate FROM member WHERE id='admin'";
+    String sql = "SELECT id, pw, name, email, tel, resdate FROM member WHERE id='admin'";
     pstmt = conn.prepareStatement(sql);
     rs = pstmt.executeQuery();
 
@@ -125,8 +125,8 @@
         member.setTel(rs.getString("tel"));
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date d = sdf.parse(rs.getString("regdate"));
-        member.setRegdate(sdf.format(d));
+        Date d = sdf.parse(rs.getString("resdate"));
+        member.setResdate(sdf.format(d));
     }
 %>
 </head>
@@ -187,6 +187,12 @@
         <footer class="ft" id="ft">
             <%@ include file="/layout/footer.jsp" %>
         </footer>
+        <script>
+            <% if(sid == null || !sid.equals("admin")) { %>
+            alert("관리자만 접근 가능한 페이지입니다.");
+            history.go(-1);
+            <% } %>
+        </script>
     </div>
 </body>
 </html>
