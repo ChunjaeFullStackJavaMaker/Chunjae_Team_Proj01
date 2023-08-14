@@ -2,6 +2,8 @@ CREATE DATABASE cornedu;
 
 USE cornedu;
 
+DROP TABLE member;
+
 -- per에는 관리자, 학생, 학부모만 INSERT 가능
 CREATE TABLE member(
 id VARCHAR(16) NOT NULL,
@@ -30,7 +32,6 @@ VALUES('shin','3333', '신예은', 'shin@edu.com', '010-9999-8888', 'mother');
 COMMIT;
 
 SELECT * FROM MEMBER;
-
 --------------------------------------------------------------
 
 -- 공지사항(board) 테이블 생성

@@ -1,15 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%
+    String path5 = request.getContextPath();
+%>
 <%-- 1. 필요한 라이브러리 로딩 --%>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.*" %>
-<%@ page import="com.chunjae_pro01.dto.*" %>
+<%@ page import="com.chunjae_pro01.dto.* " %>
 <%@ page import="java.util.Date" %>
 <%@ page import="com.chunjae_pro01.util.DBC" %>
 <%@ page import="com.chunjae_pro01.util.MariaDBCon" %>
-<%
-    String path5 = request.getContextPath();
-%>
+<%@ page import="com.chunjae_pro01.dto.Board" %>
 <%
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -20,7 +21,7 @@
     con = conn.connect();
 
     //3. SQL을 실행하여 Result(공지사항목록)을 가져오기
-    String sql = "select * from motherboard order by bno desc";
+    String sql = "select * from studentboard order by bno desc";
     pstmt = con.prepareStatement(sql);
     rs = pstmt.executeQuery();
 
@@ -43,8 +44,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항 목록</title>
-    <%@ include file="/setting/head.jsp" %>
+    <title>학생 커뮤니티</title>
+    <%@ include file="../../setting/head.jsp" %>
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
@@ -60,7 +61,7 @@
     <style>
         /* 본문 영역 스타일 */
         .contents { clear:both; min-height:100vh;
-            /*background-image: url("../images/bg_visual_overview.jpg");*/
+            /* background-image: url("../../images/bg_visual_overview.jpg"); */
             background-repeat: no-repeat; background-position:center -250px; }
         .contents::after { content:""; clear:both; display:block; width:100%; }
 
@@ -145,7 +146,7 @@
                             <td class="item2">
                             <%-- 6. 로그인한 사용자만 제목 부분의 a요소에 링크 중 bno 파라미터(쿼리스트링)으로 상세보기를 요청 가능--%>
                                 <% if(sid!=null) { %>
-                                <a href="/board/motherboard/getMotherBoard.jsp?bno=<%=bd.getBno() %>"><%=bd.getTitle() %></a>
+                                <a href="/board/studentboard/getStudentBoard.jsp?bno=<%=bd.getBno() %>"><%=bd.getTitle() %></a>
                                 <% } else { %>
                                 <span><%=bd.getTitle() %></span>
                                 <% } %>
@@ -169,7 +170,7 @@
                 <div class="btn_group">
                     <%-- 공지사항이므로 관리자만 글 추가 기능(링크)이 적용되도록 설정 --%>
                     <% if(sid!=null && sid.equals("admin")) { %>
-                    <a href="/board/motherboard/addMotherBoard.jsp" class="inbtn">글쓰기</a>
+                    <a href="/board/studentboard/addStudentBoard.jsp" class="inbtn">글쓰기</a>
                     <% } else { %>
                     <p>관리자만 공지사항의 글을 쓸 수 있습니다.<br>
                     로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>

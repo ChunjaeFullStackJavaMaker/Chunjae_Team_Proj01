@@ -26,6 +26,8 @@
     pstmt.setString(5, id);
     cnt = pstmt.executeUpdate();
 
+    con.close(pstmt, conn);
+
     if (cnt > 0) { %>
 <script>
     alert("회원 정보를 수정했습니다.");

@@ -1,8 +1,0 @@
-SELECT * FROM board
-SELECT DISTINCT author FROM board;
-COMMIT;
-SELECT * FROM board;
-SELECT * FROM member;
-COMMIT;
-
-

@@ -109,6 +109,7 @@ a {
     background-color: #8CB964;
     border: 1px solid #8CB964;
     color: #fff;
+    cursor: pointer;
 }
 
 .board_page {
