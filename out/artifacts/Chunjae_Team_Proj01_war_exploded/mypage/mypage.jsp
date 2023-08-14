@@ -1,6 +1,39 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="com.chunjae_pro01.util.*" %>
+<%@ page import="com.chunjae_pro01.dto.*" %>
+<%@ include file="/setting/encoding.jsp" %>
 <%
     String path5 = request.getContextPath();
+%>
+<%
+    String id = (String) session.getAttribute("id");
+
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+
+    DBC conn = new MariaDBCon();
+    con = conn.connect();
+
+    Member m = new Member();
+    String sql = "select * from member where id=? ";
+    pstmt = con.prepareStatement(sql);
+    pstmt.setString(1, id);
+    rs = pstmt.executeQuery();
+    if(rs.next()){
+        m.setId(rs.getString("id"));
+        m.setPw(rs.getString("pw"));
+        m.setName(rs.getString("name"));
+        m.setEmail(rs.getString("email"));
+        m.setTel(rs.getString("tel"));
+        m.setRegdate(rs.getString("regdate"));
+        m.setPoint(rs.getInt("point"));
+    }else{
+        response.sendRedirect("/member/login.jsp");
+    }
+    conn.close(rs, pstmt, con);
+
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,11 +171,11 @@
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <p class="content_tit"> 안녕하세요, 000님! </p>
+                <p class="content_tit"> 안녕하세요, <%=m.getName() %>님! </p>
                 <hr>
                 <div class="item_wrap">
-                    <a href="modify.jsp" class="item"><img src="/images/mypage_info.jpg" alt="개인정보 변경 이미지"><br> 개인정보 변경 </a>
-                    <a href="myboard.jsp" class="item"><img src="/images/mypage_write.jpg" alt="내가쓴 글 이미지"><br> 내가 쓴 글 </a>
+                    <a href="/mypage/modify.jsp" class="item"><img src="/images/mypage_info.jpg" alt="개인정보 변경 이미지"><br> 개인정보 변경 </a>
+                    <a href="/mypage/myBoardListQna.jsp" class="item"><img src="/images/mypage_write.jpg" alt="내가쓴 글 이미지"><br> 내가 쓴 글 </a>
                 </div>
             </div>
         </section>

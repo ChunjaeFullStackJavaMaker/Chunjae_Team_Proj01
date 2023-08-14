@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#page_wrap > h2 {
+    font-size: 30px;
+    color: #6A24FE;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+.agree_fr {
+    width: 900px;
+    margin: 20px auto;
+    border:1px solid #eee;
+    padding: 20px;
+    overflow-y: auto;
+    height: 450px;
+    white-space: pre-wrap;
+}
+.inbtn {
+    isplay:block;
+    border-radius:100px;
+    min-width:140px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    line-height: 48px;
+    background-color: #333;
+    color:#fff;
+    font-size: 18px;
+}
+#ck_item1 {
+    float:left;
+    margin-left: 990px;
+}
+.inbtn {
+    float:right;
+    margin-right: 165px;
+    background-color: #6A24FE;
+}

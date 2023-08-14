@@ -7,7 +7,7 @@
     <nav class="tnb">
         <ul class="menu">
             <li><a href="<%=path8 %>/member/login.jsp"> 로그인 </a></li>
-            <li><a href="<%=path8 %>/"> 회원가입 </a></li>
+            <li><a href="<%=path8 %>/member/term.jsp"> 회원가입 </a></li>
         </ul>
     </nav>
 </div>

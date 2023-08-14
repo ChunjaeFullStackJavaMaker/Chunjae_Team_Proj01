@@ -1,6 +1,48 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.text.*" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="com.chunjae_pro01.util.*" %>
+<%@ page import="com.chunjae_pro01.vo.*" %>
+<%@ include file="/setting/encoding.jsp" %>
 <%
     String path7 = request.getContextPath();
+%>
+<%
+    String id = (String) session.getAttribute("id");
+
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+
+    DBC conn = new MariaDBCon();
+    con = conn.connect();
+
+    //select * a.qno as qno, a.title as title, a.content as content, a.author as author, a.resdate as resdate, a.cnt as cnt,
+    //a.lev as lev, a.par as par, b.name as name, b.id as id, from qna a, member b where a.author = b.id and id=?
+    //order by a.par desc, a.lev asc, a.qno asc;
+    String sql = "select * from qnalist where id=? ";
+    pstmt = con.prepareStatement(sql);
+    rs = pstmt.executeQuery();
+
+    List<Qna> qnaList = new ArrayList();
+    while(rs.next()){
+        Qna q = new Qna();
+        q.setQno(rs.getInt("qno"));
+        q.setTitle(rs.getString("title"));
+        q.setContent(rs.getString("content"));
+        q.setAuthor(rs.getString("author"));
+        q.setId(rs.getString("id"));
+        q.setName(rs.getString("name"));
+        q.setRegdate(rs.getString("regdate"));
+        q.setCnt(rs.getInt("cnt"));
+        q.setLev(rs.getInt("lev"));
+        q.setPar(rs.getInt("par"));
+        qnaList.add(q);
+    }
+    conn.close(rs, pstmt, con);
+
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,11 +125,15 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <div class="box_myboard">
-                    <a href="myBoardListQna.jsp" class="btn_myboard">QnA</a>
-                    <a href=myBoardListComu.jsp.jsp class="btn_myboard">커뮤니티</a>
+                    <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA</a>
+                    <%//if(아이디 ==학생){ %>
+                    <a href=/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <%//}else(아이디 == 부모){ %>
+                    <!--<a href=/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>-->
+                    <%//} %>
                 </div>
                 <hr>
-                <br><br><h2 class="content_tit"> QnA </h2>
+                <br><br><p class="content_tit"> QnA </p>
                 <table class="tb1" id="myTable">
                     <thead>
                     <th class="item1">번호</th>
@@ -97,13 +143,24 @@
                     <th class="item5">조회</th>
                     </thead>
                     <tbody>
+                    <%if(qnaList != null){%>
+                    <div style="font-size: 17px; font-weight: bold;">작성글이 없습니다.</div>
+                    <% }else{
+                        SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
+                        for(Qna q: qnaList){
+                            Date d= ymd.parse(q.getRegdate());
+                            String date = ymd.format(d);
+                    %>
                     <tr>
-                        <td class="item1">1</td>
-                        <td class="item1">제목1</td>
-                        <td class="item1">글쓴이1</td>
-                        <td class="item1">작성일</td>
-                        <td class="item1">조회수</td>
+                        <td class="item1"><%=q.getQno() %></td>
+                        <td class="item1">
+                            <a href="/qna/getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
+                        </td>
+                        <td class="item1"><%=q.getName() %></td>
+                        <td class="item1"><%=date %></td>
+                        <td class="item1"><%=q.getCnt() %></td>
                     </tr>
+                    <%}} %>
                     </tbody>
                 </table>
             </div>

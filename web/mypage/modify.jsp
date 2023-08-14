@@ -1,6 +1,54 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="com.chunjae_pro01.util.*" %>
+<%@ page import="com.chunjae_pro01.dto.*" %>
+<%@ include file="/setting/encoding.jsp" %>
 <%
     String path6 = request.getContextPath();
+%>
+<%
+    String id = (String) session.getAttribute("id");
+
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+
+    DBC conn = new MariaDBCon();
+    con = conn.connect();
+    if(con != null){
+        System.out.println("DB 연결 성공");
+    }
+
+    Member m = new Member();
+    String pw="";
+    try{
+        String sql = "select * from member where id=?";
+        pstmt = con.prepareStatement(sql);
+        pstmt.setString(1, id);
+        rs = pstmt.executeQuery();
+        if(rs.next()){
+            m.setId(rs.getString("id"));
+            m.setPw(rs.getString("pw"));
+            m.setName(rs.getString("name"));
+            m.setEmail(rs.getString("email"));
+            m.setTel(rs.getString("tel"));
+            m.setRegdate(rs.getString("regdate"));
+            m.setPoint(rs.getInt("point"));
+            pw=m.getPw();
+        }else{
+            response.sendRedirect("/member/login.jsp");
+        }
+    } catch (SQLException e) {
+        System.out.println("SQL 구문이 처리되지 못했습니다.");
+    } finally{
+        conn.close(rs, pstmt, con);
+    }
+
+    String pw2 = pw.substring(0,2);
+    for(int i=0; i<pw.length()-2;i++){
+        pw2 += "*";
+    }
+
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,27 +131,27 @@
                         <tbody>
                         <tr>
                             <th>아이디</th>
-                            <td><input type="text" name="id" id="id" class="indata" value="" readonly required/></td>
+                            <td><input type="text" name="id" id="id" class="indata" value="<%=m.getId() %>" readonly required/></td>
                         </tr>
                         <tr>
                             <th>비밀번호</th>
                             <td>
-                                <input type="text" value="" name="re_pw" id="re_pw" class="indata" required>
-                                <input type="hidden" value="" name="pw2" id="pw2" />
-                                <input type="hidden" value="" name="pw" id="pw" />
+                                <input type="text" value="<%=pw2 %>" name="re_pw" id="re_pw" class="indata" required>
+                                <input type="hidden" value="<%=pw2 %>" name="pw2" id="pw2" />
+                                <input type="hidden" value="<%=pw %>" name="pw" id="pw" />
                             </td>
                         </tr>
                         <tr>
                             <th>이름</th>
-                            <td><input type="text" value="" name="name" id="name" class="indata" disabled></td>
+                            <td><input type="text" value="<%=m.getName() %>" name="name" id="name" class="indata" disabled></td>
                         </tr>
                         <tr>
                             <th>전화번호</th>
-                            <td><input type="tel" value="" name="tel" id="tel" class="indata" required></td>
+                            <td><input type="tel" value="<%=m.getTel() %>" name="tel" id="tel" class="indata" required></td>
                         </tr>
                         <tr>
                             <th>이메일</th>
-                            <td><input type="email" value="" name="email" id="email" class="indata" required></td>
+                            <td><input type="email" value="<%=m.getEmail() %>" name="email" id="email" class="indata" required></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="colspan">
