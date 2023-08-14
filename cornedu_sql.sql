@@ -2,6 +2,8 @@ CREATE DATABASE cornedu;
 
 USE cornedu;
 
+DROP TABLE member;
+
 -- per에는 관리자, 학생, 학부모만 INSERT 가능
 CREATE TABLE member(
 id VARCHAR(16) NOT NULL,

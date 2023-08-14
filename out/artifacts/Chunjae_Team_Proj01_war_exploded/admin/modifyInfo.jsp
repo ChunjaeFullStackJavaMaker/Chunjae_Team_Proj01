@@ -171,7 +171,7 @@
                             </tr>
                             <tr>
                                 <td><label for="regdate"> 가입일 </label></td>
-                                <td><input type="text" id="regdate" name="regdate" value="<%=member.getRegdate()%>" readonly></td>
+                                <td><input type="text" id="regdate" name="regdate" value="<%=member.getResdate()%>" readonly></td>
                             </tr>
                             <tr>
                                 <td colspan="2">

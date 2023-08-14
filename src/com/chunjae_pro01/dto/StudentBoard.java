@@ -6,7 +6,7 @@ public class StudentBoard {
     private String name;
     private String email;
     private String tel;
-    private String regdate;
+    private String resdate;
     private int point;
 
     public String getId() {
@@ -49,12 +49,12 @@ public class StudentBoard {
         this.tel = tel;
     }
 
-    public String getRegdate() {
-        return regdate;
+    public String getResdate() {
+        return resdate;
     }
 
-    public void setRegdate(String regdate) {
-        this.regdate = regdate;
+    public void setResdate(String resdate) {
+        this.resdate = resdate;
     }
 
     public int getPoint() {
@@ -73,7 +73,7 @@ public class StudentBoard {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", tel='" + tel + '\'' +
-                ", regdate='" + regdate + '\'' +
+                ", resdate='" + resdate + '\'' +
                 ", point=" + point +
                 '}';
     }

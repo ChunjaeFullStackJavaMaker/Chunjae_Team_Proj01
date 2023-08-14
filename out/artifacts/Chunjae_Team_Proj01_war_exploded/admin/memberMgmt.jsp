@@ -107,7 +107,7 @@
     }
 
     // 현재 페이지에 출력할 회원 데이터만 가져오기
-    sql = "SELECT * FROM member WHERE id !='admin' ORDER BY regdate, id LIMIT ?, 10";
+    sql = "SELECT * FROM member WHERE id !='admin' ORDER BY resdate, id LIMIT ?, 10";
     pstmt = conn.prepareStatement(sql);
     pstmt.setInt(1, 10*(pageNo-1));
     rs = pstmt.executeQuery();
@@ -119,8 +119,8 @@
         member.setName(rs.getString("name"));
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date d = sdf.parse(rs.getString("regdate"));
-        member.setRegdate(sdf.format(d));
+        Date d = sdf.parse(rs.getString("resdate"));
+        member.setResdate(sdf.format(d));
         memberList.add(member);
     }
     con.close(rs, pstmt, conn);
@@ -154,7 +154,7 @@
                                 <div>
                                     <div class="id"> <%=member.getId()%> </div>
                                     <div class="name"> <%=member.getName()%> </div>
-                                    <div class="date"> <%=member.getRegdate()%> </div>
+                                    <div class="date"> <%=member.getResdate()%> </div>
                                     <div class="kick"><button onclick="javascript:location.href='<%=path%>/admin/kickpro.jsp?id=<%=member.getId()%>&pageNo=<%=pageNo%>'">강퇴</button></div>
                                 </div>
                             <% } %>

@@ -89,7 +89,7 @@
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Date d = sdf.parse(rs.getString("regdate"));
-            member.setRegdate(sdf.format(d));
+            member.setResdate(sdf.format(d));
             memberList.add(member);
         }
 
@@ -127,7 +127,7 @@
                         <div>
                             <div class="id"> <%=member.getId()%> </div>
                             <div class="name"> <%=member.getName()%> </div>
-                            <div class="date"> <%=member.getRegdate()%> </div>
+                            <div class="date"> <%=member.getResdate()%> </div>
                             <div class="kick"><button onclick="javascript:location.href='<%=path%>/admin/kickpro.jsp?id=<%=member.getId()%>'">강퇴</button></div>
                         </div>
                         <% } %>
