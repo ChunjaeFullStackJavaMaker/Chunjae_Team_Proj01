@@ -1,3 +1,4 @@
+<%@ page import="javax.xml.xpath.XPathEvaluationResult" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
     String path3 = request.getContextPath();
@@ -36,7 +37,7 @@
         <section class="page" id="page1">
             <div class="login-wrapper">
                 <h2>Login</h2>
-                <form method="post" action="loginpro.jsp" id="login-form">
+                <form method="post" action="<%=path3%>/member/loginpro.jsp" id="login-form">
                     <input type="text" name="userId" placeholder="아이디" autofocus required>
                     <input type="password" name="userPassword" placeholder="비밀번호" required>
                     <label for="remember-check">

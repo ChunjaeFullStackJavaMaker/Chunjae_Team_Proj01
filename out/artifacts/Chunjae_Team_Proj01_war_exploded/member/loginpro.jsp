@@ -2,13 +2,11 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae_pro01.util.*"%>
 <%
-    String path3 = request.getContextPath();
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
 
     Connection conn = null;
     PreparedStatement pstmt = null;
-    Statement stmt = null;
     ResultSet rs = null;
 
     DBC con = new MariaDBCon();

@@ -1,13 +1,12 @@
 package com.chunjae_pro01.vo;
 
-public class Qna {
+public class QnA {
     private int qno;
     private String title;
     private String content;
     private String author;
-    private String id;
     private String name;
-    private String regdate;
+    private String resdate;
     private int cnt;
     private int lev;
     private int par;
@@ -44,14 +43,6 @@ public class Qna {
         this.author = author;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
@@ -60,12 +51,12 @@ public class Qna {
         this.name = name;
     }
 
-    public String getRegdate() {
-        return regdate;
+    public String getResdate() {
+        return resdate;
     }
 
-    public void setRegdate(String regdate) {
-        this.regdate = regdate;
+    public void setResdate(String resdate) {
+        this.resdate = resdate;
     }
 
     public int getCnt() {
@@ -90,5 +81,20 @@ public class Qna {
 
     public void setPar(int par) {
         this.par = par;
+    }
+
+    @Override
+    public String toString() {
+        return "QnA{" +
+                "qno=" + qno +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", author='" + author + '\'' +
+                ", name='" + name + '\'' +
+                ", resdate='" + resdate + '\'' +
+                ", cnt=" + cnt +
+                ", lev=" + lev +
+                ", par=" + par +
+                '}';
     }
 }
