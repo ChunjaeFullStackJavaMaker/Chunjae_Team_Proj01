@@ -43,8 +43,8 @@
                             <tr>
                                 <th></th>
                                 <td>
-                                    <label><input type="radio" name="person" id="mother">학부모</label>
-                                    <label><input type="radio" name="person" id="student">학생</label>
+                                    <label><input type="radio" name="per" id="mother" value="mother">학부모</label>
+                                    <label><input type="radio" name="per" id="student" value="student">학생</label>
                                 </td>
                             </tr>
                             <tr>
@@ -110,7 +110,7 @@
                             var child;
                             var id = document.getElementById("id");
                             if(id.value!="") {
-                                child = window.open("idcheck.jsp?id="+id.value, "child", "width=200, height=150");
+                                child = window.open("idcheck.jsp?id="+id.value, "child", "width=400, height=300");
                                 return;
                             } else {
                                 alert("아이디 입력란에 아이디를 입력하고, 진행하시기 바랍니다.");

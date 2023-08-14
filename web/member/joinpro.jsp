@@ -15,6 +15,7 @@
   String name = request.getParameter("name");
   String tel = request.getParameter("tel");
   String email = request.getParameter("email");
+  String per = request.getParameter("per");
 
   Connection conn = null;
   PreparedStatement pstmt = null;
@@ -27,13 +28,14 @@
   }
 
   try {
-    String sql = "insert into member(id,pw,name,tel,email) values(?,?,?,?,?)";
+    String sql = "insert into member(id,pw,name,tel,email,per) values(?,?,?,?,?,?)";
     pstmt = conn.prepareStatement(sql);
     pstmt.setString(1, id);
     pstmt.setString(2, pw);
     pstmt.setString(3, name);
     pstmt.setString(4, tel);
     pstmt.setString(5, email);
+    pstmt.setString(6, per);
     cnt = pstmt.executeUpdate();
     if(cnt>0){
       response.sendRedirect("/member/login.jsp");
