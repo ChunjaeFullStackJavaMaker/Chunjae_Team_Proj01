@@ -11,6 +11,7 @@
 %>
 <%
     String id = (String) session.getAttribute("id");
+    String per =(String) session.getAttribute("per");
 
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -19,23 +20,19 @@
     DBC conn = new MariaDBCon();
     con = conn.connect();
 
-    //select * a.qno as qno, a.title as title, a.content as content, a.author as author, a.resdate as resdate, a.cnt as cnt,
-    //a.lev as lev, a.par as par, b.name as name, b.id as id, from qna a, member b where a.author = b.id and id=?
-    //order by a.par desc, a.lev asc, a.qno asc;
     String sql = "select * from qnalist where id=? ";
     pstmt = con.prepareStatement(sql);
     rs = pstmt.executeQuery();
 
-    List<Qna> qnaList = new ArrayList();
+    List<QnA> qnaList = new ArrayList();
     while(rs.next()){
-        Qna q = new Qna();
+        QnA q = new QnA();
         q.setQno(rs.getInt("qno"));
         q.setTitle(rs.getString("title"));
         q.setContent(rs.getString("content"));
         q.setAuthor(rs.getString("author"));
-        q.setId(rs.getString("id"));
         q.setName(rs.getString("name"));
-        q.setRegdate(rs.getString("regdate"));
+        q.setResdate(rs.getString("resdate"));
         q.setCnt(rs.getInt("cnt"));
         q.setLev(rs.getInt("lev"));
         q.setPar(rs.getInt("par"));
@@ -126,11 +123,11 @@
             <div class="page_wrap">
                 <div class="box_myboard">
                     <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA</a>
-                    <%//if(아이디 ==학생){ %>
+                    <%if(per.equals("학생")){%>
                     <a href=/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
-                    <%//}else(아이디 == 부모){ %>
-                    <!--<a href=/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>-->
-                    <%//} %>
+                    <%}else if(per.equals("학부모")){ %>
+                    <a href=/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <%} %>
                 </div>
                 <hr>
                 <br><br><p class="content_tit"> QnA </p>
@@ -147,8 +144,8 @@
                     <div style="font-size: 17px; font-weight: bold;">작성글이 없습니다.</div>
                     <% }else{
                         SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
-                        for(Qna q: qnaList){
-                            Date d= ymd.parse(q.getRegdate());
+                        for(QnA q: qnaList){
+                            Date d= ymd.parse(q.getResdate());
                             String date = ymd.format(d);
                     %>
                     <tr>

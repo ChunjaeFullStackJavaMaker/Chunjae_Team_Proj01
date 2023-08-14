@@ -1,11 +1,10 @@
-package com.chunjae_pro01.vo;
+package com.chunjae_pro01.dto;
 
-public class StudentBoardList {
+public class Board {
     private int bno;
     private String title;
     private String content;
     private String author;
-    private String id;
     private String resdate;
     private int cnt;
 
@@ -41,14 +40,6 @@ public class StudentBoardList {
         this.author = author;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getResdate() {
         return resdate;
     }
@@ -65,4 +56,3 @@ public class StudentBoardList {
         this.cnt = cnt;
     }
 }
-
