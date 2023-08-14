@@ -17,9 +17,9 @@ PRIMARY KEY (id));
 INSERT INTO member(id, pw, NAME, email, tel, per)
 VALUES('admin','1234', '관리자', 'admin@edu.com', '010-1004-1004', '관리자');
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('kimhk','9876', '김현경', 'kimbk@edu.com', '010-1234-5678', '학생');
+VALUES('kimhk','9876', '김현경', 'kimhk@edu.com', '010-1234-5678', '학생');
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('kimbk','1111', '김보경', 'kimhk@edu.com', '010-8765-4321', '학생');
+VALUES('kimbk','1111', '김보경', 'kimbk@edu.com', '010-8765-4321', '학생');
 INSERT INTO member(id, pw, NAME, email, tel, per)
 VALUES('park','2222', '박진권', 'park@edu.com', '010-1111-2222', '학부모');
 INSERT INTO member(id, pw, NAME, email, tel, per)
@@ -102,7 +102,7 @@ SELECT * FROM motherboard;
 -- 학생 게시판 생성
 CREATE TABLE studentboard(
 	bno INT PRIMARY KEY AUTO_INCREMENT,
-	title VARCHAR(200) NOT NULL,
+	title VARCHAR(200studentboard) NOT NULL,
 	content VARCHAR(1000),
 	author VARCHAR(16),
 	resdate TIMESTAMP NOT NULL default CURRENT_TIMESTAMP,
@@ -114,19 +114,19 @@ DESC studentboard;
 -- 게시판 더미글 추가 8건
 INSERT INTO studentboard(title, content, author) 
 VALUES ('학생 게시판1', '여기는 학생 게시판1입니다', 'kimhk');
-INSERT INTO motherboard(title, content, author) 
+INSERT INTO studentboard(title, content, author) 
 VALUES ('학생 게시판2', '여기는 학생 게시판2입니다', 'kimbk');
-INSERT INTO motherboard(title, content, author) 
+INSERT INTO studentboard(title, content, author) 
 VALUES ('학생 게시판3', '여기는 학생 게시판3입니다', 'kimbk');
-INSERT INTO motherboard(title, content, author) 
+INSERT INTO studentboard(title, content, author) 
 VALUES ('학생 게시판4', '여기는 학생 게시판4입니다', 'kimhk');
-INSERT INTO motherboard(title, content, author) 
+INSERT INTO studentboard(title, content, author) 
 VALUES ('학생 게시판5', '여기는 학생 게시판5입니다', 'kimhk');
-INSERT INTO motherboard(title, content, author) 
+INSERT INTO studentboard(title, content, author) 
 VALUES ('학생 게시판6', '여기는 학생 게시판6입니다', 'kimbk');
-INSERT INTO motherboard(title, content, author) 
+INSERT INTO studentboard(title, content, author) 
 VALUES ('학생 게시판7', '여기는 학생 게시판7입니다', 'kimbk');
-INSERT INTO motherboard(title, content, author) 
+INSERT INTO studentboard(title, content, author) 
 VALUES ('학생 게시판8', '여기는 학생 게시판8입니다', 'kimbk');
 
 COMMIT;
@@ -183,7 +183,7 @@ UPDATE qna SET par=qno WHERE lev=0 AND qno=8;
 INSERT INTO qna(title, content, author, lev) VALUES('질문9', '질문입니다. 9', 'park', 0);
 UPDATE qna SET par=qno WHERE lev=0 AND qno=9; 
 
-INSERT INTO qna(title, content, author, lev) VALUES('질문10', '질문입니다. 10', 'kim', 0);
+INSERT INTO qna(title, content, author, lev) VALUES('질문10', '질문입니다. 10', 'kimbk', 0);
 UPDATE qna SET par=qno WHERE lev=0 AND qno=10; 
 
 INSERT INTO qna(title, content, author, lev, par) VALUES ('질문1에 대한 답변', '답변입니다. 1', 'park', 1, 1);
@@ -199,23 +199,20 @@ INSERT INTO qna(title, content, author, lev, par) VALUES ('질문10에 대한 �
 
 COMMIT;
 
-SELECT * FROM qna ORDER BY par DESC, lev ASC, qno ASC;
-
+-- QnA 리스트
 SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt AS cnt, a.lev AS lev,
 a.par AS par, b.name AS name
 FROM qna a, member b WHERE a.author=b.id ORDER BY a.par DESC, a.lev ASC, a.qno ASC;
-
-SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt AS cnt, a.lev AS lev, a.par AS par, b.name AS NAME FROM qna a, member b WHERE a.author=b.id and qno=? ORDER BY a.par DESC, a.lev ASC, a.qno ASC";
 
 
 -----------------------------------------------------------------------------------------------------------------------
 
 -- FAQ 테이블 생성
-CREATE TABLE faq(
+CREATE TABLE faq (
 	fno INT PRIMARY KEY AUTO_INCREMENT,
 	question VARCHAR(1000) NOT NULL,
-	answer VARCHAR(1000),
-	cnt INT DEFAULT 0,
+	answer VARCHAR(1000) NOT NULL,
+	cnt INT DEFAULT 0 NOT NULL
 );
 
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다1', '답변입니다1');
