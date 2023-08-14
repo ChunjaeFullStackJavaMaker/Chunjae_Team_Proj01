@@ -6,8 +6,19 @@
 <div class="tnb_wrap">
     <nav class="tnb">
         <ul class="menu">
-            <li><a href="<%=path8 %>/member/login.jsp"> 로그인 </a></li>
-            <li><a href="<%=path8 %>/member/term.jsp"> 회원가입 </a></li>
+            <% if(sid!=null) { %>
+            <li><a href="<%=path8 %>/member/logout.jsp">로그아웃</a></li>
+            <li><a href="<%=path8 %>/member/mypage.jsp">마이페이지</a></li>
+            <li><a href="map.jsp">오시는길</a></li>
+            <% if(sid.equals("admin")) { %>
+            <li><a href="<%=path8 %>/admin/index.jsp">관리자페이지로</a></li>
+            <% } %>
+            <% } else { %>
+            <li><a href="<%=path8 %>/member/login.jsp">로그인</a></li>
+            <li><a href="<%=path8 %>/member/term.jsp">회원가입</a></li>
+            <li><a href="map.jsp">오시는길</a></li>
+            <% } %>
+            
         </ul>
     </nav>
 </div>

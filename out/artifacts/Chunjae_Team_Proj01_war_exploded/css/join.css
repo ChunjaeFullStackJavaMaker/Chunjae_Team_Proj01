@@ -24,7 +24,7 @@
     margin: 10px;
     padding: 10px;
     text-align: center;
-    margin-left: -60px;
+    margin : auto;
 }
 .tb1 td {
     height: 40px;
@@ -39,6 +39,19 @@
     margin-bottom: 10px;
     border-radius: 6px;
     background-color: #F8F8F8;
+}
+.tb1 .per {
+    color: black;
+    font-weight: 600;
+    float: left;
+}
+.tb1 .per input[type=radio]{
+    vertical-align: middle;
+    appearance: none;
+    border: solid #6A24FE;
+    border-radius: 100%;
+    width: 5px;
+    height: 25px;
 }
 .tb1 label {
     color: #6A24FE;
