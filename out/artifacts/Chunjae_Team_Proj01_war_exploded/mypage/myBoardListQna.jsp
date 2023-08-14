@@ -11,7 +11,7 @@
 %>
 <%
     String id = (String) session.getAttribute("id");
-    String per =(String) session.getAttribute("per");
+    int per =(Integer) session.getAttribute("per");
 
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -20,18 +20,25 @@
     DBC conn = new MariaDBCon();
     con = conn.connect();
 
-    String sql = "select * from qnalist where id=? ";
+    String sql = "select * from qnalist2 where id=? ";
     pstmt = con.prepareStatement(sql);
+    pstmt.setString(1,id);
     rs = pstmt.executeQuery();
 
+<<<<<<< HEAD
     List<QnA> qnaList = new ArrayList();
     while(rs.next()){
         QnA q = new QnA();
+=======
+    List<Qna2> qnaList = new ArrayList();
+    while(rs.next()){
+        Qna2 q = new Qna2();
+>>>>>>> 70b8a898a2ca85ae8d73d55d11b6a49d26e5cab3
         q.setQno(rs.getInt("qno"));
         q.setTitle(rs.getString("title"));
         q.setContent(rs.getString("content"));
         q.setAuthor(rs.getString("author"));
-        q.setName(rs.getString("name"));
+        q.setId(rs.getString("id"));
         q.setResdate(rs.getString("resdate"));
         q.setCnt(rs.getInt("cnt"));
         q.setLev(rs.getInt("lev"));
@@ -123,10 +130,10 @@
             <div class="page_wrap">
                 <div class="box_myboard">
                     <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA</a>
-                    <%if(per.equals("학생")){%>
-                    <a href=/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
-                    <%}else if(per.equals("학부모")){ %>
-                    <a href=/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <% if(per == 1){%>
+                    <a href="/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <%}else if(per ==2){ %>
+                    <a href="/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
                     <%} %>
                 </div>
                 <hr>
@@ -140,11 +147,15 @@
                     <th class="item5">조회</th>
                     </thead>
                     <tbody>
-                    <%if(qnaList != null){%>
+                    <%if(qnaList.isEmpty()){%>
                     <div style="font-size: 17px; font-weight: bold;">작성글이 없습니다.</div>
                     <% }else{
                         SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
+<<<<<<< HEAD
                         for(QnA q: qnaList){
+=======
+                        for(Qna2 q: qnaList){
+>>>>>>> 70b8a898a2ca85ae8d73d55d11b6a49d26e5cab3
                             Date d= ymd.parse(q.getResdate());
                             String date = ymd.format(d);
                     %>
@@ -153,7 +164,7 @@
                         <td class="item1">
                             <a href="/qna/getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
                         </td>
-                        <td class="item1"><%=q.getName() %></td>
+                        <td class="item1"><%=q.getId() %></td>
                         <td class="item1"><%=date %></td>
                         <td class="item1"><%=q.getCnt() %></td>
                     </tr>

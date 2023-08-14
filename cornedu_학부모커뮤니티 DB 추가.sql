@@ -9,23 +9,23 @@ pw VARCHAR(330) NOT NULL,
 NAME VARCHAR(100) NOT NULL,
 email VARCHAR(100) NOT NULL,
 tel VARCHAR(13),
-regdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
 POINT INT DEFAULT 0,
-per VARCHAR(5) CHECK(per IN('관리자', '학생', '학부모')),
+per INT CHECK(per IN(0, 1, 2)),
 PRIMARY KEY (id));
 
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('admin','1234', '관리자', 'admin@edu.com', '010-1004-1004', '관리자');
+VALUES('admin','1234', '관리자', 'admin@edu.com', '010-1004-1004', 0);
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('kimhk','9876', '김현경', 'kimhk@edu.com', '010-1234-5678', '학생');
+VALUES('kimhk','9876', '김현경', 'kimhk@edu.com', '010-1234-5678', 1);
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('kimbk','1111', '김보경', 'kimbk@edu.com', '010-8765-4321', '학생');
+VALUES('kimbk','1111', '김보경', 'kimbk@edu.com', '010-8765-4321', 1);
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('park','2222', '박진권', 'park@edu.com', '010-1111-2222', '학부모');
+VALUES('park','2222', '박진권', 'park@edu.com', '010-1111-2222', 2);
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('oh','4321', '오태훈', 'oh@edu.com', '010-1122-3344', '학부모');
+VALUES('oh','4321', '오태훈', 'oh@edu.com', '010-1122-3344', 2);
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('shin','3333', '신예은', 'shin@edu.com', '010-9999-8888', '학부모');
+VALUES('shin','3333', '신예은', 'shin@edu.com', '010-9999-8888', 2);
 
 COMMIT;
 
@@ -72,7 +72,13 @@ CREATE TABLE motherboard(
 	content VARCHAR(1000),
 	author VARCHAR(16),
 	resdate TIMESTAMP NOT NULL default CURRENT_TIMESTAMP,
-	cnt INT DEFAULT 0);
+	cnt INT DEFAULT 0,
+	FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE);
+	
+-- motherboard JOIN & VIEW 생성 ( 내가 쓴 글에 이용) 
+SELECT a.bno AS bno, a.title AS title, a.content AS content ,a.author AS author,a.resdate AS resdate ,a.cnt AS cnt, b.id as id FROM motherboard a, member b WHERE a.author =b.id;
+CREATE view motherboardlist AS (SELECT a.bno AS bno ,a.title AS title, a.content AS content ,a.author AS author,a.resdate AS resdate ,a.cnt AS cnt, b.id as id FROM motherboard a, member b WHERE a.author =b.id);
+SELECT * FROM motherboardlist;
 
 -- 게시판 더미글 추가 8건
 INSERT INTO motherboard(title, content, author) 
@@ -87,7 +93,7 @@ VALUES ('수능 D-90... 9월 모평 후 학습계획 변경도 염두해야', '�
 
 주요내용
 
-- 9월 모평, "킬러문항 배제" 방향성 적용되는 첫 시험
+- 9월 모평, '킬러문항 배제' 방향성 적용되는 첫 시험
 
 - 90일 남은 시점... 다양한 문제풀이와 주어진 시간 안에 문제 푸는 연습으로 수능 실전 감각 키워야
 
@@ -146,33 +152,40 @@ SELECT * FROM motherboard;
 
 -- 학생 게시판 생성
 CREATE TABLE studentboard(
-	bno INT PRIMARY KEY AUTO_INCREMENT,
-	title VARCHAR(200) NOT NULL,
-	content VARCHAR(1000),
-	author VARCHAR(16),
-	resdate TIMESTAMP NOT NULL default CURRENT_TIMESTAMP,
-	cnt INT DEFAULT 0);
+bno INT PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(200) NOT NULL,
+content VARCHAR(1000),
+author VARCHAR(16),
+resdate TIMESTAMP NOT NULL default CURRENT_TIMESTAMP,
+cnt INT DEFAULT 0,
+FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE);
+	
+-- studentboard JOIN & VIEW 생성 ( 내가 쓴 글에 이용) 
+SELECT a.bno AS bno, a.title AS title, a.content AS content ,a.author AS author,a.resdate AS resdate ,a.cnt AS cnt, b.id as id FROM studentboard a, member b WHERE a.author =b.id;
+CREATE view studentboardlist AS (SELECT a.bno AS bno, a.title AS title, a.content AS content ,a.author AS author,a.resdate AS resdate ,a.cnt AS cnt, b.id as id FROM studentboard a, member b WHERE a.author =b.id);
+SELECT * FROM studentboardlist;
+	
 	
 -- 게시판 테이블 구조 보기
 DESC studentboard;
 
 -- 게시판 더미글 추가 8건
 INSERT INTO studentboard(title, content, author) 
-VALUES ('2024 EBS 수능완성 실전편 5회 전문항 풀이', '여기는 학생 게시판1입니다', 'kimhk');
+VALUES ('학생 게시판1', '여기는 학생 게시판1입니다', 'kimhk');
 INSERT INTO studentboard(title, content, author) 
-VALUES ('🌈유니스트/지스트/디지스트 합격하는 과학 기술원 자기 소개서 만들기 사진링크new', '여기는 학생 게시판2입니다', 'kimbk');
+VALUES ('학생 게시판2', '여기는 학생 게시판2입니다', 'kimbk');
 INSERT INTO studentboard(title, content, author) 
-VALUES ('[수학칼럼] 예비 고3은 개념정리를 꼼꼼하게 하세요 + 반드시 알아야하는 내용 3개 정리', '여기는 학생 게시판3입니다', 'kimbk');
+VALUES ('학생 게시판3', '여기는 학생 게시판3입니다', 'kimbk');
 INSERT INTO studentboard(title, content, author) 
-VALUES ('[자료] 하루하루 남기다 보면 늘어가는 국어 #196 비문학 사진 [1]', '여기는 학생 게시판4입니다', 'kimhk');
+VALUES ('학생 게시판4', '여기는 학생 게시판4입니다', 'kimhk');
 INSERT INTO studentboard(title, content, author) 
-VALUES ('[칼럼] 방학기간 예비 고3 선택과목 준비법', '여기는 학생 게시판5입니다', 'kimhk');
+VALUES ('학생 게시판5', '여기는 학생 게시판5입니다', 'kimhk');
 INSERT INTO studentboard(title, content, author) 
-VALUES ('수능과 내신 대비) EBS 수능특강 문학 고전산문 03강 임춘 - 공방전 (036)', '여기는 학생 게시판6입니다', 'kimbk');
+VALUES ('학생 게시판6', '여기는 학생 게시판6입니다', 'kimbk');
 INSERT INTO studentboard(title, content, author) 
-VALUES ('[칼럼] 새학기가 시작되기 직전, 슬럼프가 온 여러분들에게 쓰는 글 사진링크', '여기는 학생 게시판7입니다', 'kimbk');
+VALUES ('학생 게시판7', '여기는 학생 게시판7입니다', 'kimbk');
 INSERT INTO studentboard(title, content, author) 
-VALUES ('의대 박살내는 회독법 총정리', '여기는 학생 게시판8입니다', 'kimbk');
+VALUES ('학생 게시판8', '여기는 학생 게시판8입니다', 'kimbk');
 
 COMMIT;
 
@@ -249,6 +262,16 @@ SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author,
 a.par AS par, b.name AS name
 FROM qna a, member b WHERE a.author=b.id ORDER BY a.par DESC, a.lev ASC, a.qno ASC;
 
+-- QnA JOIN & VIEW 생성 ( qna 게시판에 이용)
+CREATE VIEW qnalist AS (SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt AS cnt, a.lev AS lev,
+a.par AS par, b.name AS name
+FROM qna a, member b WHERE a.author=b.id ORDER BY a.par DESC, a.lev ASC, a.qno ASC);
+SHOW VIEW qnalist;
+
+-- qna JOIN & VIEW 생성 ( 내가 쓴 글에 이용)
+CREATE VIEW qnalist2 AS (SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt AS cnt, a.lev AS lev,
+a.par AS par, b.id AS idFROM qna a, member b WHERE a.author=b.id ORDER BY a.par DESC, a.lev ASC, a.qno ASC);
+SELECT * FROM qnalist2;
 
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -267,3 +290,4 @@ INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다4', '답�
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다5', '답변입니다5');
 
 COMMIT;
+member

@@ -32,7 +32,7 @@
             m.setName(rs.getString("name"));
             m.setEmail(rs.getString("email"));
             m.setTel(rs.getString("tel"));
-            m.setRegdate(rs.getString("regdate"));
+            m.setResdate(rs.getString("resdate"));
             m.setPoint(rs.getInt("point"));
             pw=m.getPw();
         }else{

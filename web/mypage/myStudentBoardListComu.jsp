@@ -7,11 +7,11 @@
 <%@ page import="com.chunjae_pro01.vo.*" %>
 <%@ include file="/setting/encoding.jsp" %>
 <%
-    String path8 = request.getContextPath();
+    String path21 = request.getContextPath();
 %>
 <%
     String id = (String) session.getAttribute("id");
-    String per =(String) session.getAttribute("per");
+    int per =(Integer) session.getAttribute("per");
 
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -54,13 +54,13 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path8 %>/css/google.css">
-    <link rel="stylesheet" href="<%=path8 %>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path21 %>/css/google.css">
+    <link rel="stylesheet" href="<%=path21 %>/css/fonts.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path8 %>/css/common.css">
-    <link rel="stylesheet" href="<%=path8 %>/css/hd.css">
+    <link rel="stylesheet" href="<%=path21 %>/css/common.css">
+    <link rel="stylesheet" href="<%=path21 %>/css/hd.css">
     <style>
         .contents { clear:both; height:100vh;}
         .contents::after { content:""; clear:both; display:block; width:100%; }
@@ -105,7 +105,7 @@
         .inbtn:last-child { float:right; }
     </style>
 
-    <link rel="stylesheet" href="<%=path8 %>/css/footer.css">
+    <link rel="stylesheet" href="<%=path21 %>/css/footer.css">
 
 </head>
 <body>
@@ -123,11 +123,11 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <div class="box_myboard">
-                    <a href="myBoardListQna.jsp" class="btn_myboard">QnA</a>
-                    <%if(per.equals("학생")){ %>
-                    <a href=/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
-                    <%}else if(per.equals("학부모")){ %>
-                    <a href=/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA</a>
+                    <% if(per== 1){%>
+                    <a href="/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <%}else if(per ==2){ %>
+                    <a href="/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
                     <%} %>
                 </div>
                 <hr>
@@ -141,7 +141,7 @@
                     <th class="item5">조회</th>
                     </thead>
                     <tbody>
-                    <%if(boardList != null){%>
+                    <%if(boardList.isEmpty() ){%>
                     <div style="font-size: 17px; font-weight: bold;">작성글이 없습니다.</div>
                     <% }else{
                         SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");

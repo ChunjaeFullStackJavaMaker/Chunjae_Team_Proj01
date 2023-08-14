@@ -11,7 +11,7 @@
 %>
 <%
     String id = (String) session.getAttribute("id");
-    String per =(String) session.getAttribute("per");
+    int per =(Integer) session.getAttribute("per");
 
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -124,11 +124,11 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <div class="box_myboard">
-                    <a href="myBoardListQna.jsp" class="btn_myboard">QnA</a>
-                    <%if(per.equals("학생")){ %>
-                    <a href=/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
-                    <%}else if(per.equals("부모")){ %>
-                    <a href=/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA</a>
+                    <% if(per == 1){%>
+                    <a href="/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <%}else if(per==2){ %>
+                    <a href="/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
                     <%} %>
                 </div>
                 <hr>
@@ -142,7 +142,7 @@
                     <th class="item5">조회</th>
                     </thead>
                     <tbody>
-                    <%if(boardList != null){%>
+                    <%if(boardList.isEmpty()){%>
                     <div style="font-size: 17px; font-weight: bold;">작성글이 없습니다.</div>
                     <% }else{
                         SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
