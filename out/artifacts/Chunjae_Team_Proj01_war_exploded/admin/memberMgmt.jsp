@@ -6,10 +6,6 @@
 <%@ page import="com.chunjae_pro01.dto.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="/setting/encoding.jsp"%>
-<%
-    String pageNo = request.getParameter("page");
-
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +42,7 @@
         .page {
             clear:both;
             width: 100%;
-            min-height: 90vh;
+            min-height: 100vh;
             position:relative;
             top: 50px;
             margin: 0px auto;
@@ -73,14 +69,47 @@
     </style>
 
 <%
+    int pageNo = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 0;
+    // 총 페이지 수
+    int totalPage = 0;
+    // 시작 페이지
+    int startPage = pageNo-2 < 1 ? 1 : pageNo-2;
+    // 마지막 페이지
+    int endPage = pageNo+2 < 5 ? 5 : pageNo+2;
+
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
-
     DBC con = new MariaDBCon();
     conn = con.connect();
-    String sql = "SELECT * FROM member WHERE id !='admin' ORDER BY regdate, id";
+
+    // 페이징 처리 - 전체 페이지 수 구하기
+    String sql = "SELECT COUNT(*) as 'count' FROM member WHERE id != 'admin'";
     pstmt = conn.prepareStatement(sql);
+    rs = pstmt.executeQuery();
+    if(rs.next()) {
+        int count = rs.getInt("count");
+        totalPage = count % 10 == 0 ? count / 10 : (count / 10) + 1;
+    }
+    rs.close();
+    pstmt.close();
+
+    // 페이징 처리 - 현재 페이지에 출력될 페이지 리스트 구하기
+    if(endPage > totalPage) {
+        endPage = totalPage;
+    }
+    List<Integer> pageList = new ArrayList<>();
+//    if((endPage-startPage+1) < 5) {
+//        startPage = startPage - (endPage-startPage+2);
+//    }
+    for(int p=(endPage-4 > 0 ? endPage-4 : 1); p<=endPage; p++) {
+        pageList.add(p);
+    }
+
+    // 현재 페이지에 출력할 회원 데이터만 가져오기
+    sql = "SELECT * FROM member WHERE id !='admin' ORDER BY regdate, id LIMIT ?, 10";
+    pstmt = conn.prepareStatement(sql);
+    pstmt.setInt(1, 10*(pageNo-1));
     rs = pstmt.executeQuery();
 
     List<Member> memberList = new ArrayList<>();
@@ -94,6 +123,7 @@
         member.setRegdate(sdf.format(d));
         memberList.add(member);
     }
+    con.close(rs, pstmt, conn);
 %>
 </head>
 <body>
@@ -125,20 +155,18 @@
                                     <div class="id"> <%=member.getId()%> </div>
                                     <div class="name"> <%=member.getName()%> </div>
                                     <div class="date"> <%=member.getRegdate()%> </div>
-                                    <div class="kick"><button onclick="javascript:location.href='<%=path%>/admin/kickpro.jsp?id=<%=member.getId()%>'">강퇴</button></div>
+                                    <div class="kick"><button onclick="javascript:location.href='<%=path%>/admin/kickpro.jsp?id=<%=member.getId()%>&pageNo=<%=pageNo%>'">강퇴</button></div>
                                 </div>
                             <% } %>
                         </div>
                         <div class="board_page">
-                            <a href="<%=path %>/" class="bt first"> &lt;&lt; </a>
-                            <a href="#" class="bt prev"> &lt; </a>
-                            <a href="#" class="num on"> 1 </a>
-                            <a href="#" class="num"> 2 </a>
-                            <a href="#" class="num"> 3 </a>
-                            <a href="#" class="num"> 4 </a>
-                            <a href="#" class="num"> 5 </a>
-                            <a href="#" class="bt next"> &gt; </a>
-                            <a href="#" class="bt last"> &gt;&gt; </a>
+                            <a href="<%=path%>/admin/memberMgmt.jsp?page=1" class="bt first"> &lt;&lt; </a>
+                            <a href="<%=path%>/admin/memberMgmt.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
+                        <%  for(int p : pageList) {  %>
+                                <a href="<%=path%>/admin/memberMgmt.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                        <%  } %>
+                            <a href="<%=path%>/admin/memberMgmt.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
+                            <a href="<%=path%>/admin/memberMgmt.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
                         </div>
                     </div>
                 </div>

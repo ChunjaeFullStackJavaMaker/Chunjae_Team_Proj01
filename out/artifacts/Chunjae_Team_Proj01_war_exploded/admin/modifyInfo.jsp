@@ -114,6 +114,8 @@
     pstmt = conn.prepareStatement(sql);
     rs = pstmt.executeQuery();
 
+    con.close(rs, pstmt, conn);
+
     Member member = new Member();
     if(rs.next()) {
         member.setId(rs.getString("id"));

@@ -6,10 +6,6 @@
 <%@ page import="com.chunjae_pro01.dto.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="/setting/encoding.jsp"%>
-<%
-    String pageNo = request.getParameter("page");
-
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,6 +79,8 @@
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
 
+        int count = rs.getInt("count");
+        System.out.println("count : " + count);
         List<Member> memberList = new ArrayList<>();
         while(rs.next()) {
             Member member = new Member();
@@ -94,7 +92,12 @@
             member.setRegdate(sdf.format(d));
             memberList.add(member);
         }
+
+        con.close(rs, pstmt, conn);
     %>
+    <script>
+
+    </script>
 </head>
 <body>
 <div class="wrap">
@@ -104,13 +107,13 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">관리자 페이지</a> &gt; <span> 회원 관리 </span> </p>
+                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">관리자 페이지</a> &gt; <span> 커뮤니티 관리 </span> </p>
                 <h2 class="page_tit"> 관리자 페이지 </h2>
             </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <p class="content_tit"> 회원 관리 </p>
+                <p class="content_tit"> 커뮤니티 관리 </p>
                 <hr>
                 <div class="board_list_wrap">
                     <div class="board_list">
