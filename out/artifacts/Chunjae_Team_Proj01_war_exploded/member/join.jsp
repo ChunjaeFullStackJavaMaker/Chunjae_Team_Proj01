@@ -43,8 +43,8 @@
                             <tr>
                                 <th></th>
                                 <td>
-                                    <label><input type="radio" name="mother" id="mother">학부모</label>
-                                    <label><input type="radio" name="student" id="student">학생</label>
+                                    <label><input type="radio" name="person" id="mother">학부모</label>
+                                    <label><input type="radio" name="person" id="student">학생</label>
                                 </td>
                             </tr>
                             <tr>
