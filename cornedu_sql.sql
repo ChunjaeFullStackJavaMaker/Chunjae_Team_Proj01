@@ -11,21 +11,21 @@ email VARCHAR(100) NOT NULL,
 tel VARCHAR(13),
 resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
 POINT INT DEFAULT 0,
-per VARCHAR(5) CHECK(per IN('관리자', '학생', '학부모')),
+per VARCHAR(20),
 PRIMARY KEY (id));
 
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('admin','1234', '관리자', 'admin@edu.com', '010-1004-1004', '관리자');
+VALUES('admin','1234', '관리자', 'admin@edu.com', '010-1004-1004', 'admin');
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('kimhk','9876', '김현경', 'kimhk@edu.com', '010-1234-5678', '학생');
+VALUES('kimhk','9876', '김현경', 'kimhk@edu.com', '010-1234-5678', 'student');
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('kimbk','1111', '김보경', 'kimbk@edu.com', '010-8765-4321', '학생');
+VALUES('kimbk','1111', '김보경', 'kimbk@edu.com', '010-8765-4321', 'student');
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('park','2222', '박진권', 'park@edu.com', '010-1111-2222', '학부모');
+VALUES('park','2222', '박진권', 'park@edu.com', '010-1111-2222', 'mother');
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('oh','4321', '오태훈', 'oh@edu.com', '010-1122-3344', '학부모');
+VALUES('oh','4321', '오태훈', 'oh@edu.com', '010-1122-3344', 'mother');
 INSERT INTO member(id, pw, NAME, email, tel, per)
-VALUES('shin','3333', '신예은', 'shin@edu.com', '010-9999-8888', '학부모');
+VALUES('shin','3333', '신예은', 'shin@edu.com', '010-9999-8888', 'mother');
 
 COMMIT;
 
