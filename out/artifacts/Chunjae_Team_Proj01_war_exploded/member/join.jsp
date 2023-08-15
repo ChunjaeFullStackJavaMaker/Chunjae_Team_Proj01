@@ -22,6 +22,7 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="<%=path4%>/css/common.css">
     <link rel="stylesheet" href="<%=path4%>/css/header.css">
+    <link rel="stylesheet" href="<%=path4%>/css/content_header.css">
     <link rel="stylesheet" href="<%=path4%>/css/footer.css">
     <link rel="stylesheet" href="<%=path4%>/css/join.css">
 </head>
@@ -31,15 +32,23 @@
         <%@ include file="/layout/header.jsp" %>
     </header>
         <div class="contents" id="contents">
-            <div class="breadcrumb">
-                <p><a href="/">HOME</a> &gt; <span>회원 가입</span></p>
+            <div class="content_header">
+                <div class="breadcrumb">
+                    <p><a href="/">Home</a> &gt; <span> 회원 가입 </span> </p>
+                    <h2 class="page_tit"> 회원 가입 </h2>
+                </div>
             </div>
             <section class="page" id="page1">
                 <div class="join-wrapper">
-                    <h2>회원 가입</h2>
                     <form name="frm1" action="joinpro.jsp" method="post" onsubmit="return inform(this)">
                         <table class="tb1">
                             <tbody>
+                            <tr>
+                                <div class="person">
+                                    <label><input type="radio" name="per" id="student" value="1" checked>학생</label> &nbsp;&nbsp;
+                                    <label><input type="radio" name="per" id="mother" value="2">학부모</label>
+                                </div>
+                            </tr>
                             <tr>
                                 <th><label for="id">아이디</label></th>
                                 <td>
@@ -87,15 +96,14 @@
                             if(ck_item.value!="yes"){
                                 alert("아이디 중복 검사를 진행하시기 바랍니다.");
                                 frm.id.focus();
-                                return;
+                                return false;
                             }
                             var pw = frm.pw.value;
                             var pw2 = frm.pw2.value;
                             if(pw!=pw2){
                                 alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
                                 pw.focus();
-                                return;
-                            }
+                            } e
                         }
                         function idcheck(){
                             var child;
@@ -116,7 +124,6 @@
     <footer class="ft" id="ft">
         <%@ include file="/layout/footer.jsp" %>
     </footer>
-
 </div>
 </body>
 </html>

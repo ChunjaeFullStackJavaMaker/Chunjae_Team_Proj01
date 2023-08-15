@@ -23,6 +23,7 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="<%=path3%>/css/common.css">
     <link rel="stylesheet" href="<%=path3%>/css/header.css">
+    <link rel="stylesheet" href="<%=path3%>/css/content_header.css">
     <link rel="stylesheet" href="<%=path3%>/css/footer.css">
 </head>
 <body>
@@ -31,12 +32,14 @@
         <%@ include file="/layout/header.jsp" %>
     </header>
     <div class="contents" id="contents">
-        <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <span>로그인</span></p>
+        <div class="content_header">
+            <div class="breadcrumb">
+                <p><a href="/">Home</a> &gt; <span> 로그인 </span> </p>
+                <h2 class="page_tit"> 로그인 </h2>
+            </div>
         </div>
         <section class="page" id="page1">
             <div class="login-wrapper">
-                <h2>Login</h2>
                 <form method="post" action="<%=path3%>/member/loginpro.jsp" id="login-form">
                     <input type="text" name="id" placeholder="아이디" autofocus required>
                     <input type="password" name="pw" placeholder="비밀번호" required>

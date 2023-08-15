@@ -22,6 +22,7 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="<%=path5%>/css/common.css">
     <link rel="stylesheet" href="<%=path5%>/css/header.css">
+    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
     <link rel="stylesheet" href="<%=path5%>/css/footer.css">
     <link rel="stylesheet" href="<%=path5%>/css/term.css">
 </head>
@@ -31,12 +32,14 @@
         <%@ include file="/layout/header.jsp" %>
     </header>
     <div class="contents" id="contents">
-        <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <span>회원 가입</span></p>
+        <div class="content_header">
+            <div class="breadcrumb">
+                <p><a href="/">Home</a> &gt; <span> 회원 약관 </span> </p>
+                <h2 class="page_tit"> 회원 약관 </h2>
+            </div>
         </div>
         <section class="page" id="page1">
             <div class="page" id="page_wrap">
-                <h2>회원 약관</h2>
                 <div class="agree_fr">
                     제 1 장 총칙
 
@@ -185,7 +188,7 @@
                     (시행일) 이 약관은 2016년 12월 30일부터 적용되며, 종전 약관은 본 약관으로 대체되며, 개정된 약관의 적용일 이전 가입자도 개정된 약관의 적용을 받습니다.
                 </div>
                 <div class="btn_fr">
-                    <input type="checkbox" id="ck_item1" name="ck_item"> <label for="ck_item1">약관의 동의</label><br><br>
+                    <span><input type="checkbox" id="ck_item1" name="ck_item"> <label for="ck_item1">약관의 동의</label></span><br><br>
                     <button type="button" id="in_btn1" class="inbtn">다음 단계</button>
                 </div>
                 <script>
@@ -203,6 +206,9 @@
                 </div>
         </section>
     </div>
+    <footer class="ft" id="ft">
+        <%@ include file="/layout/footer.jsp" %>
+    </footer>
 </div>
 </body>
 </html>
