@@ -1,7 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae_pro01.util.*" %>
+<head>
+    <style>
+        button [type='button'] {
+            color: #fff;
+            background-color: #8CB964;
+            border-radius: 6px;
+            float: right;
+            margin-top: 10px;
+            margin-right: 75px;
+        }
+    </style>
+
 <%
+
     String id = request.getParameter("id");
 
     Connection con = null;
@@ -20,11 +33,11 @@
         rs = pstmt.executeQuery();
 
         if(rs.next()){
-            out.println("<p>사용 불가능한 아이디</p>");
+            out.println("<p>사용 불가능한 아이디입니다.</p>");
             out.println("<a href='idcheck.jsp?id="+id+"'>아이디 중복 재시도</a>");
         } else {
-            out.println("<p>사용 가능한 아이디</p>");
-            out.println("<button type='button' onclick='fnc1(\""+id+"\")'>"+id+"</button>");
+            out.println("<p>사용 가능한 아이디입니다.</p>");
+            out.println("<button type='button' onclick='fnc1(\""+id+"\")'>사용하기</button>");
         }
     } catch(SQLException e) {
         System.out.println("SQL 구문이 처리되지 못했습니다.");
@@ -32,6 +45,7 @@
         conn.close(rs, pstmt, con);
     }
 %>
+</head>
 <script>
     function fnc1(cid){
         opener.document.frm1.id.value = cid;

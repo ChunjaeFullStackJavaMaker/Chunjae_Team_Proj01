@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<link rel="stylesheet" href="../css/content.css">
 <div class="contents" id="contents">
     <figure class="vs">
         <ul class="img_box">
@@ -14,7 +15,7 @@
                 <h2 class="vs_tit">최고의 교육을 경험하세요</h2>
             </li>
             <ul class="btn_box">
-                <li class="item1 active"><label for="vs_ra1" class="vs_btn"></label></li>
+                <li class="item1 active"><label for="vs_ra1" class="vs_btn"></label></li> &nbsp;&nbsp;
                 <li class="item2"><label for="vs_ra1" class="vs_btn"></label></li>
             </ul>
             <button type="button" class="play_btn"></button>
