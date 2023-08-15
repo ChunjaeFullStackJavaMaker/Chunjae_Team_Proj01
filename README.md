@@ -49,5 +49,14 @@
 
 
 # ⚒프로젝트 설계
-![]
+
+### 📂USE CASE DIAGRAM
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/848d0d3f-ac3b-4ee7-8da7-15e52cd62c8b)
+
+### 📂DATABASE
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/8f7be9dd-bf0e-4142-87bb-aa2407134e0b)
+
+### 📂
+
+### 📂
+
