@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<section class="page" id="page1">
+<section class="page" id="page2">
     <div class="page_wrap">
-        <h2 class="box_tit">추천 강의</h2>
+        <h2 class="page_tit">추천 강의</h2>
         <!--추천 강의 목록 박스(이미지,제목, 내용순)로 정렬-->
         <div class="box_group">
             <div class="box">
