@@ -33,33 +33,31 @@
     .page_tit { font-size:48px; text-align: center; padding-top:1.75em; }
 
     .pic_lst { clear:both; width: 1200px; margin: 60px auto; }
-    .pic_lst li { width: 280px; margin-right:26px; height: 400px; float:left;
-      background-repeat: no-repeat; background-position:center center;
-      filter:brightness(90%); margin-top:30px; transition:0.4s;
+    .pic_lst li { width: 346px; padding-top :40px; padding-bottom:40px; margin-right:10px; height: 165px; float:left;
+       margin-top:30px; transition:0.4s;
       box-shadow:12px 12px 12px #999; overflow:hidden;  }
-    .pic_lst li:hover { filter:brightness(140%); margin-top: -10px; }
+    .pic_lst li:hover { margin-top: -10px; }
     .pic_lst li a { display:block; width: 256px; height: 376px; margin: 11px;
-      border:1px solid #fff; color:#fff; }
-    .pic_lst li:last-child { margin-right: 0; }
-    .pic_lst li.item1 { background-image: url("./images/img_social_main01.jpg"); }
-    .pic_lst li.item2 { background-image: url("./images/img_social_main02.jpg"); }
-    .pic_lst li.item3 { background-image: url("./images/img_social_main03.jpg"); }
-    .pic_lst li.item4 { background-image: url("./images/img_social_main04.jpg"); }
-    .pic_com { padding-left: 20px; padding-top: 20px; font-size:14px; }
-    .pic_tit { padding-left: 20px; padding-top: 20px; font-size:18px; }
-    .pic_arrow { display:block; width:110px; height:10px; border-bottom:1px solid #fff;
-      margin-top: 20px; margin-left: -12px; transition:0.4s; position:relative; }
-    .pic_lst li:hover a .pic_arrow { margin-left:20px; }
-    .pic_arrow::after { content:""; display:block; width: 10px; height: 10px;
-      position:absolute; right:0; top: 0; border-bottom:1px solid #fff; transform-origin:100% 100%;
-      transform:rotate(45deg); display:none; }
-    .pic_lst li:hover a .pic_arrow::after { display:block; }
+      color:#fff; text-align: left; }
+    .pic_lst li:first-child { margin-left: 20px; background-color: #FFC700; border-radius: 50px; }
+    .pic_lst li:nth-child(2) { margin-left:20px;background-color: green; border-radius: 50px;}
+    .pic_lst li:last-child {margin-left:20px; background-color:darkorange; border-radius: 50px;}
+    .pic_tit { font-size : 26px; text-shadow:0px 2px 7px rgba(0,0,0,0.12); font-weight:bold;}
+    .pic_com {display: block; line-height: 1.2; position: relative; margin-top:10px; margin-bottom: 50px;}
+    .pic_arrow { border : 2px solid #fff; border-radius: 50px; padding:10px; }
+    .pic_icon { float:right;}
+    #pic_a1:hover { background-color:#ffffff; color:#FFC700; transition: 0.7s; }
+    #pic_a2:hover { background-color:#ffffff; color:green; transition: 0.7s; }
+    #pic_a3:hover { background-color:#ffffff; color:darkorange; transition: 0.7s; }
 
-    <!--추천 강의 목록 스타일-->
+    <!--추천 강의 목록 스타일 -->
+    .page_tit {margin-top : 100px;}
     .box_tit { text-align: center; padding : 10px; margin-top:20px; margin-bottom : 20px;}
-    .box_group { height : 250px; margin: 80px auto; }
-    .box {float:left; display : block; width : 180px; height : 220px; padding : 15px; border : 1px solid #333;  margin : 10px;}
-    a { text-decoration: none; display : flex; color : #333; text-align: center;}
+    .box_group { height : 250px;  margin: 80px auto; }
+    .box {float:left; display : block; width : 200px; height : 220px; border : 1px solid #333;  margin : 15px;}
+    a { display: flex; flex-direction: column; text-decoration: none; color : #333; text-align: center;}
+    .image { padding-bottom:20px;}
+
 
     <!--공지사항과 이벤트 게시판 스타일-->
     #page3 {clear : both; background-color: gray;}
@@ -67,12 +65,12 @@
     .board { display : inline-block; margin: 60px;}
     .board_title { display : inline-block;}
     .notice_title {margin : 5px;}
-    .notice_more { position : absolute; top: 1970px; left : 500px;}
+    .notice_more { position : absolute; top: 1810px; left : 500px;}
     .events_title {margin : 5px;}
-    .events_more { position : absolute; top : 1980px; left : 1120px;}
+    .events_more { position : absolute; top : 1850px; left : 1120px;}
     .lst_group { display: flex; justify-content : space-between; margin-top : 10px; }
     .board_subject1::before { content:"공지"; padding-right: 5px; border-radius: 50px; background-color: #333;
-      color:#fff; font-size: 10px; text-align: center; line-height: 20px; padding-left: 5px; padding-right: 5px;}
+      color:#fff; font-size: 10px; text-align: center; line-height: 20px; padding-left: 5px; }
     .board_subject2::before { content:"공지"; padding-right: 5px; border-radius: 50px; background-color: #333;
       color:#fff; font-size: 10px; text-align: center; line-height: 20px; padding-left: 5px; padding-right: 5px;}
     a { text-decoration: none; display : flex; color : #333; text-align: center;}

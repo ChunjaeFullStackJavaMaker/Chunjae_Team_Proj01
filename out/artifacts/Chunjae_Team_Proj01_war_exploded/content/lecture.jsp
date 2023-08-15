@@ -6,46 +6,46 @@
         <div class="box_group">
             <div class="box">
                 <a href="">
-                    <div class="image"><img src=""></div>
-                    <div>
-                        <div>#서울대학교</div>
-                        <div>수능 만점 받은 서울대학교 경영학과 </div>
+                    <div class="image"><img src="/images/boximageindex.jpg"></div>
+                    <div class="box_com">
+                        <h4>#서울대학교</h4><br>
+                        <p>수능 만점 받은 서울대학교 경영학과 </p>
                     </div>
                 </a>
             </div>
             <div class="box">
                 <a href="">
-                    <div class="image"><img src=""></div>
-                    <div>
-                        <div>#서울대학교</div>
-                        <div>수능 만점 받은 서울대학교 경영학과 </div>
+                    <div class="image"><img src="/images/boximageindex.jpg"></div>
+                    <div class="box_com">
+                        <h4>#서울대학교</h4><br>
+                        <p>수능 만점 받은 서울대학교 경영학과 </p>
                     </div>
                 </a>
             </div>
             <div class="box">
                 <a href="">
-                    <div class="image"><img src=""></div>
-                    <div>
-                        <div>#서울대학교</div>
-                        <div>수능 만점 받은 서울대학교 경영학과 </div>
+                    <div class="image"><img src="/images/boximageindex.jpg"></div>
+                    <div class="box_com">
+                        <h4>#서울대학교</h4><br>
+                        <p>수능 만점 받은 서울대학교 경영학과 </p>
                     </div>
                 </a>
             </div>
             <div class="box">
                 <a href="">
-                    <div class="image"><img src=""></div>
-                    <div>
-                        <div>#서울대학교</div>
-                        <div>수능 만점 받은 서울대학교 경영학과 </div>
+                    <div class="image"><img src="/images/boximageindex.jpg"></div>
+                    <div class="box_com">
+                        <h4>#서울대학교</h4><br>
+                        <p>수능 만점 받은 서울대학교 경영학과 </p>
                     </div>
                 </a>
             </div>
             <div class="box">
                 <a href="">
-                    <div class="image"><img src=""></div>
-                    <div>
-                        <div>#서울대학교</div>
-                        <div>수능 만점 받은 서울대학교 경영학과 </div>
+                    <div class="image"><img src="/images/boximageindex.jpg"></div>
+                    <div class="box_com">
+                        <h4>#서울대학교</h4><br>
+                        <p>수능 만점 받은 서울대학교 경영학과 </p>
                     </div>
                 </a>
             </div>

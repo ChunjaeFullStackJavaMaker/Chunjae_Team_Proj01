@@ -5,30 +5,27 @@
         <ul class="pic_lst">
             <li class="item1">
                 <a href="">
-                    <p class="pic_com">설명</p>
-                    <h3 class="pic_tit">초등</h3>
-                    <span class="pic_arrow"></span>
+                    <strong class="pic_tit">초등</strong>
+                    <em class="pic_com">초등학생 메뉴로 이동합니다.</em>
+                    <span class="pic_arrow" id="pic_a1">이동하기 →</span>
+                    <div class="pic_icon"><img src="images/ic.svg" /></div>
                 </a>
             </li>
             <li class="item2">
                 <a href="">
-                    <p class="pic_com">설명</p>
-                    <h3 class="pic_tit">중등</h3>
-                    <span class="pic_arrow"></span>
+                    <strong class="pic_tit">중등</strong>
+                    <em class="pic_com">중학생 메뉴로 이동합니다.</em>
+                    <span class="pic_arrow" id="pic_a2">이동하기 →</span>
+                    <div class="pic_icon"><img src="images/ic.svg" /></div>
                 </a>
             </li>
             <li class="item3">
                 <a href="">
-                    <p class="pic_com">설명</p>
-                    <h3 class="pic_tit">고등</h3>
-                    <span class="pic_arrow"></span>
-                </a>
-            </li>
-            <li class="item4">
-                <a href="">
-                    <p class="pic_com">설명</p>
-                    <h3 class="pic_tit">커뮤니티</h3>
-                    <span class="pic_arrow"></span>
+                    <strong class="pic_tit">고등</strong>
+                    <em class="pic_com">고등학생 메뉴로 이동합니다.</em>
+                    <span class="pic_arrow" id="pic_a3">이동하기 →</span>
+                    <div class="pic_icon"><img src="images/ic.svg" /></div>
+
                 </a>
             </li>
         </ul>
