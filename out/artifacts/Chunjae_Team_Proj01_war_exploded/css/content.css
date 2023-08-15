@@ -52,7 +52,7 @@
 }
 
 .img_box li.item1 .bg_box {
-    background-image: url("../images/education01.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/education01.jpg");
     border-radius: 20px;
 }
 
@@ -69,7 +69,8 @@
     font-weight: 100;
     font-size: 40px;
     line-height: 1.3;
-    color:#fff; }
+    color: #fff;
+}
 .img_box li.active {
     visibility: visible;
     opacity: 1;
