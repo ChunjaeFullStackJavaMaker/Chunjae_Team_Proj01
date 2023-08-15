@@ -8,21 +8,22 @@
 
     <style>
         label {
-            color: #6A24FE;
+            color: #8CB964;
             font-weight: 600;
         }
         input[type=text] {
             box-sizing: border-box;
             border-radius: 6px;
             background-color: #F8F8F8;
+            height: 30px;
         }
         input[type=submit] {
             color: #fff;
-            background-color: #6A24FE;
+            background-color: #8CB964;
             border-radius: 6px;
             float: right;
             margin-top: 10px;
-            margin-right: 170px;
+            margin-right: 75px;
         }
     </style>
 </head>

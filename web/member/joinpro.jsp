@@ -1,9 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="com.chunjae_pro01.dto.*" %>
 <%@ page import="com.chunjae_pro01.util.*" %>
-<%@ page import="java.security.*" %>
 <%@ page import="com.chunjae_pro01.util.MariaDBCon" %>
+
 <%
   request.setCharacterEncoding("UTF-8");
   response.setContentType("text/html; charset=UTF-8");
@@ -15,11 +14,11 @@
   String name = request.getParameter("name");
   String tel = request.getParameter("tel");
   String email = request.getParameter("email");
-  String per = request.getParameter("per");
+  int per = Integer.parseInt(request.getParameter("per"));
 
   Connection conn = null;
   PreparedStatement pstmt = null;
-  ResultSet rs = null;
+
   int cnt = 0;
   DBC con = new MariaDBCon();
   conn = con.connect();
@@ -35,16 +34,16 @@
     pstmt.setString(3, name);
     pstmt.setString(4, tel);
     pstmt.setString(5, email);
-    pstmt.setInt(6, Integer.parseInt(per));
+    pstmt.setInt(6, per);
     cnt = pstmt.executeUpdate();
     if(cnt>0){
-      response.sendRedirect("/member/login.jsp");
+        response.sendRedirect("/member/login.jsp");
     } else {
       response.sendRedirect("/member/join.jsp");
     }
   } catch(SQLException e) {
     System.out.println("SQL 구문이 처리되지 못했습니다.");
   } finally {
-    con.close(rs, pstmt, conn);
+    con.close(pstmt, conn);
   }
 %>

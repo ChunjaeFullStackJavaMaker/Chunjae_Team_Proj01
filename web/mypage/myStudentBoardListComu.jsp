@@ -56,23 +56,23 @@
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
     <link rel="stylesheet" href="<%=path21 %>/css/google.css">
     <link rel="stylesheet" href="<%=path21 %>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path21 %>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="<%=path21 %>/css/common.css">
-    <link rel="stylesheet" href="<%=path21 %>/css/hd.css">
+    <link rel="stylesheet" href="<%=path21 %>/css/header.css">
     <style>
-        .contents { clear:both; height:100vh;}
+        .contents { clear:both; min-height:100vh; }
         .contents::after { content:""; clear:both; display:block; width:100%; }
-        .content_tit {text-align: center;}
+        .page { clear:both; width: 100%; min-height: 90vh; position:relative; top: 50px; }
+        .page::after { content:""; display:block; width: 100%; clear:both; }
+        .page_wrap { clear:both; width: 1000px; height: auto; margin:0 auto; }
 
         .content_header { clear: both; height: 250px; background-image: url("/images/mypage_cover.jpg");
             background-repeat: no-repeat; background-position:center -300px;
             background-size: cover; }
-        .page { clear:both; width: 100vw; height: 100vh; position:relative; }
-        .page::after { content:""; display:block; width: 100%; clear:both; }
 
-        .page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
         .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
             padding-bottom: 2.4rem; }
 
@@ -80,13 +80,12 @@
             width:1200px; margin: 0 auto; text-align: right; color:#fff;
             padding-top: 28px; padding-bottom: 28px; }
         .breadcrumb a { color:#fff; }
-        .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
 
-        .box_myboard {display: block;  width:1000px; height: 80px; margin-left: 350px; margin-top: 50px;
-            margin-bottom: 25px;}
-        .btn_myboard { display: block; float: left; border-radius:100px; min-width: 200px;
-            padding-left: 24px; padding-right: 24px; margin-right: 50px; text-align: center;
-            line-height: 50px; background-color: deepskyblue;color: #fff;font-size: 25px; text-decoration: none;}
+        .box_myboard { display : block; margin-bottom: 20px; text-align :center;}
+        .btn_myboard {padding-right : 20px; padding-left :20px;  background-color: gray; color:#fff;
+            border-radius:100px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            line-height:50px; font-size:15px; }
+        #btn_mb1 {background-color: yellowgreen;}
 
         .tb1 { width:500px; margin:50px auto; }
         .tb1 th { width:180px; line-height:32px; padding-top:8px; padding-bottom:8px;
@@ -95,18 +94,11 @@
         .tb1 td { width:310px; line-height:32px; padding-top:8px; padding-bottom:8px;
             border-bottom:1px solid #333;
             padding-left: 14px; border-top:1px solid #333; }
-
-        .indata { display:inline-block; width:300px; height: 48px; line-height: 48px;
-            text-indent:14px; font-size:18px; }
-        .inbtn { display:block;  border-radius:100px;
-            min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; text-decoration: none;}
-        .inbtn:first-child { float:left; }
-        .inbtn:last-child { float:right; }
     </style>
 
     <link rel="stylesheet" href="<%=path21 %>/css/footer.css">
-
+    <link rel="stylesheet" href="<%=path21 %>/jquery.dataTables.css">
+    <script src="<%=path21 %>/jquery.dataTables.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -122,14 +114,14 @@
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <div class="box_myboard">
-                    <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA</a>
-                    <% if(per== 1){%>
-                    <a href="/mypage/myStudentBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                <p class="box_myboard">
+                    <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA </a> &nbsp&nbsp | &nbsp&nbsp
+                    <% if(per == 1){%>
+                    <a href="/mypage/myStudentBoardListComu.jsp" class="btn_myboard" id="btn_mb1">커뮤니티</a>
                     <%}else if(per ==2){ %>
-                    <a href="/mypage/myMotherBoardListComu.jsp" class="btn_myboard">커뮤니티</a>
+                    <a href="/mypage/myMotherBoardListComu.jsp" class="btn_myboard" id="btn_mb1">커뮤니티</a>
                     <%} %>
-                </div>
+                </p>
                 <hr>
                 <br><br><h2 class="content_tit"> 내가 쓴글 </h2>
                 <table class="tb1" id="myTable">
@@ -141,9 +133,7 @@
                     <th class="item5">조회</th>
                     </thead>
                     <tbody>
-                    <%if(boardList.isEmpty() ){%>
-                    <div style="font-size: 17px; font-weight: bold;">작성글이 없습니다.</div>
-                    <% }else{
+                    <%
                         SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
                         for(StudentBoardList b: boardList){
                             Date d= ymd.parse(b.getResdate());
@@ -152,15 +142,22 @@
                     <tr>
                         <td class="item1"><%=b.getBno() %></td>
                         <td class="item1">
-                            <a href="/baord/studentboard/StudentBoardVIew.jsp?bno=<%=b.getBno()%>"><%=b.getTitle() %></a>
+                            <a href="/baord/studentboard/getStudentBoard.jsp?bno=<%=b.getBno()%>"><%=b.getTitle() %></a>
                         </td>
                         <td class="item1"><%=b.getAuthor() %></td>
                         <td class="item1"><%=date %></td>
                         <td class="item1"><%=b.getCnt() %></td>
                     </tr>
-                    <%}} %>
+                    <%} %>
                     </tbody>
                 </table>
+                <script>
+                    $(document).ready( function () {
+                        $('#myTable').DataTable({
+                            order:[[0, "desc"]]
+                        });
+                    });
+                </script>
             </div>
         </section>
     </div>
