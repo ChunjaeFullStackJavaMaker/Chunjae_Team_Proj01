@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>로그인</title>
     <%@ include file="/setting/head.jsp" %>
 
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->

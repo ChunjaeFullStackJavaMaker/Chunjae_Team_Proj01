@@ -69,19 +69,18 @@
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="<%=path6 %>/css/common.css">
-    <link rel="stylesheet" href="<%=path6 %>/css/hd.css">
+    <link rel="stylesheet" href="<%=path6 %>/css/header.css">
     <style>
-        .contents { clear:both; height:100vh;}
+        .contents { clear:both; min-height:100vh; }
         .contents::after { content:""; clear:both; display:block; width:100%; }
-        .content_tit {text-align: center;}
+        .page { clear:both; width: 100%; min-height: 90vh; position:relative; top: 50px; }
+        .page::after { content:""; display:block; width: 100%; clear:both; }
+        .page_wrap { clear:both; width: 1000px; height: auto; margin:0 auto; }
 
         .content_header { clear: both; height: 250px; background-image: url("/images/mypage_cover.jpg");
             background-repeat: no-repeat; background-position:center -300px;
             background-size: cover; }
-        .page { clear:both; width: 100vw; height: 100vh; position:relative; }
-        .page::after { content:""; display:block; width: 100%; clear:both; }
 
-        .page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
         .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
             padding-bottom: 2.4rem; }
 
@@ -89,7 +88,6 @@
             width:1200px; margin: 0 auto; text-align: right; color:#fff;
             padding-top: 28px; padding-bottom: 28px; }
         .breadcrumb a { color:#fff; }
-        .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
 
         .tb1 { width:500px; margin:50px auto; }
         .tb1 th { width:180px; line-height:32px; padding-top:8px; padding-bottom:8px;
@@ -103,7 +101,7 @@
             text-indent:14px; font-size:18px; }
         .inbtn { display:block;  border-radius:100px;
             min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; text-decoration: none;}
+            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
         .inbtn:first-child { float:left; }
         .inbtn:last-child { float:right; }
     </style>
@@ -124,8 +122,6 @@
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="content_tit"> 개인정보 변경 </h2>
-                <hr>
                 <form action="modifypro.jsp" method="post">
                     <table class="tb1">
                         <tbody>

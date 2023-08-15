@@ -37,33 +37,28 @@
             <section class="page" id="page1">
                 <div class="join-wrapper">
                     <h2>회원 가입</h2>
-                    <form action="joinpro.jsp" name="frm1" method="post" id="joni-form">
+                    <form name="frm1" action="joinpro.jsp" method="post" onsubmit="return inform(this)">
                         <table class="tb1">
                             <tbody>
-                            <tr>
-                                <th></th>
-                                <td>
-                                    <label><input type="radio" name="per" id="mother" value="mother">학부모</label>
-                                    <label><input type="radio" name="per" id="student" value="student">학생</label>
-                                </td>
-                            </tr>
                             <tr>
                                 <th><label for="id">아이디</label></th>
                                 <td>
                                     <input type="text" name="id" id="id" class="indata" required>
-                                </td>
-                                <td>
-                                    <button type="button" id="ch_btn" class="overlap" onclick="idcheck()">중복확인</button>
+                                    <button type="button" id="ck_btn" class="inbtn" onclick="idcheck()">아이디 중복 체크</button>
                                     <input type="hidden" name="ck_item" id="ck_item" value="no">
                                 </td>
                             </tr>
                             <tr>
                                 <th><label for="pw">비밀번호</label></th>
-                                <td><input type="password" name="pw" id="pw" class="indata" required></td>
+                                <td>
+                                    <input type="password" name="pw" id="pw" class="indata" required>
+                                </td>
                             </tr>
                             <tr>
                                 <th><label for="pw2">비밀번호 확인</label></th>
-                                <td><input type="password" name="pw2" id="pw2" class="indata" required></td>
+                                <td>
+                                    <input type="password" name="pw2" id="pw2" class="indata" required>
+                                </td>
                             </tr>
                             <tr>
                                 <th><label for="name">이름</label></th>
@@ -77,13 +72,9 @@
                                 <th><label for="email">이메일</label></th>
                                 <td><input type="email" name="email" id="email" class="indata" required></td>
                             </tr>
-                            </tbody>
-                        </table>
-                        <table class="tb2">
-                            <tbody>
                             <tr>
                                 <td colspan="2" class="colspan">
-                                    <input type="submit" value="회원가입" class="inbtn">
+                                    <input type="submit" value="회원 가입" class="inbtn">
                                 </td>
                             </tr>
                             </tbody>
@@ -98,8 +89,8 @@
                                 frm.id.focus();
                                 return;
                             }
-                            var pw = frm.pw;
-                            var pw2 = frm.pw2;
+                            var pw = frm.pw.value;
+                            var pw2 = frm.pw2.value;
                             if(pw!=pw2){
                                 alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
                                 pw.focus();

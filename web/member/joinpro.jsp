@@ -15,7 +15,7 @@
   String name = request.getParameter("name");
   String tel = request.getParameter("tel");
   String email = request.getParameter("email");
-  String per = request.getParameter("per");
+  String per = (String) request.getParameter("per");
 
   Connection conn = null;
   PreparedStatement pstmt = null;
@@ -35,7 +35,7 @@
     pstmt.setString(3, name);
     pstmt.setString(4, tel);
     pstmt.setString(5, email);
-    pstmt.setInt(6, Integer.parseInt(per));
+    pstmt.setString(6, per);
     cnt = pstmt.executeUpdate();
     if(cnt>0){
       response.sendRedirect("/member/login.jsp");
