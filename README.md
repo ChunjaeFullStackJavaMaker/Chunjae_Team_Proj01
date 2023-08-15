@@ -49,3 +49,5 @@
 
 
 # ⚒프로젝트 설계
+![]
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/8f7be9dd-bf0e-4142-87bb-aa2407134e0b)
