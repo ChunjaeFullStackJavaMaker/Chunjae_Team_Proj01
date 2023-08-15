@@ -1,6 +1,6 @@
 package com.chunjae_pro01.vo;
 
-public class Qna {
+public class QnA {
         private int qno;
         private String title;
         private String content;

@@ -25,15 +25,9 @@
     pstmt.setString(1,id);
     rs = pstmt.executeQuery();
 
-<<<<<<< HEAD
-    List<QnA> qnaList = new ArrayList();
-    while(rs.next()){
-        QnA q = new QnA();
-=======
     List<Qna2> qnaList = new ArrayList();
     while(rs.next()){
         Qna2 q = new Qna2();
->>>>>>> 70b8a898a2ca85ae8d73d55d11b6a49d26e5cab3
         q.setQno(rs.getInt("qno"));
         q.setTitle(rs.getString("title"));
         q.setContent(rs.getString("content"));
@@ -151,11 +145,7 @@
                     <div style="font-size: 17px; font-weight: bold;">작성글이 없습니다.</div>
                     <% }else{
                         SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
-<<<<<<< HEAD
-                        for(QnA q: qnaList){
-=======
                         for(Qna2 q: qnaList){
->>>>>>> 70b8a898a2ca85ae8d73d55d11b6a49d26e5cab3
                             Date d= ymd.parse(q.getResdate());
                             String date = ymd.format(d);
                     %>
