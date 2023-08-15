@@ -9,7 +9,7 @@ public class Qna2 {
     private String resdate;
     private int cnt;
     private int lev;
-    private int par;
+    private int per;
 
     public int getQno() {
         return qno;
@@ -76,10 +76,10 @@ public class Qna2 {
     }
 
     public int getPar() {
-        return par;
+        return per;
     }
 
-    public void setPar(int par) {
-        this.par = par;
+    public void setPer(int per) {
+        this.per = per;
     }
 }
