@@ -56,7 +56,7 @@
 ### 📂DATABASE
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/8f7be9dd-bf0e-4142-87bb-aa2407134e0b)
 
-### 📂
+### 📂DATABASE - 물리적설계
 
 ### 📂
-
+![class diagram](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/f1e567b0-5043-4a4b-859e-92085b0684e9)
