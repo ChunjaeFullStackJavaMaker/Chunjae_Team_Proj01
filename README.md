@@ -69,4 +69,6 @@
 
 # 📎기능 구현
 
-## 로그인/회원가입
+## 🗂로그인/회원가입
+
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/42c1eb55-ffe0-4827-8f6a-ef260a65df22)
