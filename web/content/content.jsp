@@ -5,14 +5,13 @@
             <li class="item1 active">
                 <input type="radio" name="vs_ra" id="vs_ra1" class="vs_ra" checked>
                 <div class="bg_box"></div>
-                <h2 class="vs_tit">가나다라마바사<br>
-                    아자차카타파하</h2>
+                <h2 class="vs_tit">학생들의 미래를 위한 교육<br>
+                    콘에듀</h2>
             </li>
             <li class="item2">
                 <input type="radio" name="vs_ra" id="vs_ra2" class="vs_ra" checked>
                 <div class="bg_box"></div>
-                <h2 class="vs_tit">ABCDEFGHIJKLMN<br>
-                    OPQRSTUVWXYZ</h2>
+                <h2 class="vs_tit">최고의 교육을 경험하세요</h2>
             </li>
             <ul class="btn_box">
                 <li class="item1 active"><label for="vs_ra1" class="vs_btn"></label></li>
