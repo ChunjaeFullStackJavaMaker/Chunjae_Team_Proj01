@@ -151,7 +151,7 @@
                         <td colspan="2">
                             <%-- 6. 로그인한 아이디가 작성자이거나 관리자인 경우만, 글 수정과 글 삭제 기능이
                             가능함.--%>
-                            <a href="/cs/board/boardList.jsp" class="inbtn">글 목록</a>
+                            <a href="/cs/board/boardList.jsp?page=1" class="inbtn">글 목록</a>
                             <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                             <a href="/cs/board/updateBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 수정</a>
                             <a href="/cs/board/delBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 삭제</a>

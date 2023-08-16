@@ -36,9 +36,9 @@
     rs = pstmt.executeQuery();
 
     //4. 받아온 결과셋(ResultSet) 을 질문및답변 목록(qnaList)에 불러와 하나의 레코드씩 담기
-    List<Qna> qnaList = new ArrayList<>();
+    List<QnA> qnaList = new ArrayList<>();
     while(rs.next()){
-        Qna qna = new Qna();
+        QnA qna = new QnA();
         qna.setQno(rs.getInt("qno"));
         qna.setTitle(rs.getString("title"));
         qna.setContent(rs.getString("content"));

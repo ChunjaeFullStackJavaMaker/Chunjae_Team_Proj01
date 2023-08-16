@@ -130,8 +130,11 @@
         <%@ include file="/layout/header.jsp" %>
     </header>
     <div class="contents" id="contents">
-        <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/cs/faq/faqList.jsp">자주하는 질문</a></p>
+        <div class="content_header">
+            <div class="breadcrumb">
+                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>"> 고객지원 </a> > <span> 공지사항 </span> </p>
+                <h2 class="page_tit"> 관리자 페이지 </h2>
+            </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">

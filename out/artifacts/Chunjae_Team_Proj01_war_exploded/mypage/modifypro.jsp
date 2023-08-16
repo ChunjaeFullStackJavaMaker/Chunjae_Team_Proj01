@@ -5,15 +5,6 @@
 
 <%
     String id = request.getParameter("id");
-    String pw = request.getParameter("pw");
-    String pw2 = request.getParameter("pw2");
-    String re_pw = request.getParameter("re_pw");
-    String apw ="";
-    if(pw2.equals(re_pw)){
-        apw = pw;
-    }else{
-        apw = re_pw;
-    }
     String tel = request.getParameter("tel");
     String email = request.getParameter("email");
 
@@ -29,12 +20,11 @@
 
     int cnt =0;
     try{
-        String sql = "update member set pw =?, email=?, tel=? where id=?";
+        String sql = "update member set email=?, tel=? where id=?";
         pstmt = con.prepareStatement(sql);
-        pstmt.setString(1, apw);
-        pstmt.setString(2, email);
-        pstmt.setString(3, tel);
-        pstmt.setString(4, id);
+        pstmt.setString(1, email);
+        pstmt.setString(2, tel);
+        pstmt.setString(3, id);
         cnt = pstmt.executeUpdate();
         if(cnt >0){
             response.sendRedirect("/");
