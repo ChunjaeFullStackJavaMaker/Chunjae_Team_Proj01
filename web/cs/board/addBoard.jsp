@@ -43,6 +43,12 @@
         .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
             padding-bottom: 2.4rem; }
 
+        .content_tit {
+            font-weight: bold;
+            font-size: 25px;
+            margin: 80px 30px 30px 10px;
+        }
+
         .breadcrumb { clear:both;
             width:1200px; margin: 0 auto; text-align: right; color:#fff;
             padding-top: 28px; padding-bottom: 28px; }
@@ -52,7 +58,7 @@
         .tb1 { width:800px; margin:50px auto; }
         .tb1 th { width:150px; line-height:32px; padding-top:8px; padding-bottom:8px;
             border-top:1px solid #333; border-bottom:1px solid #333;
-            background-color:#8CB964; color:#fff; }
+            background-color:#8CB964; color:#fff; vertical-align:top;}
         .tb1 td { width:650px; line-height:32px; padding-top:8px; padding-bottom:8px;
             border-bottom:1px solid #333;
             padding-left: 14px; border-top:1px solid #333; }
@@ -75,17 +81,20 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
     <header class="hd" id="hd">
         <%@ include file="/layout/header.jsp" %>
     </header>
     <div class="contents" id="contents">
-        <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/cs/board/boardList.jsp">공지사항</a> &gt; <span>공지사항 글쓰기</span></p>
+        <div class="content_header">
+            <div class="breadcrumb">
+                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">공지사항</a> &gt; <span> 공지사항 글쓰기 </span> </p>
+                <h2 class="page_tit"> 고객지원 </h2>
+            </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">공지사항 글쓰기</h2>
+                <p class="content_tit"> 공지사항 글쓰기</p>
                 <hr>
                 <form action="addBoardPro.jsp" method="post">
                     <table class="tb1">
@@ -104,7 +113,7 @@
                         <tr>
                             <td colspan="2">
                                 <input type="submit" value="글쓰기" class="inbtn">
-                                <input type="reset" value="취소" class="inbtn">
+                                <input type="reset" value="취소"  class="inbtn">
                             </td>
                         </tr>
                         </tbody>

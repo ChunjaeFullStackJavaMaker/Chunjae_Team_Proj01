@@ -66,8 +66,20 @@
             font-size: 25px;
             margin: 80px 30px 30px 10px;
         }
+        .indata { display:inline-block; width:300px; height: 48px; line-height: 48px;
+            text-indent:14px; font-size:18px; }
+        .inbtn { display:block;  border-radius:100px;
+            min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
+            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
+        .inbtn:first-child { float:left; }
+        .inbtn:last-child { float:right; }
     </style>
 
+    <style>
+        .btn_group { clear:both; width:800px; margin:20px auto; }
+        .btn_group:after { content:""; display:block; width:100%; clear: both; }
+        .btn_group p {text-align: center;   line-height:3.6; }
+    </style>
     <%
         int pageNo = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 0;
         // 총 페이지 수
@@ -134,13 +146,13 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">관리자 페이지</a> &gt; <span> 회원 관리 </span> </p>
-                <h2 class="page_tit"> 관리자 페이지 </h2>
+                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">고객지원</a> &gt; <span> 공지사항 </span> </p>
+                <h2 class="page_tit"> 고객지원 </h2>
             </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <p class="content_tit"> 회원 관리 </p>
+                <p class="content_tit"> 공지사항 </p>
                 <hr>
                 <div class="board_list_wrap">
                     <div class="board_list">
@@ -176,6 +188,16 @@
                         <%  } %>
                         <a href="<%=path%>/cs/board/boardList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
                         <a href="<%=path%>/cs/board/boardList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                    </div>
+                    <div class="btn_group">
+                        <br><hr><br>
+                        <%-- 공지사항이므로 관리자만 글 추가 기능(링크)이 적용되도록 설정 --%>
+                        <% if(sid!=null && sid.equals("admin")) { %>
+                        <a href="/cs/board/addBoard.jsp" class="inbtn">글쓰기</a>
+                        <% } else { %>
+                        <p>관리자만 공지사항의 글을 쓸 수 있습니다.<br>
+                            로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>
+                        <% } %>
                     </div>
                 </div>
             </div>

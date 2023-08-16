@@ -33,7 +33,7 @@
         .content_header {
             clear: both;
             height: 250px;
-            margin: 0 auto;
+            margin-top: 40px;
             background-image: url("/images/mypage_cover.jpg");
             background-repeat: no-repeat;
             background-position:center -300px;
@@ -77,7 +77,7 @@
         .row{
             display: flex;
             flex-wrap: wrap;
-            margin-left: 100px;
+            margin-left: 150px;
         }
         div .card {
             margin: 25px auto;

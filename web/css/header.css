@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 .hd {
     clear: both;
     position: relative;
@@ -27,7 +26,7 @@
     background-color: #fff;
     position: absolute;
     left: 0;
-    top: 110px;
+    top: 120px;
     z-index: 15;
     display: none;
 }
@@ -68,9 +67,9 @@
 .logo {
     display: block;
     width: auto;
-    height: 60px;
+    height: 70px;
     float: left;
-    padding: 5px;
+    padding: 10px;
 }
 
 .logo img {
@@ -89,7 +88,7 @@
 
 .gnb .menu {
     clear: both;
-    height: 50px;
+    height: 90px;
     position: relative;
 }
 
@@ -113,7 +112,7 @@
     position: absolute;
     width: 180px;
     height: 200px;
-    top: 70px;
+    top: 90px;
     left: 0;
     z-index: 999;
 }
@@ -127,7 +126,7 @@
 .gnb .menu li a.dp1 {
     display: block;
     width: 100%;
-    line-height: 68px;
+    line-height: 88px;
     border-bottom: 2px solid #fff;
     text-align: center;
     background-color: #fff;
