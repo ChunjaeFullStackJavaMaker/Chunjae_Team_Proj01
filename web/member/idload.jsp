@@ -1,17 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae_pro01.util.*" %>
-<head>
-    <style>
-        button [type='button'] {
-            color: #fff;
-            background-color: #8CB964;
-            border-radius: 6px;
-            float: right;
-            margin-top: 10px;
-            margin-right: 75px;
-        }
-    </style>
 
 <%
 
@@ -45,7 +34,6 @@
         conn.close(rs, pstmt, con);
     }
 %>
-</head>
 <script>
     function fnc1(cid){
         opener.document.frm1.id.value = cid;

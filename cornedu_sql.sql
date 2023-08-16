@@ -34,7 +34,6 @@ COMMIT;
 
 SELECT * FROM member;
 
-
 UPDATE member SET pw='03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4' WHERE id='admin';
 UPDATE member SET pw='0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c' WHERE id='kimbk';
 UPDATE member SET pw='dbff5341acad5e2a58db4efd5e72e2d9a0a843a28e02b1183c68162d0a3a3de6' WHERE id='kimhk';

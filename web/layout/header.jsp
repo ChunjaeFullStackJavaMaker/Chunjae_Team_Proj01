@@ -38,7 +38,7 @@
             <li class="item2">
                 <a href="" class="dp1"> 초 등 </a>
                 <ul class="sub">
-                    <li><a href=""> 강의 소개 </a></li>
+                    <li><a href="<%=path8%>/class/elementary/class.jsp"> 강의 소개 </a></li>
                     <li><a href=""> 교재 소개 </a></li>
                 </ul>
             </li>
