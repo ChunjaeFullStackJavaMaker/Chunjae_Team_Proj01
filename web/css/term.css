@@ -2,6 +2,9 @@
 
 .page {
     height: 650px;
+    width: 1200px;
+    position: relative;
+    margin: 0 auto;
 }
 .agree_fr {
     width: 900px;
