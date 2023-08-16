@@ -78,7 +78,13 @@
 # 📎기능 구현
 
 ## 🗂로그인/회원가입
-
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/42c1eb55-ffe0-4827-8f6a-ef260a65df22)
 
-## 🗂로그인/회원가입
+
+## 🗂게시판(커뮤니티, faq, qna)
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/bb3a2cec-4d52-4cf5-9623-32325e1f6245)
+
+
+
+
+
