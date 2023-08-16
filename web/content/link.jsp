@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<style>s
+<style>
     .pic_lst { clear:both; width: 1110px; margin: 0px auto; }
     .pic_lst li { width: 340px; height: 242px; padding :40px; margin-left:30px; float:left;
         margin-top:50px; transition:0.4s; overflow:hidden; box-sizing: border-box; box-shadow:5px 5px 5px #999; }

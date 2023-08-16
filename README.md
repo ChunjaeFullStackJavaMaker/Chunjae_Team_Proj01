@@ -67,7 +67,7 @@
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4d1ecd48-ff5e-4443-9dd0-a23fe91d8487)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/cc1c70c4-1454-4b1a-8efe-29af5d83e5ba)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/69a2d610-490a-4950-8c02-94e8462a3a8c)
-### DATABASE - 테이블 ERD
+### 📂DATABASE - 테이블 ERD
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/b347b26d-6372-4b09-bd9a-447e6bf70f2e)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/cd6e23ad-291e-44ab-9b39-560ac020e39d)
 
@@ -78,5 +78,13 @@
 # 📎기능 구현
 
 ## 🗂로그인/회원가입
-
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/42c1eb55-ffe0-4827-8f6a-ef260a65df22)
+
+
+## 🗂게시판(커뮤니티, faq, qna)
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/bb3a2cec-4d52-4cf5-9623-32325e1f6245)
+
+
+
+
+

@@ -31,7 +31,7 @@
                 <a href="" class="dp1"> 소 개 </a>
                 <ul class="sub">
                     <li><a href=""> 회사 소개 </a></li>
-                    <li><a href=""> 서비스 소개 </a></li>
+                    <li><a href="../introduce/serviceIntro.jsp"> 서비스 소개 </a></li>
                     <li><a href=""> 오시는 길 </a></li>
                 </ul>
             </li>
@@ -39,21 +39,21 @@
                 <a href="" class="dp1"> 초 등 </a>
                 <ul class="sub">
                     <li><a href="<%=path8%>/class/elementary/class.jsp"> 강의 소개 </a></li>
-                    <li><a href=""> 교재 소개 </a></li>
+                    <li><a href="<%=path8%>/class/elementary/book.jsp"> 교재 소개 </a></li>
                 </ul>
             </li>
             <li class="item3">
                 <a href="" class="dp1"> 중 등 </a>
                 <ul class="sub">
-                    <li><a href=""> 강의 소개 </a></li>
-                    <li><a href=""> 교재 소개 </a></li>
+                    <li><a href="<%=path8%>/class/middle/class.jsp"> 강의 소개 </a></li>
+                    <li><a href="<%=path8%>/class/middle/book.jsp"> 교재 소개 </a></li>
                 </ul>
             </li>
             <li class="item4">
                 <a href="" class="dp1"> 고 등 </a>
                 <ul class="sub">
-                    <li><a href=""> 강의 소개 </a></li>
-                    <li><a href=""> 교재 소개 </a></li>
+                    <li><a href="<%=path8%>/class/high/class.jsp"> 강의 소개 </a></li>
+                    <li><a href="<%=path8%>/class/high/book.jsp"> 교재 소개 </a></li>
                 </ul>
             </li>
             <li class="item5">
