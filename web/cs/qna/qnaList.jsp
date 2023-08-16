@@ -13,97 +13,69 @@
 <%@ page import="java.text.*" %>
 <%@ page import="com.chunjae_pro01.util.*" %>
 <%@ page import="com.chunjae_pro01.vo.*" %>
-<%
-    request.setCharacterEncoding("UTF-8");
-    response.setContentType("text/html; charset=UTF-8");
-    response.setCharacterEncoding("UTF-8");
-%>
-<%
-    String path5 = request.getContextPath();
-%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ include file="/setting/encoding.jsp"%>
 
-<%
-    //2. DB 연결
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-    DBC con = new MariaDBCon();
-    conn = con.connect();
-
-    //3. SQL을 실행하여 결과셋(ResultSet) 받아오기
-    String sql = "SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt as cnt, a.lev AS lev, a.par AS par, b.name AS name FROM qna a, member b WHERE a.author=b.id order BY a.par DESC, a.lev ASC, a.qno ASC";
-    pstmt = conn.prepareStatement(sql);
-    rs = pstmt.executeQuery();
-
-    //4. 받아온 결과셋(ResultSet) 을 질문및답변 목록(qnaList)에 불러와 하나의 레코드씩 담기
-    List<QnA> qnaList = new ArrayList<>();
-    while(rs.next()){
-        QnA qna = new QnA();
-        qna.setQno(rs.getInt("qno"));
-        qna.setTitle(rs.getString("title"));
-        qna.setContent(rs.getString("content"));
-        qna.setAuthor(rs.getString("author"));
-        qna.setResdate(rs.getString("resdate"));
-        qna.setCnt(rs.getInt("cnt"));
-        qna.setLev(rs.getInt("lev"));
-        qna.setPar(rs.getInt("par"));
-        qna.setName(rs.getString("name"));
-        qnaList.add(qna);
-    }
-    con.close(rs, pstmt, conn);
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>묻고 답하기 목록</title>
+    <title> QnA </title>
     <%@ include file="/setting/head.jsp" %>
+
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path5%>/css/google.css">
-    <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
-
+    <link rel="stylesheet" href="<%=path%>/css/google.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path5%>/css/common.css">
-    <link rel="stylesheet" href="<%=path5%>/css/header.css">
+    <link rel="stylesheet" href="<%=path%>/css/common.css">
+    <link rel="stylesheet" href="<%=path%>/css/header.css">
+    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path%>/css/mgmt.css">
+    <link rel="stylesheet" href="<%=path%>/css/footer.css">
+
     <style>
-        /* 본문 영역 스타일 */
-        .contents { clear:both; min-height:100vh;
-            /*background-image: url("../images/bg_visual_overview.jpg");*/
-            background-repeat: no-repeat; background-position:center -250px; }
-        .contents::after { content:""; clear:both; display:block; width:100%; }
+        .contents {
+            clear:both;
+            min-height:100vh;
+        }
+        .contents::after {
+            content:"";
+            clear:both;
+            display:block;
+            width:100%;
+        }
 
-        .page { clear:both; width: 100vw; height: 100vh; position:relative; }
-        .page::after { content:""; display:block; width: 100%; clear:both; }
+        .page {
+            clear:both;
+            width: 100%;
+            min-height: 100vh;
+            position:relative;
+            top: 50px;
+            margin: 0px auto;
+        }
+        .page::after {
+            content:"";
+            display:block;
+            width: 100%;
+            clear:both;
+        }
 
-        .page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
-        .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
-            padding-bottom: 2.4rem; }
+        .page_wrap {
+            clear:both;
+            width: 1000px;
+            height: auto;
+            margin:0 auto;
+        }
 
-        .breadcrumb { clear:both;
-            width:1200px; margin: 0 auto; text-align: right; color:#fff;
-            padding-top: 28px; padding-bottom: 28px; }
-        .breadcrumb a { color:#fff; }
-        .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
-
-        .tb1 { width:800px; margin:50px auto; }
-        .tb1 th { line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-top:1px solid #333; border-bottom:1px solid #333;
-            background-color:deepskyblue; color:#fff; }
-        .tb1 td {line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-bottom:1px solid #333;
-            padding-left: 14px; border-top:1px solid #333; }
-
-        .tb1 .item1 { width:10%; text-align: center; }
-        .tb1 .item2 { width:65%; }
-        .tb1 .item3 { width:10%; text-align: center; }
-        .tb1 .item4 { width:15%; text-align: center; }
-
+        .content_tit {
+            font-weight: bold;
+            font-size: 25px;
+            margin: 80px 30px 30px 10px;
+        }
         .indata { display:inline-block; width:300px; height: 48px; line-height: 48px;
             text-indent:14px; font-size:18px; }
         .inbtn { display:block;  border-radius:100px;
@@ -113,12 +85,70 @@
         .inbtn:last-child { float:right; }
     </style>
 
-    <link rel="stylesheet" href="<%=path5%>/css/footer.css">
     <style>
         .btn_group { clear:both; width:800px; margin:20px auto; }
         .btn_group:after { content:""; display:block; width:100%; clear: both; }
         .btn_group p {text-align: center;   line-height:3.6; }
     </style>
+    <%
+        int pageNo = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 0;
+        // 총 페이지 수
+        int totalPage = 0;
+        // 마지막 페이지
+        int endPage = pageNo+2 < 5 ? 5 : pageNo+2;
+        // 전체 회원 수
+        int count = 0;
+
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        DBC con = new MariaDBCon();
+        conn = con.connect();
+
+        // 페이징 처리 - 전체 페이지 수 구하기
+        String sql = "SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt as cnt, a.lev AS lev, a.par AS par, b.name AS name FROM qna a, member b WHERE a.author=b.id order BY a.par DESC, a.lev ASC, a.qno ASC";
+        pstmt = conn.prepareStatement(sql);
+        rs = pstmt.executeQuery();
+        if(rs.next()) {
+            count = rs.getInt("count");
+            totalPage = count % 10 == 0 ? count / 10 : (count / 10) + 1;
+            // 전체 페이지가 0일 경우 (=회원이 없는 경우)
+            totalPage = (totalPage == 0) ? 1 : totalPage;
+        }
+        rs.close();
+        pstmt.close();
+
+        // 페이징 처리 - 현재 페이지에 출력될 페이지 리스트 구하기
+        if(endPage > totalPage) {
+            endPage = totalPage;
+        }
+        List<Integer> pageList = new ArrayList<>();
+        for(int p=(endPage-4 > 0 ? endPage-4 : 1); p<=endPage; p++) {
+            pageList.add(p);
+        }
+
+        // 현재 페이지에 출력할 회원 데이터만 가져오기
+        sql = "SELECT * FROM board ORDER BY bno DESC LIMIT ?, 10";
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, 10*(pageNo-1));
+        rs = pstmt.executeQuery();
+
+        List<QnA> qnaList = new ArrayList<>();
+        while(rs.next()){
+            QnA qna = new QnA();
+            qna.setQno(rs.getInt("qno"));
+            qna.setTitle(rs.getString("title"));
+            qna.setContent(rs.getString("content"));
+            qna.setAuthor(rs.getString("author"));
+            qna.setResdate(rs.getString("resdate"));
+            qna.setCnt(rs.getInt("cnt"));
+            qna.setLev(rs.getInt("lev"));
+            qna.setPar(rs.getInt("par"));
+            qna.setName(rs.getString("name"));
+            qnaList.add(qna);
+        }
+        con.close(rs, pstmt, conn);
+    %>
 </head>
 <body>
 <div class="container">
@@ -126,13 +156,16 @@
         <%@ include file="/layout/header.jsp" %>
     </header>
     <div class="contents" id="contents">
-        <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/cs/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 목록</span></p>
+        <div class="content_header">
+            <div class="breadcrumb">
+                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">고객지원</a> &gt; <span> QnA </span> </p>
+                <h2 class="page_tit"> 고객지원 </h2>
+            </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">질문 및 답변 목록</h2>
-                <br><br><hr><br><br>
+                <p class="content_tit"> QnA </p>
+                <hr>
                 <table class="tb1" id="myTable">
                     <thead>
                     <tr>
@@ -144,7 +177,7 @@
                     <%
                         SimpleDateFormat ymd = new SimpleDateFormat("yy-MM-dd");
                         int tot = qnaList.size();
-                        for(Qna q:qnaList) {
+                        for(QnA q:qnaList) {
                             Date d = ymd.parse(q.getResdate());
                             String date = ymd.format(d);
                     %>
@@ -164,6 +197,15 @@
                             tot--;
                         }
                     %>
+                    <div class="qna_page">
+                        <a href="<%=path%>/cs/qna/qnaList.jsp?page=1" class="bt first"> &lt;&lt; </a>
+                        <a href="<%=path%>/cs/qna/qnaList.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
+                        <%  for(int p : pageList) {  %>
+                        <a href="<%=path%>/cs/qna/qnaList.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                        <%  } %>
+                        <a href="<%=path%>/cs/qna/qnaList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
+                        <a href="<%=path%>/cs/qna/qnaList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                    </div>
                     </tbody>
                 </table>
             </div>
