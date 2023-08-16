@@ -15,7 +15,7 @@
 * **김현경** : 마이페이지 (정보수정, 내가 쓴 글) 기능 구현, 화면설계도 작성
 * **김보경** : 로그인, 로그아웃, 아이디 중복 체크, 회원가입 기능 구현, usecaseDiagram 작성
 * **신예은** : 관리자페이지(회원관리, 커뮤니티 관리, 개인정보 변경) 기능 구현, usecaseDiagram 작성
-* **오태훈** : 학부모 커뮤니티, 학생 커뮤니티 기능구현, 요구사항정의서 작성
+* **오태훈** : 학부모 커뮤니티, 학생 커뮤니티 기능구현, 소개 페이지 제작, 요구사항정의서 작성
 * 전체 메뉴 구성 기획 및 DB 설계, frontend 설계는 다같이!
 
 
@@ -36,6 +36,8 @@
 
 #### ✅DATABASE : <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"><img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
 
+#### ✅Server : <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">
+
 
 
 ### 📌 주요기능
@@ -50,12 +52,14 @@
 
 # ⚒프로젝트 설계
 
-### 📂USE CASE DIAGRAM
+### 📂개념적 설계 (USE CASE DIAGRAM)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/848d0d3f-ac3b-4ee7-8da7-15e52cd62c8b)
-
+### 📂논리적 설계
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/b9200ed8-74b4-427e-bafb-260a74497fe7)
+### 📂논리적 ERD
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/8a8c7a43-c301-4b00-8a52-0d40e081101b)
 ### 📂DATABASE
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/8f7be9dd-bf0e-4142-87bb-aa2407134e0b)
-
 ### 📂DATABASE - 테이블 구현
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/e94a6a06-9672-4e26-ae7a-361aa2225e6a)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/1e40c798-815a-44b8-97e3-5214524e6366)
@@ -63,6 +67,10 @@
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4d1ecd48-ff5e-4443-9dd0-a23fe91d8487)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/cc1c70c4-1454-4b1a-8efe-29af5d83e5ba)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/69a2d610-490a-4950-8c02-94e8462a3a8c)
+### DATABASE - 테이블 ERD
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/b347b26d-6372-4b09-bd9a-447e6bf70f2e)
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/cd6e23ad-291e-44ab-9b39-560ac020e39d)
+
 
 ### 📂CLASS DIAGRAM
 ![class diagram](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/f1e567b0-5043-4a4b-859e-92085b0684e9)

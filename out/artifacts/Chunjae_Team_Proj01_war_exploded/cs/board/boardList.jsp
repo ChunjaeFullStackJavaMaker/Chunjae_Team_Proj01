@@ -144,7 +144,7 @@
                         <td class="item2">
                             <%-- 6. 로그인한 사용자만 제목 부분의 a요소에 링크 중 bno 파라미터(쿼리스트링)으로 상세보기를 요청 가능--%>
                             <% if(sid!=null) { %>
-                            <a href="/board/getBoard.jsp?bno=<%=bd.getBno() %>"><%=bd.getTitle() %></a>
+                            <a href="/cs/board/getBoard.jsp?bno=<%=bd.getBno() %>"><%=bd.getTitle() %></a>
                             <% } else { %>
                             <span><%=bd.getTitle() %></span>
                             <% } %>
@@ -168,7 +168,7 @@
                     <br><hr><br>
                     <%-- 공지사항이므로 관리자만 글 추가 기능(링크)이 적용되도록 설정 --%>
                     <% if(sid!=null && sid.equals("admin")) { %>
-                    <a href="/board/addBoard.jsp" class="inbtn">글쓰기</a>
+                    <a href="/cs/board/addBoard.jsp" class="inbtn">글쓰기</a>
                     <% } else { %>
                     <p>관리자만 공지사항의 글을 쓸 수 있습니다.<br>
                         로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>

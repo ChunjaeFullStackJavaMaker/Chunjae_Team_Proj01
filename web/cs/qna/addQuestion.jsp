@@ -1,22 +1,31 @@
 <%--
   Created by IntelliJ IDEA.
   User: jk347
-  Date: 2023-08-13
-  Time: 오후 10:42
+  Date: 2023-08-15
+  Time: 오전 12:28
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
     String path3 = request.getContextPath();
 %>
+<%
+    int lev = Integer.parseInt(request.getParameter("lev"));
+    int par = Integer.parseInt(request.getParameter("par"));
+    String sel = "";
+    if(lev==0){
+        sel = "질문";
+    } else {
+        sel = "답변";
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항 글쓰기</title>
+    <title><%=sel %> 등록하기</title>
     <%@ include file="/setting/head.jsp" %>
-
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
@@ -76,34 +85,36 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/cs/board/boardList.jsp">공지사항</a> &gt; <span>공지사항 글쓰기</span></p>
+            <p><a href="/">HOME</a> &gt; <a href="/cs/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 글쓰기</span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">공지사항 글쓰기</h2>
-                <hr>
-                <form action="addBoardPro.jsp" method="post">
-                    <table class="tb1">
+                <h2 class="page_tit"><%=sel %> 글쓰기</h2>
+                <br><br><hr><br><br>
+                <form action="addQuestionPro.jsp" method="post">
+                    <table>
                         <tbody>
                         <tr>
-                            <th><label for="title">글 제목</label></th>
+                            <th><label for="title">제목</label></th>
                             <td>
-                                <input type="text" name="title" id="title" class="indata" required>
+                                <input type="text" name="title" id="title" class="indata" maxlength="98" required>
+                                <input type="hidden" name="lev" id="lev" value="<%=lev %>">
+                                <input type="hidden" name="par" id="par" value="<%=par %>">
                                 <input type="hidden" name="author" id="author" value="<%=sid %>">
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="content">글 내용</label></th>
-                            <td><textarea rows="10" cols="80" name="content" id="content" class="indata2" maxlength="990" required></textarea></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <input type="submit" value="글쓰기" class="inbtn">
-                                <input type="reset" value="취소" class="inbtn">
+                            <th><label for="content">내용</label></th>
+                            <td>
+                                <textarea name="content" id="content" cols="80" rows="10" maxlength="990" class="indata2"></textarea>
                             </td>
                         </tr>
                         </tbody>
                     </table>
+                    <div class="btn_group">
+                        <input type="submit" value="<%=sel %> 등록" class="inbtn">
+                        <a href="/cs/qna/qnaList.jsp" class="inbtn">글 목록</a>
+                    </div>
                 </form>
             </div>
         </section>

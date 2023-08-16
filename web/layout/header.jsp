@@ -66,9 +66,9 @@
             <li class="item6">
                 <a href="" class="dp1"> 고객지원 </a>
                 <ul class="sub">
-                    <li><a href=""> 공지사항 </a></li>
-                    <li><a href=""> QnA </a></li>
-                    <li><a href=""> FAQ </a></li>
+                    <li><a href="/cs/board/boardList.jsp"> 공지사항 </a></li>
+                    <li><a href="/cs/qna/qnaList.jsp"> QnA </a></li>
+                    <li><a href="/cs/faq/faqList.jsp"> FAQ </a></li>
                 </ul>
             </li>
         </ul>

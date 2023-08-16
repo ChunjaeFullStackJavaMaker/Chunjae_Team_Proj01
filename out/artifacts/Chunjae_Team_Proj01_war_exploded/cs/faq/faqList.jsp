@@ -1,57 +1,59 @@
 <%--
   Created by IntelliJ IDEA.
   User: jk347
-  Date: 2023-08-14
-  Time: 오전 12:30
+  Date: 2023-08-15
+  Time: 오전 12:27
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<%-- 1. 필요한 라이브러리 로딩 --%>
+<%-- 1. 필요한 라이브러리 임포트 --%>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="java.text.*" %>
-<%@ page import="com.chunjae_pro01.dto.Board" %>
-<%@ page import="com.chunjae_pro01.util.*" %>
 <%@ page import="java.util.Date" %>
+<%@ page import="java.text.*" %>
+<%@ page import="com.chunjae_pro01.util.*" %>
+<%@ page import="com.chunjae_pro01.dto.*" %>
 
 <%
     String path3 = request.getContextPath();
 %>
 
 <%
-    Connection con = null;
+    request.setCharacterEncoding("UTF-8");
+    response.setContentType("text/html; charset=UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
+<%
+    //2. DB 연결
+    Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
+    DBC con = new MariaDBCon();
+    conn = con.connect();
 
-    //2. DB 연결하기
-    DBC conn = new MariaDBCon();
-    con = conn.connect();
-
-    //3. SQL을 실행하여 Result(공지사항목록)을 가져오기
-    String sql = "select * from board order by bno desc";
-    pstmt = con.prepareStatement(sql);
+    //3. SQL을 실행하여 결과셋(ResultSet) 받아오기
+    String sql = "select * from faq order by fno asc";
+    pstmt = conn.prepareStatement(sql);
     rs = pstmt.executeQuery();
 
-    //4.가져온 목록을 boardList(공지사항목록)에 하나 씩 담기
-    List<Board> boardList = new ArrayList<>();
+    //4. 받아온 결과셋(ResultSet) 을 질문및답변 목록(qnaList)에 불러와 하나의 레코드씩 담기
+    List<Faq> faqList = new ArrayList<>();
     while(rs.next()){
-        Board bd = new Board();
-        bd.setBno(rs.getInt("bno"));
-        bd.setTitle(rs.getString("title"));
-        bd.setContent(rs.getString("content"));
-        bd.setAuthor(rs.getString("author"));
-        bd.setResdate(rs.getString("resdate"));
-        bd.setCnt(rs.getInt("cnt"));
-        boardList.add(bd);
+        Faq faq = new Faq();
+        faq.setFno(rs.getInt("fno"));
+        faq.setQuestion(rs.getString("question"));
+        faq.setAnswer(rs.getString("answer"));
+        faq.setCnt(rs.getInt("cnt"));
+        faqList.add(faq);
     }
-    conn.close(rs, pstmt, con);
+    con.close(rs, pstmt, conn);
 %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항 목록</title>
+    <title>자주하는 질문</title>
     <%@ include file="/setting/head.jsp" %>
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
@@ -104,11 +106,12 @@
         .btn_group:after { content:""; display:block; width:100%; clear: both; }
         .btn_group p {text-align: center;   line-height:3.6; }
     </style>
-
-    <link rel="stylesheet" href="../jquery.dataTables.css">
-    <script src="../jquery.dataTables.js"></script>
     <style>
-        #myTable_length, #dataTables_filter { margin-top:20px; margin-bottom:20px; }
+        .qnalist li { padding-top:8px; padding-bottom:8px; line-height: 2; }
+        .qnalist li .ans { padding: 16px;  background-color: #f1f1f1; }
+        .ans { display:none; }
+        .que:after { content:"▼"; padding-left: 36px;}
+        .que.on:after { content:"▲"; }
     </style>
 </head>
 <body>
@@ -118,62 +121,28 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="">공지사항</a> &gt; <span>공지사항 목록</span></p>
+            <p><a href="/">HOME</a> &gt; <a href="/cs/faq/faqList.jsp">자주하는 질문</a></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">공지사항 목록</h2>
+                <h2 class="page_tit">자주하는 질문</h2>
                 <br><br><hr><br><br>
-                <table class="tb1" id="myTable">
-                    <thead>
-                    <th class="item1">글번호</th>
-                    <th class="item2">글제목</th>
-                    <th class="item3">작성자</th>
-                    <th class="item4">작성일</th>
-                    </thead>
-                    <tbody>
-                    <%-- 5. boardList(공지사항목록)을 테이블 태그의 tr 요소를 반복하여 출력 --%>
-                    <%
-                        SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
-                        for(Board bd:boardList) {
-                            Date d = ymd.parse(bd.getResdate());  //날짜데이터로 변경
-                            String date = ymd.format(d);    //형식을 포함한 문자열로 변경
-                    %>
-                    <tr>
-                        <td class="item1"><%=bd.getBno() %></td>
-                        <td class="item2">
-                            <%-- 6. 로그인한 사용자만 제목 부분의 a요소에 링크 중 bno 파라미터(쿼리스트링)으로 상세보기를 요청 가능--%>
-                            <% if(sid!=null) { %>
-                            <a href="/cs/board/getBoard.jsp?bno=<%=bd.getBno() %>"><%=bd.getTitle() %></a>
-                            <% } else { %>
-                            <span><%=bd.getTitle() %></span>
-                            <% } %>
-                        </td>
-                        <td class="item3"><%=bd.getAuthor() %></td>
-                        <td class="item4"><%=date %></td>
-                    </tr>
-                    <%
-                        }
-                    %>
-                    </tbody>
-                </table>
+                <ul class="qnalist">
+                    <% for(Faq f:faqList) { %>
+                    <li>
+                        <div class="que"><%=f.getQuestion() %></div>
+                        <div class="ans"><%=f.getAnswer() %></div>
+                    </li>
+                    <% } %>
+                </ul>
                 <script>
-                    $(document).ready( function () {
-                        $('#myTable').DataTable({
-                            order:[[0, "desc"]]
+                    $(document).ready(function(){
+                        $(".qnalist li").click(function(){
+                            $(this).find(".ans").slideToggle(500);
+                            $(this).find(".que").toggleClass("on");
                         });
                     });
                 </script>
-                <div class="btn_group">
-                    <br><hr><br>
-                    <%-- 공지사항이므로 관리자만 글 추가 기능(링크)이 적용되도록 설정 --%>
-                    <% if(sid!=null && sid.equals("admin")) { %>
-                    <a href="/cs/board/addBoard.jsp" class="inbtn">글쓰기</a>
-                    <% } else { %>
-                    <p>관리자만 공지사항의 글을 쓸 수 있습니다.<br>
-                        로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>
-                    <% } %>
-                </div>
             </div>
         </section>
     </div>
