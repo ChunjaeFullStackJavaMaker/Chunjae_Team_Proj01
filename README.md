@@ -50,9 +50,11 @@
 
 # ⚒프로젝트 설계
 
-### 📂USE CASE DIAGRAM
+### 📂개념적 설계 (USE CASE DIAGRAM)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/848d0d3f-ac3b-4ee7-8da7-15e52cd62c8b)
 
+### 📂논리적 설계
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/b9200ed8-74b4-427e-bafb-260a74497fe7)
 ### 📂DATABASE
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/8f7be9dd-bf0e-4142-87bb-aa2407134e0b)
 
