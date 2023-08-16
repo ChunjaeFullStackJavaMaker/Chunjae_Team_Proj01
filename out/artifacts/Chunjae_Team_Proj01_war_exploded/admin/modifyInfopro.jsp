@@ -6,6 +6,7 @@
     String path9 = request.getContextPath();
 
     String id = request.getParameter("id");
+    String pw = request.getParameter("pw");
     String name = request.getParameter("name");
     String email = request.getParameter("email");
     String tel = request.getParameter("tel");
@@ -16,12 +17,13 @@
 
     DBC con = new MariaDBCon();
     conn = con.connect();
-    String sql = "UPDATE member SET name=?, email=?, tel=? WHERE id=?";
+    String sql = "UPDATE member SET pw=?, name=?, email=?, tel=? WHERE id=?";
     pstmt = conn.prepareStatement(sql);
-    pstmt.setString(1, name);
-    pstmt.setString(2, email);
-    pstmt.setString(3, tel);
-    pstmt.setString(4, id);
+    pstmt.setString(1, pw);
+    pstmt.setString(2, name);
+    pstmt.setString(3, email);
+    pstmt.setString(4, tel);
+    pstmt.setString(5, id);
     cnt = pstmt.executeUpdate();
 
     con.close(pstmt, conn);

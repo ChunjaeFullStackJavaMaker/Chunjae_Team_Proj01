@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="<%=path2%>/css/google.css">
     <link rel="stylesheet" href="<%=path2%>/css/fonts.css">
     <link rel="stylesheet" href="<%=path2%>/css/login.css">
-    <link rel="stylesheet" href="<%=path2%>/css/content_header.css">
+
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="<%=path2%>/css/footer.css">
 
     <style>
+        /*breadcrumb*/
+
         /*contents*/
         .container{
             margin-top: 20px;
