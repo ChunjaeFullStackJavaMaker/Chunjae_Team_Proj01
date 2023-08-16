@@ -189,6 +189,7 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <p class="content_tit"> 질문 내용 </p>
+                <hr>
                 <table class="tb1">
                     <tbody>
                     <tr>
@@ -211,6 +212,7 @@
         <section class="page" id="page2">
             <div class="page_wrap">
                 <p class="content_tit"> 답변 작성 </p>
+                <hr>
                 <form action="addAnswerPro.jsp" method="post">
                     <table class="tb2">
                         <tbody>

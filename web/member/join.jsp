@@ -103,7 +103,7 @@
                             if(pw!=pw2){
                                 alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
                                 pw.focus();
-                            } e
+                            }
                         }
                         function idcheck(){
                             var child;
