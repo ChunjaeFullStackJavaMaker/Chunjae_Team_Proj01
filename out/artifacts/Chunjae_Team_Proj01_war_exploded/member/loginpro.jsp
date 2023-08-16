@@ -4,6 +4,7 @@
 <%
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
+    pw = AES256.sha256(pw);
 
 
     Connection conn = null;
