@@ -1,178 +1,182 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jk347
-  Date: 2023-08-14
-  Time: 오전 12:30
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<%-- 1. 필요한 라이브러리 로딩 --%>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="java.text.*" %>
-<%@ page import="com.chunjae_pro01.dto.Board" %>
-<%@ page import="com.chunjae_pro01.util.*" %>
 <%@ page import="java.util.Date" %>
-
-<%
-    String path3 = request.getContextPath();
-%>
-
-<%
-    Connection con = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-
-    //2. DB 연결하기
-    DBC conn = new MariaDBCon();
-    con = conn.connect();
-
-    //3. SQL을 실행하여 Result(공지사항목록)을 가져오기
-    String sql = "select * from board order by bno desc";
-    pstmt = con.prepareStatement(sql);
-    rs = pstmt.executeQuery();
-
-    //4.가져온 목록을 boardList(공지사항목록)에 하나 씩 담기
-    List<Board> boardList = new ArrayList<>();
-    while(rs.next()){
-        Board bd = new Board();
-        bd.setBno(rs.getInt("bno"));
-        bd.setTitle(rs.getString("title"));
-        bd.setContent(rs.getString("content"));
-        bd.setAuthor(rs.getString("author"));
-        bd.setResdate(rs.getString("resdate"));
-        bd.setCnt(rs.getInt("cnt"));
-        boardList.add(bd);
-    }
-    conn.close(rs, pstmt, con);
-%>
+<%@ page import="com.chunjae_pro01.util.*" %>
+<%@ page import="com.chunjae_pro01.dto.*" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ include file="/setting/encoding.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항 목록</title>
+    <title> 공지사항 </title>
     <%@ include file="/setting/head.jsp" %>
+
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path3%>/css/google.css">
-    <link rel="stylesheet" href="<%=path3%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path3%>/css/login.css">
-
+    <link rel="stylesheet" href="<%=path%>/css/google.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path3%>/css/common.css">
-    <link rel="stylesheet" href="<%=path3%>/css/header.css">
-    <link rel="stylesheet" href="<%=path3%>/css/board.css">
+    <link rel="stylesheet" href="<%=path%>/css/common.css">
+    <link rel="stylesheet" href="<%=path%>/css/header.css">
+    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path%>/css/mgmt.css">
+    <link rel="stylesheet" href="<%=path%>/css/footer.css">
+
     <style>
-        /* 본문 영역 스타일 */
-        .contents { clear:both; min-height:100vh;
-            background-image: url("<%=path3%>/images/bg_visual_overview.jpg");
-            background-repeat: no-repeat; background-position:center -250px; }
-        .contents::after { content:""; clear:both; display:block; width:100%; }
+        .contents {
+            clear:both;
+            min-height:100vh;
+        }
+        .contents::after {
+            content:"";
+            clear:both;
+            display:block;
+            width:100%;
+        }
 
-        .page { clear:both; width: 100vw; height: 400px; position:relative; }
-        .page::after { content:""; display:block; width: 100%; clear:both; }
+        .page {
+            clear:both;
+            width: 100%;
+            min-height: 100vh;
+            position:relative;
+            top: 50px;
+            margin: 0px auto;
+        }
+        .page::after {
+            content:"";
+            display:block;
+            width: 100%;
+            clear:both;
+        }
 
-        .page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
-        .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
-            padding-bottom: 2.4rem; }
+        .page_wrap {
+            clear:both;
+            width: 1000px;
+            height: auto;
+            margin:0 auto;
+        }
 
-        .breadcrumb { clear:both;
-            width:1200px; margin: 0 auto; text-align: right; color:#fff;
-            padding-top: 28px; padding-bottom: 28px; }
-        .breadcrumb a { color:#fff; }
-        .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
-
-        .tb1 { width:500px; margin:0 auto; }
-        .tb1 td { width:500px; line-height: 48px; padding-top:24px; padding-bottom:24px; }
-
-        .indata { display:inline-block; width: 500px; height: 48px; line-height: 48px;
-            text-indent:14px; font-size:18px; }
-        .inbtn { display:block;  border-radius:100px;
-            min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
-        .inbtn:first-child { float:left; }
-        .inbtn:last-child { float:right; }
+        .content_tit {
+            font-weight: bold;
+            font-size: 25px;
+            margin: 80px 30px 30px 10px;
+        }
     </style>
 
-    <link rel="stylesheet" href="<%=path3%>/css/footer.css">
-    <style>
-        .btn_group { clear:both; width:800px; margin:20px auto; }
-        .btn_group:after { content:""; display:block; width:100%; clear: both; }
-        .btn_group p {text-align: center;   line-height:3.6; }
-    </style>
+    <%
+        int pageNo = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 0;
+        // 총 페이지 수
+        int totalPage = 0;
+        // 마지막 페이지
+        int endPage = pageNo+2 < 5 ? 5 : pageNo+2;
+        // 전체 회원 수
+        int count = 0;
 
-    <link rel="stylesheet" href="../jquery.dataTables.css">
-    <script src="../jquery.dataTables.js"></script>
-    <style>
-        #myTable_length, #dataTables_filter { margin-top:20px; margin-bottom:20px; }
-    </style>
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        DBC con = new MariaDBCon();
+        conn = con.connect();
+
+        // 페이징 처리 - 전체 페이지 수 구하기
+        String sql = "SELECT COUNT(*) as 'count' FROM board";
+        pstmt = conn.prepareStatement(sql);
+        rs = pstmt.executeQuery();
+        if(rs.next()) {
+            count = rs.getInt("count");
+            totalPage = count % 10 == 0 ? count / 10 : (count / 10) + 1;
+            // 전체 페이지가 0일 경우 (=회원이 없는 경우)
+            totalPage = (totalPage == 0) ? 1 : totalPage;
+        }
+        rs.close();
+        pstmt.close();
+
+        // 페이징 처리 - 현재 페이지에 출력될 페이지 리스트 구하기
+        if(endPage > totalPage) {
+            endPage = totalPage;
+        }
+        List<Integer> pageList = new ArrayList<>();
+        for(int p=(endPage-4 > 0 ? endPage-4 : 1); p<=endPage; p++) {
+            pageList.add(p);
+        }
+
+        // 현재 페이지에 출력할 회원 데이터만 가져오기
+        sql = "SELECT * FROM board ORDER BY bno DESC LIMIT ?, 10";
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, 10*(pageNo-1));
+        rs = pstmt.executeQuery();
+
+        List<Board> boardList = new ArrayList<>();
+        while(rs.next()) {
+            Board board = new Board();
+            board.setBno(rs.getInt("bno"));
+            board.setTitle(rs.getString("title"));
+            board.setAuthor(rs.getString("author"));
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date d = sdf.parse(rs.getString("resdate"));
+            board.setResdate(sdf.format(d));
+            boardList.add(board);
+        }
+        con.close(rs, pstmt, conn);
+    %>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
     <header class="hd" id="hd">
         <%@ include file="/layout/header.jsp" %>
     </header>
     <div class="contents" id="contents">
-        <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="">공지사항</a> &gt; <span>공지사항 목록</span></p>
+        <div class="content_header">
+            <div class="breadcrumb">
+                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">관리자 페이지</a> &gt; <span> 회원 관리 </span> </p>
+                <h2 class="page_tit"> 관리자 페이지 </h2>
+            </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">공지사항 목록</h2>
-                <br><br><hr><br><br>
-                <table class="tb1" id="myTable">
-                    <thead>
-                    <th class="item1">글번호</th>
-                    <th class="item2">글제목</th>
-                    <th class="item3">작성자</th>
-                    <th class="item4">작성일</th>
-                    </thead>
-                    <tbody>
-                    <%-- 5. boardList(공지사항목록)을 테이블 태그의 tr 요소를 반복하여 출력 --%>
-                    <%
-                        SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
-                        for(Board bd:boardList) {
-                            Date d = ymd.parse(bd.getResdate());  //날짜데이터로 변경
-                            String date = ymd.format(d);    //형식을 포함한 문자열로 변경
-                    %>
-                    <tr>
-                        <td class="item1"><%=bd.getBno() %></td>
-                        <td class="item2">
-                            <%-- 6. 로그인한 사용자만 제목 부분의 a요소에 링크 중 bno 파라미터(쿼리스트링)으로 상세보기를 요청 가능--%>
+                <p class="content_tit"> 회원 관리 </p>
+                <hr>
+                <div class="board_list_wrap">
+                    <div class="board_list">
+                        <div class="top">
+                            <div class="bno"> 번호 </div>
+                            <div class="qTitle"> 제목 </div>
+                            <div style="width: 25%"> 작성자 </div>
+                            <div class="resdate"> 작성일 </div>
+                        </div>
+                        <% for(Board board:boardList) { %>
+                        <div>
+                            <div class="bno"> <%=board.getBno()%> </div>
                             <% if(sid!=null) { %>
-                            <a href="/cs/board/getBoard.jsp?bno=<%=bd.getBno() %>"><%=bd.getTitle() %></a>
+                                <div class="qTitle"> <a href="/cs/board/getBoard.jsp?bno=<%=board.getBno() %>"><%=board.getTitle() %></a> </div>
                             <% } else { %>
-                            <span><%=bd.getTitle() %></span>
+                                <div class="qTitle"><%=board.getTitle() %></div>
                             <% } %>
-                        </td>
-                        <td class="item3"><%=bd.getAuthor() %></td>
-                        <td class="item4"><%=date %></td>
-                    </tr>
-                    <%
-                        }
-                    %>
-                    </tbody>
-                </table>
-                <script>
-                    $(document).ready( function () {
-                        $('#myTable').DataTable({
-                            order:[[0, "desc"]]
-                        });
-                    });
-                </script>
-                <div class="btn_group">
-                    <br><hr><br>
-                    <%-- 공지사항이므로 관리자만 글 추가 기능(링크)이 적용되도록 설정 --%>
-                    <% if(sid!=null && sid.equals("admin")) { %>
-                    <a href="/cs/board/addBoard.jsp" class="inbtn">글쓰기</a>
-                    <% } else { %>
-                    <p>관리자만 공지사항의 글을 쓸 수 있습니다.<br>
-                        로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>
-                    <% } %>
+                            <div style="width: 25%"> <%=board.getAuthor()%> </div>
+                            <div class="resdate"> <%=board.getResdate()%> </div>
+                        </div>
+                        <% } %>
+                        <% if(count == 0) { %>
+                        <div>
+                            <p class="result"> 공지사항이 없습니다 :) </p>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="board_page">
+                        <a href="<%=path%>/cs/board/boardList.jsp?page=1" class="bt first"> &lt;&lt; </a>
+                        <a href="<%=path%>/cs/board/boardList.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
+                        <%  for(int p : pageList) {  %>
+                        <a href="<%=path%>/cs/board/boardList.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                        <%  } %>
+                        <a href="<%=path%>/cs/board/boardList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
+                        <a href="<%=path%>/cs/board/boardList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                    </div>
                 </div>
             </div>
         </section>
