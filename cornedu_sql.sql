@@ -34,9 +34,13 @@ COMMIT;
 
 SELECT * FROM member;
 
-DELETE FROM member WHERE id='leebk';
 
-
+UPDATE member SET pw='03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4' WHERE id='admin';
+UPDATE member SET pw='0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c' WHERE id='kimbk';
+UPDATE member SET pw='dbff5341acad5e2a58db4efd5e72e2d9a0a843a28e02b1183c68162d0a3a3de6' WHERE id='kimhk';
+UPDATE member SET pw='fe2592b42a727e977f055947385b709cc82b16b9a87f88c6abf3900d65d0cdc3' WHERE id='oh';
+UPDATE member SET pw='edee29f882543b956620b26d0ee0e7e950399b1c4222f5de05e06425b4c995e9' WHERE id='park';
+UPDATE member SET pw='318aee3fed8c9d040d35a7fc1fa776fb31303833aa2de885354ddf3d44d8fb69' WHERE id='shin';
 --------------------------------------------------------------
 
 -- 공지사항(board) 테이블 생성
