@@ -3,30 +3,30 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 <%
-    String path12 = request.getContextPath();
+    String path22 = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>초등 교재의 소개</title>
+    <title>고등 교재 소개</title>
     <%@ include file="/setting/head.jsp" %>
 
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path12%>/css/google.css">
-    <link rel="stylesheet" href="<%=path12%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path12%>/css/login.css">
+    <link rel="stylesheet" href="<%=path22%>/css/google.css">
+    <link rel="stylesheet" href="<%=path22%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path22%>/css/login.css">
 
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path12%>/css/common.css">
-    <link rel="stylesheet" href="<%=path12%>/css/header.css">
-    <link rel="stylesheet" href="<%=path12%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path22%>/css/common.css">
+    <link rel="stylesheet" href="<%=path22%>/css/header.css">
+    <link rel="stylesheet" href="<%=path22%>/css/footer.css">
 
     <style>
         /*breadcrumb*/
@@ -114,7 +114,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <h2 class="page_tit"> 초등 교재 소개 </h2>
+                <h2 class="page_tit"> 고등 교재 소개 </h2>
             </div>
         </div>
         <div class="container">
@@ -124,8 +124,8 @@
                         <div class="card">
                             <img src="..." class="card-img-top" alt="강의소개">
                             <div class="card-body">
-                                <h5 class="card-title">초등 국어</h5>
-                                <p class="card-text">술술 읽기</p>
+                                <h5 class="card-title">고등 국어</h5>
+                                <p class="card-text">문학</p>
                                 <a href="#" class="btn btn-primary">구매하기</a>
                             </div>
                         </div>
@@ -134,8 +134,8 @@
                         <div class="card">
                             <img src="..." class="card-img-top" alt="강의소개">
                             <div class="card-body">
-                                <h5 class="card-title">초등 국어</h5>
-                                <p class="card-text">받아쓰기</p>
+                                <h5 class="card-title">고등 국어</h5>
+                                <p class="card-text">독해</p>
                                 <a href="#" class="btn btn-primary">구매하기</a>
                             </div>
                         </div>
@@ -144,8 +144,8 @@
                         <div class="card">
                             <img src="..." class="card-img-top" alt="강의소개">
                             <div class="card-body">
-                                <h5 class="card-title">초등 국어</h5>
-                                <p class="card-text">초등 한자</p>
+                                <h5 class="card-title">고등 국어</h5>
+                                <p class="card-text">화법과 작문</p>
                                 <a href="#" class="btn btn-primary">구매하기</a>
                             </div>
                         </div>
@@ -154,8 +154,8 @@
                         <div class="card">
                             <img src="..." class="card-img-top" alt="강의소개">
                             <div class="card-body">
-                                <h5 class="card-title">초등 영어</h5>
-                                <p class="card-text">기초 Phonics</p>
+                                <h5 class="card-title">고등 영어</h5>
+                                <p class="card-text">고등 VOCA</p>
                                 <a href="#" class="btn btn-primary">구매하기</a>
                             </div>
                         </div>
@@ -164,8 +164,8 @@
                         <div class="card">
                             <img src="..." class="card-img-top" alt="강의소개">
                             <div class="card-body">
-                                <h5 class="card-title">초등 영어</h5>
-                                <p class="card-text">귀가 트이는 English listening</p>
+                                <h5 class="card-title">고등 영어</h5>
+                                <p class="card-text">수능 기출 - 독해</p>
                                 <a href="#" class="btn btn-primary">구매하기</a>
                             </div>
                         </div>
@@ -174,8 +174,8 @@
                         <div class="card">
                             <img src="..." class="card-img-top" alt="강의소개">
                             <div class="card-body">
-                                <h5 class="card-title">초등 영어</h5>
-                                <p class="card-text">영어 동화책 시리즈</p>
+                                <h5 class="card-title">고등 영어</h5>
+                                <p class="card-text">수능 기출 - 듣기</p>
                                 <a href="#" class="btn btn-primary">구매하기</a>
                             </div>
                         </div>
@@ -184,8 +184,8 @@
                         <div class="card">
                             <img src="..." class="card-img-top" alt="강의소개">
                             <div class="card-body">
-                                <h5 class="card-title">초등 수학</h5>
-                                <p class="card-text">기초부터 차근차근 수학 익히기</p>
+                                <h5 class="card-title">고등 수학</h5>
+                                <p class="card-text">미분과 적분</p>
                                 <a href="#" class="btn btn-primary">구매하기</a>
                             </div>
                         </div>
@@ -194,8 +194,8 @@
                         <div class="card">
                             <img src="..." class="card-img-top" alt="강의소개">
                             <div class="card-body">
-                                <h5 class="card-title">초등 수학</h5>
-                                <p class="card-text">사칙연산 심화편</p>
+                                <h5 class="card-title">고등 수학</h5>
+                                <p class="card-text">기하와 벡터</p>
                                 <a href="#" class="btn btn-primary">구매하기</a>
                             </div>
                         </div>
@@ -204,8 +204,8 @@
                         <div class="card">
                             <img src="..." class="card-img-top" alt="강의소개">
                             <div class="card-body">
-                                <h5 class="card-title">초등 수학</h5>
-                                <p class="card-text">구구단을 외자</p>
+                                <h5 class="card-title">고등 수학</h5>
+                                <p class="card-text">수능 기출 - 수학</p>
                                 <a href="#" class="btn btn-primary">구매하기</a>
                             </div>
                         </div>

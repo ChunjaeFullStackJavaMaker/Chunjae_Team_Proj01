@@ -3,30 +3,30 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 <%
-    String path2 = request.getContextPath();
+    String path32 = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>초등 강의 소개</title>
+    <title>고등 강의 소개</title>
     <%@ include file="/setting/head.jsp" %>
 
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path2%>/css/google.css">
-    <link rel="stylesheet" href="<%=path2%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path2%>/css/login.css">
+    <link rel="stylesheet" href="<%=path32%>/css/google.css">
+    <link rel="stylesheet" href="<%=path32%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path32%>/css/login.css">
 
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path2%>/css/common.css">
-    <link rel="stylesheet" href="<%=path2%>/css/header.css">
-    <link rel="stylesheet" href="<%=path2%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path32%>/css/common.css">
+    <link rel="stylesheet" href="<%=path32%>/css/header.css">
+    <link rel="stylesheet" href="<%=path32%>/css/footer.css">
 
     <style>
         /*breadcrumb*/
@@ -114,7 +114,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <h2 class="page_tit"> 초등 강의 소개 </h2>
+                <h2 class="page_tit"> 고등 강의 소개 </h2>
             </div>
         </div>
             <div class="container">
@@ -124,9 +124,9 @@
                             <div class="card">
                                 <img src="..." class="card-img-top" alt="강의소개">
                                 <div class="card-body">
-                                    <h5 class="card-title">초등 국어</h5>
-                                    <p class="card-text">1, 2학년 제공</p>
-                                    <a href="#" class="btn btn-primary">도전! AI 받아쓰기</a>
+                                    <h5 class="card-title">고등 국어</h5>
+                                    <p class="card-text">국어 영역 최선의 선택!</p>
+                                    <a href="#" class="btn btn-primary">김이름 선생님</a>
                                 </div>
                             </div>
                         </li>
@@ -134,9 +134,9 @@
                             <div class="card">
                                 <img src="..." class="card-img-top" alt="강의소개">
                                 <div class="card-body">
-                                    <h5 class="card-title">초등 국어</h5>
-                                    <p class="card-text">문제 음성을 듣고 받아쓰기</p>
-                                    <a href="#" class="btn btn-primary">보고 따라 쓰기</a>
+                                    <h5 class="card-title">고등 국어</h5>
+                                    <p class="card-text">문학의 핵심을 잡는 베테랑의 여유</p>
+                                    <a href="#" class="btn btn-primary">박문학 선생님</a>
                                 </div>
                             </div>
                         </li>
@@ -144,9 +144,9 @@
                             <div class="card">
                                 <img src="..." class="card-img-top" alt="강의소개">
                                 <div class="card-body">
-                                    <h5 class="card-title">초등 국어</h5>
-                                    <p class="card-text">어휘력을 향상시킬 수 있는 낱말 게임</p>
-                                    <a href="#" class="btn btn-primary">어휘력 짱짱</a>
+                                    <h5 class="card-title">고등 국어</h5>
+                                    <p class="card-text">한글만 알고오면 너도 되는 국어</p>
+                                    <a href="#" class="btn btn-primary">김국어 선생님</a>
                                 </div>
                             </div>
                         </li>
@@ -154,9 +154,9 @@
                             <div class="card">
                                 <img src="..." class="card-img-top" alt="강의소개">
                                 <div class="card-body">
-                                    <h5 class="card-title">초등 영어</h5>
-                                    <p class="card-text">소리와 글자의 연관관계를 학습하며 읽기 실력의 기초를 마련</p>
-                                    <a href="#" class="btn btn-primary">팡팡 Phonics</a>
+                                    <h5 class="card-title">고등 영어</h5>
+                                    <p class="card-text">영포자 탈출하는 쉬운 영어</p>
+                                    <a href="#" class="btn btn-primary">박이름 선생님</a>
                                 </div>
                             </div>
                         </li>
@@ -164,39 +164,9 @@
                             <div class="card">
                                 <img src="..." class="card-img-top" alt="강의소개">
                                 <div class="card-body">
-                                    <h5 class="card-title">초등 영어</h5>
-                                    <p class="card-text">하나의 주제로 영어의 듣기, 말하기, 읽기, 쓰기를 학습할 수 있는 회화 중심 통합학습</p>
-                                    <a href="#" class="btn btn-primary">술술 Speaking</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-3">
-                            <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
-                                <div class="card-body">
-                                    <h5 class="card-title">초등 영어</h5>
-                                    <p class="card-text">AI 음성인식 기술을 통해 말하기 연습 병행</p>
-                                    <a href="#" class="btn btn-primary">콕콕 Listening</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-3">
-                            <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
-                                <div class="card-body">
-                                    <h5 class="card-title">초등 수학</h5>
-                                    <p class="card-text">기초부터 차근차근 공부하고 싶을 때</p>
-                                    <a href="#" class="btn btn-primary">기본</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-3">
-                            <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
-                                <div class="card-body">
-                                    <h5 class="card-title">초등 수학</h5>
-                                    <p class="card-text">다양한 문제로 실력을 키우고 싶을 때</p>
-                                    <a href="#" class="btn btn-primary">실력</a>
+                                    <h5 class="card-title">고등 영어</h5>
+                                    <p class="card-text">영어듣기 만점을 목표로~!</p>
+                                    <a href="#" class="btn btn-primary">김영어 선생님</a>
                                 </div>
                             </div>
                         </li>
@@ -205,8 +175,38 @@
                                 <img src="..." class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">초등 영어</h5>
-                                    <p class="card-text">고난도 문제를 풀고 싶을 때</p>
-                                    <a href="#" class="btn btn-primary">심화</a>
+                                    <p class="card-text">최고의 영어강의를 보라</p>
+                                    <a href="#" class="btn btn-primary">이듣기 선생님</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="강의소개">
+                                <div class="card-body">
+                                    <h5 class="card-title">고등 수학</h5>
+                                    <p class="card-text">수포자를 탈출하는 가장 쉬운 방법</p>
+                                    <a href="#" class="btn btn-primary">정수학 선생님</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="강의소개">
+                                <div class="card-body">
+                                    <h5 class="card-title">고등 수학</h5>
+                                    <p class="card-text">완벽한 교육과 지독한 노력만이 만점을 만듭니다</p>
+                                    <a href="#" class="btn btn-primary">김벡터 선생님</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="강의소개">
+                                <div class="card-body">
+                                    <h5 class="card-title">고등 영어</h5>
+                                    <p class="card-text">지나간 것도 다시 보는 수학</p>
+                                    <a href="#" class="btn btn-primary">박수열 선생님</a>
                                 </div>
                             </div>
                         </li>

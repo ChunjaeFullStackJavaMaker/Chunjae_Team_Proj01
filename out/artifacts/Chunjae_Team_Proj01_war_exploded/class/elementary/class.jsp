@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="<%=path2%>/css/google.css">
     <link rel="stylesheet" href="<%=path2%>/css/fonts.css">
     <link rel="stylesheet" href="<%=path2%>/css/login.css">
-    <link rel="stylesheet" href="<%=path2%>/css/content_header.css">
+
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
@@ -29,17 +29,58 @@
     <link rel="stylesheet" href="<%=path2%>/css/footer.css">
 
     <style>
+        /*breadcrumb*/
+        .content_header {
+            clear: both;
+            height: 250px;
+            margin: 0 auto;
+            background-image: url("/images/mypage_cover.jpg");
+            background-repeat: no-repeat;
+            background-position:center -300px;
+            background-size: cover;
+        }
+
+        .page_tit {
+            font-size:48px;
+            text-align: center;
+            padding-top:1em;
+            color:#fff;
+            padding-bottom: 2.4rem;
+            margin-left: 450px;
+        }
+
+        .breadcrumb {
+            clear:both;
+            width:1200px;
+            margin: 0 auto;
+            text-align: right;
+            color:#fff;
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+
+        .breadcrumb a {
+            color:#fff;
+        }
+
         /*contents*/
         .container{
-            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .contents{
             margin-top: 20px;
+            height: 1400px;
         }
-        .list row {
+        .row{
             display: flex;
-            width: 1000px;
+            flex-wrap: wrap;
+            margin-left: 100px;
+        }
+        div .card {
+            margin: 25px auto;
         }
 
         .col-3 {
@@ -47,6 +88,9 @@
             height: 300px;
         }
 
+        .card-text{
+            height: 50px;
+        }
         .card-body {
             height: 150px;
         }
@@ -54,6 +98,10 @@
             margin-top: 10px;
             background-color: #8CB964;
             border-color: #8CB964;
+
+        }
+        .card-img-top {
+            height: 130px;
         }
 
     </style>
@@ -66,7 +114,6 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="/">Home</a> &gt; <span> 초등 강의 소개 </span> </p>
                 <h2 class="page_tit"> 초등 강의 소개 </h2>
             </div>
         </div>

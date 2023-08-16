@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <style>
     .page_content { text-align: center; width:100%; margin: 20px 0px; }
-    .pic_lst { clear:both; width: 1200px; height: 20px; margin: 0px auto; }
+    .pic_lst { clear:both; width: 1110px; margin: 0px auto; }
     .pic_lst li { width: 340px; height: 242px; padding :40px; margin-left:30px; float:left;
         margin-top:30px; transition:0.4s; box-shadow:12px 12px 12px #999; overflow:hidden; box-sizing: border-box; }
     .pic_lst li:hover { margin-top: -5px; }
