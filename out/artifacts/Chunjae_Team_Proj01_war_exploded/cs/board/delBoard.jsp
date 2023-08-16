@@ -33,9 +33,9 @@
     /* 5. 처리된 건수가 0보다 크면(성공처리가 되었으면) 목록 페이지로 이동하고,
     아니면(실패처리가 되었으면), 해당 글 상세보기로 이동한다. */
     if(cnt>0){
-        response.sendRedirect("/board/boardList.jsp");
+        response.sendRedirect("/cs/board/boardList.jsp");
     } else {
-        response.sendRedirect("/board/getBoard.jsp?bno="+bno);
+        response.sendRedirect("/cs/board/getBoard.jsp?bno="+bno);
     }
 
     conn.close(pstmt, con);

@@ -34,6 +34,9 @@ COMMIT;
 
 SELECT * FROM member;
 
+DELETE FROM member WHERE id='leebk';
+
+
 --------------------------------------------------------------
 
 -- 공지사항(board) 테이블 생성
