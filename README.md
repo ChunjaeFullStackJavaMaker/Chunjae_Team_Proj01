@@ -84,11 +84,14 @@
 
 ## 🗂게시판(커뮤니티, faq, qna)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/bb3a2cec-4d52-4cf5-9623-32325e1f6245)
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/e8cbd4bf-03de-4864-9543-41cc36d6903f)
 
 ## 🗂마이페이지
-
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/65c54683-2c33-4358-8022-9f4d824fb82e)
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/3ae9f6a7-96f8-4604-a8e0-72b5a9959aa6)
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/244bfecf-5c5a-4fda-8023-5018b5960f96)
 
 ## 🗂관리자페이지
-
-
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/759fb3b1-61dc-4824-bf5c-1b4ef2a98a53)
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/77c2995b-4c08-433e-9a40-9276929e7ca0)
 
