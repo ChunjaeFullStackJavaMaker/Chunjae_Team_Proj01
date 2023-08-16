@@ -154,12 +154,8 @@
                                 <td><input type="text" id="id" name="id" value="<%=member.getId()%>" readonly></td>
                             </tr>
                             <tr>
-                                <td> 비밀번호 </td>
-                                <td><input type="text" id="pw" name="pw" value="<%=member.getPw()%>"></td>
-                            </tr>
-                            <tr>
                                 <td><label for="name"> 이름 </label></td>
-                                <td><input type="text" id="name" name="name" value="<%=member.getName()%>" required></td>
+                                <td><input type="text" id="name" name="name" value="<%=member.getName()%>" readonly></td>
                             </tr>
                             <tr>
                                 <td><label for="email"> 이메일 </label></td>

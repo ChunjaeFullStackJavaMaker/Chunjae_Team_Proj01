@@ -130,14 +130,6 @@
                             <td><input type="text" name="id" id="id" class="indata" value="<%=m.getId() %>" readonly required/></td>
                         </tr>
                         <tr>
-                            <th>비밀번호</th>
-                            <td>
-                                <input type="text" value="<%=pw2 %>" name="re_pw" id="re_pw" class="indata" required>
-                                <input type="hidden" value="<%=pw2 %>" name="pw2" id="pw2" />
-                                <input type="hidden" value="<%=pw %>" name="pw" id="pw" />
-                            </td>
-                        </tr>
-                        <tr>
                             <th>이름</th>
                             <td><input type="text" value="<%=m.getName() %>" name="name" id="name" class="indata" disabled></td>
                         </tr>
