@@ -52,12 +52,12 @@
 
 ### 📂개념적 설계 (USE CASE DIAGRAM)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/848d0d3f-ac3b-4ee7-8da7-15e52cd62c8b)
-
 ### 📂논리적 설계
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/b9200ed8-74b4-427e-bafb-260a74497fe7)
+### 📂논리적 ERD
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/8a8c7a43-c301-4b00-8a52-0d40e081101b)
 ### 📂DATABASE
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/8f7be9dd-bf0e-4142-87bb-aa2407134e0b)
-
 ### 📂DATABASE - 테이블 구현
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/e94a6a06-9672-4e26-ae7a-361aa2225e6a)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/1e40c798-815a-44b8-97e3-5214524e6366)
