@@ -37,7 +37,7 @@
 
     //5. 실행결과(ResultSet) 인 해당 Qna 1건 qna(질문및답변) 객체에 넣기
     rs = pstmt.executeQuery();
-    Qna qna = new Qna();
+    QnA qna = new QnA();
     if(rs.next()){
         qna.setQno(rs.getInt("qno"));
         qna.setTitle(rs.getString("title"));
