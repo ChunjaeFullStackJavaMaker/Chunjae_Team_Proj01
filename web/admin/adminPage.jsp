@@ -34,6 +34,8 @@
             clear:both;
             width: 100%;
             min-height: 90vh;
+            height: 100%;
+            padding-bottom: 100px;
             position:relative;
             top: 50px;
         }
