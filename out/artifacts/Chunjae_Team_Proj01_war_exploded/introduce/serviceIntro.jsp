@@ -63,8 +63,9 @@
             margin: 80px 30px 30px 10px;
         }
 
+        #page1 {height : 1240px;}
         .page_wrap {clear:both; position:absolute; top:-50px;
-            background-color: rgb(203, 226, 240); width:1280px; padding-bottom: 300px;}
+            background-color: rgb(203, 226, 240); width:1700px; padding-bottom: 300px;}
         #service_tit {display: block; margin-left:410px; margin-top:50px;}
         #study1 {margin-left:100px; width:300px; padding-top:50px;}
         #study2 {margin-left:100px; width:300px; padding-top:50px;}
