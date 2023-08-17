@@ -72,7 +72,6 @@
 
         .contents{
             margin-top: 20px;
-            height: 1400px;
         }
         .row{
             display: flex;
@@ -122,7 +121,7 @@
                 <ul class="list row">
                     <li class="col-3">
                         <div class="card">
-                            <img src="..." class="card-img-top" alt="강의소개">
+                            <img src="<%=path22%>/images/book01.png" class="card-img-top" alt="강의소개">
                             <div class="card-body">
                                 <h5 class="card-title">고등 국어</h5>
                                 <p class="card-text">문학</p>
@@ -132,7 +131,7 @@
                     </li>
                     <li class="col-3">
                         <div class="card">
-                            <img src="..." class="card-img-top" alt="강의소개">
+                            <img src="<%=path22%>/images/book02.png" class="card-img-top" alt="강의소개">
                             <div class="card-body">
                                 <h5 class="card-title">고등 국어</h5>
                                 <p class="card-text">독해</p>
@@ -142,7 +141,7 @@
                     </li>
                     <li class="col-3">
                         <div class="card">
-                            <img src="..." class="card-img-top" alt="강의소개">
+                            <img src="<%=path22%>/images/book03.png" class="card-img-top" alt="강의소개">
                             <div class="card-body">
                                 <h5 class="card-title">고등 국어</h5>
                                 <p class="card-text">화법과 작문</p>
@@ -152,7 +151,7 @@
                     </li>
                     <li class="col-3">
                         <div class="card">
-                            <img src="..." class="card-img-top" alt="강의소개">
+                            <img src="<%=path22%>/images/book04.png" class="card-img-top" alt="강의소개">
                             <div class="card-body">
                                 <h5 class="card-title">고등 영어</h5>
                                 <p class="card-text">고등 VOCA</p>
@@ -162,7 +161,7 @@
                     </li>
                     <li class="col-3">
                         <div class="card">
-                            <img src="..." class="card-img-top" alt="강의소개">
+                            <img src="<%=path22%>/images/book01.png" class="card-img-top" alt="강의소개">
                             <div class="card-body">
                                 <h5 class="card-title">고등 영어</h5>
                                 <p class="card-text">수능 기출 - 독해</p>
@@ -172,7 +171,7 @@
                     </li>
                     <li class="col-3">
                         <div class="card">
-                            <img src="..." class="card-img-top" alt="강의소개">
+                            <img src="<%=path22%>/images/book02.png" class="card-img-top" alt="강의소개">
                             <div class="card-body">
                                 <h5 class="card-title">고등 영어</h5>
                                 <p class="card-text">수능 기출 - 듣기</p>
@@ -182,7 +181,7 @@
                     </li>
                     <li class="col-3">
                         <div class="card">
-                            <img src="..." class="card-img-top" alt="강의소개">
+                            <img src="<%=path22%>/images/book03.png" class="card-img-top" alt="강의소개">
                             <div class="card-body">
                                 <h5 class="card-title">고등 수학</h5>
                                 <p class="card-text">미분과 적분</p>
@@ -192,7 +191,7 @@
                     </li>
                     <li class="col-3">
                         <div class="card">
-                            <img src="..." class="card-img-top" alt="강의소개">
+                            <img src="<%=path22%>/images/book04.png" class="card-img-top" alt="강의소개">
                             <div class="card-body">
                                 <h5 class="card-title">고등 수학</h5>
                                 <p class="card-text">기하와 벡터</p>
@@ -202,7 +201,7 @@
                     </li>
                     <li class="col-3">
                         <div class="card">
-                            <img src="..." class="card-img-top" alt="강의소개">
+                            <img src="<%=path22%>/images/book01.png" class="card-img-top" alt="강의소개">
                             <div class="card-body">
                                 <h5 class="card-title">고등 수학</h5>
                                 <p class="card-text">수능 기출 - 수학</p>

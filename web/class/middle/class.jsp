@@ -72,7 +72,6 @@
 
         .contents{
             margin-top: 20px;
-            height: 1400px;
         }
         .row{
             display: flex;
@@ -122,7 +121,7 @@
                     <ul class="list row">
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path52%>/images/teacher04.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">중등 국어</h5>
                                     <p class="card-text">빠작! 중학 국어 </p>
@@ -132,7 +131,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path52%>/images/teacher03.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">중등 국어</h5>
                                     <p class="card-text">국어 만점받는 강의</p>
@@ -142,7 +141,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path52%>/images/teacher02.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">중등 국어</h5>
                                     <p class="card-text">고전문학 독해</p>
@@ -152,7 +151,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path52%>/images/teacher01.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">중등 영어</h5>
                                     <p class="card-text">단기 영문법 핵심 특강</p>
@@ -162,7 +161,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path52%>/images/teacher04.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">중등 영어</h5>
                                     <p class="card-text">귀가 트이는 영어듣기 학습법</p>
@@ -172,7 +171,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path52%>/images/teacher03.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">중등 영어</h5>
                                     <p class="card-text">한달 마스터 VOCA 1000</p>
@@ -182,7 +181,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path52%>/images/teacher02.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">중등 수학</h5>
                                     <p class="card-text">기초부터 차근차근 수학 개념</p>
@@ -192,7 +191,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path52%>/images/teacher01.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">중등 수학</h5>
                                     <p class="card-text">시험 대비 특강</p>
@@ -202,7 +201,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path52%>/images/teacher04.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">중등 영어</h5>
                                     <p class="card-text">1등급을 향하는 수학 공식</p>
