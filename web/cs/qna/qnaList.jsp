@@ -159,7 +159,7 @@
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <p class="content_tit"> Qna </p>
+                <p class="content_tit"> QnA </p>
                 <hr>
                 <div class="board_list_wrap">
                     <div class="board_list">
