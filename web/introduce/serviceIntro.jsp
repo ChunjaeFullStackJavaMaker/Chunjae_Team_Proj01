@@ -64,8 +64,8 @@
         }
 
         #page1 {height : 1240px;}
-        .page_wrap {clear:both; position:absolute; top:-50px;
-            background-color: rgb(203, 226, 240); width:1700px; padding-bottom: 300px;}
+        .page_wrap {display:block; margin:0 auto; clear:both; position:absolute; top:-50px;
+            background-color: rgb(203, 226, 240); width:100%; padding-bottom: 300px;}
         #service_tit {display: block; margin-left:410px; margin-top:50px;}
         #study1 {margin-left:100px; width:300px; padding-top:50px;}
         #study2 {margin-left:100px; width:300px; padding-top:50px;}
@@ -100,9 +100,10 @@
                     <img src="<%=path25 %>/images/students.png" id="service_stu"/>
                     <img src="<%=path25 %>/images/parents.png" id="service_par"/>
                     <img src="<%=path25 %>/images/s3.png" />
+                    <div>
                     <img src="<%=path25 %>/images/study.jpg" class="rounded float-start" id="study1">
                     <img src="<%=path25 %>/images/study.jpg" class="rounded float" id="study2">
-                    <img src="<%=path25 %>/images/study.jpg" class="rounded float" id="study3">
+                    <img src="<%=path25 %>/images/study.jpg" class="rounded float" id="study3"></div>
                 </div>
                 <div class="service_cont">
                     <img src="<%=path25 %>/images/compare.png" id="pic_cont3" />
