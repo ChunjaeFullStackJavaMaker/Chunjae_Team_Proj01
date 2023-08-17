@@ -11,8 +11,8 @@ CREATE TABLE member(
                        pw VARCHAR(330) NOT NULL,
                        NAME VARCHAR(100) NOT NULL,
                        email VARCHAR(100) NOT NULL,
-                       tel VARCHAR(13),cornedu
-                           resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+                       tel VARCHAR(13),
+                       resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
                        POINT INT DEFAULT 0,
                        per VARCHAR(5) CHECK(per IN(0, 1, 2)),
                        PRIMARY KEY (id));
@@ -170,7 +170,7 @@ DESC studentboard;
 INSERT INTO studentboard(title, content, author)
 VALUES ('2024 EBS 수능완성 실전편 5회 전문항 풀이', '여기는 학생 게시판1입니다', 'kimhk');
 INSERT INTO studentboard(title, content, author)
-VALUES ('🌈유니스트/지스트/디지스트 합격하는 과학 기술원 자기 소개서 만들기 사진링크new', '여기는 학생 게시판2입니다', 'kimbk');
+VALUES ('유니스트/지스트/디지스트 합격하는 과학 기술원 자기 소개서 만들기 사진링크new', '여기는 학생 게시판2입니다', 'kimbk');
 INSERT INTO studentboard(title, content, author)
 VALUES ('[수학칼럼] 예비 고3은 개념정리를 꼼꼼하게 하세요 + 반드시 알아야하는 내용 3개 정리', '여기는 학생 게시판3입니다', 'kimbk');
 INSERT INTO studentboard(title, content, author)
@@ -279,15 +279,33 @@ INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다5', '답�
 COMMIT;
 
 ----------------------------------------------------------------------------------
-create table comment(
-    boardID int,
-    commentID int,
-    bbsID int,
-    userID varchar(20),
-    commentDate varchar(50),
-    commentText varchar(100),
-    commentAvailable int
+-- 학부모 게시판 댓글 테이블 생성
+create table motherComment(
+	cno INT AUTO_INCREMENT PRIMARY KEY,
+	bno INT,
+	author VARCHAR(16),
+   resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+   content VARCHAR(200)
 );
 
-alter table comment add primary key (commentID, bbsID);
-alter table comment add constraint bbsID foreign key bbsID references bbs(bbsID); 
+----------------------------------------------------------------------------------------------------------------------------
+-- 학생 게시판 댓글 테이블 생성
+create table studentComment(
+	cno INT AUTO_INCREMENT PRIMARY KEY,
+	bno INT,
+	author VARCHAR(16),
+   resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+   content VARCHAR(200)
+);
+
+-- 더미 데이터 추가
+INSERT INTO studentComment(bno, author, content)
+VALUES(114, 'admin', '댓글 기능 더미데이터1');
+INSERT INTO studentComment(bno, author, content)
+VALUES(114, 'admin', '댓글 기능 더미데이터2');
+INSERT INTO studentComment(bno, author, content)
+VALUES(114, 'admin', '댓글 기능 더미데이터3');
+
+COMMIT;
+
+SELECT * FROM studentComment;
