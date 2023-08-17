@@ -77,7 +77,7 @@
         .row{
             display: flex;
             flex-wrap: wrap;
-            margin-left: 100px;
+            margin-left: 150px;
         }
         div .card {
             margin: 25px auto;
