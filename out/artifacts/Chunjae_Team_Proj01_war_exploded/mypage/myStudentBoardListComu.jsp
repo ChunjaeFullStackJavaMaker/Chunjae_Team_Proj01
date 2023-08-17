@@ -142,7 +142,7 @@
                     <tr>
                         <td class="item1"><%=b.getBno() %></td>
                         <td class="item1">
-                            <a href="/baord/studentboard/getStudentBoard.jsp?bno=<%=b.getBno()%>"><%=b.getTitle() %></a>
+                            <a href="<%=path21 %>/board/studentboard/getStudentBoard.jsp?bno=<%=b.getBno()%>"><%=b.getTitle() %></a>
                         </td>
                         <td class="item1"><%=b.getAuthor() %></td>
                         <td class="item1"><%=date %></td>
