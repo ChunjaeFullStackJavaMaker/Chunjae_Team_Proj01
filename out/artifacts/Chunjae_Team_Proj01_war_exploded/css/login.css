@@ -2,12 +2,12 @@
 
 .login-wrapper{
     text-align: center;
-    width: 400px;
-    height: 350px;
-    padding: 40px;
+    width: 500px;
+    border-radius: 10px;
+    padding: 80px 50px;
+    background-color: #ddd;
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 130px auto;
 }
 
 #login-form > input{
