@@ -7,6 +7,9 @@
 <%@ page import="com.chunjae_pro01.vo.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="/setting/encoding.jsp"%>
+<%
+    String path68 = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,14 +22,14 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path%>/css/google.css">
+    <link rel="stylesheet" href="<%=path68%>/css/google.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path%>/css/common.css">
-    <link rel="stylesheet" href="<%=path%>/css/header.css">
-    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path%>/css/mgmt.css">
-    <link rel="stylesheet" href="<%=path%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path68%>/css/common.css">
+    <link rel="stylesheet" href="<%=path68%>/css/header.css">
+    <link rel="stylesheet" href="<%=path68%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path68%>/css/mgmt.css">
+    <link rel="stylesheet" href="<%=path68%>/css/footer.css">
 
     <style>
         .contents {
@@ -67,6 +70,19 @@
             font-size: 25px;
             margin: 80px 30px 30px 10px;
         }
+        .indata { display:inline-block; width:300px; height: 48px; line-height: 48px;
+            text-indent:14px; font-size:18px; }
+        .inbtn { display:block;  border-radius:100px;
+            min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
+            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
+        .inbtn:first-child { float:left; }
+        .inbtn:last-child { float:right; }
+    </style>
+
+    <style>
+        .btn_group { clear:both; width:800px; margin:20px auto; }
+        .btn_group:after { content:""; display:block; width:100%; clear: both; }
+        .btn_group p {text-align: center;   line-height:3.6; }
     </style>
 
     <%
@@ -137,7 +153,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">고객지원</a> &gt; <span> QnA </span> </p>
+                <p><a href="<%=path68 %>">Home</a> &gt; <a href="<%=path68 %>/admin/adminPage.jsp">고객지원</a> &gt; <span> QnA </span> </p>
                 <h2 class="page_tit"> 고객지원 </h2>
             </div>
         </div>
@@ -172,13 +188,21 @@
                         <% } %>
                     </div>
                     <div class="board_page">
-                        <a href="<%=path%>/cs/qna/qnaList.jsp?page=1" class="bt first"> &lt;&lt; </a>
-                        <a href="<%=path%>/cs/qna/qnaList.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
+                        <a href="<%=path68%>/cs/qna/qnaList.jsp?page=1" class="bt first"> &lt;&lt; </a>
+                        <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
                         <%  for(int p : pageList) {  %>
-                        <a href="<%=path%>/cs/qna/qnaList.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                        <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
                         <%  } %>
-                        <a href="<%=path%>/cs/qna/qnaList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
-                        <a href="<%=path%>/cs/qna/qnaList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                        <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
+                        <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                    </div>
+                    <div class="btn_group">
+                        <% if(sid!=null) { %>
+                        <a href="<%=path68%>/cs/qna/addQuestion.jsp?lev=0&par=0" class="inbtn">질문하기</a>
+                        <% } else { %>
+                        <p>관리자만 공지사항의 글을 쓸 수 있습니다.<br>
+                            로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>
+                        <% } %>
                     </div>
                 </div>
             </div>
