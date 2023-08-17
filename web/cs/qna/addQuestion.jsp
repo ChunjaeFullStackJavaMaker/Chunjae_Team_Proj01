@@ -53,6 +53,13 @@
         .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
             padding-bottom: 2.4rem; }
 
+        .content_tit {
+            font-weight: bold;
+            font-size: 25px;
+            margin: 80px 30px 30px 10px;
+        }
+
+
         .breadcrumb { clear:both;
             width:1200px; margin: 0 auto; text-align: right; color:#fff;
             padding-top: 28px; padding-bottom: 28px; }
@@ -90,13 +97,16 @@
         <%@ include file="/layout/header.jsp" %>
     </header>
     <div class="contents" id="contents">
-        <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/cs/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 글쓰기</span></p>
+        <div class="content_header">
+            <div class="breadcrumb">
+                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">QnA</a> &gt; <span> QnA 글쓰기 </span> </p>
+                <h2 class="page_tit"> 고객지원 </h2>
+            </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit"><%=sel %> 글쓰기</h2>
-                <br><br><hr><br><br>
+                <p class="content_tit"> QnA 글쓰기</p>
+                <hr>
                 <form action="addQuestionPro.jsp" method="post">
                     <table>
                         <tbody>
