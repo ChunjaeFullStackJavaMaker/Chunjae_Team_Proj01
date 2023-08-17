@@ -80,7 +80,7 @@
         .tb1 { width:800px; margin:50px auto; }
         .tb1 th { line-height:32px; padding-top:8px; padding-bottom:8px;
             border-top:1px solid #8CB964; border-bottom:1px solid #8CB964;
-            background-color:#8CB964; color:#fff; }
+            background-color:#8CB964; color:#fff; width: 100px;}
         .tb1 td {line-height:32px; padding-top:8px; padding-bottom:8px;
             border-bottom:1px solid #8CB964;
             padding-left: 14px; border-top:1px solid #333; }
