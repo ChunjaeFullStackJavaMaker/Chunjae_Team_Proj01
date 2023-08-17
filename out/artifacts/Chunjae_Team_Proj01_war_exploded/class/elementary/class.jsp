@@ -77,7 +77,7 @@
         .row{
             display: flex;
             flex-wrap: wrap;
-            margin-left: 100px;
+            margin-left: 150px;
         }
         div .card {
             margin: 25px auto;
@@ -122,7 +122,7 @@
                     <ul class="list row">
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path2%>/images/teacher01.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">초등 국어</h5>
                                     <p class="card-text">1, 2학년 제공</p>
@@ -132,7 +132,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path2%>/images/teacher02.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">초등 국어</h5>
                                     <p class="card-text">문제 음성을 듣고 받아쓰기</p>
@@ -142,7 +142,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path2%>/images/teacher03.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">초등 국어</h5>
                                     <p class="card-text">어휘력을 향상시킬 수 있는 낱말 게임</p>
@@ -152,7 +152,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path2%>/images/teacher04.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">초등 영어</h5>
                                     <p class="card-text">소리와 글자의 연관관계를 학습하며 읽기 실력의 기초를 마련</p>
@@ -162,7 +162,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path2%>/images/teacher01.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">초등 영어</h5>
                                     <p class="card-text">하나의 주제로 영어의 듣기, 말하기, 읽기, 쓰기를 학습할 수 있는 회화 중심 통합학습</p>
@@ -172,7 +172,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path2%>/images/teacher02.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">초등 영어</h5>
                                     <p class="card-text">AI 음성인식 기술을 통해 말하기 연습 병행</p>
@@ -182,7 +182,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path2%>/images/teacher03.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">초등 수학</h5>
                                     <p class="card-text">기초부터 차근차근 공부하고 싶을 때</p>
@@ -192,7 +192,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path2%>/images/teacher04.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">초등 수학</h5>
                                     <p class="card-text">다양한 문제로 실력을 키우고 싶을 때</p>
@@ -202,7 +202,7 @@
                         </li>
                         <li class="col-3">
                             <div class="card">
-                                <img src="..." class="card-img-top" alt="강의소개">
+                                <img src="<%=path2%>/images/teacher01.png" class="card-img-top" alt="강의소개">
                                 <div class="card-body">
                                     <h5 class="card-title">초등 영어</h5>
                                     <p class="card-text">고난도 문제를 풀고 싶을 때</p>
