@@ -38,7 +38,7 @@
     script += "history.go(-1);";
     script += "</script>";
     if(cnt>0){
-        response.sendRedirect("boardList.jsp");
+        response.sendRedirect("boardList.jsp?page=1");
     } else {
         //response.sendRedirect("addBoard.jsp");
         out.println(script);
