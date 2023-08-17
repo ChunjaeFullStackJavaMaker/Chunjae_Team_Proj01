@@ -142,7 +142,7 @@
                     <tr>
                         <td class="item1"><%=q.getQno() %></td>
                         <td class="item1">
-                            <a href="/qna/getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
+                            <a href="<%=path7 %>/cs/qna/getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
                         </td>
                         <td class="item1"><%=q.getId() %></td>
                         <td class="item1"><%=date %></td>
