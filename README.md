@@ -5,7 +5,7 @@
 
 
 ### 📅 개발 기간
-* 23.08.01 ~
+* 23.08.07 ~
 
 
 
@@ -80,22 +80,162 @@
 ![class diagram](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/f1e567b0-5043-4a4b-859e-92085b0684e9)
 
 # 📎기능 구현
+## 🗂 회원 기능
+### 1. 로그인
+#### (1) 일반 로그인
+- mariaDB를 연동하여 사용자가 입력한 아이디, 비밀번호와 같은 데이터가 존재하면 로그인 성공 처리
+- 그렇지 않으면 로그인 실패 처리
+### 2. 회원가입
+#### (2) 일반 회원가입
+- 회원 약관에 동의한 경우에만 회원 가입 가능하도록 구현
+- 아이디 중복 체크 기능 구현
+- 아이디, 비밀번호, 이름, 전화번호, 이메일을 입력받아 연동한 mariaDB에 INSERT 처리
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/cdbee5af-b4b0-4c01-ae10-da845c9b2d3c" width="1300" alt=""/> <br/>
+      <sub><b> PIC1 : 로그인 </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/b05a2641-9c1f-400c-9fe1-0f1c40175a4e" width="1300" alt=""/> <br/>
+      <sub><b> PIC2 : 회원가입 </sub></b>
+    </td>
+  </tr>
+</table>
+<br>
 
-## 🗂로그인/회원가입
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/42c1eb55-ffe0-4827-8f6a-ef260a65df22)
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/1f2388dd-a006-446b-a4a6-d32daf7c2c0d)
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/68976ae7-4696-4b51-ba7c-317a6f4be0bb)
+## 🗂 마이 페이지
+### 1. 정보 수정
+#### (1) 회원 정보 수정
+- 현재 로그인한 회원의 정보를 연동된 mariaDB에서 SELECT하여 화면에 출력
+- 이메일, 전화번호 데이터를 수정 가능하도록 구현
+- 단, 비밀번호는 보안을 위하여 변경할 수 없으므로 관리자에게 문의
+
+### 2. 내가 쓴 글
+#### (1) 
+- 
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/cdbee5af-b4b0-4c01-ae10-da845c9b2d3c" width="1300" alt=""/> <br/>
+      <sub><b> PIC1 : 마이페이지 </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/b05a2641-9c1f-400c-9fe1-0f1c40175a4e" width="1300" alt=""/> <br/>
+      <sub><b> PIC2 : 회원 정보 수정 </sub></b>
+    </td>
+  </tr>
+    <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/b05a2641-9c1f-400c-9fe1-0f1c40175a4e" width="1300" alt=""/> <br/>
+      <sub><b> PIC3 : 내가 쓴 글 </sub></b>
+    </td>
+  </tr>
+</table>
+<br>
+
+## 🗂 관리자 페이지
+### 1. 정보 수정
+#### (1) 관리자 정보 수정
+- 관리자 로그인 시, 관리자의 정보를 연동된 mariaDB에서 SELECT하여 화면에 출력
+- 이메일, 전화번호 데이터를 수정 가능하도록 구현
+- 단, 비밀번호는 보안을 위하여 변경할 수 없음
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/48419e5e-d648-494b-a253-8528016c3fa6" width="1300" alt=""/> <br/>
+      <sub><b> PIC1 : 관리자 페이지 </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/c36b9517-b886-4cc6-8e03-d1a3b7026369" width="1300" alt=""/> <br/>
+      <sub><b> PIC2 : 관리자 정보 수정 </sub></b>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+### 2. 회원 관리
+#### (1) 회원 목록
+- CORN EDU에 회원가입한 회원의 아이디, 이름, 가입일 데이터를 목록으로 화면에 출력
+- 한 페이지에 10명의 데이터만 출력되도록 페이징 처리
+- 관리자 로그인 시에만 페이지에 접근 가능하도록 구현
+#### (2) 회원 강퇴
+- 회원 목록 페이지에서 강퇴 버튼 클릭 시 회원 강제 탈퇴 처리
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/f0129245-0249-4935-8b41-a9469e70aa99" width="1300" alt=""/> <br/>
+      <sub><b> PIC1 : 회원 목록 </sub></b>
+    </td>
+  </tr>
+</table>
+<br>
+
+### 3. 고객지원 관리
+#### (1) 답변이 필요한 질문 목록
+- QnA 게시판에서 답변이 등록되지 않은 질문 목록 출력
+- 답변하기 버튼 클릭 시 답변 등록 페이지로 이동
+- 관리자 로그인 시에만 페이지에 접근 가능하도록 구현
+#### (2) 답변 등록
+- 답변할 질문 내용을 화면의 상단에 출력
+- 화면의 하단에는 답변 입력창 출력
+- 작성 버튼 클릭 시 입력된 답변 내용을 mariaDB에 INSERT 처리
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/2a96e814-54f0-41b4-a2e2-c0f0c93a639d" width="1300" alt=""/> <br/>
+      <sub><b> PIC1 : 답변이 필요한 질문 목록 </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/0a49719c-0102-4ce8-aae1-5c2a4350e001" width="1300" alt=""/> <br/>
+      <sub><b> PIC2 : 답변 등록 </sub></b>
+    </td>
+  </tr>
+</table>
+<br>
+
+### 4. 커뮤니티 관리
+#### (1) 학부모 커뮤니티 관리
+- 학부모 커뮤니티 목록을 mariaDB에서 SELECT하여 화면에 출력
+- 커뮤니티 규정에 어긋나는 게시물은 관리자 권한으로 수정하거나 삭제할 수 있도록 구현
+- 관리자 로그인 시에만 페이지에 접근 가능하도록 구현
+#### (2) 학생 커뮤니티 관리
+- 학생 커뮤니티 목록을 mariaDB에서 SELECT하여 화면에 출력
+- 커뮤니티 규정에 어긋나는 게시물은 관리자 권한으로 수정하거나 삭제할 수 있도록 구현
+- 관리자 로그인 시에만 페이지에 접근 가능하도록 구현
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/66a007bd-9041-4e29-93c4-04b4887bee24" width="1300" alt=""/> <br/>
+      <sub><b> PIC1 : 학부모 커뮤니티 관리 </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/49ea3359-3ac0-429d-96b5-72905e56c195" width="1300" alt=""/> <br/>
+      <sub><b> PIC2 : 학생 커뮤니티 관리 </sub></b>
+    </td>
+  </tr>
+</table>
+<br>
+
 
 ## 🗂게시판(커뮤니티, faq, qna)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/bb3a2cec-4d52-4cf5-9623-32325e1f6245)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/e8cbd4bf-03de-4864-9543-41cc36d6903f)
-
-## 🗂마이페이지
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/65c54683-2c33-4358-8022-9f4d824fb82e)
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/3ae9f6a7-96f8-4604-a8e0-72b5a9959aa6)
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/244bfecf-5c5a-4fda-8023-5018b5960f96)
-
-## 🗂관리자페이지
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/759fb3b1-61dc-4824-bf5c-1b4ef2a98a53)
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/77c2995b-4c08-433e-9a40-9276929e7ca0)
 
