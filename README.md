@@ -77,7 +77,7 @@
 
 
 ### 📂CLASS DIAGRAM
-![class diagram](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/f1e567b0-5043-4a4b-859e-92085b0684e9)
+![class diagram](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/a10408e7-56da-4c0f-8a30-e379f1ba6e80)
 
 # 📎기능 구현
 ## 🗂 회원 기능
