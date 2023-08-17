@@ -277,3 +277,17 @@ INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다4', '답�
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다5', '답변입니다5');
 
 COMMIT;
+
+----------------------------------------------------------------------------------
+create table comment(
+    boardID int,
+    commentID int,
+    bbsID int,
+    userID varchar(20),
+    commentDate varchar(50),
+    commentText varchar(100),
+    commentAvailable int
+);
+
+alter table comment add primary key (commentID, bbsID);
+alter table comment add constraint bbsID foreign key bbsID references bbs(bbsID); 
