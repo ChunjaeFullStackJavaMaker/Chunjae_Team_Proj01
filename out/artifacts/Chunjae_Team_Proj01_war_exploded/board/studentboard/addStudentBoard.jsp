@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항 글쓰기</title>
+    <title>학생 커뮤니티</title>
     <%@ include file="../../setting/head.jsp" %>
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
@@ -73,13 +73,13 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path5 %>">Home</a> &gt; <span> 관리자 페이지 </span> </p>
-                <h2 class="page_tit"> 관리자 페이지 </h2>
+                <p><a href="<%=path5 %>">Home</a> &gt; <span> 학생 커뮤니티 </span> </p>
+                <h2 class="page_tit"> 학생 커뮤니티 </h2>
             </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">공지사항 글쓰기</h2>
+                <h2 class="page_tit">학생 커뮤니티 글쓰기</h2>
                 <hr>
                 <form action="addStudentBoardPro.jsp" method="post">
                     <table class="tb1">

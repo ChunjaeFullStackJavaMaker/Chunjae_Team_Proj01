@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항 글쓰기</title>
+    <title>학부모 커뮤니티</title>
     <%@ include file="../../setting/head.jsp" %>
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@
         .tb1 { width:800px; margin:50px auto; }
         .tb1 th { width:150px; line-height:32px; padding-top:8px; padding-bottom:8px;
             border-top:1px solid #333; border-bottom:1px solid #333;
-            background-color:deepskyblue; color:#fff; }
+            background-color:#8CB964; color:#fff; }
         .tb1 td { width:650px; line-height:32px; padding-top:8px; padding-bottom:8px;
             border-bottom:1px solid #8CB964;
             padding-left: 14px; border-top:1px solid #8CB964; }
@@ -74,13 +74,13 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path5 %>">Home</a> &gt; <span> 관리자 페이지 </span> </p>
-                <h2 class="page_tit"> 관리자 페이지 </h2>
+                <p><a href="<%=path5 %>">Home</a> &gt; <span> 학부모 커뮤니티 </span> </p>
+                <h2 class="page_tit"> 학부모 커뮤니티 </h2>
             </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">공지사항 글쓰기</h2>
+                <h2 class="page_tit"> 학부모 커뮤니티 글쓰기</h2>
                 <hr>
                 <form action="<%=path5%>/board/motherboard/addMotherBoardPro.jsp" method="post">
                     <table class="tb1">

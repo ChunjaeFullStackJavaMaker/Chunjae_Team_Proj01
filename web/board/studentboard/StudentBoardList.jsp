@@ -75,7 +75,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항 목록</title>
+    <title>학생 게시판</title>
     <%@ include file="/setting/head.jsp" %>
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
@@ -138,6 +138,13 @@
         .btn_group { clear:both; width:800px; margin:20px auto; }
         .btn_group:after { content:""; display:block; width:100%; clear: both; }
         .btn_group p {text-align: center;   line-height:3.6; }
+        .indata { display:inline-block; width:300px; height: 48px; line-height: 48px;
+            text-indent:14px; font-size:18px; }
+        .inbtn { display:block;  border-radius:100px;
+            min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
+            line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px; }
+        .inbtn:first-child { float:left; }
+        .inbtn:last-child { float:right; }
     </style>
 
     <link rel="stylesheet" href="<%=path5%>/jquery.dataTables.css">
@@ -152,7 +159,7 @@
         <div class="content_header">
             <div class="breadcrumb">
                 <p><a href="<%=path5 %>">Home</a> &gt; <span> 관리자 페이지 </span> </p>
-                <h2 class="page_tit"> 학부모커뮤니티 상세보기 </h2>
+                <h2 class="page_tit"> 학생 커뮤니티 상세보기 </h2>
             </div>
         </div>
         <section class="page" id="page1">
@@ -193,6 +200,15 @@
                         <%  } %>
                         <a href="<%=path5%>/board/studentboard/StudentBoardList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
                         <a href="<%=path5%>/board/studentboard/StudentBoardList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                    </div>
+                    <div class="btn_group">
+                        <br><hr><br>
+                        <%-- 공지사항이므로 관리자만 글 추가 기능(링크)이 적용되도록 설정 --%>
+                        <% if(sid!=null) { %>
+                        <a href="/board/studentboard/addStudentBoard.jsp" class="inbtn">글쓰기</a>
+                        <% } else { %>
+                        <p>로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>
+                        <% } %>
                     </div>
                 </div>
             </div>
