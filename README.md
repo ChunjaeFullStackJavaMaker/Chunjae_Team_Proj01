@@ -86,7 +86,7 @@
 - mariaDB를 연동하여 사용자가 입력한 아이디, 비밀번호와 같은 데이터가 존재하면 로그인 성공 처리
 - 그렇지 않으면 로그인 실패 처리
 ### 2. 회원가입
-#### (2) 일반 회원가입
+#### (1) 일반 회원가입
 - 회원 약관에 동의한 경우에만 회원 가입 가능하도록 구현
 - 아이디 중복 체크 기능 구현
 - 아이디, 비밀번호, 이름, 전화번호, 이메일을 입력받아 연동한 mariaDB에 INSERT 처리
@@ -115,8 +115,8 @@
 - 단, 비밀번호는 보안을 위하여 변경할 수 없으므로 관리자에게 문의
 
 ### 2. 내가 쓴 글
-#### (2) 내가 쓴 글 게시판
-- 현재 로그인한 회원이 작성한 글(qna 및 커뮤니티) 연동된 mariaDB에서 SELECT하여 화면에 출력
+#### (1) 내가 쓴 글 게시판
+- 현재 로그인한 회원이 작성한 글(qna 및 커뮤니티)과 연동된 mariaDB에서 SELECT하여 화면에 출력(id 와 author JOIN)
 - 학부모일 경우 학부모 커뮤니티, 학생일 경우 학생 커뮤니티에서 내가 쓴 글 게시판으로 링크 설정
 - 글을 클릭하면 내가 쓴 qna, board 게시판 글로 페이지가 이동
 #### 📷 View
@@ -239,7 +239,82 @@
 <br>
 
 
-## 🗂게시판(커뮤니티, faq, qna)
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/bb3a2cec-4d52-4cf5-9623-32325e1f6245)
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/e8cbd4bf-03de-4864-9543-41cc36d6903f)
+## 🗂게시판(커뮤니티, qna, faq)
+### 1. 커뮤니티
+#### (1) 학부모 및 학생 커뮤니티 게시판
+- 학부모,학생 커뮤니티 목록을 mariaDB에서 SELECT하여 화면에 출력
+- 글번호, 글제목, 작성자, 작성일이 화면에 출력되며, 글번호 역순 정렬
+#### (2) 글 관리(글 작성, 글 수정, 글 삭제)
+- 회원이 본인의 아이디로 로그인시 본인이 작성한 글을 수정 및 삭제 가능하도록 구현
+- 비회원은 글을 볼 수 없도록 구현
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/2a96e814-54f0-41b4-a2e2-c0f0c93a639d" width="1300" alt=""/> <br/>
+      <sub><b> PIC1 : 커뮤니티 게시판 </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/0a49719c-0102-4ce8-aae1-5c2a4350e001" width="1300" alt=""/> <br/>
+      <sub><b> PIC2 : 글 관리(글 작성) </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/0a49719c-0102-4ce8-aae1-5c2a4350e001" width="1300" alt=""/> <br/>
+      <sub><b> PIC3 : 글 관리(글 수정) </sub></b>
+    </td>
+  </tr>
+  <tr>
+</table>
+<br>
+
+###  2. 공지사항 및 qna
+#### (1) 공지사항
+- 공지사항 글을 mariaDB에서 SELECT하여 화면에 출력
+- 공지사항 글을 회원 및 관리자만 볼 수 있도록 구현
+- 글 작성은 관리자만 작성할 수 있도록 구현
+#### (2) qna
+- qna 글을  mariaDB에서 SELECT하여 화면에 출력 
+- qna 테이블의 author 과 member 테이블의 name을 JOIN하여 테이블 구현
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/2a96e814-54f0-41b4-a2e2-c0f0c93a639d" width="1300" alt=""/> <br/>
+      <sub><b> PIC1 : 공지사항 </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/0a49719c-0102-4ce8-aae1-5c2a4350e001" width="1300" alt=""/> <br/>
+      <sub><b> PIC2 : qna </sub></b>
+    </td>
+  </tr>
+</table>
+<br>
+        
+###  3. FAQ
+#### (1) FAQ 게시판
+- 회원, 비회원 구분없이 볼 수 있도록 구현
+- 토글 기능을 사용하여 화면에 출력 
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/2a96e814-54f0-41b4-a2e2-c0f0c93a639d" width="1300" alt=""/> <br/>
+      <sub><b> PIC1 : 공지사항 </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/0a49719c-0102-4ce8-aae1-5c2a4350e001" width="1300" alt=""/> <br/>
+      <sub><b> PIC2 : qna </sub></b>
+    </td>
+  </tr>
+</table>
+<br>
+
 
