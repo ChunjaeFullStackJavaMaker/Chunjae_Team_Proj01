@@ -12,7 +12,7 @@ CREATE TABLE member(
                        NAME VARCHAR(100) NOT NULL,
                        email VARCHAR(100) NOT NULL,
                        tel VARCHAR(13),cornedu
-                           regdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+                           resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
                        POINT INT DEFAULT 0,
                        per VARCHAR(5) CHECK(per IN(0, 1, 2)),
                        PRIMARY KEY (id));
