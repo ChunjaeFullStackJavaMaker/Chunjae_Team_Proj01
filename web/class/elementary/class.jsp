@@ -72,7 +72,6 @@
 
         .contents{
             margin-top: 20px;
-            height: 1400px;
         }
         .row{
             display: flex;
