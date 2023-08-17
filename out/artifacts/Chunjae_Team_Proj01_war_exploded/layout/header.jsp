@@ -31,7 +31,7 @@
                 <a href="" class="dp1"> 소 개 </a>
                 <ul class="sub">
                     <li><a href=""> 회사 소개 </a></li>
-                    <li><a href="../introduce/serviceIntro.jsp"> 서비스 소개 </a></li>
+                    <li><a href="<%=path8 %>/introduce/serviceIntro.jsp"> 서비스 소개 </a></li>
                     <li><a href=""> 오시는 길 </a></li>
                 </ul>
             </li>
@@ -66,9 +66,9 @@
             <li class="item6">
                 <a href="" class="dp1"> 고객지원 </a>
                 <ul class="sub">
-                    <li><a href="/cs/board/boardList.jsp?page=1"> 공지사항 </a></li>
-                    <li><a href="/cs/qna/qnaList.jsp"> QnA </a></li>
-                    <li><a href="/cs/faq/faqList.jsp"> FAQ </a></li>
+                    <li><a href="<%=path8%>/cs/board/boardList.jsp?page=1"> 공지사항 </a></li>
+                    <li><a href="<%=path8%>/cs/qna/qnaList.jsp"> QnA </a></li>
+                    <li><a href="<%=path8%>/cs/faq/faqList.jsp"> FAQ </a></li>
                 </ul>
             </li>
         </ul>

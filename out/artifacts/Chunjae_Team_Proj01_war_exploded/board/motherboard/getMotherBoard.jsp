@@ -20,20 +20,20 @@
     con = conn.connect();
 
     //3. SQL을 실행하여 Result(공지사항 한 레코드)을 가져오기
-    String sql = "select * from board where bno=?";
+    String sql = "select * from motherboard where bno=?";
     pstmt = con.prepareStatement(sql);
     pstmt.setInt(1, bno);
     rs = pstmt.executeQuery();
 
     //4. 가져온 한 레코드를 하나의 Board 객체에 담기
-    MotherBoard bd  = new MotherBoard();
+    MotherBoard motherBoard  = new MotherBoard();
     if(rs.next()){
-        bd.setBno(rs.getInt("bno"));
-        bd.setTitle(rs.getString("title"));
-        bd.setContent(rs.getString("content"));
-        bd.setAuthor(rs.getString("author"));
-        bd.setResdate(rs.getString("resdate"));
-        bd.setCnt(rs.getInt("cnt"));
+        motherBoard.setBno(rs.getInt("bno"));
+        motherBoard.setTitle(rs.getString("title"));
+        motherBoard.setContent(rs.getString("content"));
+        motherBoard.setAuthor(rs.getString("author"));
+        motherBoard.setResdate(rs.getString("resdate"));
+        motherBoard.setCnt(rs.getInt("cnt"));
     }
     conn.close(rs, pstmt, con);
 %>
@@ -80,7 +80,7 @@
         .tb1 { width:800px; margin:50px auto; }
         .tb1 th { line-height:32px; padding-top:8px; padding-bottom:8px;
             border-top:1px solid #333; border-bottom:1px solid #333;
-            background-color:deepskyblue; color:#fff; }
+            background-color:#8CB964; color:#fff; }
         .tb1 td {line-height:32px; padding-top:8px; padding-bottom:8px;
             border-bottom:1px solid #333;
             padding-left: 14px; border-top:1px solid #333; }
@@ -89,7 +89,7 @@
             text-indent:14px; font-size:18px; }
         .inbtn { display:block;  border-radius:100px;
             min-width:100px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px;
+            line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px;
             float:left; margin-right: 20px; }
         .inbtn:last-child { float:right; }
     </style>
@@ -108,48 +108,48 @@
         <div class="content_header">
             <div class="breadcrumb">
                 <p><a href="<%=path5 %>">Home</a> &gt; <span> 관리자 페이지 </span> </p>
-                <h2 class="page_tit"> 관리자 페이지 </h2>
+                <h2 class="page_tit"> 학부모 커뮤니티</h2>
             </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">공지사항 상세보기</h2>
+                <h2 class="page_tit">학부모 커뮤니티 상세보기</h2>
                 <hr>
                 <!-- 5. Board 객체의 내용을 출력 -->
                 <table class="tb1">
                     <tbody>
                     <tr>
                         <th>글 번호</th>
-                        <td><%=bd.getBno() %></td>
+                        <td><%=motherBoard.getBno() %></td>
                     </tr>
                     <tr>
                         <th>글 제목</th>
-                        <td><%=bd.getTitle() %></td>
+                        <td><%=motherBoard.getTitle() %></td>
                     </tr>
                     <tr>
                         <th>글 내용</th>
-                        <td><%=bd.getContent() %></td>
+                        <td><%=motherBoard.getContent() %></td>
                     </tr>
                     <tr>
                         <th>작성자</th>
-                        <td><%=bd.getAuthor() %></td>
+                        <td><%=motherBoard.getAuthor() %></td>
                     </tr>
                     <tr>
                         <th>작성일시</th>
-                        <td><%=bd.getResdate() %></td>
+                        <td><%=motherBoard.getResdate() %></td>
                     </tr>
                     <tr>
                         <th>조회수</th>
-                        <td><%=bd.getCnt() %></td>
+                        <td><%=motherBoard.getCnt() %></td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <%-- 6. 로그인한 아이디가 작성자이거나 관리자인 경우만, 글 수정과 글 삭제 기능이
                             가능함.--%>
                             <a href="/board/motherboard/MotherBoardList.jsp" class="inbtn">글 목록</a>
-                            <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
-                            <a href="/board/motherboard/updateMotherBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 수정</a>
-                            <a href="/board/motherboard/delMotherBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 삭제</a>
+                            <% if(sid.equals("admin") || sid.equals(motherBoard.getAuthor())) { %>
+                            <a href="/board/motherboard/updateMotherBoard.jsp?bno=<%=motherBoard.getBno() %>" class="inbtn">글 수정</a>
+                            <a href="/board/motherboard/delMotherBoard.jsp?bno=<%=motherBoard.getBno() %>" class="inbtn">글 삭제</a>
                             <% } %>
                         </td>
                     </tr>
