@@ -115,25 +115,29 @@
 - 단, 비밀번호는 보안을 위하여 변경할 수 없으므로 관리자에게 문의
 
 ### 2. 내가 쓴 글
-#### (1) 
-- 
+#### (2) 내가 쓴 글 게시판판
+- 현재 로그인한 회원이 작성한 글(qna 및 커뮤니티) 연동된 mariaDB에서 SELECT하여 화면에 출력
+- 학부모일 경우 학부모 커뮤니티, 학생일 경우 학생 커뮤니티에서 내가 쓴 글 게시판으로 링크 설정
+- 글을 클릭하면 내가 쓴 qna, board 게시판 글로 페이지가 이동
 #### 📷 View
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/cdbee5af-b4b0-4c01-ae10-da845c9b2d3c" width="1300" alt=""/> <br/>
+      <img width="960" alt="2" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/76bc1238-7c6f-41ed-826b-3270a8b5842d">
+
+ <br/>
       <sub><b> PIC1 : 마이페이지 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/b05a2641-9c1f-400c-9fe1-0f1c40175a4e" width="1300" alt=""/> <br/>
+       <img width="838" alt="1" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/14eb9799-17d9-4137-8b7e-779120f0234d"><br/>
       <sub><b> PIC2 : 회원 정보 수정 </sub></b>
     </td>
   </tr>
     <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/b05a2641-9c1f-400c-9fe1-0f1c40175a4e" width="1300" alt=""/> <br/>
+      <img width="960" alt="3" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/d76ae5d3-f862-4725-bf82-1e201ccf9093"> <br/>
       <sub><b> PIC3 : 내가 쓴 글 </sub></b>
     </td>
   </tr>
