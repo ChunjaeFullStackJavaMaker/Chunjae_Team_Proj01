@@ -16,7 +16,7 @@
             <% } else { %>
                 <li><a href="<%=path8 %>/member/login.jsp">로그인</a></li>
                 <li><a href="<%=path8 %>/member/term.jsp">회원가입</a></li>
-                <li><a href="map.jsp">오시는길</a></li>
+                <li><a href="<%=path8 %>/map/map.jsp">오시는길</a></li>
             <% } %>
         </ul>
     </nav>
