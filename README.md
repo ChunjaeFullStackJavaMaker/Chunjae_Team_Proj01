@@ -239,7 +239,7 @@
 <br>
 
 
-## 🗂게시판(커뮤니티, qna, faq)
+## 🗂게시판(커뮤니티, QNA, FAQ)
 ### 1. 커뮤니티
 #### (1) 학부모 및 학생 커뮤니티 게시판
 - 학부모,학생 커뮤니티 목록을 mariaDB에서 SELECT하여 화면에 출력
@@ -274,7 +274,7 @@
 </table>
 <br>
 
-###  2. 공지사항 및 qna
+###  2. 공지사항 및 QNA
 #### (1) 공지사항
 - 공지사항 글을 mariaDB에서 SELECT하여 화면에 출력
 - 공지사항 글을 회원 및 관리자만 볼 수 있도록 구현
@@ -286,13 +286,14 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/2a96e814-54f0-41b4-a2e2-c0f0c93a639d" width="1300" alt=""/> <br/>
+     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4e3fb913-4b5c-4820-aea6-af403a87e6e0"> <br/>
       <sub><b> PIC1 : 공지사항 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/0a49719c-0102-4ce8-aae1-5c2a4350e001" width="1300" alt=""/> <br/>
+      <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4e3fb913-4b5c-4820-aea6-af403a87e6e0">   
+      <br/>
       <sub><b> PIC2 : qna </sub></b>
     </td>
   </tr>
@@ -307,16 +308,11 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/2a96e814-54f0-41b4-a2e2-c0f0c93a639d" width="1300" alt=""/> <br/>
-      <sub><b> PIC1 : 공지사항 </sub></b>
+     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4e3fb913-4b5c-4820-aea6-af403a87e6e0">  <br/>
+      <sub><b> PIC1 : FAQ 게시판 </sub></b>
     </td>
   </tr>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/0a49719c-0102-4ce8-aae1-5c2a4350e001" width="1300" alt=""/> <br/>
-      <sub><b> PIC2 : qna </sub></b>
-    </td>
-  </tr>
+  
 </table>
 <br>
 
