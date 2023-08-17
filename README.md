@@ -251,19 +251,21 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/2a96e814-54f0-41b4-a2e2-c0f0c93a639d" width="1300" alt=""/> <br/>
+      <img width="959" alt="second" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/bea960f3-e6be-4126-b14f-c1b0c268e277">
+ <br/>
       <sub><b> PIC1 : 커뮤니티 게시판 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/0a49719c-0102-4ce8-aae1-5c2a4350e001" width="1300" alt=""/> <br/>
+      
+     <br/>
       <sub><b> PIC2 : 글 관리(글 작성) </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/0a49719c-0102-4ce8-aae1-5c2a4350e001" width="1300" alt=""/> <br/>
+      <br/>
       <sub><b> PIC3 : 글 관리(글 수정) </sub></b>
     </td>
   </tr>
