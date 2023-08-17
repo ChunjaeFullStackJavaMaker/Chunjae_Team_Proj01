@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jk347
-  Date: 2023-08-15
-  Time: 오전 12:30
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%-- 1. 필요한 라이브러리 불러오기 --%>
 <%@ page import="java.sql.*" %>
@@ -31,7 +24,7 @@
     conn = con.connect();
 
     //4. sql 실행 및 실행결과 받기
-    String sql = "SELECT * FROM qnalist WHERE qno=?";
+    String sql = "SELECT * FROM qna WHERE qno=?";
     pstmt = conn.prepareStatement(sql);
     pstmt.setInt(1, qno);
 
@@ -45,7 +38,6 @@
         qna.setAuthor(rs.getString("author"));
         qna.setResdate(rs.getString("resdate"));
         qna.setCnt(rs.getInt("cnt"));
-        qna.setName(rs.getString("name"));
         qna.setLev(rs.getInt("lev"));
         qna.setPar(rs.getInt("par"));
     }
