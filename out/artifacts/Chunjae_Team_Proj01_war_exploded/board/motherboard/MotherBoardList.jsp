@@ -79,10 +79,10 @@
 
         .tb1 { width:800px; margin:50px auto; }
         .tb1 th { line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-top:1px solid #333; border-bottom:1px solid #333;
+            border-top:1px solid #8CB964; border-bottom:1px solid #8CB964;
             background-color:#8CB964; color:#fff; }
         .tb1 td {line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-bottom:1px solid #333;
+            border-bottom:1px solid #8CB964;
             padding-left: 14px; border-top:1px solid #333; }
 
         .tb1 .item1 { width:10%; text-align: center; }

@@ -30,7 +30,7 @@
             <li class="item1">
                 <a href="" class="dp1"> 소 개 </a>
                 <ul class="sub">
-                    <li><a href=""> 회사 소개 </a></li>
+                    <li><a href="<%=path8 %>/intro/intro.jsp"> 회사 소개 </a></li>
                     <li><a href="<%=path8 %>/introduce/serviceIntro.jsp"> 서비스 소개 </a></li>
                     <li><a href=""> 오시는 길 </a></li>
                 </ul>
