@@ -5,8 +5,10 @@
 <%-- 1. 필요한 라이브러리 가져오기 --%>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae_pro01.dto.*" %>
-<%@ page import="com.chunjae_pro01.util.DBC" %>
-<%@ page import="com.chunjae_pro01.util.MariaDBCon" %>
+<%@ page import="com.chunjae_pro01.util.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
 <%
     Connection con = null;
     PreparedStatement pstmt = null;
@@ -31,10 +33,31 @@
         bd.setTitle(rs.getString("title"));
         bd.setContent(rs.getString("content"));
         bd.setAuthor(rs.getString("author"));
-        bd.setResdate(rs.getString("resdate"));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date d = sdf.parse(rs.getString("resdate"));
+        bd.setResdate(sdf.format(d));
         bd.setCnt(rs.getInt("cnt"));
     }
-    conn.close(rs, pstmt, con);
+
+    rs.close();
+    pstmt.close();
+
+    sql = "SELECT cno, author, resdate, content FROM studentComment WHERE bno=? ORDER BY cno DESC LIMIT 0, 10";
+    pstmt = con.prepareStatement(sql);
+    pstmt.setInt(1, bno);
+    rs = pstmt.executeQuery();
+
+    List<Comment> cList = new ArrayList<>();
+    while(rs.next()) {
+        Comment cmt = new Comment();
+        cmt.setCno(rs.getInt("cno"));
+        cmt.setAuthor(rs.getString("author"));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date d = sdf.parse(rs.getString("resdate"));
+        cmt.setResdate(sdf.format(d));
+        cmt.setContent(rs.getString("content"));
+        cList.add(cmt);
+    }
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,39 +80,188 @@
     <link rel="stylesheet" href="<%=path5%>/css/header.css">
     <style>
         /* 본문 영역 스타일 */
-        .contents { clear:both; min-height:100vh;
-            /* background-image: url("../../images/bg_visual_overview.jpg"); */
-            background-repeat: no-repeat; background-position:center -250px; }
-        .contents::after { content:""; clear:both; display:block; width:100%; }
+        .contents {
+            clear: both;
+        }
 
-        .page { clear:both; width: 100vw; height: 100vh; position:relative; }
-        .page::after { content:""; display:block; width: 100%; clear:both; }
+        .contents::after {
+            content: "";
+            clear: both;
+            display: block;
+            width: 100%;
+        }
 
-        .page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
-        .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
-            padding-bottom: 2.4rem; }
+        .page {
+            position: relative;
+            clear: both;
+            width: 100%;
+            min-height: 100vh;
+        }
 
-        .breadcrumb { clear:both;
-            width:1200px; margin: 0 auto; text-align: right; color:#fff;
-            padding-top: 28px; padding-bottom: 28px; }
-        .breadcrumb a { color:#fff; }
-        .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
+        .page::after {
+            content: "";
+            display: block;
+            width: 100%;
+            clear: both;
+        }
 
-        .tb1 { width:800px; margin:50px auto; }
-        .tb1 th { line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-top:1px solid #333; border-bottom:1px solid #333;
-            background-color:#8CB964; color:#fff; }
-        .tb1 td {line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-bottom:1px solid #333;
-            padding-left: 14px; border-top:1px solid #333; }
+        .page_wrap {
+            clear: both;
+            width: 1200px;
+            margin: 0 auto;
+        }
 
-        .indata { display:inline-block; width:300px; height: 48px; line-height: 48px;
-            text-indent:14px; font-size:18px; }
-        .inbtn { display:block;  border-radius:100px;
-            min-width:100px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px;
-            float:left; margin-right: 20px; }
-        .inbtn:last-child { float:right; }
+        .page_tit {
+            font-size: 48px;
+            text-align: center;
+            padding-top: 1em;
+            color: #fff;
+            padding-bottom: 2.4rem;
+        }
+
+        .breadcrumb {
+            clear: both;
+            width: 1200px;
+            margin: 0 auto;
+            text-align: right;
+            color: #fff;
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+
+        .breadcrumb a {
+            color: #fff;
+        }
+
+        .view_detail {
+            width: 800px;
+            margin: 50px auto;
+        }
+
+        .view_detail tr {
+            width: 100%;
+        }
+
+        .view_detail tr td {
+            width: 100%;
+        }
+
+        .view_detail .btn {
+            float: right;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: none;
+            background-color: #fff;
+        }
+
+        .view_detail .title {
+            padding: 20px;
+            font-size: 18pt;
+            font-weight: bold;
+            line-height: 30px;
+        }
+
+        .view_detail .author {
+            width: 50%;
+            padding: 0px 20px 10px 20px;
+            text-align: right;
+        }
+
+        .view_detail .resdate {
+            width: 50%;
+            padding: 0px 20px 10px 20px;
+        }
+
+        .view_detail .content {
+            clear: both;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            line-height: 20px;
+        }
+
+        .comment_detail {
+            width: 800px;
+            margin: 50px auto;
+        }
+
+        .comment_detail .input_comment {
+            width: 700px;
+            height: 100px;
+            line-height: 30px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 13pt;
+            resize: none;
+            font-family: 'Noto-Sans', sans-serif;
+        }
+        .comment_detail .sub_comment {
+            position: relative;
+            width: 90px;
+            height: 98px;
+            border-radius: 5px;
+        }
+
+        .sub_comment .comment_btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: #8CB964;
+        }
+
+        .comment_detail .comment_list {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 150px;
+        }
+
+        .comment_detail .comment_list::after {
+            clear: both;
+            display: block;
+            width: 100%;
+            content: "";
+        }
+
+        .comment_detail .comment_list .author {
+            clear: both;
+            display: inline-block;
+            float: left;
+            text-align: left;
+            padding: 20px;
+        }
+        .comment_detail .comment_list .resdate {
+            display: inline-block;
+            float: right;
+            text-align: right;
+            padding: 20px;
+        }
+        .comment_detail .comment_list .content {
+            clear: both;
+            width: 100%;
+            padding: 20px;
+            line-height: 20px;
+            box-sizing: border-box;
+        }
+
+        .comment_detail .btn {
+            float: right;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: none;
+            margin-right: 20px;
+        }
+        .comment_detail .line {
+            clear: both;
+            display: block;
+            border-bottom: 1px solid #ddd;
+            width: 100%;
+        }
     </style>
 
     <link rel="stylesheet" href="<%=path5%>/css/footer.css">
@@ -113,46 +285,64 @@
             <div class="page_wrap">
                 <h2 class="page_tit">공지사항 상세보기</h2>
                 <hr>
-                <!-- 5. Board 객체의 내용을 출력 -->
-                <table class="tb1">
+                <table class="view_detail color">
                     <tbody>
-                    <tr>
-                        <th>글 번호</th>
-                        <td><%=bd.getBno() %></td>
-                    </tr>
-                    <tr>
-                        <th>글 제목</th>
-                        <td><%=bd.getTitle() %></td>
-                    </tr>
-                    <tr>
-                        <th>글 내용</th>
-                        <td><%=bd.getContent() %></td>
-                    </tr>
-                    <tr>
-                        <th>작성자</th>
-                        <td><%=bd.getAuthor() %></td>
-                    </tr>
-                    <tr>
-                        <th>작성일시</th>
-                        <td><%=bd.getResdate() %></td>
-                    </tr>
-                    <tr>
-                        <th>조회수</th>
-                        <td><%=bd.getCnt() %></td>
-                    </tr>
+                    <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                     <tr>
                         <td colspan="2">
-                            <%-- 6. 로그인한 아이디가 작성자이거나 관리자인 경우만, 글 수정과 글 삭제 기능이
-                            가능함.--%>
-                            <a href="/board/studentboard/StudentBoardList.jsp" class="inbtn">글 목록</a>
-                            <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
-                            <a href="/board/studentboard/updateStudentBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 수정</a>
-                            <a href="/board/studentboard/delStudentBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 삭제</a>
-                            <% } %>
+                            <a href="/board/motherboard/delMotherBoard.jsp?bno=<%=bno%>" class="btn"> 삭제 </a>
+                            <a href="/board/motherboard/updateMotherBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
+                        </td>
+                    </tr>
+                    <% } %>
+                    <tr>
+                        <td class="title" colspan="2">
+                            <%=bd.getTitle() %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="resdate">
+                            작성일 | <%=bd.getResdate()%>
+                        </td>
+                        <td class="author">
+                            작성자 | <%=bd.getAuthor()%>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content" colspan="2">
+                            <%=bd.getContent() %>
                         </td>
                     </tr>
                     </tbody>
                 </table>
+                <form action="<%=path5 %>/comment/addStudentCommentPro.jsp" method="post">
+                    <table class="comment_detail">
+                            <tbody>
+                            <tr>
+                                <td class="add_comment">
+                                    <textarea name="content" id="content" class="input_comment" placeholder="댓글을 입력해주세요" required></textarea>
+                                    <input type="hidden" name="bno" id="bno" value="<%=bno %>">
+                                </td>
+                                <td class="sub_comment">
+                                    <input type="submit" class="comment_btn" value="작성">
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </form>
+                <div class="comment_detail">
+                    <div class="comment_list">
+                        <% for(Comment cmt:cList) { %>
+                            <p class="author"><%=cmt.getAuthor()%></p>
+                            <p class="resdate"><%=cmt.getResdate()%></p>
+                            <p class="content"><%=cmt.getContent()%></p>
+                            <% if(cmt.getAuthor().equals(sid) || sid.equals("admin")) { %>
+                                <a href="<%=path5 %>/comment/delStudentCommentPro.jsp?bno=<%=bno%>&cno=<%=cmt.getCno()%>" class="btn"> [ 삭제 ] </a>
+                            <% } %>
+                                <span class="line"></span>
+                        <% } %>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

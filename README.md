@@ -225,7 +225,7 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/66a007bd-9041-4e29-93c4-04b4887bee24" width="1300" alt=""/> <br/>
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/104690434/15942c06-3816-437a-9110-3992dd4fb6c4" width="1300" alt=""/> <br/>
       <sub><b> PIC1 : 학부모 커뮤니티 관리 </sub></b>
     </td>
   </tr>
@@ -251,7 +251,7 @@
 <table>
   <tr>
     <td align="center">
-      <img width="959" alt="second" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/bea960f3-e6be-4126-b14f-c1b0c268e277">
+      <img width="959" alt="second" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/104690434/907d71a2-5bee-4b1e-ba12-aa94af5876e0">
  <br/>
       <sub><b> PIC1 : 커뮤니티 게시판 </sub></b>
     </td>

@@ -25,14 +25,14 @@
     rs = pstmt.executeQuery();
 
     //4. 가져온 한 레코드를 하나의 Board 객체에 담기
-    Board bd  = new Board();
+    MotherBoard motherBoard  = new MotherBoard();
     if(rs.next()){
-        bd.setBno(rs.getInt("bno"));
-        bd.setTitle(rs.getString("title"));
-        bd.setContent(rs.getString("content"));
-        bd.setAuthor(rs.getString("author"));
-        bd.setResdate(rs.getString("resdate"));
-        bd.setCnt(rs.getInt("cnt"));
+        motherBoard.setBno(rs.getInt("bno"));
+        motherBoard.setTitle(rs.getString("title"));
+        motherBoard.setContent(rs.getString("content"));
+        motherBoard.setAuthor(rs.getString("author"));
+        motherBoard.setResdate(rs.getString("resdate"));
+        motherBoard.setCnt(rs.getInt("cnt"));
     }
     conn.close(rs, pstmt, con);
 %>
@@ -114,28 +114,28 @@
                 <h2 class="page_tit">공지사항 수정하기</h2>
                 <hr>
                 <!-- 5. Board 객체의 내용을 폼의 각 컨트롤(input/textarea)에 바인딩하여 출력 -->
-                <form action="./updateMotherBoard.jsp" method="post">
+                <form action="updateMotherBoardPro.jsp" method="post">
                     <table class="tb1">
                         <tbody>
                         <tr>
                             <th>글 번호</th>
-                            <td><input type="text" name="bno" id="bno" class="indata" value="<%=bd.getBno() %>" readonly></td>
+                            <td><input type="text" name="bno" id="bno" class="indata" value="<%=motherBoard.getBno() %>" readonly></td>
                         </tr>
                         <tr>
                             <th>글 제목</th>
-                            <td><input type="text" name="title" id="title" class="indata" value="<%=bd.getTitle() %>" required></td>
+                            <td><input type="text" name="title" id="title" class="indata" value="<%=motherBoard.getTitle() %>" required></td>
                         </tr>
                         <tr>
                             <th>글 내용</th>
-                            <td><textarea rows="10" cols="80" name="content" id="content" class="indata2"><%=bd.getContent() %></textarea></td>
+                            <td><textarea rows="10" cols="80" name="content" id="content" class="indata2"><%=motherBoard.getContent() %></textarea></td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <%-- 6. 수정하기(submit)을 누르면, 수정처리로 넘기기 --%>
                                 <a href="/board/motherboard/MotherBoardList.jsp" class="inbtn">글 목록</a>
-                                <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
-                                <input type="submit" value="글수정" class="inbtn">
-                                <a href="/board/motherboard/delMotherBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 삭제</a>
+                                <% if(sid.equals("admin") || sid.equals(motherBoard.getAuthor())) { %>
+                                    <input type="submit" value="글수정" class="inbtn">
+                                <a href="/board/motherboard/delStudentBoard.jsp?bno=<%=motherBoard.getBno() %>" class="inbtn">글 삭제</a>
                                 <% } %>
                             </td>
                         </tr>

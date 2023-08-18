@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/web/board/motherboard/MotherBoardList1.jsp" value="file://$PROJECT_DIR$/web/board/motherboard" />
+        <entry key="file://$PROJECT_DIR$/web/board/studentboard/getStudentBoard.jsp" value="file://$PROJECT_DIR$/web/board/studentboard" />
         <entry key="file://$PROJECT_DIR$/web/index.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/member/idload.jsp" value="file://$PROJECT_DIR$/web/member" />
         <entry key="file://$PROJECT_DIR$/web/setting/head.jsp" value="file://$PROJECT_DIR$/web/setting" />

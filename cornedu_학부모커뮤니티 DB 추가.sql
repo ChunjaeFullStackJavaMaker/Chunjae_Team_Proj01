@@ -285,8 +285,11 @@ create table motherComment(
 	bno INT,
 	author VARCHAR(16),
    resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-   content VARCHAR(200)
+   content VARCHAR(200),
+   FOREIGN KEY(bno) REFERENCES motherboard(bno) ON DELETE CASCADE
 );
+
+SELECT * FROM mothercomment;
 
 ----------------------------------------------------------------------------------------------------------------------------
 -- 학생 게시판 댓글 테이블 생성
@@ -295,16 +298,17 @@ create table studentComment(
 	bno INT,
 	author VARCHAR(16),
    resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-   content VARCHAR(200)
+   content VARCHAR(200),
+   FOREIGN KEY(bno) REFERENCES studentboard(bno) ON DELETE CASCADE
 );
 
 -- 더미 데이터 추가
 INSERT INTO studentComment(bno, author, content)
-VALUES(114, 'admin', '댓글 기능 더미데이터1');
+VALUES(1, 'admin', '댓글 기능 더미데이터1');
 INSERT INTO studentComment(bno, author, content)
-VALUES(114, 'admin', '댓글 기능 더미데이터2');
+VALUES(1, 'admin', '댓글 기능 더미데이터2');
 INSERT INTO studentComment(bno, author, content)
-VALUES(114, 'admin', '댓글 기능 더미데이터3');
+VALUES(1, 'shin', '댓글 기능 더미데이터3');
 
 COMMIT;
 

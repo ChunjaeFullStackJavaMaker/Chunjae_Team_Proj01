@@ -32,7 +32,7 @@
     /* 5. 처리된 건수가 0보다 크면(성공처리가 되었으면) 목록 페이지로 이동하고,
     아니면(실패처리가 되었으면), 수정할 폼 화면으로 이동한다. */
     if(cnt>0){
-        response.sendRedirect("/board/motherboard/MotherBoardList.jsp");
+        response.sendRedirect("/board/motherboard/MotherBoardList.jsp?page=1");
     } else {
         response.sendRedirect("/board/motherboard/updateMotherBoard.jsp?bno="+bno);
     }
