@@ -80,6 +80,7 @@
     <link rel="stylesheet" href="<%=path5%>/css/header.css">
     <style>
         /* 본문 영역 스타일 */
+        /* 본문 영역 스타일 */
         .contents {
             clear: both;
         }
@@ -182,20 +183,11 @@
         }
 
         .comment_detail {
-            position: relative;
             width: 800px;
             margin: 50px auto;
         }
 
-        .comment_detail .comment {
-            position: relative;
-            padding: 20px;
-        }
-
         .comment_detail .input_comment {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 700px;
             height: 100px;
             line-height: 30px;
@@ -206,24 +198,27 @@
             font-family: 'Noto-Sans', sans-serif;
         }
         .comment_detail .sub_comment {
-            position: absolute;
-            top: 0;
-            right: 0;
+            position: relative;
             width: 90px;
             height: 98px;
             border-radius: 5px;
-            box-sizing: content-box;
+        }
+
+        .sub_comment .comment_btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
             background-color: #8CB964;
         }
 
         .comment_detail .comment_list {
-            position: absolute;
-            top: 120px;
-            left: 0px;
             width: 100%;
             border: 1px solid #ddd;
             border-radius: 5px;
-            margin-bottom: 50px;
+            margin-bottom: 150px;
         }
 
         .comment_detail .comment_list::after {
@@ -320,29 +315,29 @@
                     </tr>
                     </tbody>
                 </table>
-                <table class="comment_detail">
-                    <form action="<%=path5 %>/comment/addMotherCommentPro.jsp" method="post">
+                <form action="<%=path5 %>/comment/addMotherCommentPro.jsp" method="post">
+                    <table class="comment_detail">
                         <tbody>
-                        <tr class="comment">
-                            <td>
+                        <tr>
+                            <td class="add_comment">
                                 <textarea name="content" id="content" class="input_comment" placeholder="댓글을 입력해주세요" required></textarea>
                                 <input type="hidden" name="bno" id="bno" value="<%=bno %>">
                             </td>
-                            <td>
-                                <input type="submit" class="sub_comment" value="작성">
+                            <td class="sub_comment">
+                                <input type="submit" class="comment_btn" value="작성">
                             </td>
                         </tr>
                         </tbody>
-                    </form>
-                </table>
+                    </table>
+                </form>
                 <div class="comment_detail">
                     <div class="comment_list">
                         <% for(Comment cmt:cList) { %>
                         <p class="author"><%=cmt.getAuthor()%></p>
                         <p class="resdate"><%=cmt.getResdate()%></p>
                         <p class="content"><%=cmt.getContent()%></p>
-                        <% if(cmt.getAuthor().equals(sid)) { %>
-                        <a href="<%=path5 %>/comment/delStudentCommentPro.jsp?bno=<%=bno%>&cno=<%=cmt.getCno()%>" class="btn"> [ 삭제 ] </a>
+                        <% if(cmt.getAuthor().equals(sid) || sid.equals("admin")) { %>
+                        <a href="<%=path5 %>/comment/delMotherCommentPro.jsp?bno=<%=bno%>&cno=<%=cmt.getCno()%>" class="btn"> [ 삭제 ] </a>
                         <% } %>
                         <span class="line"></span>
                         <% } %>

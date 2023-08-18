@@ -182,20 +182,11 @@
         }
 
         .comment_detail {
-            position: relative;
             width: 800px;
             margin: 50px auto;
         }
 
-        .comment_detail .comment {
-            position: relative;
-            padding: 20px;
-        }
-
         .comment_detail .input_comment {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 700px;
             height: 100px;
             line-height: 30px;
@@ -206,24 +197,27 @@
             font-family: 'Noto-Sans', sans-serif;
         }
         .comment_detail .sub_comment {
-            position: absolute;
-            top: 0;
-            right: 0;
+            position: relative;
             width: 90px;
             height: 98px;
             border-radius: 5px;
-            box-sizing: content-box;
+        }
+
+        .sub_comment .comment_btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
             background-color: #8CB964;
         }
 
         .comment_detail .comment_list {
-            position: absolute;
-            top: 120px;
-            left: 0px;
             width: 100%;
             border: 1px solid #ddd;
             border-radius: 5px;
-            margin-bottom: 50px;
+            margin-bottom: 150px;
         }
 
         .comment_detail .comment_list::after {
@@ -290,7 +284,7 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <!-- 5. Board 객체의 내용을 출력 -->
-                <table class="view_detail color">
+                <table class="view_detail">
                     <tbody>
                     <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                     <tr>
@@ -320,62 +314,34 @@
                     </tr>
                     </tbody>
                 </table>
-                <table class="comment_detail">
-                    <form action="<%=path5 %>/comment/addStudentCommentPro.jsp" method="post">
-                        <tbody>
-                        <tr class="comment">
-                            <td>
-                                <textarea name="content" id="content" class="input_comment" placeholder="댓글을 입력해주세요" required></textarea>
-                                <input type="hidden" name="bno" id="bno" value="<%=bno %>">
-                            </td>
-                            <td>
-                                <input type="submit" class="sub_comment" value="작성">
-                            </td>
-                        </tr>
-                        </tbody>
-                    </form>
-                </table>
+                <form action="<%=path5 %>/comment/addStudentCommentPro.jsp" method="post">
+                    <table class="comment_detail">
+                            <tbody>
+                            <tr>
+                                <td class="add_comment">
+                                    <textarea name="content" id="content" class="input_comment" placeholder="댓글을 입력해주세요" required></textarea>
+                                    <input type="hidden" name="bno" id="bno" value="<%=bno %>">
+                                </td>
+                                <td class="sub_comment">
+                                    <input type="submit" class="comment_btn" value="작성">
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </form>
                 <div class="comment_detail">
                     <div class="comment_list">
                         <% for(Comment sc:scList) { %>
                             <p class="author"><%=sc.getAuthor()%></p>
                             <p class="resdate"><%=sc.getResdate()%></p>
                             <p class="content"><%=sc.getContent()%></p>
-                            <% if(sc.getAuthor().equals(sid)) { %>
+                            <% if(sc.getAuthor().equals(sid) || sid.equals("admin")) { %>
                                 <a href="<%=path5 %>/comment/delStudentCommentPro.jsp?bno=<%=bno%>&cno=<%=sc.getCno()%>" class="btn"> [ 삭제 ] </a>
                             <% } %>
                                 <span class="line"></span>
                         <% } %>
                     </div>
                 </div>
-<%--                <table class="comment_detail">--%>
-<%--                    <tbody class="comment_list">--%>
-<%--                    <% for(StudentComment sc:scList) { %>--%>
-<%--                        <% if(sc.getAuthor().equals(sid)) { %>--%>
-<%--                            <tr>--%>
-<%--                                <td class="author"><%=sc.getAuthor()%></td>--%>
-<%--                                <td class="resdate"><%=sc.getResdate()%></td>--%>
-<%--                            </tr>--%>
-<%--                            <tr>--%>
-<%--                                <td colspan="2" class="content"><%=sc.getContent()%></td>--%>
-<%--                            </tr>--%>
-<%--                            <tr>--%>
-<%--                                <td colspan="2" class="line">--%>
-<%--                                    <a href="<%=path5 %>/comment/delStudentCommentPro.jsp?bno=<%=bno%>&cno=<%=sc.getCno()%>" class="btn"> [ 삭제 ] </a>--%>
-<%--                                </td>--%>
-<%--                            </tr>--%>
-<%--                    <%      } else { %>--%>
-<%--                                <tr>--%>
-<%--                                    <td class="author"><%=sc.getAuthor()%></td>--%>
-<%--                                    <td class="resdate"><%=sc.getResdate()%></td>--%>
-<%--                                </tr>--%>
-<%--                                <tr>--%>
-<%--                                    <td colspan="2" class="content line"><%=sc.getContent()%></td>--%>
-<%--                                </tr>--%>
-<%--                    <%      }--%>
-<%--                    } %>--%>
-<%--                    </tbody>--%>
-<%--                </table>--%>
             </div>
         </section>
     </div>
