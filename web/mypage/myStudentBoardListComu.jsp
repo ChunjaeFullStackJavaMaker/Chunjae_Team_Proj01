@@ -66,6 +66,11 @@
         b.setId(rs.getString("id"));
         b.setResdate(rs.getString("resdate"));
         b.setCnt(rs.getInt("cnt"));
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date d = sdf.parse(rs.getString("resdate"));
+        b.setResdate(sdf.format(d));
+
         boardList.add(b);
     }
     con.close(rs, pstmt, conn);
