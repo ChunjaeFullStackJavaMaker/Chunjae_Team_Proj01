@@ -13,16 +13,47 @@
     String id = (String) session.getAttribute("id");
     int per =(Integer) session.getAttribute("per");
 
-    Connection con = null;
+    int pageNo = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 0;
+    // 총 페이지 수
+    int totalPage = 0;
+    // 마지막 페이지
+    int endPage = pageNo+2 < 5 ? 5 : pageNo+2;
+    // 학부모 게시글 총 개수
+    int count = 0;
+
+    Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
+    DBC con = new MariaDBCon();
+    conn = con.connect();
 
-    DBC conn = new MariaDBCon();
-    con = conn.connect();
+    // 페이징 처리 - 전체 페이지 수 구하기
+    String sql = "SELECT COUNT(*) as 'count' FROM qnaList";
+    pstmt = conn.prepareStatement(sql);
+    rs = pstmt.executeQuery();
+    if(rs.next()) {
+        count = rs.getInt("count");
+        totalPage = count % 10 == 0 ? count / 10 : (count / 10) + 1;
+        // 전체 페이지가 0일 경우 (=게시글이 없는 경우)
+        totalPage = (totalPage == 0) ? 1 : totalPage;
+    }
+    rs.close();
+    pstmt.close();
 
-    String sql = "select * from qnalist2 where id=? ";
-    pstmt = con.prepareStatement(sql);
+    // 페이징 처리 - 현재 페이지에 출력될 페이지 리스트 구하기
+    if(endPage > totalPage) {
+        endPage = totalPage;
+    }
+    List<Integer> pageList = new ArrayList<>();
+    for(int p=(endPage-4 > 0 ? endPage-4 : 1); p<=endPage; p++) {
+        pageList.add(p);
+    }
+
+    sql = "select * from qnalist2 where id=? ORDER BY qno DESC ";
+    pstmt = conn.prepareStatement(sql);
+    pstmt.setInt(1, 10*(pageNo-1));
     pstmt.setString(1,id);
+
     rs = pstmt.executeQuery();
 
     List<Qna2> qnaList = new ArrayList();
@@ -39,7 +70,7 @@
         q.setPer(rs.getInt("par"));
         qnaList.add(q);
     }
-    conn.close(rs, pstmt, con);
+    con.close(rs, pstmt, conn);
 
 %>
 <!DOCTYPE html>
@@ -57,21 +88,23 @@
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
     <link rel="stylesheet" href="<%=path7 %>/css/google.css">
     <link rel="stylesheet" href="<%=path7 %>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path7 %>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="<%=path7 %>/css/common.css">
     <link rel="stylesheet" href="<%=path7 %>/css/header.css">
+    <link rel="stylesheet" href="<%=path7 %>/css/msboard.css">
+    <link rel="stylesheet" href="<%=path7 %>/css/mgmt.css">
+
     <style>
         .contents { clear:both; min-height:100vh; }
         .contents::after { content:""; clear:both; display:block; width:100%; }
-        .page { clear:both; width: 100%; min-height: 90vh; position:relative; top: 50px; }
+        .page { clear:both; width: 100%; min-height: 90vh; position:relative; top: 50px; margin:0px auto;}
         .page::after { content:""; display:block; width: 100%; clear:both; }
         .page_wrap { clear:both; width: 1000px; height: auto; margin:0 auto; }
 
-        .content_header { clear: both; height: 250px; background-image: url("/images/mypage_cover.jpg");
-            background-repeat: no-repeat; background-position:center -300px;
-            background-size: cover; }
+        .content_tit { font-weight: bold; font-size: 25px; margin: 80px 30px 30px 10px; }
 
         .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
             padding-bottom: 2.4rem; }
@@ -84,21 +117,12 @@
         .box_myboard { display : block; margin-bottom: 20px; text-align :center;}
         .btn_myboard {padding-right : 20px; padding-left :20px;  background-color: yellowgreen; color:#fff;
             border-radius:100px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            line-height:50px; font-size:15px; }
+            line-height:50px; font-size:15px; text-align: center;}
         #btn_mb1 {background-color: gray;}
 
-        .tb1 { width:500px; margin:50px auto; }
-        .tb1 th { width:180px; line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-top:1px solid #333; border-bottom:1px solid #333;
-            background-color:yellowgreen; color:#fff; }
-        .tb1 td { width:310px; line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-bottom:1px solid #333;
-            padding-left: 14px; border-top:1px solid #333; }
     </style>
 
     <link rel="stylesheet" href="<%=path7 %>/css/footer.css">
-    <link rel="stylesheet" href="<%=path7 %>/jquery.dataTables.css">
-    <script src="<%=path7 %>/jquery.dataTables.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -114,7 +138,7 @@
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <p class="box_myboard">
+                <p class="content_tit">
                     <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA </a> &nbsp&nbsp | &nbsp&nbsp
                     <% if(per == 1){%>
                     <a href="/mypage/myStudentBoardListComu.jsp" class="btn_myboard" id="btn_mb1">커뮤니티</a>
@@ -123,42 +147,41 @@
                     <%} %>
                 </p>
                 <hr>
-                <br><br>
-                <table class="tb1" id="myTable">
-                    <thead>
-                    <th class="item1">번호</th>
-                    <th class="item2">제목</th>
-                    <th class="item3">글쓴이</th>
-                    <th class="item4">작성일</th>
-                    <th class="item5">조회</th>
-                    </thead>
-                    <tbody>
-                    <%
-                        SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
-                        for(Qna2 q: qnaList){
-                            Date d= ymd.parse(q.getResdate());
-                            String date = ymd.format(d);
-                    %>
-                    <tr>
-                        <td class="item1"><%=q.getQno() %></td>
-                        <td class="item1">
+                <div class="board_list_wrap">
+                <div class="board_list">
+                    <div class="top" >
+                        <div class="bno" >글번호</div>
+                        <div class="qTitle" >제목</div>
+                        <div style="width:25% ">작성자</div>
+                        <div class="resdate">작성일</div>
+                    </div>
+                    <% for(Qna2 q: qnaList){ %>
+                    <div>
+                        <div class="bno"><%=q.getQno() %></div>
+                        <div class="qTitle">
                             <a href="<%=path7 %>/cs/qna/getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
-                        </td>
-                        <td class="item1"><%=q.getId() %></td>
-                        <td class="item1"><%=date %></td>
-                        <td class="item1"><%=q.getCnt() %></td>
-                    </tr>
+                        </div>
+                        <div style="width:25%"><%=q.getId() %></div>
+                        <div class="resdate"><%=q.getResdate() %></div>
+                    </div>
                     <%}%>
-                    </tbody>
-                </table>
-                <script>
-                    $(document).ready( function () {
-                        $('#myTable').DataTable({
-                            order:[[0, "desc"]]
-                        });
-                    });
-                </script>
+                    <% if(count==0){ %>
+                    <div>
+                        <p class="result">작성한 글이 없습니다.</p>
+                    </div>
+                    <%} %>
+                </div>
+                <div class="board_page">
+                    <a href="<%=path7 %>/mypage/myBoardListQna.jsp?page=1" class="bt first"> &lt;&lt; </a>
+                    <a href="<%=path7 %>/mypage/myBoardListQna.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
+                    <%  for(int p : pageList) {  %>
+                    <a href="<%=path7 %>/mypage/myBoardListQna.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                    <%  } %>
+                    <a href="<%=path7 %>/mypage/myBoardListQna.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
+                    <a href="<%=path7 %>/mypage/myBoardListQna.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                </div>
             </div>
+        </div>
         </section>
     </div>
     <footer class="ft" id="ft">
