@@ -225,7 +225,7 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/66a007bd-9041-4e29-93c4-04b4887bee24" width="1300" alt=""/> <br/>
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/104690434/e9d12bfe-b80c-48f6-a994-a7b08fe65f65" width="1300" alt=""/> <br/>
       <sub><b> PIC1 : 학부모 커뮤니티 관리 </sub></b>
     </td>
   </tr>
