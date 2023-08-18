@@ -68,6 +68,11 @@
         q.setCnt(rs.getInt("cnt"));
         q.setLev(rs.getInt("lev"));
         q.setPer(rs.getInt("par"));
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date d = sdf.parse(rs.getString("resdate"));
+        q.setResdate(sdf.format(d));
+
         qnaList.add(q);
     }
     con.close(rs, pstmt, conn);
