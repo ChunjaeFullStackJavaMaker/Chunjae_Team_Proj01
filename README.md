@@ -136,7 +136,7 @@
   </tr>
     <tr>
     <td align="center">
-     <img width="959" alt="aaa" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/808e7ea2-1022-45d9-8163-05c73705557a">
+     <img width="960" alt="s" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/635f3b74-6280-4dc2-be2b-ba83100b40c3">
  <br/>
       <sub><b> PIC3 : 내가 쓴 글 </sub></b>
     </td>
