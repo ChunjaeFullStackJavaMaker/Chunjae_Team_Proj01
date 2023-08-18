@@ -130,7 +130,7 @@
   </tr>
   <tr>
     <td align="center">
-       <img width="838" alt="1" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/14eb9799-17d9-4137-8b7e-779120f0234d"><br/>
+       <img width="960" alt="ssss" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/2b42fdd1-9560-4c36-8bf4-b6b13f790882"><br/>
       <sub><b> PIC2 : 회원 정보 수정 </sub></b>
     </td>
   </tr>
