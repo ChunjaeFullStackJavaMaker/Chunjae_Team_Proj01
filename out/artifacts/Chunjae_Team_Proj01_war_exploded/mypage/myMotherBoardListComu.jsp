@@ -49,10 +49,10 @@
         pageList.add(p);
     }
 
-    sql = "select * from motherboardlist where id=? ORDER BY bno DESC ";
+    sql = "select * from motherboardlist where id=? ORDER BY resdate desc, id LIMIT ?,10  ";
     pstmt = conn.prepareStatement(sql);
     pstmt.setString(1,id);
-    pstmt.setInt(1, 10*(pageNo-1));
+    pstmt.setInt(2, 10*(pageNo-1));
     rs = pstmt.executeQuery();
 
     List<MotherBoardList> boardList = new ArrayList();
@@ -107,7 +107,7 @@
         .page::after { content:""; display:block; width: 100%; clear:both; }
         .page_wrap { clear:both; width: 1000px; height: auto; margin:0 auto; }
 
-        .content_tit { font-weight: bold; font-size: 25px; margin: 80px 30px 30px 10px; }
+        .content_tit { font-weight: bold; font-size: 25px; margin: 80px 30px 30px 10px; text-align: center;}
 
         .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
             padding-bottom: 2.4rem; }
@@ -141,11 +141,11 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <p class="content_tit">
-                    <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA </a> &nbsp&nbsp | &nbsp&nbsp
+                    <a href="/mypage/myBoardListQna.jsp?page=1" class="btn_myboard">QnA </a> &nbsp&nbsp | &nbsp&nbsp
                     <% if(per == 1){%>
-                    <a href="/mypage/myStudentBoardListComu.jsp" class="btn_myboard" id="btn_mb1">커뮤니티</a>
+                    <a href="/mypage/myStudentBoardListComu.jsp?page=1" class="btn_myboard" id="btn_mb1">커뮤니티</a>
                     <%}else if(per ==2){ %>
-                    <a href="/mypage/myMotherBoardListComu.jsp" class="btn_myboard" id="btn_mb1">커뮤니티</a>
+                    <a href="/mypage/myMotherBoardListComu.jsp?page=1" class="btn_myboard" id="btn_mb1">커뮤니티</a>
                     <%} %>
                 </p>
                 <hr>
@@ -163,7 +163,7 @@
                         <div class="qTitle">
                             <a href="<%=path20 %>/board/motherboard/getMotherBoard.jsp?bno=<%=b.getBno()%>"><%=b.getTitle() %></a>
                         </div>
-                        <div style="width:25%"><%=b.getAuthor() %></div>
+                        <div style="width:25%"><%=b.getId() %></div>
                         <div class="resdate"><%=b.getResdate() %></div>
                     </div>
                     <%}%>

@@ -140,6 +140,10 @@
             qna.setLev(rs.getInt("lev"));
             qna.setPar(rs.getInt("par"));
             qna.setName(rs.getString("name"));
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date d = sdf.parse(rs.getString("resdate"));
+            qna.setResdate(sdf.format(d));
             qnaList.add(qna);
         }
         con.close(rs, pstmt, conn);

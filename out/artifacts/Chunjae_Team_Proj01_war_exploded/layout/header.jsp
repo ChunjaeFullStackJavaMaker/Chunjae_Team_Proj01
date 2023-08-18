@@ -59,15 +59,15 @@
             <li class="item5">
                 <a href="" class="dp1"> 커뮤니티 </a>
                 <ul class="sub">
-                    <li><a href="<%=path8 %>/board/studentboard/StudentBoardList.jsp"> 학생 커뮤니티 </a></li>
-                    <li><a href="<%=path8 %>/board/motherboard/MotherBoardList.jsp"> 학부모 커뮤니티 </a></li>
+                    <li><a href="<%=path8 %>/board/studentboard/StudentBoardList.jsp?page=1"> 학생 커뮤니티 </a></li>
+                    <li><a href="<%=path8 %>/board/motherboard/MotherBoardList.jsp?page=1"> 학부모 커뮤니티 </a></li>
                 </ul>
             </li>
             <li class="item6">
                 <a href="" class="dp1"> 고객지원 </a>
                 <ul class="sub">
                     <li><a href="<%=path8%>/cs/board/boardList.jsp?page=1"> 공지사항 </a></li>
-                    <li><a href="<%=path8%>/cs/qna/qnaList.jsp"> QnA </a></li>
+                    <li><a href="<%=path8%>/cs/qna/qnaList.jsp?page=1"> QnA </a></li>
                     <li><a href="<%=path8%>/cs/faq/faqList.jsp"> FAQ </a></li>
                 </ul>
             </li>
