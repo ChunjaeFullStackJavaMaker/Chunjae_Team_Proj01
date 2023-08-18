@@ -304,8 +304,6 @@
   <tr>
     <td align="center">
       <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/03b77f05-6d4a-41b4-9bc9-a38620a6a8a4">
-      ![qna]()
-
       <br/>
       <sub><b> PIC2 : qna </sub></b>
     </td>
