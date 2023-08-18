@@ -116,11 +116,8 @@
         <%@ include file="/layout/header.jsp" %>
     </header>
     <div class="contents" id="contents">
-        <div class="content_header">
-            <div class="breadcrumb">
-                <p><a href="<%=path3 %>">Home</a> &gt; <a href="<%=path3 %>/admin/adminPage.jsp">고객지원</a> &gt; <span> 공지사항 </span> </p>
-                <h2 class="page_tit"> 고객지원 </h2>
-            </div>
+        <div class="breadcrumb">
+            <p><a href="/">HOME</a> &gt; <a href="/cs/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 글 수정보기</span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
