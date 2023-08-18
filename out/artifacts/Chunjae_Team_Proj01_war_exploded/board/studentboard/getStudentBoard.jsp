@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<%@ include file="/setting/encoding.jsp" %>
 <%
     String path5 = request.getContextPath();
 %>
@@ -39,6 +38,7 @@
         bd.setResdate(sdf.format(d));
         bd.setCnt(rs.getInt("cnt"));
     }
+
     rs.close();
     pstmt.close();
 
@@ -47,16 +47,16 @@
     pstmt.setInt(1, bno);
     rs = pstmt.executeQuery();
 
-    List<Comment> scList = new ArrayList<>();
+    List<Comment> cList = new ArrayList<>();
     while(rs.next()) {
-        Comment sc = new Comment();
-        sc.setCno(rs.getInt("cno"));
-        sc.setAuthor(rs.getString("author"));
+        Comment cmt = new Comment();
+        cmt.setCno(rs.getInt("cno"));
+        cmt.setAuthor(rs.getString("author"));
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date d = sdf.parse(rs.getString("resdate"));
-        sc.setResdate(sdf.format(d));
-        sc.setContent(rs.getString("content"));
-        scList.add(sc);
+        cmt.setResdate(sdf.format(d));
+        cmt.setContent(rs.getString("content"));
+        cList.add(cmt);
     }
 %>
 <!DOCTYPE html>
@@ -64,7 +64,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 학생 커뮤니티 </title>
+    <title>공지사항 글쓰기</title>
     <%@ include file="/setting/head.jsp" %>
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
@@ -277,20 +277,21 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path5 %>">Home</a> &gt; <a href="<%=path5 %>/board/studentboard/StudentBoardList.jsp"> 학생 커뮤니티 목록 </a> > <span> 학생 커뮤니티 </span> </p>
-                <h2 class="page_tit"> 학생 커뮤니티 </h2>
+                <p><a href="<%=path5 %>">Home</a> &gt; <span> 관리자 페이지 </span> </p>
+                <h2 class="page_tit"> 관리자 페이지 </h2>
             </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <!-- 5. Board 객체의 내용을 출력 -->
-                <table class="view_detail">
+                <h2 class="page_tit">공지사항 상세보기</h2>
+                <hr>
+                <table class="view_detail color">
                     <tbody>
                     <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                     <tr>
                         <td colspan="2">
-                            <a href="/board/studentboard/delStudentBoard.jsp?bno=<%=bno%>" class="btn"> 삭제 </a>
-                            <a href="/board/studentboard/updateStudentBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
+                            <a href="/board/motherboard/delMotherBoard.jsp?bno=<%=bno%>" class="btn"> 삭제 </a>
+                            <a href="/board/motherboard/updateMotherBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
                         </td>
                     </tr>
                     <% } %>
@@ -331,12 +332,12 @@
                 </form>
                 <div class="comment_detail">
                     <div class="comment_list">
-                        <% for(Comment sc:scList) { %>
-                            <p class="author"><%=sc.getAuthor()%></p>
-                            <p class="resdate"><%=sc.getResdate()%></p>
-                            <p class="content"><%=sc.getContent()%></p>
-                            <% if(sc.getAuthor().equals(sid) || sid.equals("admin")) { %>
-                                <a href="<%=path5 %>/comment/delStudentCommentPro.jsp?bno=<%=bno%>&cno=<%=sc.getCno()%>" class="btn"> [ 삭제 ] </a>
+                        <% for(Comment cmt:cList) { %>
+                            <p class="author"><%=cmt.getAuthor()%></p>
+                            <p class="resdate"><%=cmt.getResdate()%></p>
+                            <p class="content"><%=cmt.getContent()%></p>
+                            <% if(cmt.getAuthor().equals(sid) || sid.equals("admin")) { %>
+                                <a href="<%=path5 %>/comment/delStudentCommentPro.jsp?bno=<%=bno%>&cno=<%=cmt.getCno()%>" class="btn"> [ 삭제 ] </a>
                             <% } %>
                                 <span class="line"></span>
                         <% } %>

@@ -11,11 +11,11 @@
 
 
 ### 👤 팀원 
-* **박진권** : QnA , Faq 카테고리 기능 구현, 화면설계도 작성 
+* **박진권** : 공지사항, QnA , Faq 카테고리 기능 구현, 화면설계도 작성 
 * **김현경** : 마이페이지 (정보수정, 내가 쓴 글) 기능 구현, 화면설계도 작성
 * **김보경** : 로그인, 로그아웃, 아이디 중복 체크, 회원가입 기능 구현, usecaseDiagram 작성
-* **신예은** : 관리자페이지(회원관리, 커뮤니티 관리, 고객지원 관리, 개인정보 변경) 기능 구현, usecaseDiagram 작성
-* **오태훈** : 학부모 커뮤니티, 학생 커뮤니티 기능구현, 소개 페이지 제작, 요구사항정의서 작성
+* **신예은** : 관리자페이지(회원관리, 커뮤니티 관리, 고객지원 관리, 개인정보 변경) 기능 구현, 페이징 처리 구현, 커뮤니티 댓글 기능 구현, usecaseDiagram 작성
+* **오태훈** : 학부모 커뮤니티, 학생 커뮤니티 기능 구현, 회사 소개 페이지 제작, 오시는 길(다음API연동), API명세서, 요구사항정의서 작성
 * 전체 메뉴 구성 기획 및 DB 설계, frontend 설계는 다같이!
 
 
@@ -77,7 +77,7 @@
 
 
 ### 📂CLASS DIAGRAM
-![class diagram](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/f1e567b0-5043-4a4b-859e-92085b0684e9)
+![class diagram](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/a10408e7-56da-4c0f-8a30-e379f1ba6e80)
 
 # 📎기능 구현
 ## 🗂 회원 기능
@@ -258,16 +258,23 @@
   </tr>
   <tr>
     <td align="center">
+      <img width="960" alt="2222" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/969f1089-ee6a-4d21-a4b4-2c9fce7af150">
+     <br/>
+      <sub><b> PIC2 : 게시판 상세 글 보기 </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
       <img width="960" alt="2222" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/7626d36a-402f-4464-8c7a-c8b3babc7042">
      <br/>
-      <sub><b> PIC2 : 글 관리(글 작성) </sub></b>
+      <sub><b> PIC2 : 게시판 글 작성 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
       <img width="960" alt="33333" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/910078bc-533a-433d-8ed3-d3cf80835ffd">
       <br/>
-      <sub><b> PIC3 : 글 관리(글 수정) </sub></b>
+      <sub><b> PIC3 : 게시판 글 수정 </sub></b>
     </td>
   </tr>
   <tr>

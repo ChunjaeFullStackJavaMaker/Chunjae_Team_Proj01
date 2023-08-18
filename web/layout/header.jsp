@@ -32,7 +32,7 @@
                 <ul class="sub">
                     <li><a href="<%=path8 %>/intro/intro.jsp"> 회사 소개 </a></li>
                     <li><a href="<%=path8 %>/introduce/serviceIntro.jsp"> 서비스 소개 </a></li>
-                    <li><a href=""> 오시는 길 </a></li>
+                    <li><a href="<%=path8 %>/map/map.jsp"> 오시는 길 </a></li>
                 </ul>
             </li>
             <li class="item2">

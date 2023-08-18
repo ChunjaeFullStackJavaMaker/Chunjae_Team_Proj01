@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jk347
-  Date: 2023-08-15
-  Time: 오전 12:28
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
     String path5 = request.getContextPath();
@@ -12,8 +5,9 @@
 <%
     int lev = Integer.parseInt(request.getParameter("lev"));
     int par = Integer.parseInt(request.getParameter("par"));
+
     String sel = "";
-    if(lev==0){
+    if(lev == 0) {
         sel = "질문";
     } else {
         sel = "답변";
@@ -99,7 +93,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">QnA</a> &gt; <span> QnA 글쓰기 </span> </p>
+                <p><a href="<%=path5 %>">Home</a> &gt; <a href="<%=path5 %>/admin/adminPage.jsp">QnA</a> &gt; <span> QnA 글쓰기 </span> </p>
                 <h2 class="page_tit"> 고객지원 </h2>
             </div>
         </div>
@@ -107,7 +101,7 @@
             <div class="page_wrap">
                 <p class="content_tit"> QnA 글쓰기</p>
                 <hr>
-                <form action="addQuestionPro.jsp" method="post">
+                <form action="./addQuestionPro.jsp" method="post">
                     <table>
                         <tbody>
                         <tr>
