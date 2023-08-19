@@ -146,8 +146,8 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">고객지원</a> &gt; <span> 공지사항 </span> </p>
-                <h2 class="page_tit"> 고객지원 </h2>
+                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>">고객지원</a> &gt; <span> 공지사항 </span> </p>
+                <h2 class="page_tit"> 공지사항 </h2>
             </div>
         </div>
         <section class="page" id="page1">

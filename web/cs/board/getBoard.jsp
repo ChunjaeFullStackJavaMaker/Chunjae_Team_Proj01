@@ -52,14 +52,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항 글 상세보기</title>
 
-    <%@ include file="../../setting/head.jsp" %>
+    <%@ include file="/setting/head.jsp" %>
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
     <link rel="stylesheet" href="../../css/google.css">
     <link rel="stylesheet" href="../../css/fonts.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path%>/css/header.css">
+    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
@@ -108,17 +109,18 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
     <header class="hd" id="hd">
         <%@ include file="/layout/header.jsp" %>
     </header>
-    <div class="contents" id="contents">
+    <div class="content_header">
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/cs/board/boardList.jsp">공지사항</a> &gt; <span>공지사항 상세보기</span></p>
+            <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>">공지사항</a> &gt; <span> 공지사항 상세보기 </span> </p>
+            <h2 class="page_tit"> 공지사항 </h2>
         </div>
+    </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">공지사항 상세보기</h2>
                 <hr>
                 <!-- 5. Board 객체의 내용을 출력 -->
                 <table class="tb1">
