@@ -19,6 +19,12 @@
     border-radius: 6px;
     background-color: #F8F8F8;
 }
+#login-form > input[type=button] {
+    height: 24px;
+    background-color: #8CB964;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
 #login-form > input::placeholder{
     color: #D2D2D2;
 }
@@ -26,5 +32,6 @@
     color: #fff;
     font-size: 16px;
     background-color: #8CB964;
-    margin-top: 20px;
+    margin-top: 10px;
 }
+

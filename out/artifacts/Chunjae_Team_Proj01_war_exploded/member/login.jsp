@@ -21,6 +21,8 @@
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="../css/lib/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="<%=path3%>/css/common.css">
     <link rel="stylesheet" href="<%=path3%>/css/header.css">
     <link rel="stylesheet" href="<%=path3%>/css/content_header.css">
@@ -42,9 +44,22 @@
             <div class="login-wrapper">
                 <form method="post" action="<%=path3%>/member/loginpro.jsp" id="login-form">
                     <input type="text" name="id" placeholder="아이디" autofocus required>
-                    <input type="password" name="pw" placeholder="비밀번호" required>
+                    <input type="password" id="pw" name="pw" placeholder="비밀번호" class="active" required>
+                    <input type="button" id="showpw" class="showpw" value="비밀번호 확인하기">
                     <input type="submit" value="Login">
                 </form>
+                <script>
+                    $(function(){
+                        $('#showpw').on('click',function (){
+                            $('#pw').toggleClass('active');
+                            if ($('#pw').hasClass('active')){
+                                $('#pw').prop('type','text');
+                            } else {
+                                $('#pw').prop('type','password');
+                            }
+                        });
+                    });
+                </script>
             </div>
         </section>
     </div>
