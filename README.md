@@ -121,7 +121,7 @@
 <br><br>
 
 ### 📂CLASS DIAGRAM
-![class diagram](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/a10408e7-56da-4c0f-8a30-e379f1ba6e80)
+![classdiagram](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/33b93fe1-b4df-4c75-ba1e-f4a6ba262df3)
 <br><br>
 
 # 📎기능 구현
