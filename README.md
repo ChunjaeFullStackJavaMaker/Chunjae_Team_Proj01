@@ -139,13 +139,13 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/139138265/63a4a308-9f0d-429c-bb17-9373f9f0bb23" width="1300" alt=""/> <br/>
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/cdbee5af-b4b0-4c01-ae10-da845c9b2d3c" width="1300" alt=""/> <br/>
       <sub><b> PIC1 : 로그인 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/139138265/604e7a1a-9931-4027-add9-adc6695492fa" width="1300" alt=""/> <br/>
+      <img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/b05a2641-9c1f-400c-9fe1-0f1c40175a4e" width="1300" alt=""/> <br/>
       <sub><b> PIC2 : 회원가입 </sub></b>
     </td>
   </tr>
@@ -168,21 +168,19 @@
 <table>
   <tr>
     <td align="center">
-      <img width="960" alt="2" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/76bc1238-7c6f-41ed-826b-3270a8b5842d">
-
- <br/>
+      <img width="1300" alt="2" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/76bc1238-7c6f-41ed-826b-3270a8b5842d"><br/>
       <sub><b> PIC1 : 마이페이지 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-       <img width="960" alt="ssss" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/2b42fdd1-9560-4c36-8bf4-b6b13f790882"><br/>
+       <img width="1300" alt="ssss" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/2b42fdd1-9560-4c36-8bf4-b6b13f790882"><br/>
       <sub><b> PIC2 : 회원 정보 수정 </sub></b>
     </td>
   </tr>
     <tr>
     <td align="center">
-     <img width="960" alt="s" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/635f3b74-6280-4dc2-be2b-ba83100b40c3">
+     <img width="1300" alt="s" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/635f3b74-6280-4dc2-be2b-ba83100b40c3">
  <br/>
       <sub><b> PIC3 : 내가 쓴 글 </sub></b>
     </td>
@@ -257,21 +255,6 @@
   </tr>
 </table>
 <br>
-       
-###  4. 온라인 상담 관리
-#### (1) 온라인 상담
-- 회원, 비회원 구분없이 관리자에게 메일로 문의할 수 있도록 구현
-- 네이버 SMTP 이용
-#### 📷 View
-<table>
-  <tr>
-    <td align="center">
-     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/139138265/c843e156-acc2-4169-8cb4-97b7ec528f70">  
-<br/>
-      <sub><b> PIC1 : 온라인 상담 </sub></b>
-    </td>
-  </tr>
-</table>
 
 ### 4. 커뮤니티 관리
 #### (1) 학부모 커뮤니티 관리
@@ -316,33 +299,28 @@
 <table>
   <tr>
     <td align="center">
-      <img width="959" alt="second" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/104690434/907d71a2-5bee-4b1e-ba12-aa94af5876e0">
- <br/>
+      <img width="1300" alt="second" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/104690434/907d71a2-5bee-4b1e-ba12-aa94af5876e0"><br/>
       <sub><b> PIC1 : 커뮤니티 게시판 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img width="960" alt="2222" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/969f1089-ee6a-4d21-a4b4-2c9fce7af150">
-     <br/>
+      <img width="1300" alt="2222" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/969f1089-ee6a-4d21-a4b4-2c9fce7af150"><br/>
       <sub><b> PIC2 : 게시판 상세 글 보기 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img width="960" alt="2222" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/7626d36a-402f-4464-8c7a-c8b3babc7042">
-     <br/>
+      <img width="1300" alt="2222" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/7626d36a-402f-4464-8c7a-c8b3babc7042"><br/>
       <sub><b> PIC2 : 게시판 글 작성 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img width="960" alt="33333" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/910078bc-533a-433d-8ed3-d3cf80835ffd">
-      <br/>
+      <img width="1300" alt="33333" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/910078bc-533a-433d-8ed3-d3cf80835ffd"><br/>
       <sub><b> PIC3 : 게시판 글 수정 </sub></b>
     </td>
   </tr>
-  <tr>
 </table>
 <br>
 
@@ -358,14 +336,14 @@
 <table>
   <tr>
     <td align="center">
-     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4e3fb913-4b5c-4820-aea6-af403a87e6e0">
+     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4e3fb913-4b5c-4820-aea6-af403a87e6e0">
 <br/>
       <sub><b> PIC1 : 공지사항 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/03b77f05-6d4a-41b4-9bc9-a38620a6a8a4">
+      <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/03b77f05-6d4a-41b4-9bc9-a38620a6a8a4">
 <br/>
       <sub><b> PIC2 : qna </sub></b>
     </td>
@@ -381,7 +359,7 @@
 <table>
   <tr>
     <td align="center">
-     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/2a360242-1bdc-49c7-b443-5e51c172037d">  
+     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/2a360242-1bdc-49c7-b443-5e51c172037d">  
 <br/>
       <sub><b> PIC1 : FAQ 게시판 </sub></b>
     </td>
@@ -389,4 +367,33 @@
 </table>
 <br>
 
-
+## 🗂온라인 강의
+### 1. 온라인 강의 목록
+#### (1) 초등학생, 중학생, 고등학생 온라인 강의 목록
+- mariaDB와 연동하여 초등학생, 중학생, 고등학생을 대상으로 한 온라인 강의 목록 출력
+#### (2) 강의 상세 보기
+- 화면 상단에는 사용자가 선택한 강의의 정보 출력
+- 화면 하단에는 선택한 강의의 동영상 목록이 10개씩 페이지로 묶여 페이징 처리되어 출력
+#### (3) 동영상 플레이어
+- 재생, 일시정지, 정지, 사운드 조절 기능이 포함된 동영상 플레이어 구현
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/2a360242-1bdc-49c7-b443-5e51c172037d"><br/>
+      <sub><b> PIC1 : 온라인 강의 목록 </sub></b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/2a360242-1bdc-49c7-b443-5e51c172037d"><br/>
+      <sub><b> PIC2 : 강의 상세 보기 </sub></b>
+    </td>
+  </tr>  
+  <tr>
+    <td align="center">
+     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/2a360242-1bdc-49c7-b443-5e51c172037d"><br/>
+      <sub><b> PIC3 : 동영상 플레이어 </sub></b>
+    </td>
+  </tr>
+</table>
