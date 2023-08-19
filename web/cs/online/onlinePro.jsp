@@ -3,12 +3,11 @@
 <%@ page import="java.util.*, javax.mail.*, javax.mail.internet.*" %>
 
 <%
-        //인코딩
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
 
-        //보내온 이메일 데이터 받기
+        //3. 보내온 이메일 데이터 받기
         String name = request.getParameter("name");
         String id = request.getParameter("author");
         String email = request.getParameter("from");    //보내는 사람 이메일
@@ -17,28 +16,24 @@
         String content = request.getParameter("content");
         String to = "bkyoung123@naver.com";  //받는 사람 이메일
 
-        //smtp 설정
+        //4. smtp 설정 -> Properties 활용
         Properties p = new Properties();
-        p.put("mail.smtp.host","smtp.gmail.com");
-        p.put("mail.smtp.port", "587");
+        p.put("mail.smtp.host","smtp.naver.com");
+        p.put("mail.smtp.port", "465");
         p.put("mail.smtp.starttls.enable", "true");
         p.put("mail.smtp.auth", "true");
         p.put("mail.smtp.debug", "true");
-        p.put("mail.smtp.ssl.enable", "false");
-        p.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-        p.put("mail.smtp.user","bk75121@gmail.com");
-        p.put("mail.smtp.socketFactory.port", "587");
+        p.put("mail.smtp.socketFactory.port", "465");
         p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         p.put("mail.smtp.socketFactory.fallback", "false");
 
-        //이메일 보내기
+        //5. 이메일 보내기
         try {
-                Authenticator auth = new SMTPAuthenticatior();
+                Authenticator auth = new SMTP();
                 Session ses = Session.getInstance(p, auth);
 
                 ses.setDebug(true);
                 MimeMessage msg = new MimeMessage(ses);
-
 
                 msg.setSubject(title); //  메일 제목 추가
 
@@ -60,7 +55,10 @@
                 Address toAddr = new InternetAddress(to);      // 받는 사람
                 msg.addRecipient(Message.RecipientType.TO, toAddr);
 
+
+
                 msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // 메일 내용 추가
+                //msg.setText("이메일 내용"); - 메일 내용이 텍스트로만 가능
                 Transport.send(msg); // 이메일 전송
         } catch(Exception e){
                 e.printStackTrace();
@@ -68,4 +66,5 @@
         } finally {
                 response.sendRedirect("/index.jsp");
         }
+
 %>

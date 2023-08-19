@@ -7,6 +7,9 @@
 <%@ page import="com.chunjae_pro01.dto.Member" %>
 <%
     String path10 = request.getContextPath();
+    request.setCharacterEncoding("UTF-8");
+    response.setContentType("text/html; charset=UTF-8");
+    response.setCharacterEncoding("UTF-8");
 
 %>
 <!DOCTYPE html>
