@@ -1,16 +1,24 @@
 # 📍Chunjae Project 01
 천재교육 첫번째 프로젝트 
-# 💻프로젝트 소개
+<br><br>
+## 💻프로젝트 소개
 "CORNEDU" 라는 인터넷 강의와 학부모 및 학생의 커뮤니티를 제공하는 가상 교육 기업이다.
-
+<br><br>
 
 ### 📅 개발 기간
 * 23.08.07 ~ 23.08.20
+<br><br>
 
+### 📌 주요기능
+* **회원기능** (로그인, 로그아웃, 회원가입)
+* **마이페이지** (개인정보수정 및 내가 쓴 글 목록, 글 상세보기)
+* **관리자페이지** (관리자 정보 수정, 회원 목록 및 강제 탈퇴, 고객지원 관리, 커뮤니티 관리)
+* **게시판** (게시판 글 목록, 글 상세보기, 글 등록, 글 수정, 글 삭제, 댓글)
+* **Qna 및 FAQ** ( 글 목록, 글 상세보기, 글 등록, 글 수정, 글 삭제)
+* **온라인 강의** (온라인 강의 목록, 강의 상세 보기, 동영상 플레이어)
+<br><br>
 
-
-
-### 👤 팀원 
+### 👤 팀원 및 역할 분담
 **박진권**
 * 화면설계서 작성
 * 공지사항 기능 구현
@@ -60,17 +68,13 @@
 * API명세서
 
 **전체 메뉴 구성 기획 및 DB 설계, frontend 설계는 다같이!**
-
+<br><br>
 
 
 
 ### ⚙ 개발 환경
-
-
 * 페이퍼 프로토타입으로 사용성을 테스트 한 후, html과 css, javascript로 작성하여 프론트엔드를 설계하였고
 백엔드 부분은 jsp의 디렉티브, 스크립트릿, 표현식만 활용하여 기업형 데스크탑 웹 애플리케이션을 작성하였습니다. 
-
-
 
 #### ✅FRONTEND : <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 
@@ -81,17 +85,7 @@
 
 #### ✅Server : <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">
 
-
-
-### 📌 주요기능
-
-
-* **회원기능** (로그인, 로그아웃, 회원가입)
-* **마이페이지** (개인정보수정 및 내가 쓴 글 목록, 글 상세보기)
-* **관리자페이지** (관리자 정보 수정, 회원 목록 및 강제 탈퇴, 고객지원 관리, 커뮤니티 관리)
-* **게시판** (게시판 글 목록, 글 상세보기, 글 등록, 글 수정, 글 삭제, 댓글)
-* **Qna 및 FAQ** ( 글 목록, 글 상세보기, 글 등록, 글 수정, 글 삭제)
-* **온라인 강의** (온라인 강의 목록, 강의 상세 보기, 동영상 플레이어)
+<br><br>
 
 
 # ⚒프로젝트 설계
@@ -100,16 +94,19 @@
 <p align="center"><img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/dcf0a4ca-e88f-4bef-83de-e01ec3ceb509" alt="usecase diagram1"></p>
 <p align="center"><img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/81f7a8c9-0b19-4d02-9431-f656227a07ac" alt="usecase diagram1"></p>
 <p align="center"><img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/1276645f-7f53-41d1-b342-0f58e036448c" alt="usecase diagram1"></p>
-
+<br><br>
 
 ### 📂논리적 설계
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/b9200ed8-74b4-427e-bafb-260a74497fe7)
+<br><br>
 
 ### 📂논리적 ERD
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/fee9b456-59db-43e1-bec4-cb07f8ad6cf2)
+<br><br>
 
 ### 📂DATABASE - 테이블 ERD
 <p align="center"><img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/8f58a9ad-9a32-4a86-9aa7-f80f48a8ab91" alt="usecase diagram1"></p>
+<br><br>
 
 ### 📂DATABASE - 테이블 구현
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/e94a6a06-9672-4e26-ae7a-361aa2225e6a)
@@ -118,9 +115,11 @@
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4d1ecd48-ff5e-4443-9dd0-a23fe91d8487)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/cc1c70c4-1454-4b1a-8efe-29af5d83e5ba)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/69a2d610-490a-4950-8c02-94e8462a3a8c)
+<br><br>
 
 ### 📂CLASS DIAGRAM
 ![class diagram](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/a10408e7-56da-4c0f-8a30-e379f1ba6e80)
+<br><br>
 
 # 📎기능 구현
 ## 🗂 회원 기능
