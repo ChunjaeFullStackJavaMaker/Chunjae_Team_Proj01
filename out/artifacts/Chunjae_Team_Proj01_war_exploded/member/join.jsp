@@ -41,7 +41,7 @@
             </div>
             <section class="page" id="page1">
                 <div class="join-wrapper">
-                    <form name="frm1" action="joinpro.jsp" method="post" onsubmit="return inform(this)">
+                    <form name="frm1" action="joinpro.jsp" method="post" onsubmit="return inform(this)" >
                         <table class="tb1">
                             <tbody>
                             <tr>
@@ -61,14 +61,14 @@
                             <tr>
                                 <th><label for="pw">비밀번호</label></th>
                                 <td>
-                                    <input type="password" name="pw" id="pw" class="indata" required>
+                                    <input type="password" name="pw" id="pw" class="indata" placeholder="8~20자리 영문+숫자+특수문자 조합" required>
                                     <input type="button" id="showpw1" class="inbtn" value="비밀번호 확인하기">
                                 </td>
                             </tr>
                             <tr>
                                 <th><label for="pw2">비밀번호 확인</label></th>
                                 <td>
-                                    <input type="password" name="pw2" id="pw2" class="indata" required>
+                                    <input type="password" name="pw2" id="pw2" class="indata" require>
                                     <input type="button" id="showpw2" class="inbtn" value="비밀번호 확인하기">
                                 </td>
                             </tr>
@@ -86,7 +86,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2" class="colspan">
-                                    <input type="submit" value="회원 가입" class="inbtn2">
+                                    <input type="submit" value="회원 가입" class="inbtn2" >
                                 </td>
                             </tr>
                             </tbody>
@@ -95,7 +95,6 @@
                     <script>
                         function inform(frm){
                             var ck_item = frm.ck_item;
-                            //var ck_item = document.getElementById("ck_item");
                             if(ck_item.value!="yes"){
                                 alert("아이디 중복 검사를 진행하시기 바랍니다.");
                                 frm.id.focus();
@@ -105,10 +104,33 @@
                             var pw2 = frm.pw2.value;
                             if(pw!=pw2){
                                 alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
-                                pw.focus();
                                 return false;
+                                frm.pw.focus;
                             }
+
+                            //비밀번호 유효성 검사
+                            var pw = $("#pw").val();
+                            var num = pw.search(/[0-9]/g);
+                            var eng = pw.search(/[a-z]/ig);
+                            var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+                            if(pw.length < 8 || pw.length > 20){
+
+                                alert("8자리 ~ 20자리 이내로 입력해주세요.");
+                                return false;
+                            }else if(pw.search(/\s/) != -1){
+                                alert("비밀번호는 공백 없이 입력해주세요.");
+                                return false;
+                            }else if(num < 0 || eng < 0 || spe < 0 ){
+                                alert("영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+                                return false;
+                            }else {
+                                console.log("통과");
+                                return true;
+                            }
+
                         }
+
                         function idcheck(){
                             var child;
                             var id = document.getElementById("id");

@@ -8,6 +8,7 @@
         <entry key="file://$PROJECT_DIR$/web/index.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/lecture/lectureList.jsp" value="file://$PROJECT_DIR$/web/lecture" />
         <entry key="file://$PROJECT_DIR$/web/member/idload.jsp" value="file://$PROJECT_DIR$/web/member" />
+        <entry key="file://$PROJECT_DIR$/web/member/join.jsp" value="file://$PROJECT_DIR$/web/member" />
         <entry key="file://$PROJECT_DIR$/web/setting/head.jsp" value="file://$PROJECT_DIR$/web/setting" />
       </map>
     </option>
