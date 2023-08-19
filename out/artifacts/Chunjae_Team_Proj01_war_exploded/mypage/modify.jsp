@@ -111,7 +111,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="/">Home</a> &gt; <span> 마이페이지 </span> &gt; <span> 개인정보 변경 </span> </p>
+                <p><a href="/">Home</a> &gt; <a href="/mypage/mypage.jsp">마이페이지</a> &gt; <span> 개인정보 변경 </span> </p>
                 <h2 class="page_tit"> 개인정보 변경 </h2>
             </div>
         </div>
