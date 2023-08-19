@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%-- 1. 필요한 sql, db 패키지 임포트 --%>
 <%@ page import="java.sql.*" %>
-<%@ page import="com.chunjae_pro01.dto.*" %>
 <%@ page import="com.chunjae_pro01.util.DBC" %>
 <%@ page import="com.chunjae_pro01.util.MariaDBCon" %>
 <%
@@ -32,9 +31,9 @@
     /* 5. 처리된 건수가 0보다 크면(성공처리가 되었으면) 목록 페이지로 이동하고,
     아니면(실패처리가 되었으면), 수정할 폼 화면으로 이동한다. */
     if(cnt>0){
-        response.sendRedirect("/board/studentboard/StudentBoardList.jsp");
+        response.sendRedirect("/board/studentboard/getStudentBoard.jsp?bno="+bno);
     } else {
-        response.sendRedirect("/board/studuentboard/updateStudentBoard.jsp?bno="+bno);
+        out.println("<script> history.go(-1); </script>");
     }
     con.close(pstmt, conn);
 %>

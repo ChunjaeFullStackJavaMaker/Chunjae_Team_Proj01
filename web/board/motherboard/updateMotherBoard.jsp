@@ -132,7 +132,7 @@
                         <tr>
                             <td colspan="2">
                                 <%-- 6. 수정하기(submit)을 누르면, 수정처리로 넘기기 --%>
-                                <a href="/board/motherboard/MotherBoardList.jsp" class="inbtn">글 목록</a>
+                                <a href="javascript:history.go(-1)" class="inbtn"> 이전 페이지 </a>
                                 <% if(sid.equals("admin") || sid.equals(motherBoard.getAuthor())) { %>
                                     <input type="submit" value="글수정" class="inbtn">
                                 <a href="/board/motherboard/delStudentBoard.jsp?bno=<%=motherBoard.getBno() %>" class="inbtn">글 삭제</a>

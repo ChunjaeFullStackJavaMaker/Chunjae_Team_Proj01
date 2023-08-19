@@ -42,7 +42,7 @@
     } else {
         System.out.println("글 삭제가 실패되었습니다.");
         //response.sendRedirect("/qna/updateQna.jsp?qno="+qno);
-        out.println("<script>alert('글 삭제 실패');</script>");
+        out.println("<script>alert('글을 삭제하지 못했습니다. 잠시 후 다시 시도해주세요.');</script>");
         out.println("<script>history.go(-1);</script>");
     }
 
