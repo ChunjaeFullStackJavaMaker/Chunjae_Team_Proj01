@@ -62,48 +62,116 @@
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
     <link rel="stylesheet" href="../../css/google.css">
     <link rel="stylesheet" href="../../css/fonts.css">
-    <link rel="stylesheet" href="<%=path%>/css/header.css">
-    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path5 %>/css/header.css">
+    <link rel="stylesheet" href="<%=path5 %>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="../../css/common.css">
-    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="<%= path5 %>/css/common.css">
     <style>
         /* 본문 영역 스타일 */
-        .contents { clear:both; min-height:100vh;
-            /*background-image: url("../../images/bg_visual_overview.jpg");*/
-            background-repeat: no-repeat; background-position:center -250px; }
-        .contents::after { content:""; clear:both; display:block; width:100%; }
+        .contents {
+            clear: both;
+        }
 
-        .page { clear:both; width: 100vw; height: 100vh; position:relative; }
-        .page::after { content:""; display:block; width: 100%; clear:both; }
+        .contents::after {
+            content: "";
+            clear: both;
+            display: block;
+            width: 100%;
+        }
 
-        .page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
-        .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
-            padding-bottom: 2.4rem; }
+        .page {
+            position: relative;
+            clear: both;
+            width: 100%;
+            min-height: 100vh;
+        }
 
-        .breadcrumb { clear:both;
-            width:1200px; margin: 0 auto; text-align: right; color:#fff;
-            padding-top: 28px; padding-bottom: 28px; }
-        .breadcrumb a { color:#fff; }
-        .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
+        .page::after {
+            content: "";
+            display: block;
+            width: 100%;
+            clear: both;
+        }
 
-        .tb1 { width:800px; margin:50px auto; }
-        .tb1 th { line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-top:1px solid #333; border-bottom:1px solid #333;
-            background-color:#8CB964; color:#fff; }
-        .tb1 td {line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-bottom:1px solid #333;
-            padding-left: 14px; border-top:1px solid #333; }
+        .page_wrap {
+            clear: both;
+            width: 1200px;
+            margin: 0 auto;
+        }
 
-        .indata { display:inline-block; width:300px; height: 48px; line-height: 48px;
-            text-indent:14px; font-size:18px; }
-        .inbtn { display:block;  border-radius:100px;
-            min-width:100px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px;
-            float:left; margin-right: 20px; }
-        .inbtn:last-child { float:right; }
+        .page_tit {
+            font-size: 48px;
+            text-align: center;
+            padding-top: 1em;
+            color: #fff;
+            padding-bottom: 2.4rem;
+        }
+
+        .breadcrumb {
+            clear: both;
+            width: 1200px;
+            margin: 0 auto;
+            text-align: right;
+            color: #fff;
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+
+        .breadcrumb a {
+            color: #fff;
+        }
+
+        .view_detail {
+            width: 800px;
+            margin: 50px auto;
+        }
+
+        .view_detail tr {
+            width: 100%;
+        }
+
+        .view_detail tr td {
+            width: 100%;
+        }
+
+        .view_detail .btn {
+            float: right;
+            width: 50px;
+            height: 50px;
+            text-align: right;
+            line-height: 50px;
+            border: none;
+            background-color: #fff;
+        }
+
+        .view_detail .title {
+            padding: 20px;
+            font-size: 18pt;
+            font-weight: bold;
+            line-height: 30px;
+        }
+
+        .view_detail .author {
+            width: 50%;
+            padding: 0px 20px 10px 20px;
+            text-align: right;
+        }
+
+        .view_detail .resdate {
+            width: 50%;
+            padding: 0px 20px 10px 20px;
+        }
+
+        .view_detail .content {
+            clear: both;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            line-height: 20px;
+        }
+
     </style>
 
     <link rel="stylesheet" href="../../css/footer.css">
@@ -118,82 +186,46 @@
     </header>
     <div class="content_header">
         <div class="breadcrumb">
-            <p><a href="<%=path %>/">Home</a> &gt; <a href="<%=path %>">QnA</a> &gt; <span> 질문 및 답변 </span> </p>
+            <p><a href="<%=path5 %>/">Home</a> &gt; <a href="<%=path5 %>">QnA</a> &gt; <span> 질문 및 답변 </span> </p>
             <h2 class="page_tit"> QnA </h2>
         </div>
     </div>
-        <section class="page" id="page1">
-            <div class="page_wrap">
-                <hr>
-                <table class="tb1" id="myTable">
-                    <tbody>
-                    <!-- 6. 해당 글번호에 대한 글 상세내용 출력 -->
-                    <tr>
-                        <th>유형</th>
-                        <td>
-                            <% if(qna.getLev()==0) { %>
-                            <span>질문</span>
-                            <% } else { %>
-                            <span>답변</span>
-                            <% } %>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>글 제목</th>
-                        <td><%=qna.getTitle() %></td>
-                    </tr>
-                    <tr>
-                        <th>글 내용</th>
-                        <td><%=qna.getContent() %></td>
-                    </tr>
-                    <tr>
-                        <th>작성자</th>
-                        <td>
-                            <% if(sid!=null && sid.equals("admin")) { %>
-                            <span title="<%=qna.getAuthor()%>"><%=qna.getName() %></span>
-                            <% } else { %>
-                            <span><%=qna.getName() %></span>
-                            <% } %>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>작성일시</th>
-                        <td><%=qna.getResdate() %></td>
-                    </tr>
-                    <tr>
-                        <th>조회수</th>
-                        <td><%=qna.getCnt() %></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <!-- 7. 용도별 링크 버튼 추가 -->
-                            <!-- 현재 글이 질문 글이면,
-                                로그인한 사람만 답변하기,
-                                질문을 등록한 사람(관리자포함)만 질문글 수정,
-                                질문글 삭제 버튼 추가
-                             아니면(답변 글이면),
-                                답변을 등록한 사람(관리자포함)만 답변글 삭제,
-                                답변글 버튼 수정 -->
-                            <!-- 모든 사용자 목록 버튼 추가 -->
-                            <% if(qna.getLev()==0) { %>
-                            <% if(sid!=null) { %>
-                            <a href="/cs/qna/addQuestion.jsp?lev=1&par=<%=qna.getQno() %>" class="inbtn">답변하기</a>
-                            <% } %>
-                            <% if(sid!=null && (sid.equals("admin") || sid.equals(qna.getAuthor()))) { %>
-                            <a href="/cs/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="inbtn">질문 수정하기</a>
-                            <a href="/cs/qna/delQna.jsp?qno=<%=qna.getQno() %>&lev=0" class="inbtn">질문 삭제하기</a>
-                            <% } %>
-                            <% } else { %>
-                            <% if(sid!=null && (sid.equals("admin") || sid.equals(qna.getAuthor()))) { %>
-                            <a href="/cs/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="inbtn">답변 수정하기</a>
-                            <a href="/cs/qna/delQna.jsp?qno=<%=qna.getQno() %>&lev=1" class="inbtn">답변 삭제하기</a>
-                            <% } %>
-                            <% } %>
-                            <a href="/cs/qna/qnaList.jsp" class="inbtn">목록</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+    <section class="page" id="page1">
+        <div class="page_wrap">
+            <!-- 5. Board 객체의 내용을 출력 -->
+            <table class="view_detail color">
+                <tbody>
+                <% if(sid.equals("admin") || sid.equals(qna.getAuthor())) { %>
+                <tr>
+                    <td colspan="3">
+                        <a href="<%= path5%>/cs/qna/delQna.jsp?bno=<%=qno%>&target=qna" class="btn"> 삭제 </a>
+                        <a href="<%= path5%>/cs/qna/updateQna.jsp?bno=<%=qno%>" class="btn"> 수정 </a>
+                    </td>
+                </tr>
+                <% } %>
+                <tr>
+                    <td class="title" colspan="3">
+                        <%=qna.getTitle() %>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="resdate">
+                        작성일 | <%=qna.getResdate()%>
+                    </td>
+                    <td style="width:10%; text-align: right;">
+                        조회수 | <%=qna.getCnt() %>
+                    </td>
+                    <td style="min-width:10%; max-width: 15%; text-align: right;">
+                        작성자 | <%=qna.getAuthor()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content" colspan="2">
+                        <%=qna.getContent() %>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
             </div>
         </section>
     </div>
