@@ -61,7 +61,7 @@
                             <tr>
                                 <th><label for="pw">비밀번호</label></th>
                                 <td>
-                                    <input type="password" name="pw" id="pw" class="indata" required>
+                                    <input type="password" name="pw" id="pw" class="indata" placeholder="8~20자리 영문+숫자+특수문자 조합" required>
                                     <input type="button" id="showpw1" class="inbtn" value="비밀번호 확인하기">
                                 </td>
                             </tr>
@@ -107,7 +107,30 @@
                                 return false;
                                 frm.pw.focus;
                             }
+
+                            //비밀번호 유효성 검사
+                            var pw = $("#pw").val();
+                            var num = pw.search(/[0-9]/g);
+                            var eng = pw.search(/[a-z]/ig);
+                            var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+                            if(pw.length < 8 || pw.length > 20){
+
+                                alert("8자리 ~ 20자리 이내로 입력해주세요.");
+                                return false;
+                            }else if(pw.search(/\s/) != -1){
+                                alert("비밀번호는 공백 없이 입력해주세요.");
+                                return false;
+                            }else if(num < 0 || eng < 0 || spe < 0 ){
+                                alert("영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+                                return false;
+                            }else {
+                                console.log("통과");
+                                return true;
+                            }
+
                         }
+
                         function idcheck(){
                             var child;
                             var id = document.getElementById("id");
