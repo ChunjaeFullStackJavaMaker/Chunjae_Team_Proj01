@@ -28,8 +28,9 @@
     conn = con.connect();
 
     // 페이징 처리 - 전체 페이지 수 구하기
-    String sql = "SELECT COUNT(*) as 'count' FROM StudentBoardList";
+    String sql = "SELECT COUNT(*) as 'count' FROM studentboardlist where id= ?";
     pstmt = conn.prepareStatement(sql);
+    pstmt.setString(1, id);
     rs = pstmt.executeQuery();
     if(rs.next()) {
         count = rs.getInt("count");
