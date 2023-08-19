@@ -22,21 +22,21 @@
     <div class="page_wrap">
         <ul class="pic_lst">
             <li class="item1">
-                <a href="<%=path5 %>/class/elementary/class.jsp">
+                <a href="<%=path5 %>/lecture/lectures.jsp?target=초등">
                     <strong class="pic_tit">초등</strong>
                     <em class="pic_com">초등학생 메뉴로 이동합니다.</em>
                     <span class="pic_arrow" id="pic_a1">이동하기 →</span>
                 </a>
             </li>
             <li class="item2">
-                <a href="<%=path5 %>/class/middle/class.jsp">
+                <a href="<%=path5 %>/lecture/lectures.jsp?target=중등">
                     <strong class="pic_tit">중등</strong>
                     <em class="pic_com">중학생 메뉴로 이동합니다.</em>
                     <span class="pic_arrow" id="pic_a2">이동하기 →</span>
                 </a>
             </li>
             <li class="item3">
-                <a href="<%=path5 %>/class/high/class.jsp">
+                <a href="<%=path5 %>/lecture/lectures.jsp?target=고등">
                     <strong class="pic_tit">고등</strong>
                     <em class="pic_com">고등학생 메뉴로 이동합니다.</em>
                     <span class="pic_arrow" id="pic_a3">이동하기 →</span>
