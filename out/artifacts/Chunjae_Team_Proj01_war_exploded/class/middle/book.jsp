@@ -73,7 +73,6 @@
 
         .contents{
             margin-top: 20px;
-            padding-left: 20px;
         }
         ul.list.row {
             width : 900px

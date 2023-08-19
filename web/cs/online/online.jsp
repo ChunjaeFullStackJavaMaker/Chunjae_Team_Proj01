@@ -41,7 +41,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="/">Home</a> &gt; <span> 온라인 상담 </span> </p>
+                <p><a href="<%=path10 %>/">Home</a> &gt; 고객지원 &gt; <span> 온라인 상담 </span> </p>
                 <h2 class="page_tit"> 온라인 상담 </h2>
             </div>
         </div>
