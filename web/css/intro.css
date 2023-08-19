@@ -9,7 +9,7 @@
 }
 
 .sub_wrap {
-    padding: 120px 0 120px;
+    padding: 100px 0 10px;
     background: #fff;
 }
 
@@ -71,7 +71,7 @@
 .sub01_pt.pt_lt {
     width: 51.33333334%;
     word-break: keep-all;
-    padding: 40px 40px 70px 0;
+    padding: 40px 40px 10px 0;
 }
 
 .sub01_pt_txt_in {
@@ -128,7 +128,8 @@
     left: 0;
     width: 90%;
     height: 90%;
-    background-image: url(../images/first_1.png);
+    filter: blur(5px);
+    background-image: url("../images/intro2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -177,7 +178,7 @@
 /* sub02 */
 #sub02 {
     padding: 100px 0 130px;
-    background-image: url(../images/first_1.png);
+    background-image: url(../images/intro2.png);
     background-size: cover;
     background-position: 50% 50%;
     margin-bottom: 130px;
@@ -192,7 +193,7 @@
 .sub02_title_wrap h2 {
     font-size: 40px;
     font-weight: 500;
-    color: #fff;
+    color: #333333;
 }
 
 .sub02_title_wrap h2:after {
@@ -206,11 +207,10 @@
 
 .sub02_pt_wrap {
     display: flex;
-    flex-flow: row wrap;
 }
 
 .sub02_pt {
-    width: 33.33333333%;
+    width: 33%;
     text-align: center;
     word-break: keep-all;
     padding: 0 20px;
@@ -226,7 +226,7 @@
 .sub02_pt h4 {
     font-size: 50px;
     font-weight: 600;
-    color: #fff;
+    color: #5882FA;
     margin-bottom: 10px;
     font-family: 'Lato', 'Noto Sans KR';
 }
@@ -238,7 +238,7 @@
 .sub02_pt p {
     font-size: 18px;
     font-weight: 300;
-    color: #333333;
+    color: #F8F8F8;
     width: 100%;
     max-width: 310px;
     margin: 0 auto;

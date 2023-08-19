@@ -86,22 +86,16 @@
                             <h3>
                                 Give daily pleasure through EDU<br/> <strong>보다 나은 교육의
                                 <span>첫걸음</span>
+                                <br>
+                                <br>
+
                             </strong>
+                                <strong>그 길을 CornEDU와 함께 하겠습니다!</strong>
                             </h3>
                             <div class="sub01_dia">
                                 <div></div>
                                 <div></div>
                                 <div></div>
-                            </div>
-                            <div class="sub01_txt">
-                                CornEdu 란?<br />
-                                4차 산업혁명에 부합한 교육에 맞춘<br />CornEDU는 학생의 성적 향상 뿐만이 아니라 보다 나은 학생의 성장까지 기대합니다.<br />
-                                <br />CornEdu는 교과서와 학습 교재를 출간하는 교육·출판 전문 기업입니다.<br />
-                                <br />제5차 교육과정부터 국정·검정·인정 교과용 도서를 개발, 발행하고<br />
-                                <br />연간 3,700여 종에 이르는 유아동·초·중·고등 학습 교재를 발간하고 있습니다.<br/>
-                                또한 미래 인재 육성을 위한 학원 프랜차이즈 사업과
-                                4차 산업혁명 시대에 발맞춘 스마트러닝, 에듀테크 사업 등을 통해
-                                대한민국 교육 트렌드를 주도하고 있습니다.<br/>
                             </div>
                         </div>
                     </div>
@@ -119,21 +113,25 @@
                     <h3>VISON 01</h3>
                     <h4>혁신</h4>
                     <p>
-                        혁신적이고 <span>새로운 방식의</span>교육 환경을 제공
+                        혁신적이고 <span>새로운 방식의</span><br>교육 환경을 제공
                     </p>
                 </div>
+                <br>
+                <br>
                 <div class="sub02_pt pt02">
                     <h3>VISION 02</h3>
                     <h4>지속가능</h4>
                     <p>
-                        앞으로의 미래세대를<span>위해</span>지속 가능한 교육을 목표
+                        앞으로의 미래세대를 <span>위해 </span>지속 가능한 교육을 목표
                     </p>
                 </div>
+                <br>
+                <br>
                 <div class="sub02_pt pt03">
                     <h3>VISION 03</h3>
                     <h4>글로벌</h4>
                     <p>
-                        글로벌 인재로써<span>성장 가능성을 넓히는</span>글로벌 인재 양성
+                        글로벌 인재로써 <span>성장 가능성을 넓히는 </span>글로벌 인재 양성
                     </p>
                 </div>
             </div>
