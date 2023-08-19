@@ -158,7 +158,7 @@
                             <div class="author"> <%=mBoard.getAuthor()%> </div>
                             <div class="resdate"> <%=mBoard.getResdate()%></div>
                             <div class="modify"><button onclick="javascript:location.href='<%=path%>/board/motherboard/updateMotherBoard.jsp?bno=<%=mBoard.getBno()%>'"> 수정 </button></div>
-                            <div class="delete"><button onclick="javascript:location.href='<%=path%>/board/motherboard/delMotherBoard.jsp?bno=<%=mBoard.getBno()%>'"> 삭제 </button></div>
+                            <div class="delete"><button onclick="javascript:location.href='<%=path%>/board/motherboard/delMotherBoard.jsp?bno=<%=mBoard.getBno()%>&target=admin'"> 삭제 </button></div>
                         </div>
                         <% } %>
                         <% if(count == 0) { %>

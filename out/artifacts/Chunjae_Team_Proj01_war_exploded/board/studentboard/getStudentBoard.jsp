@@ -158,6 +158,7 @@
             float: right;
             width: 50px;
             height: 50px;
+            text-align: right;
             line-height: 50px;
             border: none;
             background-color: #fff;
@@ -295,9 +296,9 @@
                     <tbody>
                     <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                     <tr>
-                        <td colspan="2">
-                            <a href="/board/motherboard/delMotherBoard.jsp?bno=<%=bno%>" class="btn"> 삭제 </a>
-                            <a href="/board/motherboard/updateMotherBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
+                        <td colspan="3">
+                            <a href="/board/studentboard/delStudentBoard.jsp?bno=<%=bno%>&target=board" class="btn"> 삭제 </a>
+                            <a href="/board/studentboard/updateStudentBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
                         </td>
                     </tr>
                     <% } %>
@@ -310,15 +311,15 @@
                         <td class="resdate">
                             작성일 | <%=bd.getResdate()%>
                         </td>
-                        <td style="width:10%; padding-left:40px;" >
+                        <td style="width:10%; text-align: right;" >
                             조회수 | <%=bd.getCnt() %>
                         </td>
-                        <td style="width:10%; padding-left:20px;">
+                        <td style="min-width:10%; max-width: 15%; text-align: right;">
                             작성자 | <%=bd.getAuthor()%>
                         </td>
                     </tr>
                     <tr>
-                        <td class="content" colspan="2">
+                        <td class="content" colspan="3">
                             <%=bd.getContent() %>
                         </td>
                     </tr>

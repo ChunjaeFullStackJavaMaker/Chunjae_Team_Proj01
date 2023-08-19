@@ -38,22 +38,22 @@
             <li class="item2">
                 <a href="" class="dp1"> 초 등 </a>
                 <ul class="sub">
-                    <li><a href="<%=path8%>/class/elementary/class.jsp"> 강의 소개 </a></li>
-                    <li><a href="<%=path8%>/class/elementary/book.jsp"> 교재 소개 </a></li>
+                    <li><a href="<%=path8%>/lecture/lectures.jsp?target=초등"> 강의 소개 </a></li>
+                    <li><a href="<%=path8%>/bookInfo/elmBookInfo.jsp"> 교재 소개 </a></li>
                 </ul>
             </li>
             <li class="item3">
                 <a href="" class="dp1"> 중 등 </a>
                 <ul class="sub">
-                    <li><a href="<%=path8%>/class/middle/class.jsp"> 강의 소개 </a></li>
-                    <li><a href="<%=path8%>/class/middle/book.jsp"> 교재 소개 </a></li>
+                    <li><a href="<%=path8%>/lecture/lectures.jsp?target=중등"> 강의 소개 </a></li>
+                    <li><a href="<%=path8%>/bookInfo/middleBookInfo.jsp"> 교재 소개 </a></li>
                 </ul>
             </li>
             <li class="item4">
                 <a href="" class="dp1"> 고 등 </a>
                 <ul class="sub">
-                    <li><a href="<%=path8%>/class/high/class.jsp"> 강의 소개 </a></li>
-                    <li><a href="<%=path8%>/class/high/book.jsp"> 교재 소개 </a></li>
+                    <li><a href="<%=path8%>/lecture/lectures.jsp?target=고등"> 강의 소개 </a></li>
+                    <li><a href="<%=path8%>/bookInfo/highBookInfo.jsp"> 교재 소개 </a></li>
                 </ul>
             </li>
             <li class="item5">

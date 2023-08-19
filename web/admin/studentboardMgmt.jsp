@@ -160,7 +160,7 @@
                             <div class="author"> <%=sBoard.getAuthor()%> </div>
                             <div class="resdate"> <%=sBoard.getResdate()%></div>
                             <div class="modify"><button onclick="javascript:location.href='<%=path%>/board/studentboard/updateStudentBoard.jsp?bno=<%=sBoard.getBno()%>'"> 수정 </button></div>
-                            <div class="delete"><button onclick="javascript:location.href='<%=path%>/board/studentboard/delStudentBoard.jsp?bno=<%=sBoard.getBno()%>'"> 삭제 </button></div>
+                            <div class="delete"><button onclick="javascript:location.href='<%=path%>/board/studentboard/delStudentBoard.jsp?bno=<%=sBoard.getBno()%>&target=admin'"> 삭제 </button></div>
                         </div>
                         <% } %>
                         <% if(count == 0) { %>

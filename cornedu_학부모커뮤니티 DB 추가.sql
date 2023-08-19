@@ -314,4 +314,103 @@ VALUES(1, 'shin', '댓글 기능 더미데이터3');
 
 COMMIT;
 
-SELECT * FROM studentComment;
+SELECT * FROM studentcomment;
+
+-----------------------------------------------------------------------------------------------------------------------------
+-- 강의 테이블 생성
+CREATE TABLE lecture(
+	lno INT AUTO_INCREMENT PRIMARY KEY,
+	lectureName VARCHAR(500) NOT NULL,
+	teacher VARCHAR(10) NOT NULL,
+	content VARCHAR(500),
+	filePath VARCHAR(200),
+	target VARCHAR(10) CHECK(target IN('초등','중등','고등'))
+);
+
+-- 초등 강의 더미데이터 5건
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('파닉스 레이스','김영어','숨은 그림 찾기로 영어에 대한 흥미를 키워요','/images/lecture01.png','초등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('수학의 신','한매스','수학 신들의 놀이터에 가기 위해 수학 영웅이 되어보아요','/images/lecture02.png','초등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('과학이 붐!','김과학','앞으로 배울 과학 개념들을 한 번에 모아 공부하고 싶은 초등생을 위한 강의','/images/lecture03.png','초등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('영어 홈스쿨 레벨1','박레벨','즐겁게 영어 기본기를 다지는 영어홈스쿨!','/images/lecture04.png','초등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('기적의 문제해결법 6-2','정문제','나의 첫 수학공부를 정문제 선생님과 함께 해요','/images/lecture05.png','초등');
+
+-- 중등 강의 더미데이터 5건
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('빠작! 중학 국어','박국어','국어 만점을 받고 싶다면 이 강의를 들어보세요','/images/lecture01.png','중등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('고전문학 독해','김고전','독해 실력을 키워봐요','/images/lecture02.png','중등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('단기 영문법 핵심 특강','김영어','영문법을 단기간으로 습득할 수 있는 기회!','/images/lecture03.png','중등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('귀가 트이는 영어듣기 학습법','정리슨','영어 듣기가 어렵다면 이 강의를 들어보세요','/images/lecture04.png','중등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('한달 마스터 VOCA 1000','신보카','한 달 안에 영단어 1000개를 외울 수 있는 마법의 강의!','/images/lecture05.png','중등');
+
+-- 고등 강의 더미데이터 5건
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('[2024 수능완성] 국어+언어와 매체','박국어','박국어쌤과 함께라면 국어는 걱정 없다!','/images/lecture01.png','고등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('[2024 수능완성] 수학+확률과 통계','이종영','5등급에서 1등급까지! 노력은 배신하지 않아요','/images/lecture02.png','고등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('[2024 수능특강] 완벽한 세계사','류역사','4등급 탈출! 상위권으로 가는 날개를 달아주는 강의','/images/lecture03.png','고등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('[2024 수능특강] 현대소설','박소설','어려운 내용도 재미있게 풀어주는 박소설쌤!','/images/lecture04.png','고등');
+INSERT INTO lecture(lectureName, teacher, content, filePath, target)
+VALUES('[2024 수능개념] 해석공식 기출구문','주영어','수능 영어 등급 상승의 단 하나의 공식!','/images/lecture05.png','고등');
+-- 데이터 참고: EBS 초등, EBS 중등, EBSi
+
+SELECT * FROM lecture;
+
+-------------------------------------------------------------------------------------------------------------------------------------
+-- 강의 목록 페이지 구현
+CREATE TABLE lectureInfo(
+	vno INT AUTO_INCREMENT PRIMARY KEY,
+	lno INT NOT NULL,
+	vTitle VARCHAR(500) NOT NULL,
+	filePath VARCHAR(200) NOT NULL,
+	duration VARCHAR(100) NOT NULL,
+	FOREIGN KEY(vno) REFERENCES lecture(lno) ON DELETE CASCADE
+);
+
+-- 중등 강의 추가
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[1강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[2강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[3강] 빠작! 국어 뽀개기', '/videos/lecture_video03', '01:41');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[4강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[5강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[6강] 빠작! 국어 뽀개기', '/videos/lecture_video03', '01:41');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[7강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[8강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[9강] 빠작! 국어 뽀개기', '/videos/lecture_video03', '01:41');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[10강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(1, '[11강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:30');
+
+-- 고등 강의 추가
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[1강] 독서 유형 연습①-②', '/videos/lecture_video01', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[2강] 독서 유형 연습③', '/videos/lecture_video02', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[3강] 독서 유형 연습④', '/videos/lecture_video03', '01:41');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[4강] 문학 유형 연습①-②', '/videos/lecture_video01', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[5강] 문학 유형 연습③', '/videos/lecture_video02', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[6강] 문학 유형 연습④-⑤', '/videos/lecture_video03', '01:41');
