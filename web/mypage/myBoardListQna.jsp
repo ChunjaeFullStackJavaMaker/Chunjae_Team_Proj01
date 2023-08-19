@@ -138,7 +138,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="/">Home</a> &gt; <span> 마이페이지 </span> &gt; <span> 내가 쓴 글 </span> </p>
+                <p><a href="/">Home</a> &gt; <a href="/mypage/mypage.jsp">마이페이지</a> &gt; <span> 내가 쓴 글 </span> </p>
                 <h2 class="page_tit"> 내가 쓴 글 </h2>
             </div>
         </div>
@@ -155,11 +155,12 @@
                 <hr>
                 <div class="board_list_wrap">
                 <div class="board_list">
-                    <div class="top" >
-                        <div class="bno" >글번호</div>
-                        <div class="qTitle" >제목</div>
-                        <div style="width:25% ">작성자</div>
-                        <div class="resdate">작성일</div>
+                    <div class="top">
+                        <div class="bno" style="padding-right: 200px"> 글번호 </div>
+                        <div class="Title" style="padding-right: 120px"> 제목 </div>
+                        <div style="width: 12%; padding-left: 150px"> 작성자 </div>
+                        <div style="width: 5%; padding-left: 30px"> 조회수 </div>
+                        <div style="width : 13%; padding-left:40px;"> 작성일 </div>
                     </div>
                     <% for(Qna2 q: qnaList){ %>
                     <div>
@@ -167,8 +168,9 @@
                         <div class="qTitle">
                             <a href="<%=path7 %>/cs/qna/getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
                         </div>
-                        <div style="width:25%"><%=q.getId() %></div>
-                        <div class="resdate"><%=q.getResdate() %></div>
+                        <div style="width: 22%"><%=q.getId() %></div>
+                        <div class="cnt"> <%=q.getCnt()%> </div>
+                        <div style="padding-left: 80px;"><%=q.getResdate() %></div>
                     </div>
                     <%}%>
                     <% if(count==0){ %>

@@ -129,7 +129,7 @@
             board.setBno(rs.getInt("bno"));
             board.setTitle(rs.getString("title"));
             board.setAuthor(rs.getString("author"));
-
+            board.setCnt(rs.getInt("cnt"));
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Date d = sdf.parse(rs.getString("resdate"));
             board.setResdate(sdf.format(d));
@@ -157,21 +157,23 @@
                 <div class="board_list_wrap">
                     <div class="board_list">
                         <div class="top">
-                            <div class="bno"> 번호 </div>
-                            <div class="qTitle"> 제목 </div>
-                            <div style="width: 25%"> 작성자 </div>
-                            <div class="resdate"> 작성일 </div>
+                            <div class="bno" style="padding-right: 200px"> 글번호 </div>
+                            <div class="Title" style="padding-right: 120px"> 제목 </div>
+                            <div style="width: 15%; padding-left: 150px"> 작성자 </div>
+                            <div style="width: 5%; padding-left: 20px"> 조회수 </div>
+                            <div style="width : 10%; padding-left:40px;"> 작성일 </div>
                         </div>
                         <% for(Board board:boardList) { %>
                         <div>
                             <div class="bno"> <%=board.getBno()%> </div>
                             <% if(sid!=null) { %>
-                                <div class="qTitle"> <a href="/cs/board/getBoard.jsp?bno=<%=board.getBno() %>"><%=board.getTitle() %></a> </div>
+                            <div class="qTitle"> <a href="/cs/board/getBoard.jsp?bno=<%=board.getBno() %>"><%=board.getTitle() %></a> </div>
                             <% } else { %>
-                                <div class="qTitle"><%=board.getTitle() %></div>
+                            <div class="qTitle"><%=board.getTitle() %></div>
                             <% } %>
-                            <div style="width: 25%"> <%=board.getAuthor()%> </div>
-                            <div class="resdate"> <%=board.getResdate()%> </div>
+                            <div style="width: 22%; padding-left:15px;"> <%=board.getAuthor()%> </div>
+                            <div class="cnt"> <%=board.getCnt()%> </div>
+                            <div style="padding-left: 80px;"> <%=board.getResdate()%> </div>
                         </div>
                         <% } %>
                         <% if(count == 0) { %>

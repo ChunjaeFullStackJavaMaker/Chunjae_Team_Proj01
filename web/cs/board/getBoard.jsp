@@ -26,13 +26,21 @@
     DBC conn = new MariaDBCon();
     con = conn.connect();
 
-    //3. SQL을 실행하여 Result(공지사항 한 레코드)을 가져오기
-    String sql = "select * from board where bno=?";
+    //3. 조회수 처리
+    int count=0;
+    String sql = "UPDATE board SET cnt=cnt+1 WHERE bno=?";
+    pstmt = con.prepareStatement(sql);
+    pstmt.setInt(1, bno);
+    count = pstmt.executeUpdate();
+    pstmt.close();
+
+    //4. SQL을 실행하여 Result(공지사항 한 레코드)을 가져오기
+    sql = "select * from board where bno=?";
     pstmt = con.prepareStatement(sql);
     pstmt.setInt(1, bno);
     rs = pstmt.executeQuery();
 
-    //4. 가져온 한 레코드를 하나의 Board 객체에 담기
+    //5. 가져온 한 레코드를 하나의 Board 객체에 담기
     Board bd  = new Board();
     if(rs.next()){
         bd.setBno(rs.getInt("bno"));

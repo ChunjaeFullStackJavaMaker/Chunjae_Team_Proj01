@@ -22,12 +22,20 @@
     DBC con = new MariaDBCon();
     conn = con.connect();
 
-    //4. sql 실행 및 실행결과 받기
-    String sql = "SELECT * FROM qna WHERE qno=?";
+    //4. 조회수 처리
+    int count=0;
+    String sql = "UPDATE qna SET cnt=cnt+1 WHERE qno=?";
+    pstmt = conn.prepareStatement(sql);
+    pstmt.setInt(1, qno);
+    count = pstmt.executeUpdate();
+    pstmt.close();
+
+    //5. sql 실행 및 실행결과 받기
+    sql = "SELECT * FROM qna WHERE qno=?";
     pstmt = conn.prepareStatement(sql);
     pstmt.setInt(1, qno);
 
-    //5. 실행결과(ResultSet) 인 해당 Qna 1건 qna(질문및답변) 객체에 넣기
+    //6. 실행결과(ResultSet) 인 해당 Qna 1건 qna(질문및답변) 객체에 넣기
     rs = pstmt.executeQuery();
     QnA qna = new QnA();
     if(rs.next()){

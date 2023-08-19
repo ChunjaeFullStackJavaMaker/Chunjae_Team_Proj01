@@ -162,10 +162,11 @@
                 <div class="board_list_wrap">
                     <div class="board_list">
                         <div class="top">
-                            <div class="bno"> 글번호 </div>
-                            <div class="qTitle"> 제목 </div>
-                            <div style="width: 25%"> 작성자 </div>
-                            <div class="resdate"> 작성일 </div>
+                            <div class="bno" style="padding-right: 200px"> 글번호 </div>
+                            <div class="Title" style="padding-right: 120px"> 제목 </div>
+                            <div style="width: 15%; padding-left: 150px"> 작성자 </div>
+                            <div style="width: 5%; padding-left: 20px"> 조회수 </div>
+                            <div style="width : 10%; padding-left:40px;"> 작성일 </div>
                         </div>
                         <% for(QnA qna: qnaList) { %>
                         <div>
@@ -181,8 +182,9 @@
                             <% }else{ %>
                             <div class="qTitle" style="text-align : left;">⌞<%=qna.getTitle() %></div>
                             <%}} %>
-                            <div style="width: 25%"> <%=qna.getAuthor()%> </div>
-                            <div class="resdate"> <%=qna.getResdate()%> </div>
+                            <div style="width: 22%; padding-left:15px;"> <%=qna.getAuthor()%> </div>
+                            <div class="cnt"> <%=qna.getCnt()%> </div>
+                            <div style="padding-left: 80px;"> <%=qna.getResdate()%> </div>
                         </div>
                         <% } %>
                         <% if(count == 0) { %>
