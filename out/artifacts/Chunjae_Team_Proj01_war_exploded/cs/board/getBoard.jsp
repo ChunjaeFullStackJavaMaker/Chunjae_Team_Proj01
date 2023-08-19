@@ -115,7 +115,7 @@
     </header>
     <div class="content_header">
         <div class="breadcrumb">
-            <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>">공지사항</a> &gt; <span> 공지사항 상세보기 </span> </p>
+            <p><a href="<%=path %>/">Home</a> &gt; <a href="<%=path %>">공지사항</a> &gt; <span> 공지사항 상세보기 </span> </p>
             <h2 class="page_tit"> 공지사항 </h2>
         </div>
     </div>

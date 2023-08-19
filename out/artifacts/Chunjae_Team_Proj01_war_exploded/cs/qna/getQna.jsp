@@ -110,7 +110,7 @@
     </header>
     <div class="content_header">
         <div class="breadcrumb">
-            <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>">QnA</a> &gt; <span> 질문 및 답변 </span> </p>
+            <p><a href="<%=path %>/">Home</a> &gt; <a href="<%=path %>">QnA</a> &gt; <span> 질문 및 답변 </span> </p>
             <h2 class="page_tit"> QnA </h2>
         </div>
     </div>

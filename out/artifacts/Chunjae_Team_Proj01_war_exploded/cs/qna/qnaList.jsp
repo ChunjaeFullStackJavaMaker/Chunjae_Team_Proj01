@@ -151,7 +151,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path68 %>">Home</a> &gt; <a href="<%=path68 %>/admin/adminPage.jsp">고객지원</a> &gt; <span> QnA </span> </p>
+                <p><a href="<%=path68 %>/">Home</a> &gt; <a href="<%=path68 %>">고객지원</a> &gt; <span> QnA </span> </p>
                 <h2 class="page_tit"> 고객지원 </h2>
             </div>
         </div>

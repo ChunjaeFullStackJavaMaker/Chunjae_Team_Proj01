@@ -81,7 +81,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">공지사항</a> &gt; <span> 공지사항 글쓰기 </span> </p>
+                <p><a href="<%=path %>/">Home</a> &gt; <a href="<%=path %>/cs/board/boardList.jsp">공지사항</a> &gt; <span> 공지사항 글쓰기 </span> </p>
                 <h2 class="page_tit"> 고객지원 </h2>
             </div>
         </div>

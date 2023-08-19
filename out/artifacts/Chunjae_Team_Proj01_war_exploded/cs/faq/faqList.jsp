@@ -138,7 +138,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>"> 고객지원 </a> > <span> FAQ </span> </p>
+                <p><a href="<%=path %>/">Home</a> &gt; <a href="<%=path %>"> 고객지원 </a> > <span> FAQ </span> </p>
                 <h2 class="page_tit"> 고객지원 </h2>
             </div>
         </div>
