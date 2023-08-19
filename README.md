@@ -257,6 +257,7 @@
   </tr>
 </table>
 <br>
+       
 ###  4. 온라인 상담 관리
 #### (1) 온라인 상담
 - 회원, 비회원 구분없이 관리자에게 메일로 문의할 수 있도록 구현
@@ -265,7 +266,7 @@
 <table>
   <tr>
     <td align="center">
-     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/139138265/772aebda-0d5a-4894-9e5d-68589c32d7d5">  
+     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/139138265/c843e156-acc2-4169-8cb4-97b7ec528f70">  
 <br/>
       <sub><b> PIC1 : 온라인 상담 </sub></b>
     </td>
