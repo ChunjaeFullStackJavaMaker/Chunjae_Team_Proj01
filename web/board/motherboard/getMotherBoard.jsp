@@ -76,12 +76,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-cmtale=1.0">
     <title> 학부모 커뮤니티 상세보기 </title>
-    <%@ include file="/setting/head.jsp" %>
-    <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
-    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
-
-    <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path5%>/css/google.css">
+    <%@ include file="/setting/head.jsp" %>    <link rel="stylesheet" href="<%=path5%>/css/google.css">
     <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
     <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
 
