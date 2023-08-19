@@ -256,22 +256,7 @@
 </table>
 <br>
 
-###  4. 온라인 상담 관리
-#### (1) 온라인 상담
-- 회원, 비회원 구분없이 관리자에게 메일로 문의할 수 있도록 구현
-- 네이버 SMTP 이용
-#### 📷 View
-<table>
-  <tr>
-    <td align="center">
-     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/139138265/c843e156-acc2-4169-8cb4-97b7ec528f70">  
-<br/>
-      <sub><b> PIC1 : 온라인 상담 </sub></b>
-    </td>
-  </tr>
-</table>
-
-### 5. 커뮤니티 관리
+### 4. 커뮤니티 관리
 #### (1) 학부모 커뮤니티 관리
 - 학부모 커뮤니티 목록을 mariaDB에서 SELECT하여 화면에 출력
 - 커뮤니티 규정에 어긋나는 게시물은 관리자 권한으로 수정하거나 삭제할 수 있도록 구현
@@ -298,8 +283,8 @@
 <br>
 
 
-## 🗂게시판(커뮤니티, QNA, FAQ)
-### 1. 커뮤니티
+## 🗂커뮤니티
+### 1. 학생 및 학부모 커뮤니티
 #### (1) 학부모 및 학생 커뮤니티 게시판
 - 학부모,학생 커뮤니티 목록을 mariaDB에서 SELECT하여 화면에 출력
 - 글번호, 글제목, 작성자, 작성일이 화면에 출력되며, 글번호 역순 정렬
@@ -339,12 +324,13 @@
 </table>
 <br>
 
-###  2. 공지사항 및 QNA
+## 🗂고객지원
+### 1. 공지사항 및 QnA
 #### (1) 공지사항
 - 공지사항 글을 mariaDB에서 SELECT하여 화면에 출력
 - 공지사항 글을 회원 및 관리자만 볼 수 있도록 구현
 - 글 작성은 관리자만 작성할 수 있도록 구현
-#### (2) qna
+#### (2) QnA
 - qna 글을  mariaDB에서 SELECT하여 화면에 출력 
 - qna 테이블의 author 과 member 테이블의 name을 JOIN하여 테이블 구현
 #### 📷 View
@@ -366,7 +352,7 @@
 </table>
 <br>
         
-###  3. FAQ
+###  2. FAQ
 #### (1) FAQ 게시판
 - 회원, 비회원 구분없이 볼 수 있도록 구현
 - 토글 기능을 사용하여 화면에 출력 
@@ -377,6 +363,22 @@
      <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/2a360242-1bdc-49c7-b443-5e51c172037d">  
 <br/>
       <sub><b> PIC1 : FAQ 게시판 </sub></b>
+    </td>
+  </tr>
+</table>
+<br>
+
+###  3. 온라인 상담 관리
+#### (1) 온라인 상담
+- 회원, 비회원 구분없이 관리자에게 메일로 문의할 수 있도록 구현
+- 네이버 SMTP 이용
+#### 📷 View
+<table>
+  <tr>
+    <td align="center">
+     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/139138265/c843e156-acc2-4169-8cb4-97b7ec528f70">  
+<br/>
+      <sub><b> PIC1 : 온라인 상담 </sub></b>
     </td>
   </tr>
 </table>
