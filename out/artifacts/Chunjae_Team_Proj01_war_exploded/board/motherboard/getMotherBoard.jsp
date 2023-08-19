@@ -21,13 +21,23 @@
     DBC conn = new MariaDBCon();
     con = conn.connect();
 
-    //3. SQL을 실행하여 Result(공지사항 한 레코드)을 가져오기
-    String sql = "select * from motherboard where bno=?";
+    //3. 조회수 처리
+    int count=0;
+    String sql = "UPDATE motherboard SET cnt=cnt+1 WHERE bno=?";
+    pstmt = con.prepareStatement(sql);
+    pstmt.setInt(1, bno);
+    count = pstmt.executeUpdate();
+    pstmt.close();
+
+
+    //4. SQL을 실행하여 Result(공지사항 한 레코드)을 가져오기
+    sql = "select * from motherboard where bno=?";
     pstmt = con.prepareStatement(sql);
     pstmt.setInt(1, bno);
     rs = pstmt.executeQuery();
 
-    //4. 가져온 한 레코드를 하나의 Board 객체에 담기
+
+    //5. 가져온 한 레코드를 하나의 Board 객체에 담기
     Board bd  = new Board();
     if(rs.next()){
         bd.setBno(rs.getInt("bno"));
@@ -38,6 +48,7 @@
         Date d = sdf.parse(rs.getString("resdate"));
         bd.setResdate(sdf.format(d));
         bd.setCnt(rs.getInt("cnt"));
+
     }
     rs.close();
     pstmt.close();
@@ -64,7 +75,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-cmtale=1.0">
-    <title> 학부모 커뮤니티 </title>
+    <title> 학부모 커뮤니티 상세보기 </title>
     <%@ include file="/setting/head.jsp" %>
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
@@ -278,8 +289,8 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path5 %>">Home</a> &gt; <a href="<%=path5 %>/board/motherboard/MotherBoardList.jsp"> 학부모 커뮤니티 목록 </a> > <span> 학부모 커뮤니티 </span> </p>
-                <h2 class="page_tit"> 학부모 커뮤니티 </h2>
+                <p><a href="<%=path5 %>">Home</a> &gt; <a href="<%=path5 %>/board/motherboard/MotherBoardList.jsp"> 학부모 커뮤니티  </a> > <span> 학부모 커뮤니티 상세보기 </span> </p>
+                <h2 class="page_tit"> 학부모 커뮤니티 상세보기 </h2>
             </div>
         </div>
         <section class="page" id="page1">
@@ -304,7 +315,10 @@
                         <td class="resdate">
                             작성일 | <%=bd.getResdate()%>
                         </td>
-                        <td class="author">
+                        <td style="width:10%; padding-left:40px;">
+                            조회수 | <%=bd.getCnt() %>
+                        </td>
+                        <td style="width:10%; padding-left:20px;">
                             작성자 | <%=bd.getAuthor()%>
                         </td>
                     </tr>

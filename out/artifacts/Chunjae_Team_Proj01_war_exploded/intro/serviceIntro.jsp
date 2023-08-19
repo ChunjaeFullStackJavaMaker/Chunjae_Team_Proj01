@@ -24,48 +24,15 @@
     <link rel="stylesheet" href="<%=path25 %>/css/footer.css">
 
     <style>
-        .contents {
-            clear:both;
-            min-height:100vh;
-        }
-        .contents::after {
-            content:"";
-            clear:both;
-            display:block;
-            width:100%;
-        }
+        .contents { clear:both; min-height:100vh;}
+        .contents::after {content:"";clear:both;display:block;width:100%;}
 
-        .page {
-            clear:both;
-            width: 100%;
-            min-height: 100vh;
-            position:relative;
-            top: 50px;
-            margin: 0px auto;
-        }
-        .page::after {
-            content:"";
-            display:block;
-            width: 100%;
-            clear:both;
-        }
-
-        .page_wrap {
-            clear:both;
-            width: 1000px;
-            height: auto;
-            margin:0 auto;
-        }
-
-        .content_tit {
-            font-weight: bold;
-            font-size: 25px;
-            margin: 80px 30px 30px 10px;
-        }
+        .page {clear:both;width: 100%;min-height: 100vh;position:relative;top: 50px;margin: 0px auto;}
+        .page::after {content:"";display:block;width: 100%;clear:both;}
+        .page_wrap {clear:both; position:absolute; top:-50px; background-color: rgb(203, 226, 240); width:100%; padding-bottom: 300px;}
 
         #page1 {height : 1240px;}
-        .page_wrap {display:block; margin:0 auto; clear:both; position:absolute; top:-50px;
-            background-color: rgb(203, 226, 240); width:100%; padding-bottom: 300px;}
+
         #service_tit {display: block; margin-left:410px; margin-top:50px;}
         #study1 {margin-left:100px; width:300px; padding-top:50px;}
         #study2 {margin-left:100px; width:300px; padding-top:50px;}

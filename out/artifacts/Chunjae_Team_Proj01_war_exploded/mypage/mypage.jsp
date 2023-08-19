@@ -177,7 +177,7 @@
                 <hr>
                 <div class="item_wrap">
                     <a href="/mypage/modify.jsp" class="item"><img src="/images/mypage_info.jpg" alt="개인정보 변경 이미지"><br> 개인정보 변경 </a>
-                    <a href="/mypage/myBoardListQna.jsp" class="item"><img src="/images/mypage_write.jpg" alt="내가쓴 글 이미지"><br> 내가 쓴 글 </a>
+                    <a href="/mypage/myBoardListQna.jsp?page=1" class="item"><img src="/images/mypage_write.jpg" alt="내가쓴 글 이미지"><br> 내가 쓴 글 </a>
                 </div>
             </div>
         </section>

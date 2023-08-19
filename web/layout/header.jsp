@@ -69,6 +69,7 @@
                     <li><a href="<%=path8%>/cs/board/boardList.jsp?page=1"> 공지사항 </a></li>
                     <li><a href="<%=path8%>/cs/qna/qnaList.jsp?page=1"> QnA </a></li>
                     <li><a href="<%=path8%>/cs/faq/faqList.jsp"> FAQ </a></li>
+                    <li><a href="<%=path8%>/cs/online/online.jsp"> 온라인 상담 </a></li>
                 </ul>
             </li>
         </ul>

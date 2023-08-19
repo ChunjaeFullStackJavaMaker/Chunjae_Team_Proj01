@@ -49,7 +49,7 @@
     }
 
     // 현재 페이지에 출력할 학부모 게시글 데이터만 가져오기
-    sql = "SELECT * FROM studentboard ORDER BY bno DESC";
+    sql = "SELECT * FROM studentboard ORDER BY bno desc, author LIMIT ?,10 ";
     pstmt = conn.prepareStatement(sql);
     pstmt.setInt(1, 10*(pageNo-1));
     rs = pstmt.executeQuery();
@@ -60,7 +60,7 @@
         sBoard.setBno(rs.getInt("bno"));
         sBoard.setTitle(rs.getString("title"));
         sBoard.setAuthor(rs.getString("author"));
-
+        sBoard.setCnt(rs.getInt("cnt"));
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date d = sdf.parse(rs.getString("resdate"));
         sBoard.setResdate(sdf.format(d));
@@ -75,7 +75,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>학생 게시판</title>
+    <title>학생 커뮤니티 </title>
     <%@ include file="/setting/head.jsp" %>
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
@@ -158,8 +158,8 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path5 %>">Home</a> &gt; <span> 관리자 페이지 </span> </p>
-                <h2 class="page_tit"> 학생 커뮤니티 상세보기 </h2>
+                <p><a href="<%=path5 %>">Home</a> &gt; <span> 학생 커뮤니티  </span> </p>
+                <h2 class="page_tit"> 학생 커뮤니티  </h2>
             </div>
         </div>
         <section class="page" id="page1">
@@ -170,9 +170,10 @@
                     <div class="board_list">
                         <div class="top">
                             <div class="bno" style="padding-right: 200px"> 글번호 </div>
-                            <div class="Title" style="padding-right: 100px"> 제목 </div>
-                            <div style="width: 25%; padding-left: 120px"> 작성자 </div>
-                            <div class="resdate"> 작성일 </div>
+                            <div class="Title" style="padding-right: 120px"> 제목 </div>
+                            <div style="width: 15%; padding-left: 150px"> 작성자 </div>
+                            <div style="width: 5%; padding-left: 20px"> 조회수 </div>
+                            <div style="width : 10%; padding-left:40px;"> 작성일 </div>
                         </div>
                         <% for(StudentBoard studentBoard: studentBoardList) { %>
                         <div>
@@ -182,8 +183,9 @@
                             <% } else { %>
                             <div class="qTitle"><%=studentBoard.getTitle() %></div>
                             <% } %>
-                            <div style="width: 25%"> <%=studentBoard.getAuthor()%> </div>
-                            <div class="resdate"> <%=studentBoard.getResdate()%> </div>
+                            <div style="width: 22%; padding-left:15px;"> <%=studentBoard.getAuthor()%> </div>
+                            <div class="cnt"> <%=studentBoard.getCnt()%> </div>
+                            <div style="padding-left: 80px;"> <%=studentBoard.getResdate()%> </div>
                         </div>
                         <% } %>
                         <% if(count == 0) { %>

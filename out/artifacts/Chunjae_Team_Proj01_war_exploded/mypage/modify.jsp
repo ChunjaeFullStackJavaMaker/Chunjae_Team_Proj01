@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.util.Date" %>
 <%@ page import="com.chunjae_pro01.util.*" %>
 <%@ page import="com.chunjae_pro01.dto.*" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="/setting/encoding.jsp" %>
 <%
     String path6 = request.getContextPath();
@@ -34,6 +36,10 @@
             m.setTel(rs.getString("tel"));
             m.setResdate(rs.getString("resdate"));
             m.setPoint(rs.getInt("point"));
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date d = sdf.parse(rs.getString("resdate"));
+            m.setResdate(sdf.format(d));
             pw=m.getPw();
         }else{
             response.sendRedirect("/member/login.jsp");
@@ -105,7 +111,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="/">Home</a> &gt; <span> 마이페이지 </span> &gt; <span> 개인정보 변경 </span> </p>
+                <p><a href="/">Home</a> &gt; <a href="/mypage/mypage.jsp">마이페이지</a> &gt; <span> 개인정보 변경 </span> </p>
                 <h2 class="page_tit"> 개인정보 변경 </h2>
             </div>
         </div>
@@ -125,16 +131,20 @@
                             <td><input type="text" value="<%=m.getName() %>" name="name" id="name" class="indata" disabled></td>
                         </tr>
                         <tr>
-                            <td><label for="tel"> 전화번호 </label></td>
-                            <td><input type="tel" value="<%=m.getTel() %>" name="tel" id="tel" class="indata" required></td>
-                        </tr>
-                        <tr>
                             <td><label for="email"> 이메일 </label></td>
                             <td><input type="email" value="<%=m.getEmail() %>" name="email" id="email" class="indata" required></td>
                         </tr>
                         <tr>
+                            <td><label for="tel"> 전화번호 </label></td>
+                            <td><input type="tel" value="<%=m.getTel() %>" name="tel" id="tel" class="indata" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="regdate"> 가입일 </label></td>
+                            <td><input type="text" id="regdate" name="regdate" value="<%=m.getResdate()%>" readonly></td>
+                        </tr>
+                        <tr>
                             <td colspan="2">
-                                <input type="submit" value="회원정보수정" class="submit_btn">
+                                <input type="submit" value="개인정보수정" class="submit_btn">
                             </td>
                         </tr>
                         </tbody>

@@ -12,8 +12,8 @@
 
 ### 👤 팀원 
 * **박진권** : 화면설계서 작성, 공지사항, QnA , Faq 카테고리 기능 구현
-* **김현경** : 화면설계서 작성, 마이페이지 (정보수정, 내가 쓴 글) 기능 구현
-* **김보경** : usecaseDiagram 작성, 로그인, 로그아웃, 아이디 중복 체크, 회원가입 기능 구현
+* **김현경** : 화면설계서 작성, 서비스 소개 페이지 제작, 마이페이지 (정보수정, 내가 쓴 글) 기능 구현, 게시판 조회수 기능 구현
+* **김보경** : usecaseDiagram 작성, 초/중/고 강의 및 교재 소개 페이지 제작, 로그인, 로그아웃, 아이디 중복 체크, 회원가입 기능 구현, 온라인 상담 이메일 보내기 기능 구현
 * **신예은** : usecaseDiagram 작성, 관리자페이지(개인정보 변경, 회원관리, 고객지원 관리, 커뮤니티 관리) 기능 구현, 페이징 처리 구현, 학부모 및 학생 커뮤니티 댓글 기능 구현
 * **오태훈** : 요구사항정의서 작성, API명세서, 학부모 커뮤니티, 학생 커뮤니티 기능 구현, 회사 소개 페이지 제작, 오시는 길(다음API연동)
 * 전체 메뉴 구성 기획 및 DB 설계, frontend 설계는 다같이!
@@ -130,13 +130,13 @@
   </tr>
   <tr>
     <td align="center">
-       <img width="838" alt="1" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/14eb9799-17d9-4137-8b7e-779120f0234d"><br/>
+       <img width="960" alt="ssss" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/2b42fdd1-9560-4c36-8bf4-b6b13f790882"><br/>
       <sub><b> PIC2 : 회원 정보 수정 </sub></b>
     </td>
   </tr>
     <tr>
     <td align="center">
-     <img width="959" alt="aaa" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/808e7ea2-1022-45d9-8163-05c73705557a">
+     <img width="960" alt="s" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/635f3b74-6280-4dc2-be2b-ba83100b40c3">
  <br/>
       <sub><b> PIC3 : 내가 쓴 글 </sub></b>
     </td>
@@ -297,14 +297,15 @@
 <table>
   <tr>
     <td align="center">
-     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4e3fb913-4b5c-4820-aea6-af403a87e6e0"> <br/>
+     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4e3fb913-4b5c-4820-aea6-af403a87e6e0">
+<br/>
       <sub><b> PIC1 : 공지사항 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4e3fb913-4b5c-4820-aea6-af403a87e6e0">   
-      <br/>
+      <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/03b77f05-6d4a-41b4-9bc9-a38620a6a8a4">
+<br/>
       <sub><b> PIC2 : qna </sub></b>
     </td>
   </tr>
@@ -319,7 +320,8 @@
 <table>
   <tr>
     <td align="center">
-     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4e3fb913-4b5c-4820-aea6-af403a87e6e0">  <br/>
+     <img width="960" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/2a360242-1bdc-49c7-b443-5e51c172037d">  
+<br/>
       <sub><b> PIC1 : FAQ 게시판 </sub></b>
     </td>
   </tr>

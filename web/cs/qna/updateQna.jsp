@@ -62,12 +62,13 @@
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
     <link rel="stylesheet" href="../../css/google.css">
     <link rel="stylesheet" href="../../css/fonts.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="<%=path5%>/css/header.css">
+    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
     <style>
         /* 본문 영역 스타일 */
         .contents { clear:both; min-height:100vh;
@@ -111,18 +112,20 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
     <header class="hd" id="hd">
         <%@ include file="/layout/header.jsp" %>
     </header>
     <div class="contents" id="contents">
-        <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/cs/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 글 수정보기</span></p>
+        <div class="content_header">
+            <div class="breadcrumb">
+                <p><a href="/">HOME</a> &gt; <a href="/cs/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 글 수정</span></p>
+                <h2 class="page_tit"> QnA </h2>
+            </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit"><%=sel %> 글 수정보기</h2>
-                <br><br><hr><br><br>
+                <hr>
                 <form action="/cs/qna/updateQnaPro.jsp" method="post">
                     <table class="tb1" id="myTable">
                         <tbody>

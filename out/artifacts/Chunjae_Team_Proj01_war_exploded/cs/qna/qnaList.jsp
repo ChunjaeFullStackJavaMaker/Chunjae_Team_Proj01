@@ -70,19 +70,13 @@
             font-size: 25px;
             margin: 80px 30px 30px 10px;
         }
-        .indata { display:inline-block; width:300px; height: 48px; line-height: 48px;
-            text-indent:14px; font-size:18px; }
+        .btn_group {clear:both;}
         .inbtn { display:block;  border-radius:100px;
             min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
-        .inbtn:first-child { float:left; }
-        .inbtn:last-child { float:right; }
-    </style>
-
-    <style>
-        .btn_group { clear:both; width:800px; margin:20px auto; }
+            line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px; }
         .btn_group:after { content:""; display:block; width:100%; clear: both; }
         .btn_group p {text-align: center;   line-height:3.6; }
+
     </style>
 
     <%
@@ -140,6 +134,10 @@
             qna.setLev(rs.getInt("lev"));
             qna.setPar(rs.getInt("par"));
             qna.setName(rs.getString("name"));
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date d = sdf.parse(rs.getString("resdate"));
+            qna.setResdate(sdf.format(d));
             qnaList.add(qna);
         }
         con.close(rs, pstmt, conn);
@@ -153,7 +151,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path68 %>">Home</a> &gt; <a href="<%=path68 %>/admin/adminPage.jsp">고객지원</a> &gt; <span> QnA </span> </p>
+                <p><a href="<%=path68 %>/">Home</a> &gt; <a href="<%=path68 %>">고객지원</a> &gt; <span> QnA </span> </p>
                 <h2 class="page_tit"> 고객지원 </h2>
             </div>
         </div>
@@ -164,21 +162,29 @@
                 <div class="board_list_wrap">
                     <div class="board_list">
                         <div class="top">
-                            <div class="bno"> 글번호 </div>
-                            <div class="qTitle"> 제목 </div>
-                            <div style="width: 25%"> 작성자 </div>
-                            <div class="resdate"> 작성일 </div>
+                            <div class="bno" style="padding-right: 200px"> 글번호 </div>
+                            <div class="Title" style="padding-right: 120px"> 제목 </div>
+                            <div style="width: 15%; padding-left: 150px"> 작성자 </div>
+                            <div style="width: 5%; padding-left: 20px"> 조회수 </div>
+                            <div style="width : 10%; padding-left:40px;"> 작성일 </div>
                         </div>
                         <% for(QnA qna: qnaList) { %>
                         <div>
                             <div class="bno"> <%=qna.getQno()%> </div>
-                            <% if(sid!=null) { %>
-                            <div class="qTitle"> <a href="/cs/qna/getQna.jsp?qno=<%=qna.getQno() %>"><%=qna.getTitle() %></a> </div>
-                            <% } else { %>
-                            <div class="qTitle"><%=qna.getTitle() %></div>
-                            <% } %>
-                            <div style="width: 25%"> <%=qna.getAuthor()%> </div>
-                            <div class="resdate"> <%=qna.getResdate()%> </div>
+                            <% if(sid!=null) {
+                                if(qna.getLev()==0){%>
+                            <div class="qTitle" style="text-align : left;"> <a href="/cs/qna/getQna.jsp?qno=<%=qna.getQno() %>"><%=qna.getTitle() %></a> </div>
+                            <% }else{ %>
+                            <div class="qTitle" style="text-align : left;"> <a href="/cs/qna/getQna.jsp?qno=<%=qna.getQno() %>">⌞<%=qna.getTitle() %></a> </div>
+                            <%}} else {
+                                if(qna.getLev()==0){%>
+                            <div class="qTitle" style="text-align : left;"><%=qna.getTitle() %></div>
+                            <% }else{ %>
+                            <div class="qTitle" style="text-align : left;">⌞<%=qna.getTitle() %></div>
+                            <%}} %>
+                            <div style="width: 22%; padding-left:15px;"> <%=qna.getAuthor()%> </div>
+                            <div class="cnt"> <%=qna.getCnt()%> </div>
+                            <div style="padding-left: 80px;"> <%=qna.getResdate()%> </div>
                         </div>
                         <% } %>
                         <% if(count == 0) { %>
@@ -196,9 +202,9 @@
                         <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
                         <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
                     </div>
-                    <div class="btn_group">
+                    <div class="btn_group" style="margin:0; width:1000px; padding-top:25px; ">
                         <% if(sid!=null) { %>
-                        <a href="<%=path68%>/cs/qna/addQuestion.jsp?lev=0&par=0" class="inbtn">질문하기</a>
+                        <a href="<%=path68%>/cs/qna/addQuestion.jsp?lev=0&par=0" class="inbtn" style="float:right; ">질문하기</a>
                         <% } else { %>
                         <p>관리자만 공지사항의 글을 쓸 수 있습니다.<br>
                             로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>

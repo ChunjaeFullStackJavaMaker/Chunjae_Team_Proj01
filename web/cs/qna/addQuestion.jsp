@@ -93,7 +93,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path5 %>">Home</a> &gt; <a href="<%=path5 %>/admin/adminPage.jsp">QnA</a> &gt; <span> QnA 글쓰기 </span> </p>
+                <p><a href="<%=path5 %>/">Home</a> &gt; <a href="<%=path5 %>/cs/qna/qnaList.jsp">QnA</a> &gt; <span> QnA 글쓰기 </span> </p>
                 <h2 class="page_tit"> 고객지원 </h2>
             </div>
         </div>

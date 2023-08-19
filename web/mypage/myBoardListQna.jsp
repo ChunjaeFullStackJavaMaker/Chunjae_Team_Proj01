@@ -28,8 +28,9 @@
     conn = con.connect();
 
     // 페이징 처리 - 전체 페이지 수 구하기
-    String sql = "SELECT COUNT(*) as 'count' FROM qnaList";
+    String sql = "SELECT COUNT(*) as 'count' FROM qnalist2 where id =? ";
     pstmt = conn.prepareStatement(sql);
+    pstmt.setString(1, id);
     rs = pstmt.executeQuery();
     if(rs.next()) {
         count = rs.getInt("count");
@@ -49,10 +50,10 @@
         pageList.add(p);
     }
 
-    sql = "select * from qnalist2 where id=? ORDER BY qno DESC ";
+    sql = "select * from qnalist2 where id=? ORDER BY resdate desc, id LIMIT ?,10 ";
     pstmt = conn.prepareStatement(sql);
-    pstmt.setInt(1, 10*(pageNo-1));
     pstmt.setString(1,id);
+    pstmt.setInt(2, 10*(pageNo-1));
 
     rs = pstmt.executeQuery();
 
@@ -109,7 +110,7 @@
         .page::after { content:""; display:block; width: 100%; clear:both; }
         .page_wrap { clear:both; width: 1000px; height: auto; margin:0 auto; }
 
-        .content_tit { font-weight: bold; font-size: 25px; margin: 80px 30px 30px 10px; }
+        .content_tit { font-weight: bold; font-size: 25px; margin: 80px 30px 30px 10px; text-align:center;}
 
         .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
             padding-bottom: 2.4rem; }
@@ -137,28 +138,29 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="/">Home</a> &gt; <span> 마이페이지 </span> &gt; <span> 내가 쓴 글 </span> </p>
+                <p><a href="/">Home</a> &gt; <a href="/mypage/mypage.jsp">마이페이지</a> &gt; <span> 내가 쓴 글 </span> </p>
                 <h2 class="page_tit"> 내가 쓴 글 </h2>
             </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
                 <p class="content_tit">
-                    <a href="/mypage/myBoardListQna.jsp" class="btn_myboard">QnA </a> &nbsp&nbsp | &nbsp&nbsp
+                    <a href="/mypage/myBoardListQna.jsp?page=1" class="btn_myboard">QnA </a> &nbsp&nbsp | &nbsp&nbsp
                     <% if(per == 1){%>
-                    <a href="/mypage/myStudentBoardListComu.jsp" class="btn_myboard" id="btn_mb1">커뮤니티</a>
+                    <a href="/mypage/myStudentBoardListComu.jsp?page=1" class="btn_myboard" id="btn_mb1">커뮤니티</a>
                     <%}else if(per ==2){ %>
-                    <a href="/mypage/myMotherBoardListComu.jsp" class="btn_myboard" id="btn_mb1">커뮤니티</a>
+                    <a href="/mypage/myMotherBoardListComu.jsp?page=1" class="btn_myboard" id="btn_mb1">커뮤니티</a>
                     <%} %>
                 </p>
                 <hr>
                 <div class="board_list_wrap">
                 <div class="board_list">
-                    <div class="top" >
-                        <div class="bno" >글번호</div>
-                        <div class="qTitle" >제목</div>
-                        <div style="width:25% ">작성자</div>
-                        <div class="resdate">작성일</div>
+                    <div class="top">
+                        <div class="bno" style="padding-right: 200px"> 글번호 </div>
+                        <div class="Title" style="padding-right: 120px"> 제목 </div>
+                        <div style="width: 12%; padding-left: 150px"> 작성자 </div>
+                        <div style="width: 5%; padding-left: 30px"> 조회수 </div>
+                        <div style="width : 13%; padding-left:40px;"> 작성일 </div>
                     </div>
                     <% for(Qna2 q: qnaList){ %>
                     <div>
@@ -166,8 +168,9 @@
                         <div class="qTitle">
                             <a href="<%=path7 %>/cs/qna/getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
                         </div>
-                        <div style="width:25%"><%=q.getId() %></div>
-                        <div class="resdate"><%=q.getResdate() %></div>
+                        <div style="width: 22%"><%=q.getId() %></div>
+                        <div class="cnt"> <%=q.getCnt()%> </div>
+                        <div style="padding-left: 80px;"><%=q.getResdate() %></div>
                     </div>
                     <%}%>
                     <% if(count==0){ %>

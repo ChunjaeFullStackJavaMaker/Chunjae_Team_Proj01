@@ -28,10 +28,12 @@
     <link rel="stylesheet" href="<%=path12%>/css/header.css">
     <link rel="stylesheet" href="<%=path12%>/css/footer.css">
 
+
     <style>
         /*breadcrumb*/
         .content_header {
             clear: both;
+            width: 100%;
             height: 250px;
             background-image: url("/images/mypage_cover.jpg");
             background-repeat: no-repeat;
@@ -74,17 +76,21 @@
         .contents{
             margin-top: 20px;
         }
+        ul.list.row {
+            width : 900px
+        }
         .row{
             display: flex;
             flex-wrap: wrap;
-            margin-left: 150px;
+            margin: auto;
+
         }
         div .card {
             margin: 25px auto;
         }
 
         .col-3 {
-            width: 330px;
+            width: 300px;
             height: 300px;
         }
 
