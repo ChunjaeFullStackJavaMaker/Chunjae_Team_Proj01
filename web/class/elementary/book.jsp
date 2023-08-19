@@ -73,18 +73,23 @@
 
         .contents{
             margin-top: 20px;
+            padding-left: 20px;
+        }
+        ul.list.row {
+            width : 900px
         }
         .row{
             display: flex;
             flex-wrap: wrap;
-            margin-left: 150px;
+            margin: auto;
+
         }
         div .card {
             margin: 25px auto;
         }
 
         .col-3 {
-            width: 330px;
+            width: 300px;
             height: 300px;
         }
 
