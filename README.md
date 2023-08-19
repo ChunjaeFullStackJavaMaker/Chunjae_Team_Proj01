@@ -398,19 +398,19 @@
 <table>
   <tr>
     <td align="center">
-     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/2a360242-1bdc-49c7-b443-5e51c172037d"><br/>
+     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/005d9c84-c62f-43bc-9b46-cef15506de02"><br/>
       <sub><b> PIC1 : 온라인 강의 목록 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/2a360242-1bdc-49c7-b443-5e51c172037d"><br/>
+     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/ceea4ccf-7308-4892-8ebe-ba22f73adb31"><br/>
       <sub><b> PIC2 : 강의 상세 보기 </sub></b>
     </td>
   </tr>  
   <tr>
     <td align="center">
-     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/132269367/2a360242-1bdc-49c7-b443-5e51c172037d"><br/>
+     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/e5af4c49-7b5d-458e-b9fd-6084a005a65e"><br/>
       <sub><b> PIC3 : 동영상 플레이어 </sub></b>
     </td>
   </tr>
