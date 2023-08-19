@@ -70,19 +70,13 @@
             font-size: 25px;
             margin: 80px 30px 30px 10px;
         }
-        .indata { display:inline-block; width:300px; height: 48px; line-height: 48px;
-            text-indent:14px; font-size:18px; }
+        .btn_group {clear:both;}
         .inbtn { display:block;  border-radius:100px;
             min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
-        .inbtn:first-child { float:left; }
-        .inbtn:last-child { float:right; }
-    </style>
-
-    <style>
-        .btn_group { clear:both; width:800px; margin:20px auto; }
+            line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px; }
         .btn_group:after { content:""; display:block; width:100%; clear: both; }
         .btn_group p {text-align: center;   line-height:3.6; }
+
     </style>
 
     <%
@@ -206,9 +200,9 @@
                         <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
                         <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
                     </div>
-                    <div class="btn_group">
+                    <div class="btn_group" style="margin:0; width:1000px; padding-top:25px; ">
                         <% if(sid!=null) { %>
-                        <a href="<%=path68%>/cs/qna/addQuestion.jsp?lev=0&par=0" class="inbtn">질문하기</a>
+                        <a href="<%=path68%>/cs/qna/addQuestion.jsp?lev=0&par=0" class="inbtn" style="float:right; ">질문하기</a>
                         <% } else { %>
                         <p>관리자만 공지사항의 글을 쓸 수 있습니다.<br>
                             로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>
