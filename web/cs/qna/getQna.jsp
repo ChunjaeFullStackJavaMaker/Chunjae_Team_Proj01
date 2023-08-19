@@ -85,7 +85,7 @@
             position: relative;
             clear: both;
             width: 100%;
-            min-height: 100vh;
+            min-height: 50vh;
         }
 
         .page::after {
