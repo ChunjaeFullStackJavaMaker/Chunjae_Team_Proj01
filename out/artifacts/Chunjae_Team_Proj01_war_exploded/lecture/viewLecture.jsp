@@ -34,6 +34,14 @@
     <title> <%=info.getvTitle()%> </title>
     <%@ include file="/setting/head.jsp" %>
 
+    <%  String sid = (String) session.getAttribute("id");
+        if(sid == null) { %>
+    <script>
+        alert("로그인 후 강의를 수강할 수 있습니다.");
+        location.href="<%=path%>/member/login.jsp";
+    </script>
+    <%  } %>
+
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
@@ -42,8 +50,6 @@
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="<%=path%>/css/common.css">
-    <link rel="stylesheet" href="<%=path%>/css/header.css">
-    <link rel="stylesheet" href="<%=path%>/css/footer.css">
     <link rel="stylesheet" href="<%=path%>/css/vdo.css">
 
     <style>
@@ -93,12 +99,12 @@
 <div class="wrap">
     <div class="contents" id="contents">
         <div class="lecture_header">
-            <div> ← 강의 대시보드 </div>
+            <div onclick="javascript: history.go(-1)"> ← 강의 대시보드 </div>
             <div> <%=info.getvTitle() %></div>
         </div>
         <div class="player">
             <div class="vdo_fr">
-                <video id="video">
+                <video id="video" autoplay>
                     <source src="<%=path.concat(info.getFilePath())%>.mp4" type="video/mp4" />
                     <source src="<%=path.concat(info.getFilePath())%>.ogv" type="video/ogg" />
                     <source src="<%=path.concat(info.getFilePath())%>.webm" type="video/webm" />

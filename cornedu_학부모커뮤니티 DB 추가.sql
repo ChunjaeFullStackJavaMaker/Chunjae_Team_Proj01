@@ -339,7 +339,7 @@ VALUES('기적의 문제해결법 6-2','정문제','나의 첫 수학공부를 �
 
 -- 중등 강의 더미데이터 5건
 INSERT INTO lecture(lectureName, teacher, content, filePath, target)
-VALUES('빠작! 중학 국어','박국어','국어 만점받는 강의입니다','/images/lecture01.png','중등');
+VALUES('빠작! 중학 국어','박국어','국어 만점을 받고 싶다면 이 강의를 들어보세요','/images/lecture01.png','중등');
 INSERT INTO lecture(lectureName, teacher, content, filePath, target)
 VALUES('고전문학 독해','김고전','독해 실력을 키워봐요','/images/lecture02.png','중등');
 INSERT INTO lecture(lectureName, teacher, content, filePath, target)
@@ -375,27 +375,40 @@ CREATE TABLE lectureInfo(
 	FOREIGN KEY(vno) REFERENCES lecture(lno) ON DELETE CASCADE
 );
 
+-- 중등 강의 추가
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[1강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:00');
+VALUES(1, '[1강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:30');
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[2강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:00');
+VALUES(1, '[2강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:30');
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[3강] 빠작! 국어 뽀개기', '/videos/lecture_video03', '02:00');
+VALUES(1, '[3강] 빠작! 국어 뽀개기', '/videos/lecture_video03', '01:41');
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[4강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:00');
+VALUES(1, '[4강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:30');
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[5강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:00');
+VALUES(1, '[5강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:30');
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[6강] 빠작! 국어 뽀개기', '/videos/lecture_video03', '02:00');
+VALUES(1, '[6강] 빠작! 국어 뽀개기', '/videos/lecture_video03', '01:41');
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[7강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:00');
+VALUES(1, '[7강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:30');
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[8강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:00');
+VALUES(1, '[8강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:30');
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[9강] 빠작! 국어 뽀개기', '/videos/lecture_video03', '02:00');
+VALUES(1, '[9강] 빠작! 국어 뽀개기', '/videos/lecture_video03', '01:41');
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[10강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:00');
+VALUES(1, '[10강] 빠작! 국어 뽀개기', '/videos/lecture_video01', '02:30');
 INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
-VALUES(1, '[11강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:00');
+VALUES(1, '[11강] 빠작! 국어 뽀개기', '/videos/lecture_video02', '02:30');
 
-SELECT lectureName, teacher, content, vTitle, b.filePath FROM lecture a JOIN lectureInfo b ON(a.lno=b.lno) WHERE b.lno=1;
+-- 고등 강의 추가
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[1강] 독서 유형 연습①-②', '/videos/lecture_video01', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[2강] 독서 유형 연습③', '/videos/lecture_video02', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[3강] 독서 유형 연습④', '/videos/lecture_video03', '01:41');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[4강] 문학 유형 연습①-②', '/videos/lecture_video01', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[5강] 문학 유형 연습③', '/videos/lecture_video02', '02:30');
+INSERT INTO lectureInfo(lno, vTitle, filePath, duration)
+VALUES(11, '[6강] 문학 유형 연습④-⑤', '/videos/lecture_video03', '01:41');
