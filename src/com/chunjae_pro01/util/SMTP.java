@@ -5,6 +5,6 @@ import javax.mail.PasswordAuthentication;
 public class SMTP extends Authenticator{
     @Override
     protected PasswordAuthentication getPasswordAuthentication() {
-        return new PasswordAuthentication("bkyoung123@naver.com", "RLAqhrud1!");
+        return new PasswordAuthentication("admin", "1234");
     }
 }
