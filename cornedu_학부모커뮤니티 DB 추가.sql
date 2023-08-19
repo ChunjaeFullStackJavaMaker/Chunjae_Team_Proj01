@@ -280,14 +280,27 @@ INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다5', '답�
 COMMIT;
 
 ----------------------------------------------------------------------------------
+-- 공지사항 게시판 댓글 테이블 생성
+CREATE table boardComment (
+                              cno INT AUTO_INCREMENT PRIMARY KEY,
+                              bno INT,
+                              author VARCHAR(16),
+                              resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+                              content VARCHAR(200),
+                              FOREIGN KEY(bno) REFERENCES board(bno) on DELETE CASCADE
+);
+
+SELECT * FROM boardComment;
+
+----------------------------------------------------------------------------------
 -- 학부모 게시판 댓글 테이블 생성
 create table motherComment(
-	cno INT AUTO_INCREMENT PRIMARY KEY,
-	bno INT,
-	author VARCHAR(16),
-   resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-   content VARCHAR(200),
-   FOREIGN KEY(bno) REFERENCES motherboard(bno) ON DELETE CASCADE
+                              cno INT AUTO_INCREMENT PRIMARY KEY,
+                              bno INT,
+                              author VARCHAR(16),
+                              resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+                              content VARCHAR(200),
+                              FOREIGN KEY(bno) REFERENCES motherboard(bno) ON DELETE CASCADE
 );
 
 SELECT * FROM mothercomment;
@@ -295,12 +308,12 @@ SELECT * FROM mothercomment;
 ----------------------------------------------------------------------------------------------------------------------------
 -- 학생 게시판 댓글 테이블 생성
 create table studentComment(
-	cno INT AUTO_INCREMENT PRIMARY KEY,
-	bno INT,
-	author VARCHAR(16),
-   resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-   content VARCHAR(200),
-   FOREIGN KEY(bno) REFERENCES studentboard(bno) ON DELETE CASCADE
+                               cno INT AUTO_INCREMENT PRIMARY KEY,
+                               bno INT,
+                               author VARCHAR(16),
+                               resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+                               content VARCHAR(200),
+                               FOREIGN KEY(bno) REFERENCES studentboard(bno) ON DELETE CASCADE
 );
 
 -- 더미 데이터 추가
@@ -318,12 +331,12 @@ SELECT * FROM studentcomment;
 -----------------------------------------------------------------------------------------------------------------------------
 -- 강의 테이블 생성
 CREATE TABLE lecture(
-	lno INT AUTO_INCREMENT PRIMARY KEY,
-	lectureName VARCHAR(500) NOT NULL,
-	teacher VARCHAR(10) NOT NULL,
-	content VARCHAR(500),
-	filePath VARCHAR(200),
-	target VARCHAR(10) CHECK(target IN('초등','중등','고등'))
+                        lno INT AUTO_INCREMENT PRIMARY KEY,
+                        lectureName VARCHAR(500) NOT NULL,
+                        teacher VARCHAR(10) NOT NULL,
+                        content VARCHAR(500),
+                        filePath VARCHAR(200),
+                        target VARCHAR(10) CHECK(target IN('초등','중등','고등'))
 );
 
 -- 초등 강의 더미데이터 5건
@@ -368,12 +381,12 @@ SELECT * FROM lecture;
 -------------------------------------------------------------------------------------------------------------------------------------
 -- 강의 목록 페이지 구현
 CREATE TABLE lectureInfo(
-	vno INT AUTO_INCREMENT PRIMARY KEY,
-	lno INT NOT NULL,
-	vTitle VARCHAR(500) NOT NULL,
-	filePath VARCHAR(200) NOT NULL,
-	duration VARCHAR(100) NOT NULL,
-	FOREIGN KEY(vno) REFERENCES lecture(lno) ON DELETE CASCADE
+                            vno INT AUTO_INCREMENT PRIMARY KEY,
+                            lno INT NOT NULL,
+                            vTitle VARCHAR(500) NOT NULL,
+                            filePath VARCHAR(200) NOT NULL,
+                            duration VARCHAR(100) NOT NULL,
+                            FOREIGN KEY(vno) REFERENCES lecture(lno) ON DELETE CASCADE
 );
 
 -- 중등 강의 추가
