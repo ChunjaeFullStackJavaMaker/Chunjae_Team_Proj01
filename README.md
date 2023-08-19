@@ -94,6 +94,8 @@
 <p align="center"><img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/dcf0a4ca-e88f-4bef-83de-e01ec3ceb509" alt="usecase diagram1"></p>
 <p align="center"><img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/81f7a8c9-0b19-4d02-9431-f656227a07ac" alt="usecase diagram1"></p>
 <p align="center"><img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/1276645f-7f53-41d1-b342-0f58e036448c" alt="usecase diagram1"></p>
+<p align="center"><img src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/630917ff-f8b6-4693-a8e0-a81f844b729a" alt="usecase diagram1"></p>
+
 <br><br>
 
 ### 📂논리적 설계
