@@ -51,8 +51,8 @@
 <style>
     <!--공지사항과 이벤트 게시판 스타일-->
     #page3 {clear : both; background-color: gray;}
-    .board_lst { background-color: rgba(240, 240, 240, 0.5); margin-top : 200px; }
-    .board_wrap { width: 1250px; margin: 0px auto; padding: 50px; }
+    .board_lst { background-color: rgba(240, 240, 240, 0.5); margin-top : 100px; }
+    .board_wrap { width: 1250px; margin: 0px auto; padding: 10px; }
     .board { display : inline-block; margin: 60px; vertical-align: top; }
     .board_title { display : inline-block; position: relative; width: 500px; }
     .notice_title {margin : 5px; font-size: 20px; font-weight: bold;}

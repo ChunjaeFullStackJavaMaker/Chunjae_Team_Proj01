@@ -1,14 +1,13 @@
 @charset "UTF-8";
 /* 푸터 구역 스타일 */
-.ft { clear:both; width: 100%; box-shadow:0px -10px 30px #ccc; }
+.ft { clear:both; width: 100%; box-shadow:0px -10px 30px #ccc; color: #ffffff }
 .ft::after { content:""; display:block; width: 100%; clear: both; }
-.ft_wrap { clear:both; width: 100%; border-bottom:1px solid #eee; padding-bottom: 30px;
-  padding-top: 30px; }
+.ft_wrap { clear:both; width: 100%; border-bottom:1px solid #eee; padding-bottom: 30px; padding-top: 30px; background-color: #A9D18E;}
 .ft_link { clear:both; width: 1200px; margin: 0 auto; }
 .ft_link::after { content:""; display:block; width: 100%; clear: both; }
-.fnb { float:left; }
+/*.fnb { float:left; }*/
 .fnb::after { content:""; display:block; width: 100%; clear: both; }
-.fnb li { float:left; }
+.fnb li { float:left; display: flex; color: #ffffff; }
 .fnb li:nth-child(2)::after { content:"|"; padding-left: 30px; padding-right: 30px;  }
 .snb { float:right; }
 .snb::after { content:""; display:block; width: 100%; clear: both; }
@@ -28,9 +27,9 @@
 .ft_link li { line-height: 48px; }
 #sel { height: 34px; width: 200px; }
 
-.ft_wrap2 { clear:both; width:1200px; margin: 0 auto; padding-bottom: 30px; padding-top: 30px; }
+.ft_wrap2 { clear:both; margin: 0 auto; width: 100%; text-align: center; padding-bottom: 30px; padding-top: 30px; background-color: #A9D18E; }
 .copyright { line-height:20px; font-size:12px; }
-.copyright span::after { content:"|"; padding-left: 20px; padding-right: 20px; color:#ccc; }
+.copyright span::after { content:"|"; padding-left: 20px; padding-right: 20px; color:#ffffff; }
 .copyright span.end::after { content:""; padding-right: 0; }
 
 .cp { font-size: 12px; color:#ccc; line-height: 20px; }

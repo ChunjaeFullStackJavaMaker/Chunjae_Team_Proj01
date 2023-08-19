@@ -12,7 +12,7 @@
     .page::after { content:""; display:block; width: 100%; clear:both; }
 
     .page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
-    .page_tit { font-size: 48px; text-align: center; padding-top:3em; }
+    .page_tit { font-size: 48px; text-align: center; padding-top:2em; }
     .page_con { font-size: 20px; text-align: center; margin-top: 50px; color: #3a3a3a }
   </style>
 </head>
