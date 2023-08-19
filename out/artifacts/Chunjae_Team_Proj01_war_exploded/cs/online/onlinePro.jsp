@@ -20,14 +20,14 @@
         //smtp 설정
         Properties p = new Properties();
         p.put("mail.smtp.host","smtp.gmail.com");
-        p.put("mail.smtp.port", "995");
+        p.put("mail.smtp.port", "587");
         p.put("mail.smtp.starttls.enable", "true");
         p.put("mail.smtp.auth", "true");
         p.put("mail.smtp.debug", "true");
         p.put("mail.smtp.ssl.enable", "false");
         p.put("mail.smtp.ssl.trust", "smtp.gmail.com");
         p.put("mail.smtp.user","bk75121@gmail.com");
-        p.put("mail.smtp.socketFactory.port", "995");
+        p.put("mail.smtp.socketFactory.port", "587");
         p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         p.put("mail.smtp.socketFactory.fallback", "false");
 

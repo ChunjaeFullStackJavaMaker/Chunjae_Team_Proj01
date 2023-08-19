@@ -45,6 +45,7 @@
                 <form method="post" action="<%=path3%>/member/loginpro.jsp" id="login-form">
                     <input type="text" name="id" placeholder="아이디" autofocus required>
                     <input type="password" id="pw" name="pw" placeholder="비밀번호" class="active" required>
+                    <input type="button" id="showpw" class="showpw" value="비밀번호 확인하기">
                     <input type="submit" value="Login">
                 </form>
                 <script>
