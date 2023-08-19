@@ -20,6 +20,7 @@
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./jquery-1.12.4.js"></script>
     <link rel="stylesheet" href="<%=path4%>/css/common.css">
     <link rel="stylesheet" href="<%=path4%>/css/header.css">
     <link rel="stylesheet" href="<%=path4%>/css/content_header.css">
@@ -61,12 +62,14 @@
                                 <th><label for="pw">비밀번호</label></th>
                                 <td>
                                     <input type="password" name="pw" id="pw" class="indata" required>
+                                    <input type="button" id="showpw1" class="inbtn" value="비밀번호 확인하기">
                                 </td>
                             </tr>
                             <tr>
                                 <th><label for="pw2">비밀번호 확인</label></th>
                                 <td>
                                     <input type="password" name="pw2" id="pw2" class="indata" required>
+                                    <input type="button" id="showpw2" class="inbtn" value="비밀번호 확인하기">
                                 </td>
                             </tr>
                             <tr>
@@ -83,7 +86,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2" class="colspan">
-                                    <input type="submit" value="회원 가입" class="inbtn">
+                                    <input type="submit" value="회원 가입" class="inbtn2">
                                 </td>
                             </tr>
                             </tbody>
@@ -118,6 +121,26 @@
                                 return;
                             }
                         }
+                        $(function(){
+                            $('#showpw1').on('click',function (){
+                                $('#pw').toggleClass('active');
+                                if ($('#pw').hasClass('active')){
+                                    $('#pw').prop('type','text');
+                                } else {
+                                    $('#pw').prop('type','password');
+                                }
+                            });
+                        });
+                        $(function(){
+                            $('#showpw2').on('click',function (){
+                                $('#pw2').toggleClass('active');
+                                if ($('#pw2').hasClass('active')){
+                                    $('#pw2').prop('type','text');
+                                } else {
+                                    $('#pw2').prop('type','password');
+                                }
+                            });
+                        });
                     </script>
                 </div>
             </section>
