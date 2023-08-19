@@ -34,5 +34,8 @@
         <url-pattern>*.png</url-pattern>
         <url-pattern>*.gif</url-pattern>
         <url-pattern>*.webp</url-pattern>
+        <url-pattern>*.mp4</url-pattern>
+        <url-pattern>*.ogg</url-pattern>
+        <url-pattern>*.webm</url-pattern>
     </servlet-mapping>
 </web-app>

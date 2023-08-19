@@ -123,7 +123,7 @@
         }
 
         // 현재 페이지에 출력할 회원 데이터만 가져오기
-        sql = "SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt as cnt, a.lev AS lev, a.par AS par, b.name AS NAME FROM qna a, member b WHERE a.author=b.id order BY a.par DESC, a.lev ASC, a.qno ASC LIMIT 10";
+        sql = "SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt as cnt, a.lev AS lev, a.par AS par, b.name AS NAME FROM qna a, member b WHERE a.author=b.id order BY a.par DESC, a.lev ASC, a.qno ASC LIMIT ?, 10";
         pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, 10*(pageNo-1));
         rs = pstmt.executeQuery();

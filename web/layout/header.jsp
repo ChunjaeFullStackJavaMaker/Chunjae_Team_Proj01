@@ -38,36 +38,36 @@
             <li class="item2">
                 <a href="" class="dp1"> 초 등 </a>
                 <ul class="sub">
-                    <li><a href="<%=path8%>/class/elementary/class.jsp"> 강의 소개 </a></li>
-                    <li><a href="<%=path8%>/class/elementary/book.jsp"> 교재 소개 </a></li>
+                    <li><a href="<%=path8%>/lecture/lectures.jsp?target=초등"> 강의 소개 </a></li>
+                    <li><a href="<%=path8%>/bookInfo/elmBookInfo.jsp"> 교재 소개 </a></li>
                 </ul>
             </li>
             <li class="item3">
                 <a href="" class="dp1"> 중 등 </a>
                 <ul class="sub">
-                    <li><a href="<%=path8%>/class/middle/class.jsp"> 강의 소개 </a></li>
-                    <li><a href="<%=path8%>/class/middle/book.jsp"> 교재 소개 </a></li>
+                    <li><a href="<%=path8%>/lecture/lectures.jsp?target=중등"> 강의 소개 </a></li>
+                    <li><a href="<%=path8%>/bookInfo/middleBookInfo.jsp"> 교재 소개 </a></li>
                 </ul>
             </li>
             <li class="item4">
                 <a href="" class="dp1"> 고 등 </a>
                 <ul class="sub">
-                    <li><a href="<%=path8%>/class/high/class.jsp"> 강의 소개 </a></li>
-                    <li><a href="<%=path8%>/class/high/book.jsp"> 교재 소개 </a></li>
+                    <li><a href="<%=path8%>/lecture/lectures.jsp?target=고등"> 강의 소개 </a></li>
+                    <li><a href="<%=path8%>/bookInfo/highBookInfo.jsp"> 교재 소개 </a></li>
                 </ul>
             </li>
             <li class="item5">
                 <a href="" class="dp1"> 커뮤니티 </a>
                 <ul class="sub">
-                    <li><a href="<%=path8 %>/board/studentboard/StudentBoardList.jsp"> 학생 커뮤니티 </a></li>
-                    <li><a href="<%=path8 %>/board/motherboard/MotherBoardList.jsp"> 학부모 커뮤니티 </a></li>
+                    <li><a href="<%=path8 %>/board/studentboard/StudentBoardList.jsp?page=1"> 학생 커뮤니티 </a></li>
+                    <li><a href="<%=path8 %>/board/motherboard/MotherBoardList.jsp?page=1"> 학부모 커뮤니티 </a></li>
                 </ul>
             </li>
             <li class="item6">
                 <a href="" class="dp1"> 고객지원 </a>
                 <ul class="sub">
                     <li><a href="<%=path8%>/cs/board/boardList.jsp?page=1"> 공지사항 </a></li>
-                    <li><a href="<%=path8%>/cs/qna/qnaList.jsp"> QnA </a></li>
+                    <li><a href="<%=path8%>/cs/qna/qnaList.jsp?page=1"> QnA </a></li>
                     <li><a href="<%=path8%>/cs/faq/faqList.jsp"> FAQ </a></li>
                 </ul>
             </li>

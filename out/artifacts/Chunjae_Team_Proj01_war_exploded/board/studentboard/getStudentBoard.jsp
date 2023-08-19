@@ -290,8 +290,8 @@
                     <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                     <tr>
                         <td colspan="2">
-                            <a href="/board/motherboard/delMotherBoard.jsp?bno=<%=bno%>" class="btn"> 삭제 </a>
-                            <a href="/board/motherboard/updateMotherBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
+                            <a href="/board/motherboard/delStudentBoard.jsp?bno=<%=bno%>" class="btn"> 삭제 </a>
+                            <a href="/board/motherboard/updateStudentBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
                         </td>
                     </tr>
                     <% } %>
