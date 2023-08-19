@@ -14,7 +14,7 @@
         String tel = request.getParameter("tel");
         String title = request.getParameter("title");
         String content = request.getParameter("content");
-        String to = "bkyoung123@naver.com";  //받는 사람 이메일
+        String to = "admin@cornedu.com";  //받는 사람 이메일
 
         //4. smtp 설정 -> Properties 활용
         Properties p = new Properties();
