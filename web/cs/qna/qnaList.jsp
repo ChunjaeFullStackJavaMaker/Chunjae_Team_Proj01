@@ -176,11 +176,17 @@
                         <% for(QnA qna: qnaList) { %>
                         <div>
                             <div class="bno"> <%=qna.getQno()%> </div>
-                            <% if(sid!=null) { %>
-                            <div class="qTitle"> <a href="/cs/qna/getQna.jsp?qno=<%=qna.getQno() %>"><%=qna.getTitle() %></a> </div>
-                            <% } else { %>
-                            <div class="qTitle"><%=qna.getTitle() %></div>
-                            <% } %>
+                            <% if(sid!=null) {
+                                if(qna.getLev()==0){%>
+                            <div class="qTitle" style="text-align : left;"> <a href="/cs/qna/getQna.jsp?qno=<%=qna.getQno() %>"><%=qna.getTitle() %></a> </div>
+                            <% }else{ %>
+                            <div class="qTitle" style="text-align : left;"> <a href="/cs/qna/getQna.jsp?qno=<%=qna.getQno() %>">⌞<%=qna.getTitle() %></a> </div>
+                            <%}} else {
+                                if(qna.getLev()==0){%>
+                            <div class="qTitle" style="text-align : left;"><%=qna.getTitle() %></div>
+                            <% }else{ %>
+                            <div class="qTitle" style="text-align : left;">⌞<%=qna.getTitle() %></div>
+                            <%}} %>
                             <div style="width: 25%"> <%=qna.getAuthor()%> </div>
                             <div class="resdate"> <%=qna.getResdate()%> </div>
                         </div>
