@@ -11,7 +11,7 @@ String email = request.getParameter("from");    //보내는 사람 이메일
 String tel = request.getParameter("tel");
 String title = request.getParameter("title");
 String content = request.getParameter("content");
-String to = "admin@cornedu.com";  //받는 사람 이메일
+String to = "bkyoung123@naver.com";  //받는 사람 이메일
 
 //4. smtp 설정 -> Properties 활용
 Properties p = new Properties();
@@ -23,7 +23,8 @@ p.put("mail.smtp.debug", "true");
 p.put("mail.smtp.socketFactory.port", "465");
 p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 p.put("mail.smtp.socketFactory.fallback", "false");
-
+p.put("mail.smtp.ssl.enable","true");
+p.put("mail.smtp.ssl.trust","smtp.naver.com");
 //5. 이메일 보내기
 try {
 Authenticator auth = new SMTPAuthenticatior();
