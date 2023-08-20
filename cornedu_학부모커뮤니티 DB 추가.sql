@@ -83,7 +83,13 @@ CREATE TABLE motherboard(
                             content VARCHAR(1000),
                             author VARCHAR(16),
                             resdate TIMESTAMP NOT NULL default CURRENT_TIMESTAMP,
-                            cnt INT DEFAULT 0);
+                            cnt INT DEFAULT 0
+                            FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE);
+
+-- motherboard JOIN & VIEW 생성 ( 내가 쓴 글에 이용)
+SELECT a.bno AS bno, a.title AS title, a.content AS content ,a.author AS author,a.resdate AS resdate ,a.cnt AS cnt, b.id as id FROM motherboard a, member b WHERE a.author =b.id;
+CREATE view motherboardlist AS (SELECT a.bno AS bno ,a.title AS title, a.content AS content ,a.author AS author,a.resdate AS resdate ,a.cnt AS cnt, b.id as id FROM motherboard a, member b WHERE a.author =b.id);
+SELECT * FROM motherboardlist;
 
 -- 게시판 더미글 추가 8건
 INSERT INTO motherboard(title, content, author)
@@ -162,7 +168,14 @@ CREATE TABLE studentboard(
                              content VARCHAR(1000),
                              author VARCHAR(16),
                              resdate TIMESTAMP NOT NULL default CURRENT_TIMESTAMP,
-                             cnt INT DEFAULT 0);
+                             cnt INT DEFAULT 0
+                             FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE);
+
+
+-- studentboard JOIN & VIEW 생성 ( 내가 쓴 글에 이용)
+SELECT a.bno AS bno, a.title AS title, a.content AS content ,a.author AS author,a.resdate AS resdate ,a.cnt AS cnt, b.id as id FROM studentboard a, member b WHERE a.author =b.id;
+CREATE view studentboardlist AS (SELECT a.bno AS bno, a.title AS title, a.content AS content ,a.author AS author,a.resdate AS resdate ,a.cnt AS cnt, b.id as id FROM studentboard a, member b WHERE a.author =b.id);
+SELECT * FROM studentboardlist;
 
 -- 게시판 테이블 구조 보기
 DESC studentboard;
@@ -189,7 +202,6 @@ COMMIT;
 
 -- 게시판 테이블 검색
 SELECT * FROM studentboard;
-
 
 -- 기존 테이블 존재시 현재 테이블을 참조하는 테이블도삭제
 DROP TABLE if EXISTS qna CASCADE;
@@ -259,6 +271,11 @@ COMMIT;
 SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt AS cnt, a.lev AS lev,
        a.par AS par, b.name AS name
 FROM qna a, member b WHERE a.author=b.id ORDER BY a.par DESC, a.lev ASC, a.qno ASC;
+
+-- qna JOIN & VIEW 생성 ( 내가 쓴 글에 이용)
+CREATE VIEW qnalist2 AS (SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt AS cnt, a.lev AS lev,
+                         a.par AS par, b.id AS idFROM qna a, member b WHERE a.author=b.id ORDER BY a.par DESC, a.lev ASC, a.qno ASC);
+SELECT * FROM qnalist2;
 
 
 -----------------------------------------------------------------------------------------------------------------------
