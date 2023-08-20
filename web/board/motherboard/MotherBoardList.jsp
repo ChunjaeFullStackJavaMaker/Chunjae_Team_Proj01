@@ -8,11 +8,6 @@
 <%@ page import="com.chunjae_pro01.util.DBC" %>
 <%@ page import="com.chunjae_pro01.util.MariaDBCon" %>
 <%
-    response.setHeader("Cache-Control", "no-cache");
-    response.addHeader("Cache-Control", "no-store");
-    response.setHeader("Pragma", "no-cache");
-    response.setDateHeader("Expires", 1L);
-
     String path5 = request.getContextPath();
 %>
 

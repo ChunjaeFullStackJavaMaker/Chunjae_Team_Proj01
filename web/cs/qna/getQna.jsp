@@ -211,7 +211,7 @@
                 <% if(sid.equals("admin") || sid.equals(qna.getAuthor())) { %>
                 <tr>
                     <td colspan="3">
-                        <a href="/cs/qna/delQna.jsp?qno=<%=qna.getQno() %>" class="btn">삭제</a>
+                        <a href="/cs/qna/delQna.jsp?lev=0&qno=<%=qna.getQno() %>" class="btn">삭제</a>
                         <a href="/cs/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="btn">수정</a>
                         <a href="/cs/qna/addQuestion.jsp?lev=1&par=<%=qna.getQno() %>" class="btn1">답변하기</a>
                     </td>

@@ -49,6 +49,7 @@
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
     <link rel="stylesheet" href="<%=path5%>/css/google.css">
     <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path%>/css/header.css">
     <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
@@ -105,13 +106,12 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <span> 관리자 페이지 </span> </p>
-                <h2 class="page_tit"> 관리자 페이지 </h2>
+                <p><a href="<%=path %>/">Home</a> &gt; <a href="<%=path %>">학생 커뮤니티</a> &gt; <span> 학생 커뮤니티 수정하기 </span> </p>
+                <h2 class="page_tit"> 학생 커뮤니티 </h2>
             </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">공지사항 수정하기</h2>
                 <hr>
                 <!-- 5. Board 객체의 내용을 폼의 각 컨트롤(input/textarea)에 바인딩하여 출력 -->
                 <form action="updateStudentBoardPro.jsp" method="post">
