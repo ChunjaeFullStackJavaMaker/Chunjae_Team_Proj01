@@ -167,6 +167,7 @@
 - 현재 로그인한 회원이 작성한 글(qna 및 커뮤니티)과 연동된 mariaDB에서 SELECT하여 화면에 출력(id 와 author JOIN)
 - 학부모일 경우 학부모 커뮤니티, 학생일 경우 학생 커뮤니티에서 내가 쓴 글 게시판으로 링크 설정
 - 글을 클릭하면 내가 쓴 qna, board 게시판 글로 페이지가 이동
+- 게시판에 조회수를 추가하였으며, 글제목을 클릭할 시 글 상세보기로 이동하면 조회수가 1씩 증가하도록 구현현
 #### 📷 View
 <table>
   <tr>
@@ -291,6 +292,7 @@
 #### (1) 학부모 및 학생 커뮤니티 게시판
 - 학부모,학생 커뮤니티 목록을 mariaDB에서 SELECT하여 화면에 출력
 - 글번호, 글제목, 작성자, 작성일이 화면에 출력되며, 글번호 역순 정렬
+- 글 제목 클릭할 시 상세보기로 이동하며 조회수 1 증가하도록 구현
 #### (2) 글 관리(글 작성, 글 수정, 글 삭제)
 - 회원이 본인의 아이디로 로그인시 본인이 작성한 글을 수정 및 삭제 가능하도록 구현
 - 비회원은 글을 볼 수 없도록 구현
@@ -314,13 +316,14 @@
   </tr>
   <tr>
     <td align="center">
-      <img width="1300" alt="2222" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/7626d36a-402f-4464-8c7a-c8b3babc7042"><br/>
+      <img width="960" alt="stucomuwrite" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/271195ef-6ffc-4ee3-b2b9-313d2e520237">
+<br/>
       <sub><b> PIC2 : 게시판 글 작성 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img width="1300" alt="33333" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/910078bc-533a-433d-8ed3-d3cf80835ffd"><br/>
+      <img width="960" alt="stucomumodify" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/6fc61200-9a05-477e-92ee-ff018cb5aba1"><br/>
       <sub><b> PIC3 : 게시판 글 수정 </sub></b>
     </td>
   </tr>
