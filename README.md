@@ -183,7 +183,7 @@
   </tr>
     <tr>
     <td align="center">
-     <img width="1300" alt="s" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/635f3b74-6280-4dc2-be2b-ba83100b40c3">
+     <img width="960" alt="mypage1" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/f7cb9084-141c-4ba4-80ef-67c193666516">
  <br/>
       <sub><b> PIC3 : 내가 쓴 글 </sub></b>
     </td>
@@ -302,7 +302,7 @@
 <table>
   <tr>
     <td align="center">
-      <img width="1300" alt="second" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/104690434/907d71a2-5bee-4b1e-ba12-aa94af5876e0"><br/>
+      <br/>
       <sub><b> PIC1 : 커뮤니티 게시판 </sub></b>
     </td>
   </tr>
