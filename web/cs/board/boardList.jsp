@@ -118,7 +118,7 @@
         }
 
         // 현재 페이지에 출력할 회원 데이터만 가져오기
-        sql = "SELECT * FROM board ORDER BY bno DESC LIMIT ?, 10";
+        sql = "SELECT * FROM board ORDER BY bno DESC";
         pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, 10*(pageNo-1));
         rs = pstmt.executeQuery();
