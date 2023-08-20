@@ -302,7 +302,7 @@
 <table>
   <tr>
     <td align="center">
-      <br/>
+      <img width="960" alt="stucomu1" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/68a64e68-a3d9-4cfe-9de8-a4da51a65c12"><br/>
       <sub><b> PIC1 : 커뮤니티 게시판 </sub></b>
     </td>
   </tr>
