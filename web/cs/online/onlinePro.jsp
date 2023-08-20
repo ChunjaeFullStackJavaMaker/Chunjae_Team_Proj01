@@ -23,7 +23,8 @@ p.put("mail.smtp.debug", "true");
 p.put("mail.smtp.socketFactory.port", "465");
 p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 p.put("mail.smtp.socketFactory.fallback", "false");
-
+p.put("mail.smtp.ssl.enable","true");
+p.put("mail.smtp.ssl.trust","smtp.naver.com");
 //5. 이메일 보내기
 try {
 Authenticator auth = new SMTPAuthenticatior();

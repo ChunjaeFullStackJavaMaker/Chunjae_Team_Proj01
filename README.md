@@ -101,10 +101,12 @@
 
 ### 📂논리적 설계
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/b9200ed8-74b4-427e-bafb-260a74497fe7)
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/0615172e-5de9-433e-b295-dec689edf2b9)
 <br><br>
 
 ### 📂논리적 ERD
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/fee9b456-59db-43e1-bec4-cb07f8ad6cf2)
+![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/88a2c296-156e-4c71-b67d-3f756e66890c)
 <br><br>
 
 ### 📂DATABASE - 테이블 ERD
@@ -117,7 +119,6 @@
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/fb25266e-ed08-45eb-978f-515c8cabdbb8)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/4d1ecd48-ff5e-4443-9dd0-a23fe91d8487)
 ![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/cc1c70c4-1454-4b1a-8efe-29af5d83e5ba)
-![initial](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/69a2d610-490a-4950-8c02-94e8462a3a8c)
 <br><br>
 
 ### 📂CLASS DIAGRAM
@@ -167,6 +168,7 @@
 - 현재 로그인한 회원이 작성한 글(qna 및 커뮤니티)과 연동된 mariaDB에서 SELECT하여 화면에 출력(id 와 author JOIN)
 - 학부모일 경우 학부모 커뮤니티, 학생일 경우 학생 커뮤니티에서 내가 쓴 글 게시판으로 링크 설정
 - 글을 클릭하면 내가 쓴 qna, board 게시판 글로 페이지가 이동
+- 게시판에 조회수를 추가하였으며, 글제목을 클릭할 시 글 상세보기로 이동하면 조회수가 1씩 증가하도록 구현현
 #### 📷 View
 <table>
   <tr>
@@ -183,7 +185,7 @@
   </tr>
     <tr>
     <td align="center">
-     <img width="1300" alt="s" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/635f3b74-6280-4dc2-be2b-ba83100b40c3">
+     <img width="960" alt="mypage1" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/f7cb9084-141c-4ba4-80ef-67c193666516">
  <br/>
       <sub><b> PIC3 : 내가 쓴 글 </sub></b>
     </td>
@@ -291,6 +293,7 @@
 #### (1) 학부모 및 학생 커뮤니티 게시판
 - 학부모,학생 커뮤니티 목록을 mariaDB에서 SELECT하여 화면에 출력
 - 글번호, 글제목, 작성자, 작성일이 화면에 출력되며, 글번호 역순 정렬
+- 글 제목 클릭할 시 상세보기로 이동하며 조회수 1 증가하도록 구현
 #### (2) 글 관리(글 작성, 글 수정, 글 삭제)
 - 회원이 본인의 아이디로 로그인시 본인이 작성한 글을 수정 및 삭제 가능하도록 구현
 - 비회원은 글을 볼 수 없도록 구현
@@ -302,25 +305,26 @@
 <table>
   <tr>
     <td align="center">
-      <img width="1300" alt="second" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/104690434/907d71a2-5bee-4b1e-ba12-aa94af5876e0"><br/>
+      <img width="960" alt="stucomu1" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/68a64e68-a3d9-4cfe-9de8-a4da51a65c12"><br/>
       <sub><b> PIC1 : 커뮤니티 게시판 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img width="1300" alt="2222" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/969f1089-ee6a-4d21-a4b4-2c9fce7af150"><br/>
+      <img width="960" alt="stucomupage" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/79cd8f4a-e4a8-422d-bb28-e36b6201d9b5"><br/>
       <sub><b> PIC2 : 게시판 상세 글 보기 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img width="1300" alt="2222" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/7626d36a-402f-4464-8c7a-c8b3babc7042"><br/>
+      <img width="960" alt="stucomuwrite" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/271195ef-6ffc-4ee3-b2b9-313d2e520237">
+<br/>
       <sub><b> PIC2 : 게시판 글 작성 </sub></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img width="1300" alt="33333" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/910078bc-533a-433d-8ed3-d3cf80835ffd"><br/>
+      <img width="960" alt="stucomumodify" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/6fc61200-9a05-477e-92ee-ff018cb5aba1"><br/>
       <sub><b> PIC3 : 게시판 글 수정 </sub></b>
     </td>
   </tr>
@@ -373,7 +377,7 @@
 
 ###  3. 온라인 상담 관리
 #### (1) 온라인 상담
-- 회원, 비회원 구분없이 관리자에게 메일로 문의할 수 있도록 구현
+- 관리자에게 메일로 문의할 수 있도록 구현
 - 네이버 SMTP 이용
 #### 📷 View
 <table>

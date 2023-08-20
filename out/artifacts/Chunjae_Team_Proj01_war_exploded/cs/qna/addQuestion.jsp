@@ -53,7 +53,6 @@
             margin: 80px 30px 30px 10px;
         }
 
-
         .breadcrumb { clear:both;
             width:1200px; margin: 0 auto; text-align: right; color:#fff;
             padding-top: 28px; padding-bottom: 28px; }
@@ -63,7 +62,7 @@
         .tb1 { width:800px; margin:50px auto; }
         .tb1 th { width:150px; line-height:32px; padding-top:8px; padding-bottom:8px;
             border-top:1px solid #333; border-bottom:1px solid #333;
-            background-color:deepskyblue; color:#fff; }
+            background-color:#8CB964; color:#fff; vertical-align:top;}
         .tb1 td { width:650px; line-height:32px; padding-top:8px; padding-bottom:8px;
             border-bottom:1px solid #333;
             padding-left: 14px; border-top:1px solid #333; }
@@ -73,7 +72,7 @@
         .indata2 { width: 600px; padding: 14px; font-size:18px; }
         .inbtn { display:block;  border-radius:100px;
             min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
+            line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px; }
         .inbtn:first-child { float:left; }
         .inbtn:last-child { float:right; }
     </style>
@@ -86,7 +85,7 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
     <header class="hd" id="hd">
         <%@ include file="/layout/header.jsp" %>
     </header>
@@ -94,7 +93,7 @@
         <div class="content_header">
             <div class="breadcrumb">
                 <p><a href="<%=path5 %>/">Home</a> &gt; <a href="<%=path5 %>/cs/qna/qnaList.jsp">QnA</a> &gt; <span> QnA 글쓰기 </span> </p>
-                <h2 class="page_tit"> 고객지원 </h2>
+                <h2 class="page_tit"> QnA </h2>
             </div>
         </div>
         <section class="page" id="page1">
@@ -102,7 +101,7 @@
                 <p class="content_tit"> QnA 글쓰기</p>
                 <hr>
                 <form action="./addQuestionPro.jsp" method="post">
-                    <table>
+                    <table class="tb1">
                         <tbody>
                         <tr>
                             <th><label for="title">제목</label></th>
@@ -115,16 +114,16 @@
                         </tr>
                         <tr>
                             <th><label for="content">내용</label></th>
-                            <td>
-                                <textarea name="content" id="content" cols="80" rows="10" maxlength="990" class="indata2"></textarea>
+                            <td><textarea rows="10" cols="80" name="content" id="content" class="indata2" maxlength="990" required></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" value="글쓰기" class="inbtn">
+                                <input type="reset" value="취소"  class="inbtn">
                             </td>
                         </tr>
                         </tbody>
                     </table>
-                    <div class="btn_group">
-                        <input type="submit" value="<%=sel %> 등록" class="inbtn">
-                        <a href="/cs/qna/qnaList.jsp" class="inbtn">글 목록</a>
-                    </div>
                 </form>
             </div>
         </section>
