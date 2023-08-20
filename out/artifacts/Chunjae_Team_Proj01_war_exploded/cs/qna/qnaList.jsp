@@ -8,6 +8,11 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="/setting/encoding.jsp"%>
 <%
+    response.setHeader("Cache-Control", "no-cache");
+    response.addHeader("Cache-Control", "no-store");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 1L);
+
     String path68 = request.getContextPath();
 %>
 <!DOCTYPE html>

@@ -81,6 +81,11 @@
         .btn_group p {text-align: center;   line-height:3.6; }
     </style>
     <%
+        response.setHeader("Cache-Control", "no-cache");
+        response.addHeader("Cache-Control", "no-store");
+        response.setHeader("Pragma", "no-cache");
+        response.setDateHeader("Expires", 1L);
+
         int pageNo = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 0;
         // 총 페이지 수
         int totalPage = 0;

@@ -7,6 +7,11 @@
 <%@ page import="com.chunjae_pro01.vo.*" %>
 <%@ include file="/setting/encoding.jsp" %>
 <%
+    response.setHeader("Cache-Control", "no-cache");
+    response.addHeader("Cache-Control", "no-store");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 1L);
+
     String path20 = request.getContextPath();
 %>
 <%
