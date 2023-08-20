@@ -11,25 +11,27 @@
     response.setCharacterEncoding("UTF-8");
 %>
 <%
-    String path5 = request.getContextPath();
+    String path31 = request.getContextPath();
 %>
 <%
-    int qno = Integer.parseInt(request.getParameter("qno"));
-
-    //3. DB연결
-    Connection conn = null;
+    Connection con = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
-    DBC con = new MariaDBCon();
-    conn = con.connect();
+
+    int qno = Integer.parseInt(request.getParameter("qno"));
+
+    // 2. DB 연결하기
+    DBC conn = new MariaDBCon();
+    con = conn.connect();
 
     //4. sql 실행 및 실행결과 받기
     String sql = "SELECT * FROM qna WHERE qno=?";
-    pstmt = conn.prepareStatement(sql);
+    pstmt = con.prepareStatement(sql);
     pstmt.setInt(1, qno);
+    rs = pstmt.executeQuery();
 
     //5. 실행결과(ResultSet) 인 해당 Qna 1건 qna(질문및답변) 객체에 넣기
-    rs = pstmt.executeQuery();
+
     QnA qna = new QnA();
     if(rs.next()){
         qna.setQno(rs.getInt("qno"));
@@ -41,6 +43,7 @@
         qna.setLev(rs.getInt("lev"));
         qna.setPar(rs.getInt("par"));
     }
+    conn.close(rs, pstmt, con);
 
     String sel = "";
     if(qna.getLev()==0){
@@ -67,8 +70,8 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/header.css">
-    <link rel="stylesheet" href="<%=path5%>/css/header.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path31 %>/css/header.css">
+    <link rel="stylesheet" href="<%=path31 %>/css/content_header.css">
     <style>
         /* 본문 영역 스타일 */
         .contents { clear:both; min-height:100vh;

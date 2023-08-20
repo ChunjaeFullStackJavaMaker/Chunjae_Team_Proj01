@@ -6,6 +6,7 @@
         <entry key="file://$PROJECT_DIR$/web/board/motherboard/MotherBoardList1.jsp" value="file://$PROJECT_DIR$/web/board/motherboard" />
         <entry key="file://$PROJECT_DIR$/web/board/studentboard/getStudentBoard.jsp" value="file://$PROJECT_DIR$/web/board/studentboard" />
         <entry key="file://$PROJECT_DIR$/web/cs/board/getBoard.jsp" value="file://$PROJECT_DIR$/web/cs/board" />
+        <entry key="file://$PROJECT_DIR$/web/cs/qna/updateQna.jsp" value="file://$PROJECT_DIR$/web/cs/qna" />
         <entry key="file://$PROJECT_DIR$/web/index.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/lecture/lectureList.jsp" value="file://$PROJECT_DIR$/web/lecture" />
         <entry key="file://$PROJECT_DIR$/web/member/idload.jsp" value="file://$PROJECT_DIR$/web/member" />

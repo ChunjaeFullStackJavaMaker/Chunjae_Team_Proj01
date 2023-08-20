@@ -9,6 +9,7 @@
 <%-- 1. 필요한 라이브러리 로딩 --%>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae_pro01.util.*" %>
+
 <%
     request.setCharacterEncoding("UTF-8");
     response.setContentType("text/html; charset=UTF-8");
@@ -19,7 +20,7 @@
     int qno = Integer.parseInt(request.getParameter("qno"));
     String title = request.getParameter("title");
     String content = request.getParameter("content");
-    String author = request.getParameter("author");
+    String author =request.getParameter("author");
 
     //3. DB 연결
     Connection conn = null;
@@ -33,13 +34,13 @@
     pstmt.setString(1, title);
     pstmt.setString(2, content);
     pstmt.setString(3, author);
-    pstmt.setInt(4, qno);
+    pstmt.setInt(4,qno);
 
     int cnt = pstmt.executeUpdate();
 
     if(cnt>0){
         System.out.println("글이 수정되었습니다.");
-        response.sendRedirect("/cs/qna/qnaList.jsp");
+        response.sendRedirect("/cs/qna/getQna.jsp?qno="+qno);
     } else {
         System.out.println("글 수정이 실패되었습니다.");
         //response.sendRedirect("/cs/qna/updateQna.jsp?qno="+qno);

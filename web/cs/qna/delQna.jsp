@@ -38,7 +38,7 @@
     int cnt = pstmt.executeUpdate();
     if(cnt>0){
         System.out.println("글이 삭제되었습니다.");
-        response.sendRedirect("/cs/qna/qnaList.jsp");
+        response.sendRedirect("/cs/qna/qnaList.jsp?page=1");
     } else {
         System.out.println("글 삭제가 실패되었습니다.");
         //response.sendRedirect("/qna/updateQna.jsp?qno="+qno);
