@@ -146,6 +146,16 @@
             background-color: #fff;
         }
 
+        .view_detail .btn1 {
+            float: right;
+            width: 60px;
+            height: 50px;
+            text-align: right;
+            line-height: 50px;
+            border: none;
+            background-color: #fff;
+        }
+
         .view_detail .title {
             padding: 20px;
             font-size: 18pt;
@@ -197,13 +207,13 @@
                 <tbody>
                 <% if(qna.getLev()==0) { %>
                 <% if(sid!=null) { %>
-                <a href="/qna/addQna.jsp?lev=1&par=<%=qna.getQno() %>" class="btn">답변하기</a>
                 <% } %>
                 <% if(sid.equals("admin") || sid.equals(qna.getAuthor())) { %>
                 <tr>
                     <td colspan="3">
+                        <a href="/cs/qna/delQna.jsp?qno=<%=qna.getQno() %>" class="btn">삭제</a>
                         <a href="/cs/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="btn">수정</a>
-                        <a href="/cs/qna/delQna.jsp?qno=<%=qna.getQno() %>&lev=0" class="btn">삭제</a>
+                        <a href="/cs/qna/addQuestion.jsp?lev=1&par=<%=qna.getQno() %>" class="btn1">답변하기</a>
                     </td>
                 </tr>
                 <% } %>
@@ -211,8 +221,8 @@
                 <% if(sid!=null && (sid.equals("admin") || sid.equals(qna.getAuthor()))){ %>
                 <tr>
                     <td colspan="3">
-                        <a href="/cs/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="btn">수정</a>
                         <a href="/cs/qna/delQna.jsp?qno=<%=qna.getQno() %>&lev=1" class="btn">삭제</a>
+                        <a href="/cs/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="btn">수정</a>
                     </td>
                 </tr>
                     <% } %>
