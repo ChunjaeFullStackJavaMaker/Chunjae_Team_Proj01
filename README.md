@@ -308,7 +308,7 @@
   </tr>
   <tr>
     <td align="center">
-      <img width="1300" alt="2222" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/70800414/969f1089-ee6a-4d21-a4b4-2c9fce7af150"><br/>
+      <img width="960" alt="stucomupage" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/79cd8f4a-e4a8-422d-bb28-e36b6201d9b5"><br/>
       <sub><b> PIC2 : 게시판 상세 글 보기 </sub></b>
     </td>
   </tr>
