@@ -414,5 +414,5 @@
 </table>
 
 ## 🎬 콘에듀 시연영상
-
+![CORNEDU_시연영상](https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/6cfc6d9e-385b-479f-bed0-12457139c8b9)
 
