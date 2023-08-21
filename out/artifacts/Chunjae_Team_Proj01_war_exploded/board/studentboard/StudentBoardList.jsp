@@ -8,11 +8,6 @@
 <%@ page import="com.chunjae_pro01.util.DBC" %>
 <%@ page import="com.chunjae_pro01.util.MariaDBCon" %>
 <%
-    response.setHeader("Cache-Control", "no-cache");
-    response.addHeader("Cache-Control", "no-store");
-    response.setHeader("Pragma", "no-cache");
-    response.setDateHeader("Expires", 1L);
-
     String path5 = request.getContextPath();
 %>
 
@@ -158,8 +153,8 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path5 %>">Home</a> &gt; <span> 학생 커뮤니티  </span> </p>
-                <h2 class="page_tit"> 학생 커뮤니티  </h2>
+                <p><a href="<%=path %>/">Home</a> &gt; <a href="<%=path %>">커뮤니티</a> &gt; <span> 학생 커뮤니티 </span> </p>
+                <h2 class="page_tit"> 커뮤니티  </h2>
             </div>
         </div>
         <section class="page" id="page1">

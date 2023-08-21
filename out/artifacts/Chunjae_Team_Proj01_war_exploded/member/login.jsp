@@ -42,10 +42,15 @@
         </div>
         <section class="page" id="page1">
             <div class="login-wrapper">
+                <h2 style="font-size: 20px">로그인 하시겠습니까?</h2>
+                <br>
+                <br>
                 <form method="post" action="<%=path3%>/member/loginpro.jsp" id="login-form">
                     <input type="text" name="id" placeholder="아이디" autofocus required>
-                    <input type="password" id="pw" name="pw" placeholder="비밀번호" class="active" required>
-                    <input type="button" id="showpw" class="showpw" value="비밀번호 확인하기">
+                    <div class="container">
+                        <input type="password" id="pw" name="pw" placeholder="비밀번호" class="active" required>
+                        <input type="button" id="showpw" class="showpw" value="비밀번호 확인하기">
+                    </div>
                     <input type="submit" value="Login">
                 </form>
                 <script>
