@@ -35,6 +35,12 @@
         .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
             padding-bottom: 2.4rem; }
 
+        .content_tit {
+            font-weight: bold;
+            font-size: 25px;
+            margin: 80px 30px 30px 10px;
+        }
+
         .breadcrumb { clear:both;
             width:1200px; margin: 0 auto; text-align: right; color:#fff;
             padding-top: 28px; padding-bottom: 28px; }
@@ -44,10 +50,10 @@
         .tb1 { width:800px; margin:50px auto; }
         .tb1 th { width:150px; line-height:32px; padding-top:8px; padding-bottom:8px;
             border-top:1px solid #333; border-bottom:1px solid #333;
-            background-color:#8CB964; color:#fff; }
+            background-color:#8CB964; color:#fff; vertical-align:top;}
         .tb1 td { width:650px; line-height:32px; padding-top:8px; padding-bottom:8px;
-            border-bottom:1px solid #8CB964;
-            padding-left: 14px; border-top:1px solid #8CB964; }
+            border-bottom:1px solid #333;
+            padding-left: 14px; border-top:1px solid #333; }
 
         .indata { display:inline-block; width:600px; height: 48px; line-height: 48px;
             padding:14px; font-size:18px; }
@@ -57,6 +63,9 @@
             line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px; }
         .inbtn:first-child { float:left; }
         .inbtn:last-child { float:right; }
+        textarea {
+            resize: none;
+        }
     </style>
 
     <link rel="stylesheet" href="<%=path5%>/css/footer.css">

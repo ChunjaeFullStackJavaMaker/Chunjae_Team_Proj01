@@ -95,7 +95,7 @@
         .tb1 { width:800px; margin:50px auto; }
         .tb1 th { line-height:32px; padding-top:8px; padding-bottom:8px;
             border-top:1px solid #333; border-bottom:1px solid #333;
-            background-color:#8CB964; color:#fff; }
+            background-color:#8CB964; color:#fff; vertical-align: top; }
         .tb1 td {line-height:32px; padding-top:8px; padding-bottom:8px;
             border-bottom:1px solid #333;
             padding-left: 14px; border-top:1px solid #333; }
@@ -107,6 +107,9 @@
             line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px;
             float:left; margin-right: 20px; }
         .inbtn:last-child { float:right; }
+        textarea {
+            resize: none;
+        }
     </style>
 
     <link rel="stylesheet" href="../../css/footer.css">

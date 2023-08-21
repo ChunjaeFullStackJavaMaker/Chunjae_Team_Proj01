@@ -56,7 +56,6 @@
     <link rel="stylesheet" href="<%=path5%>/css/common.css">
     <link rel="stylesheet" href="<%=path5%>/css/header.css">
     <style>
-    </style>    <style>
     /* 본문 영역 스타일 */
     .contents { clear:both; min-height:110vh;
         /* background-image: url("../../images/bg_visual_overview.jpg"); */
@@ -98,11 +97,12 @@
         line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px; }
     .inbtn:first-child { float:left; }
     .inbtn:last-child { float:right; }
-
-    <link rel="stylesheet" href="<%=path5%>/css/footer.css">
-    <style>
+    textarea {
+        resize: none;
+    }
 
     </style>
+    <link rel="stylesheet" href="<%=path5%>/css/footer.css">
 </head>
 <body>
 <div class="container">

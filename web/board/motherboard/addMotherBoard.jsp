@@ -63,6 +63,9 @@
             line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px; }
         .inbtn:first-child { float:left; }
         .inbtn:last-child { float:right; }
+        textarea {
+            resize: none;
+        }
     </style>
 
     <link rel="stylesheet" href="<%=path5%>/css/footer.css">

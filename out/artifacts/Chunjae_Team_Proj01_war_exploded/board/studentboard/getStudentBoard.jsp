@@ -271,6 +271,7 @@
             border-bottom: 1px solid #ddd;
             width: 100%;
         }
+
     </style>
 
     <link rel="stylesheet" href="<%=path5%>/css/footer.css">
@@ -287,7 +288,7 @@
         <div class="content_header">
             <div class="breadcrumb">
                 <p><a href="<%=path5 %>">Home</a> &gt;  <a href="<%=path5 %>/board/studentboard/StudentBoardList.jsp"> 학생 커뮤니티 </a> > <span> 학생 커뮤니티 상세보기 </span> </p>
-                <h2 class="page_tit"> 학생 커뮤니티 상세보기 </h2>
+                <h2 class="page_tit"> 학생 커뮤니티 </h2>
             </div>
         </div>
         <section class="page" id="page1">

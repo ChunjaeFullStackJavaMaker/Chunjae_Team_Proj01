@@ -11,7 +11,7 @@
 }
 
 #login-form > input{
-    width: 100%;
+    width: 75%;
     height: 48px;
     padding: 0 10px;
     box-sizing: border-box;
@@ -19,7 +19,19 @@
     border-radius: 6px;
     background-color: #F8F8F8;
 }
+
+#login-form > .container input {
+    width: 75%;
+    height: 48px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+}
+
 #login-form > input[type=button] {
+    width: 30%;
     height: 24px;
     background-color: #8CB964;
     color: #ffffff;
@@ -29,6 +41,7 @@
     color: #D2D2D2;
 }
 #login-form > input[type="submit"]{
+    width: 30%;
     color: #fff;
     font-size: 16px;
     background-color: #8CB964;

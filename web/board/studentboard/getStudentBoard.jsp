@@ -271,6 +271,7 @@
             border-bottom: 1px solid #ddd;
             width: 100%;
         }
+
     </style>
 
     <link rel="stylesheet" href="<%=path5%>/css/footer.css">

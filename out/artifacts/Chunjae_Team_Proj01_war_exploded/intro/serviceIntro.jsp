@@ -27,18 +27,26 @@
         .contents { clear:both; min-height:100vh;}
         .contents::after {content:"";clear:both;display:block;width:100%;}
 
-        .page {clear:both;width: 100%;min-height: 100vh;position:relative;top: 50px;margin: 0px auto;}
+        .page {clear:both;width: 100%;min-height: 100vh;position:relative; margin: 0px auto; background-color: rgb(203, 226, 240);}
         .page::after {content:"";display:block;width: 100%;clear:both;}
-        .page_wrap {clear:both; position:absolute; top:-50px; background-color: rgb(203, 226, 240); width:100%; padding-bottom: 300px;}
+        .page_wrap {clear: both;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            width: 1300px;
+            padding-bottom: 300px;
+            margin-left: -670px;}
 
-        #page1 {height : 1240px;}
+        #page1 {height : 1240px; padding-top: 46px;}
 
-        #service_tit {display: block; margin-left:410px; margin-top:50px;}
+        #service_tit {display: block;
+            margin-left: 410px;
+            margin-top: 85px;}
         #study1 {margin-left:100px; width:300px; padding-top:50px;}
         #study2 {margin-left:100px; width:300px; padding-top:50px;}
         #study3 {margin-left:100px; width:300px; padding-top:50px;}
-        #service_stu {width:70px; height: 70px; position:absolute; top:280px; left:480px;}
-        #service_par { width:70px; height: 70px; position:absolute; top:280px; left:730px;}
+        #service_stu {width:70px; height: 70px; position:absolute; top:309px; left:480px;}
+        #service_par { width:70px; height: 70px; position:absolute; top:309px; left:730px;}
 
         #pic_cont3 { display: block; margin-left:400px; padding-top:100px; }
         #pic_a1 { text-decoration: none; color : #636262; background-color: burlywood; font-size:25px; border-radius: 80px;

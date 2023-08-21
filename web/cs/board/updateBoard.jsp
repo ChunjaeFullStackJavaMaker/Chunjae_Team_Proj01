@@ -101,6 +101,9 @@
             line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px;
             float:left; margin-right: 20px; }
         .inbtn:last-child { float:right; }
+        textarea {
+            resize: none;
+        }
     </style>
 
     <link rel="stylesheet" href="<%=path5%>/css/ft.css">
