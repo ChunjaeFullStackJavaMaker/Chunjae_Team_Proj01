@@ -46,7 +46,6 @@
   * 회원가입
   * 아이디 중복 체크
   * 비밀번호 유효성 검사
-* 온라인 상담(이메일 보내기) 기능 구현
 
 **신예은**
 * usecaseDiagram 작성
@@ -71,7 +70,6 @@
   * 공지사항 기능 구현
 * 회사 소개 페이지 제작
 * 오시는 길(다음API연동)
-* 프론트엔드 디자인
 
 **전체 메뉴 구성 기획 및 DB 설계, frontend 설계는 다같이!**
 <br><br>
@@ -382,21 +380,6 @@
 </table>
 <br>
 
-###  3. 온라인 상담 관리
-#### (1) 온라인 상담
-- 관리자에게 메일로 문의할 수 있도록 구현
-- 네이버 SMTP 이용
-#### 📷 View
-<table>
-  <tr>
-    <td align="center">
-     <img width="1300" alt="first" src="https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/139138265/c843e156-acc2-4169-8cb4-97b7ec528f70">  
-<br/>
-      <sub><b> PIC1 : 온라인 상담 </sub></b>
-    </td>
-  </tr>
-</table>
-<br>
 
 ## 🗂온라인 강의
 ### 1. 온라인 강의 목록
