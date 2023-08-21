@@ -414,4 +414,5 @@
 </table>
 
 ## 🎬 콘에듀 시연영상
-https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/9ee4f341-47bc-42af-aaf0-198d6651c6c4
+
+https://github.com/ChunjaeFullStackJavaMaker/Chunjae_Team_Proj01/assets/138674233/8e50f810-8ccd-4bce-b0f6-a553cc4de5d4
