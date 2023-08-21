@@ -56,6 +56,10 @@
     <link rel="stylesheet" href="<%=path5%>/css/common.css">
     <link rel="stylesheet" href="<%=path5%>/css/header.css">
     <style>
+<<<<<<< HEAD
+=======
+    </style>    <style>
+>>>>>>> 370ecafc901c2f3ed4ca3e029f53b8de240d05f5
     /* 본문 영역 스타일 */
     .contents { clear:both; min-height:110vh;
         /* background-image: url("../../images/bg_visual_overview.jpg"); */
@@ -80,6 +84,7 @@
         padding-top: 28px; padding-bottom: 28px; }
     .breadcrumb a { color:#fff; }
     .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
+<<<<<<< HEAD
 
     .tb1 { width:800px; margin:50px auto; }
     .tb1 th { width:150px; line-height:32px; padding-top:8px; padding-bottom:8px;
@@ -102,6 +107,26 @@
     }
 
     </style>
+=======
+
+    .tb1 { width:800px; margin:50px auto; }
+    .tb1 th { width:150px; line-height:32px; padding-top:8px; padding-bottom:8px;
+        border-top:1px solid #333; border-bottom:1px solid #333;
+        background-color:#8CB964; color:#fff; vertical-align:top;}
+    .tb1 td { width:650px; line-height:32px; padding-top:8px; padding-bottom:8px;
+        border-bottom:1px solid #333;
+        padding-left: 14px; border-top:1px solid #333; }
+
+    .indata { display:inline-block; width:600px; height: 48px; line-height: 48px;
+        padding:14px; font-size:18px; }
+    .indata2 { width: 600px; padding: 14px; font-size:18px; }
+    .inbtn { display:block;  border-radius:100px;
+        min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
+        line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px; }
+    .inbtn:first-child { float:left; }
+    .inbtn:last-child { float:right; }
+
+>>>>>>> 370ecafc901c2f3ed4ca3e029f53b8de240d05f5
     <link rel="stylesheet" href="<%=path5%>/css/footer.css">
 </head>
 <body>
