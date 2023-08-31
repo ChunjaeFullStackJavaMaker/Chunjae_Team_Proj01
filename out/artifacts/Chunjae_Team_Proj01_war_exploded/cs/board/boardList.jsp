@@ -6,6 +6,9 @@
 <%@ page import="com.chunjae_pro01.dto.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="/setting/encoding.jsp"%>
+<%
+    String path26 = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +21,14 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path%>/css/google.css">
+    <link rel="stylesheet" href="<%=path26%>/css/google.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path%>/css/common.css">
-    <link rel="stylesheet" href="<%=path%>/css/header.css">
-    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path%>/css/mgmt.css">
-    <link rel="stylesheet" href="<%=path%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path26%>/css/common.css">
+    <link rel="stylesheet" href="<%=path26%>/css/header.css">
+    <link rel="stylesheet" href="<%=path26%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path26%>/css/mgmt.css">
+    <link rel="stylesheet" href="<%=path26%>/css/footer.css">
 
     <style>
         .contents {
@@ -152,7 +155,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>/">Home</a> &gt; <a href="<%=path %>">고객지원</a> &gt; <span> 공지사항 </span> </p>
+                <p><a href="<%=path26 %>/">Home</a> &gt; <span>고객지원</span> &gt; <span> 공지사항 </span> </p>
                 <h2 class="page_tit"> 고객지원 </h2>
             </div>
         </div>
@@ -173,7 +176,7 @@
                         <div>
                             <div class="bno"> <%=board.getBno()%> </div>
                             <% if(sid!=null) { %>
-                            <div class="qTitle"> <a href="/cs/board/getBoard.jsp?bno=<%=board.getBno() %>"><%=board.getTitle() %></a> </div>
+                            <div class="qTitle"> <a href="<%=path26 %>/cs/board/getBoard.jsp?bno=<%=board.getBno() %>"><%=board.getTitle() %></a> </div>
                             <% } else { %>
                             <div class="qTitle"><%=board.getTitle() %></div>
                             <% } %>
@@ -189,18 +192,18 @@
                         <% } %>
                     </div>
                     <div class="board_page">
-                        <a href="<%=path%>/cs/board/boardList.jsp?page=1" class="bt first"> &lt;&lt; </a>
-                        <a href="<%=path%>/cs/board/boardList.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
+                        <a href="<%=path26%>/cs/board/boardList.jsp?page=1" class="bt first"> &lt;&lt; </a>
+                        <a href="<%=path26%>/cs/board/boardList.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
                         <%  for(int p : pageList) {  %>
-                        <a href="<%=path%>/cs/board/boardList.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                        <a href="<%=path26%>/cs/board/boardList.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
                         <%  } %>
-                        <a href="<%=path%>/cs/board/boardList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
-                        <a href="<%=path%>/cs/board/boardList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                        <a href="<%=path26%>/cs/board/boardList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
+                        <a href="<%=path26%>/cs/board/boardList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
                     </div>
                     <div class="btn_group" style="margin:0; width:1000px; padding-top:25px; ">
                         <%-- 공지사항이므로 관리자만 글 추가 기능(링크)이 적용되도록 설정 --%>
                         <% if(sid!=null && sid.equals("admin")) { %>
-                        <a href="/cs/board/addBoard.jsp" class="inbtn" style="float:right; ">글쓰기</a>
+                        <a href="<%=path26 %>/cs/board/addBoard.jsp" class="inbtn" style="float:right; ">글쓰기</a>
                         <% } else { %>
                         <p>관리자만 공지사항의 글을 쓸 수 있습니다.<br>
                             로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>

@@ -9,7 +9,7 @@
     response.setCharacterEncoding("UTF-8");
 %>
 <%
-    String path30 = request.getContextPath();
+    String path31 = request.getContextPath();
 %>
 <%-- 2. 인코딩 및 보내온 데이터 받기 --%>
 <%
@@ -60,14 +60,14 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="../../css/google.css">
-    <link rel="stylesheet" href="../../css/fonts.css">
-    <link rel="stylesheet" href="<%=path30 %>/css/header.css">
-    <link rel="stylesheet" href="<%=path30 %>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path31 %>/css/google.css">
+    <link rel="stylesheet" href="<%=path31 %>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path31 %>/css/header.css">
+    <link rel="stylesheet" href="<%=path31 %>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%= path30 %>/css/common.css">
+    <link rel="stylesheet" href="<%= path31 %>/css/common.css">
     <style>
         /* 본문 영역 스타일 */
         .contents {
@@ -184,7 +184,7 @@
 
     </style>
 
-    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="<%=path31 %>/css/footer.css">
     <style>
 
     </style>
@@ -196,7 +196,7 @@
     </header>
     <div class="content_header">
         <div class="breadcrumb">
-            <p><a href="<%=path30 %>/">Home</a> &gt; <a href="<%=path30 %>">QnA</a> &gt; <span> 질문 및 답변 </span> </p>
+            <p><a href="<%=path31 %>/">Home</a> &gt; <a href="<%=path31 %>/cs/qna/qnaList.jsp">QnA</a> &gt; <span> 질문 및 답변 </span> </p>
             <h2 class="page_tit"> QnA </h2>
         </div>
     </div>
@@ -211,9 +211,9 @@
                 <% if(sid.equals("admin") || sid.equals(qna.getAuthor())) { %>
                 <tr>
                     <td colspan="3">
-                        <a href="/cs/qna/delQna.jsp?lev=0&qno=<%=qna.getQno() %>" class="btn">삭제</a>
-                        <a href="/cs/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="btn">수정</a>
-                        <a href="/cs/qna/addQuestion.jsp?lev=1&par=<%=qna.getQno() %>" class="btn1">답변하기</a>
+                        <a href="<%=path31 %>/cs/qna/delQna.jsp?lev=0&qno=<%=qna.getQno() %>" class="btn">삭제</a>
+                        <a href="<%=path31 %>/cs/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="btn">수정</a>
+                        <a href="<%=path31 %>/cs/qna/addQuestion.jsp?lev=1&par=<%=qna.getQno() %>" class="btn1">답변하기</a>
                     </td>
                 </tr>
                 <% } %>
@@ -221,8 +221,8 @@
                 <% if(sid!=null && (sid.equals("admin") || sid.equals(qna.getAuthor()))){ %>
                 <tr>
                     <td colspan="3">
-                        <a href="/cs/qna/delQna.jsp?qno=<%=qna.getQno() %>&lev=1" class="btn">삭제</a>
-                        <a href="/cs/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="btn">수정</a>
+                        <a href="<%=path31 %>/cs/qna/delQna.jsp?qno=<%=qna.getQno() %>&lev=1" class="btn">삭제</a>
+                        <a href="<%=path31 %>/cs/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="btn">수정</a>
                     </td>
                 </tr>
                     <% } %>

@@ -16,9 +16,9 @@
 
 <!-- 필요한 플러그인 연결 -->
 <script src="https://code.jquery.com/jquery-latest.js"></script>
-<link rel="stylesheet" href="/css/common.css">
-<link rel="stylesheet" href="/css/header.css">
-<link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="<%=path%>/css/common.css">
+<link rel="stylesheet" href="<%=path%>/css/header.css">
+<link rel="stylesheet" href="<%=path%>/css/footer.css">
 
 <!-- 파비콘 설정 -->
 <!-- 16x16, 24x24, 32x32, 48x48, 64x64, 96x96, 114x114, 128x128, 256x256 등을 활용-->

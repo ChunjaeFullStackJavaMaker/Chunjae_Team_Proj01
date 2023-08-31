@@ -13,7 +13,7 @@
     response.setHeader("Pragma", "no-cache");
     response.setDateHeader("Expires", 1L);
 
-    String path68 = request.getContextPath();
+    String path32 = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,14 +27,14 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path68%>/css/google.css">
+    <link rel="stylesheet" href="<%=path32%>/css/google.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path68%>/css/common.css">
-    <link rel="stylesheet" href="<%=path68%>/css/header.css">
-    <link rel="stylesheet" href="<%=path68%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path68%>/css/mgmt.css">
-    <link rel="stylesheet" href="<%=path68%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path32%>/css/common.css">
+    <link rel="stylesheet" href="<%=path32%>/css/header.css">
+    <link rel="stylesheet" href="<%=path32%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path32%>/css/mgmt.css">
+    <link rel="stylesheet" href="<%=path32%>/css/footer.css">
 
     <style>
         .contents {
@@ -156,7 +156,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path68 %>/">Home</a> &gt; <a href="<%=path68 %>">고객지원</a> &gt; <span> QnA </span> </p>
+                <p><a href="<%=path32 %>/">Home</a> &gt; <span>고객지원</span> &gt; <span> QnA </span> </p>
                 <h2 class="page_tit"> 고객지원 </h2>
             </div>
         </div>
@@ -178,9 +178,9 @@
                             <div class="bno"> <%=qna.getQno()%> </div>
                             <% if(sid!=null) {
                                 if(qna.getLev()==0){%>
-                            <div class="qTitle" style="text-align : left;"> <a href="/cs/qna/getQna.jsp?qno=<%=qna.getQno() %>"><%=qna.getTitle() %></a> </div>
+                            <div class="qTitle" style="text-align : left;"> <a href="<%=path32%>/cs/qna/getQna.jsp?qno=<%=qna.getQno() %>"><%=qna.getTitle() %></a> </div>
                             <% }else{ %>
-                            <div class="qTitle" style="text-align : left;"> <a href="/cs/qna/getQna.jsp?qno=<%=qna.getQno() %>">⌞<%=qna.getTitle() %></a> </div>
+                            <div class="qTitle" style="text-align : left;"> <a href="<%=path32%>/cs/qna/getQna.jsp?qno=<%=qna.getQno() %>">⌞<%=qna.getTitle() %></a> </div>
                             <%}} else {
                                 if(qna.getLev()==0){%>
                             <div class="qTitle" style="text-align : left;"><%=qna.getTitle() %></div>
@@ -199,17 +199,17 @@
                         <% } %>
                     </div>
                     <div class="board_page">
-                        <a href="<%=path68%>/cs/qna/qnaList.jsp?page=1" class="bt first"> &lt;&lt; </a>
-                        <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
+                        <a href="<%=path32%>/cs/qna/qnaList.jsp?page=1" class="bt first"> &lt;&lt; </a>
+                        <a href="<%=path32%>/cs/qna/qnaList.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
                         <%  for(int p : pageList) {  %>
-                        <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                        <a href="<%=path32%>/cs/qna/qnaList.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
                         <%  } %>
-                        <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
-                        <a href="<%=path68%>/cs/qna/qnaList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                        <a href="<%=path32%>/cs/qna/qnaList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
+                        <a href="<%=path32%>/cs/qna/qnaList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
                     </div>
                     <div class="btn_group" style="margin:0; width:1000px; padding-top:25px; ">
                         <% if(sid!=null) { %>
-                        <a href="<%=path68%>/cs/qna/addQuestion.jsp?lev=0&par=0" class="inbtn" style="float:right; ">질문하기</a>
+                        <a href="<%=path32%>/cs/qna/addQuestion.jsp?lev=0&par=0" class="inbtn" style="float:right; ">질문하기</a>
                         <% } else { %>
                         <p>관리자만 공지사항의 글을 쓸 수 있습니다.<br>
                             로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>

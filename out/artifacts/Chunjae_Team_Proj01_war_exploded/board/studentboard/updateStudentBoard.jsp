@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
-    String path5 = request.getContextPath();
+    String path18 = request.getContextPath();
 %>
 <%-- 1. 필요한 라이브러리 가져오기 --%>
 <%@ page import="java.sql.*" %>
@@ -47,19 +47,15 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path5%>/css/google.css">
-    <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path18%>/css/google.css">
+    <link rel="stylesheet" href="<%=path18%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path18%>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path5%>/css/common.css">
-    <link rel="stylesheet" href="<%=path5%>/css/header.css">
+    <link rel="stylesheet" href="<%=path18%>/css/common.css">
+    <link rel="stylesheet" href="<%=path18%>/css/header.css">
     <style>
-<<<<<<< HEAD
-=======
-    </style>    <style>
->>>>>>> 370ecafc901c2f3ed4ca3e029f53b8de240d05f5
     /* 본문 영역 스타일 */
     .contents { clear:both; min-height:110vh;
         /* background-image: url("../../images/bg_visual_overview.jpg"); */
@@ -84,7 +80,6 @@
         padding-top: 28px; padding-bottom: 28px; }
     .breadcrumb a { color:#fff; }
     .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
-<<<<<<< HEAD
 
     .tb1 { width:800px; margin:50px auto; }
     .tb1 th { width:150px; line-height:32px; padding-top:8px; padding-bottom:8px;
@@ -107,27 +102,7 @@
     }
 
     </style>
-=======
-
-    .tb1 { width:800px; margin:50px auto; }
-    .tb1 th { width:150px; line-height:32px; padding-top:8px; padding-bottom:8px;
-        border-top:1px solid #333; border-bottom:1px solid #333;
-        background-color:#8CB964; color:#fff; vertical-align:top;}
-    .tb1 td { width:650px; line-height:32px; padding-top:8px; padding-bottom:8px;
-        border-bottom:1px solid #333;
-        padding-left: 14px; border-top:1px solid #333; }
-
-    .indata { display:inline-block; width:600px; height: 48px; line-height: 48px;
-        padding:14px; font-size:18px; }
-    .indata2 { width: 600px; padding: 14px; font-size:18px; }
-    .inbtn { display:block;  border-radius:100px;
-        min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-        line-height: 48px; background-color: #8CB964; color:#fff; font-size: 18px; }
-    .inbtn:first-child { float:left; }
-    .inbtn:last-child { float:right; }
-
->>>>>>> 370ecafc901c2f3ed4ca3e029f53b8de240d05f5
-    <link rel="stylesheet" href="<%=path5%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path18%>/css/footer.css">
 </head>
 <body>
 <div class="container">
@@ -137,7 +112,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <span> 학생 커뮤니티 </span> </p>
+                <p><a href="<%=path18 %>">Home</a> &gt; <span> 학생 커뮤니티 </span> </p>
                 <h2 class="page_tit"> 학생 커뮤니티 상세보기 </h2>
             </div>
         </div>
@@ -146,7 +121,7 @@
                 <h2 class="page_tit">공지사항 수정하기</h2>
                 <hr>
                 <!-- 5. Board 객체의 내용을 폼의 각 컨트롤(input/textarea)에 바인딩하여 출력 -->
-                <form action="updateStudentBoardPro.jsp" method="post">
+                <form action="<%=path18 %>/board/studentboard/updateStudentBoardPro.jsp" method="post">
                     <table class="tb1">
                         <tbody>
                         <tr>
@@ -167,7 +142,7 @@
                                 <a href="javascript:history.go(-1)" class="inbtn"> 이전 페이지 </a>
                                 <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                                 <input type="submit" value="글수정" class="inbtn">
-                                <a href="/board/studentboard/delStudentBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 삭제</a>
+                                <a href="<%=path18 %>/board/studentboard/delStudentBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 삭제</a>
                                 <% } %>
                             </td>
                         </tr>

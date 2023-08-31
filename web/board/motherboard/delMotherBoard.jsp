@@ -5,6 +5,7 @@
 <%@ page import="com.chunjae_pro01.util.DBC" %>
 <%@ page import="com.chunjae_pro01.util.MariaDBCon" %>
 <%
+
     String target = request.getParameter("target");
 
     /* 2. 인코딩 설정 및 보내온 데이터 받아오기 */

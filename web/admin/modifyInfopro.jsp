@@ -3,7 +3,7 @@
 <%@ page import="com.chunjae_pro01.util.*" %>
 <%@ include file="../setting/encoding.jsp"%>
 <%
-    String path9 = request.getContextPath();
+    String path7 = request.getContextPath();
 
     String id = request.getParameter("id");
     String name = request.getParameter("name");
@@ -29,7 +29,7 @@
     if (cnt > 0) { %>
 <script>
     alert("회원 정보를 수정했습니다.");
-    location.href = "<%=path9%>/admin/modifyInfo.jsp";
+    location.href = "<%=path7%>/admin/modifyInfo.jsp";
 </script>
 <%  } else { %>
 <script>

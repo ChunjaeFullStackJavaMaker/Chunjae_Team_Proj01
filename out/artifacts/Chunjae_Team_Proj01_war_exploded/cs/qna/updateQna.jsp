@@ -11,7 +11,7 @@
     response.setCharacterEncoding("UTF-8");
 %>
 <%
-    String path31 = request.getContextPath();
+    String path33 = request.getContextPath();
 %>
 <%
     Connection con = null;
@@ -63,15 +63,15 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="../../css/google.css">
-    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="<%=path33 %>/css/google.css">
+    <link rel="stylesheet" href="<%=path33 %>/css/fonts.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="../../css/common.css">
-    <link rel="stylesheet" href="../../css/header.css">
-    <link rel="stylesheet" href="<%=path31 %>/css/header.css">
-    <link rel="stylesheet" href="<%=path31 %>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path33 %>/css/common.css">
+    <link rel="stylesheet" href="<%=path33 %>/css/header.css">
+    <link rel="stylesheet" href="<%=path33 %>/css/header.css">
+    <link rel="stylesheet" href="<%=path33 %>/css/content_header.css">
     <style>
         /* 본문 영역 스타일 */
         .contents { clear:both; min-height:100vh;
@@ -112,7 +112,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="<%=path33 %>/css/footer.css">
     <style>
 
     </style>
@@ -125,14 +125,14 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="/">HOME</a> &gt; <a href="/cs/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 글 수정</span></p>
+                <p><a href="<%=path33 %>">HOME</a> &gt; <a href="<%=path33 %>/cs/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 글 수정</span></p>
                 <h2 class="page_tit"> QnA </h2>
             </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
                 <hr>
-                <form action="/cs/qna/updateQnaPro.jsp" method="post">
+                <form action="<%=path33 %>/cs/qna/updateQnaPro.jsp" method="post">
                     <table class="tb1" id="myTable">
                         <tbody>
                         <!-- 6. 해당 글번호에 대한 글 상세내용 출력 -->
@@ -173,7 +173,7 @@
                                 <% if(sid!=null && (sid.equals("admin") || sid.equals(qna.getAuthor()))) { %>
                                 <input type="submit" class="inbtn" value="<%=sel %> 수정하기">
                                 <% } %>
-                                <a href="/cs/qna/qnaList.jsp" class="inbtn">목록</a>
+                                <a href="<%=path33 %>/cs/qna/qnaList.jsp" class="inbtn">목록</a>
                             </td>
                         </tr>
                         </tbody>

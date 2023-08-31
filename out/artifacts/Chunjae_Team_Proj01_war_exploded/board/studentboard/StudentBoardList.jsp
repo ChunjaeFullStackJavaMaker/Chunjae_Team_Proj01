@@ -8,7 +8,7 @@
 <%@ page import="com.chunjae_pro01.util.DBC" %>
 <%@ page import="com.chunjae_pro01.util.MariaDBCon" %>
 <%
-    String path5 = request.getContextPath();
+    String path17 = request.getContextPath();
 %>
 
 <%
@@ -81,17 +81,17 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path5%>/css/google.css">
-    <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path17%>/css/google.css">
+    <link rel="stylesheet" href="<%=path17%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path17%>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path5%>/css/common.css">
-    <link rel="stylesheet" href="<%=path5%>/css/header.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path5%>/css/msboard.css">
-    <link rel="stylesheet" href="<%=path5%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path17%>/css/common.css">
+    <link rel="stylesheet" href="<%=path17%>/css/header.css">
+    <link rel="stylesheet" href="<%=path17%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path17%>/css/msboard.css">
+    <link rel="stylesheet" href="<%=path17%>/css/footer.css">
     <style>
         .contents {
             clear:both;
@@ -141,9 +141,9 @@
         .btn_group p {text-align: center;   line-height:3.6; }
     </style>
 
-    <link rel="stylesheet" href="<%=path5%>/css/footer.css">
-    <link rel="stylesheet" href="<%=path5%>/jquery.dataTables.css">
-    <script src="<%=path5%>/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="<%=path17%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path17%>/jquery.dataTables.css">
+    <script src="<%=path17%>/jquery.dataTables.js"></script>
 </head>
 <body>
 <div class="container">
@@ -153,7 +153,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>/">Home</a> &gt; <a href="<%=path %>">커뮤니티</a> &gt; <span> 학생 커뮤니티 </span> </p>
+                <p><a href="<%=path17 %>/">Home</a> &gt; <span>커뮤니티</span> &gt; <span> 학생 커뮤니티 </span> </p>
                 <h2 class="page_tit"> 커뮤니티  </h2>
             </div>
         </div>
@@ -174,7 +174,7 @@
                         <div>
                             <div class="bno"> <%=studentBoard.getBno()%> </div>
                             <% if(sid!=null) { %>
-                            <div class="qTitle"> <a href="<%=path5%>/board/studentboard/getStudentBoard.jsp?bno=<%=studentBoard.getBno() %>"><%=studentBoard.getTitle() %></a> </div>
+                            <div class="qTitle"> <a href="<%=path17%>/board/studentboard/getStudentBoard.jsp?bno=<%=studentBoard.getBno() %>"><%=studentBoard.getTitle() %></a> </div>
                             <% } else { %>
                             <div class="qTitle"><%=studentBoard.getTitle() %></div>
                             <% } %>
@@ -190,18 +190,18 @@
                         <% } %>
                     </div>
                     <div class="board_page">
-                        <a href="<%=path5%>/board/studentboard/StudentBoardList.jsp?page=1" class="bt first"> &lt;&lt; </a>
-                        <a href="<%=path%>/board/studentboard/StudentBoardList.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
+                        <a href="<%=path17%>/board/studentboard/StudentBoardList.jsp?page=1" class="bt first"> &lt;&lt; </a>
+                        <a href="<%=path17%>/board/studentboard/StudentBoardList.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
                         <%  for(int p : pageList) {  %>
-                        <a href="<%=path5%>/board/studentboard/StudentBoardList.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                        <a href="<%=path17%>/board/studentboard/StudentBoardList.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
                         <%  } %>
-                        <a href="<%=path5%>/board/studentboard/StudentBoardList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
-                        <a href="<%=path5%>/board/studentboard/StudentBoardList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                        <a href="<%=path17%>/board/studentboard/StudentBoardList.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
+                        <a href="<%=path17%>/board/studentboard/StudentBoardList.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
                     </div>
                     <div class="btn_group" style="margin:0; width:1000px; padding-top:25px; ">
                         <%-- 공지사항이므로 관리자만 글 추가 기능(링크)이 적용되도록 설정 --%>
                         <% if(sid!=null) { %>
-                        <a href="/board/studentboard/addStudentBoard.jsp" class="inbtn" style="float:right; ">글쓰기</a>
+                        <a href="<%=path17%>/board/studentboard/addStudentBoard.jsp" class="inbtn" style="float:right; ">글쓰기</a>
                         <% } else { %>
                         <p>로그인한 사용자만 글의 상세내용을 볼 수 있습니다.</p>
                         <% } %>

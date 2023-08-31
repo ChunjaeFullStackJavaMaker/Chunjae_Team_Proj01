@@ -3,7 +3,7 @@
 <%@ page import="com.chunjae_pro01.util.*" %>
 <%@ include file="/setting/encoding.jsp" %>
 <%
-    String path = request.getContextPath();
+    String path2 = request.getContextPath();
 
     int par = Integer.parseInt(request.getParameter("par"));
     String title = request.getParameter("title");
@@ -27,6 +27,6 @@
     if(cnt > 0) { %>
         <script>
             alert("답변이 입력되었습니다.");
-            location.href="<%=path%>/admin/qnaMgmt.jsp?page=1";
+            location.href="<%=path2%>/admin/qnaMgmt.jsp?page=1";
         </script>
 <%  } %>

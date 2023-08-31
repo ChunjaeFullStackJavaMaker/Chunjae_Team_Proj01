@@ -6,7 +6,9 @@
 <%@ page import="com.chunjae_pro01.dto.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="/setting/encoding.jsp"%>
-
+<%
+    String path22 = request.getContextPath();
+%>
 <%
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -75,7 +77,7 @@
             <div class="board">
                 <div class="board_title">
                     <h2 class="notice_title">공지사항</h2>
-                    <a href="/cs/board/boardList.jsp?page=1" class="notice_more" >더보기 + </a>
+                    <a href="<%=path22%>/cs/board/boardList.jsp?page=1" class="notice_more" >더보기 + </a>
                 </div>
                 <ul class="lst">
                     <%  int i = 1;
@@ -84,7 +86,7 @@
                             <% if(sid == null) {%>
                                 <a href="javascript:alert('로그인 후 다시 시도해주세요.')" class="board_subject<%=i%>"><%=bd.getTitle()%></a>
                             <% } else { %>
-                                <a href="/cs/board/getBoard.jsp?bno=<%=bd.getBno()%>" class="board_subject<%=i%>"><%=bd.getTitle()%></a>
+                                <a href="<%=path22%>/cs/board/getBoard.jsp?bno=<%=bd.getBno()%>" class="board_subject<%=i%>"><%=bd.getTitle()%></a>
                             <% } %>
                             <div class="board_date"><%=bd.getResdate()%></div>
                         </li>
@@ -98,7 +100,7 @@
             <div class="board">
                 <div class="board_title">
                     <h2 class="events_title"> 학부모 커뮤니티 인기 글 </h2>
-                    <a href="/board/motherboard/MotherBoardList.jsp" class="notice_more">더보기 + </a>
+                    <a href="<%=path22%>/board/motherboard/MotherBoardList.jsp" class="notice_more">더보기 + </a>
                 </div>
                 <ul class="lst">
                     <% for(MotherBoard bd : mbList) { %>
@@ -106,7 +108,7 @@
                             <% if(sid == null) {%>
                             <a href="javascript:alert('로그인 후 다시 시도해주세요.')" class="board_subject"><%=bd.getTitle()%></a>
                             <% } else { %>
-                            <a href="/board/motherboard/getMotherBoard.jsp?bno=<%=bd.getBno()%>" class="event_subject"><%=bd.getTitle()%></a>
+                            <a href="<%=path22%>/board/motherboard/getMotherBoard.jsp?bno=<%=bd.getBno()%>" class="event_subject"><%=bd.getTitle()%></a>
                             <% } %>
                             <div class="board_date"><%=bd.getResdate()%></div>
                         </li>

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<% String path5 = request.getContextPath(); %>
+<% String path24 = request.getContextPath(); %>
 <style>
     .pic_lst { clear:both; width: 1110px; margin: 0px auto; padding-top: 50px; }
     .pic_lst li { width: 340px; height: 242px; padding :40px; margin-left:30px; float:left;
@@ -22,21 +22,21 @@
     <div class="page_wrap">
         <ul class="pic_lst">
             <li class="item1">
-                <a href="<%=path5 %>/lecture/lectures.jsp?target=초등">
+                <a href="<%=path24 %>/lecture/lectures.jsp?target=초등">
                     <strong class="pic_tit">초등</strong>
                     <em class="pic_com">초등학생 메뉴로 이동합니다.</em>
                     <span class="pic_arrow" id="pic_a1">이동하기 →</span>
                 </a>
             </li>
             <li class="item2">
-                <a href="<%=path5 %>/lecture/lectures.jsp?target=중등">
+                <a href="<%=path24 %>/lecture/lectures.jsp?target=중등">
                     <strong class="pic_tit">중등</strong>
                     <em class="pic_com">중학생 메뉴로 이동합니다.</em>
                     <span class="pic_arrow" id="pic_a2">이동하기 →</span>
                 </a>
             </li>
             <li class="item3">
-                <a href="<%=path5 %>/lecture/lectures.jsp?target=고등">
+                <a href="<%=path24 %>/lecture/lectures.jsp?target=고등">
                     <strong class="pic_tit">고등</strong>
                     <em class="pic_com">고등학생 메뉴로 이동합니다.</em>
                     <span class="pic_arrow" id="pic_a3">이동하기 →</span>

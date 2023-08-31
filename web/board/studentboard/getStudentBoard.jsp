@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
-    String path5 = request.getContextPath();
+    String path16 = request.getContextPath();
 %>
 <%-- 1. 필요한 라이브러리 가져오기 --%>
 <%@ page import="java.sql.*" %>
@@ -78,14 +78,14 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path5%>/css/google.css">
-    <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path16%>/css/google.css">
+    <link rel="stylesheet" href="<%=path16%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path16%>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path5%>/css/common.css">
-    <link rel="stylesheet" href="<%=path5%>/css/header.css">
+    <link rel="stylesheet" href="<%=path16%>/css/common.css">
+    <link rel="stylesheet" href="<%=path16%>/css/header.css">
     <style>
         /* 본문 영역 스타일 */
         .contents {
@@ -274,7 +274,7 @@
 
     </style>
 
-    <link rel="stylesheet" href="<%=path5%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path16%>/css/footer.css">
     <style>
 
     </style>
@@ -287,7 +287,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path5 %>">Home</a> &gt;  <a href="<%=path5 %>/board/studentboard/StudentBoardList.jsp"> 학생 커뮤니티 </a> > <span> 학생 커뮤니티 상세보기 </span> </p>
+                <p><a href="<%=path16 %>">Home</a> &gt;  <a href="<%=path16 %>/board/studentboard/StudentBoardList.jsp"> 학생 커뮤니티 </a> > <span> 학생 커뮤니티 상세보기 </span> </p>
                 <h2 class="page_tit"> 학생 커뮤니티 </h2>
             </div>
         </div>
@@ -298,8 +298,8 @@
                     <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                     <tr>
                         <td colspan="3">
-                            <a href="/board/studentboard/delStudentBoard.jsp?bno=<%=bno%>&target=board" class="btn"> 삭제 </a>
-                            <a href="/board/studentboard/updateStudentBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
+                            <a href="<%=path16 %>/board/studentboard/delStudentBoard.jsp?bno=<%=bno%>&target=board" class="btn"> 삭제 </a>
+                            <a href="<%=path16 %>/board/studentboard/updateStudentBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
                         </td>
                     </tr>
                     <% } %>
@@ -326,7 +326,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <form action="<%=path5 %>/comment/addStudentCommentPro.jsp" method="post">
+                <form action="<%=path16 %>/comment/addStudentCommentPro.jsp" method="post">
                     <table class="comment_detail">
                             <tbody>
                             <tr>
@@ -348,7 +348,7 @@
                             <p class="resdate"><%=cmt.getResdate()%></p>
                             <p class="content"><%=cmt.getContent()%></p>
                             <% if(cmt.getAuthor().equals(sid) || sid.equals("admin")) { %>
-                                <a href="<%=path5 %>/comment/delStudentCommentPro.jsp?bno=<%=bno%>&cno=<%=cmt.getCno()%>" class="btn"> [ 삭제 ] </a>
+                                <a href="<%=path16 %>/comment/delStudentCommentPro.jsp?bno=<%=bno%>&cno=<%=cmt.getCno()%>" class="btn"> [ 삭제 ] </a>
                             <% } %>
                                 <span class="line"></span>
                         <% } %>

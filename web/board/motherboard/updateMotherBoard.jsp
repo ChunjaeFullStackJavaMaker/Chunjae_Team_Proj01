@@ -5,7 +5,7 @@
 <%@ page import="com.chunjae_pro01.util.DBC" %>
 <%@ page import="com.chunjae_pro01.util.MariaDBCon" %>
 <%
-    String path5 = request.getContextPath();
+    String path14 = request.getContextPath();
 %>
 <%
     Connection con = null;
@@ -48,13 +48,13 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path5%>/css/google.css">
-    <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path14%>/css/google.css">
+    <link rel="stylesheet" href="<%=path14%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path14%>/css/content_header.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path5%>/css/common.css">
-    <link rel="stylesheet" href="<%=path5%>/css/header.css">
+    <link rel="stylesheet" href="<%=path14%>/css/common.css">
+    <link rel="stylesheet" href="<%=path14%>/css/header.css">
     <style>
         /* 본문 영역 스타일 */
         .contents { clear:both; min-height:110vh;
@@ -102,7 +102,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="<%=path5%>/css/ft.css">
+    <link rel="stylesheet" href="<%=path14%>/css/ft.css">
 </head>
 <body>
 <div class="container">
@@ -112,7 +112,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path5 %>">Home</a> &gt; <span> 학부모 커뮤니티 </span> </p>
+                <p><a href="<%=path14 %>">Home</a> &gt; <span> 학부모 커뮤니티 </span> </p>
                 <h2 class="page_tit"> 학부모 커뮤니티 </h2>
             </div>
         </div>
@@ -121,7 +121,7 @@
                 <h2 class="page_tit">공지사항 수정하기</h2>
                 <hr>
                 <!-- 5. Board 객체의 내용을 폼의 각 컨트롤(input/textarea)에 바인딩하여 출력 -->
-                <form action="updateMotherBoardPro.jsp" method="post">
+                <form action="<%=path14%>/board/motherboard/updateMotherBoardPro.jsp" method="post">
                     <table class="tb1">
                         <tbody>
                         <tr>
@@ -142,7 +142,7 @@
                                 <a href="javascript:history.go(-1)" class="inbtn"> 이전 페이지 </a>
                                 <% if(sid.equals("admin") || sid.equals(motherBoard.getAuthor())) { %>
                                     <input type="submit" value="글수정" class="inbtn">
-                                <a href="/board/motherboard/delStudentBoard.jsp?bno=<%=motherBoard.getBno() %>" class="inbtn">글 삭제</a>
+                                <a href="<%=path14%>/board/motherboard/delStudentBoard.jsp?bno=<%=motherBoard.getBno() %>" class="inbtn">글 삭제</a>
                                 <% } %>
                             </td>
                         </tr>

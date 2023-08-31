@@ -12,7 +12,7 @@
     response.setHeader("Pragma", "no-cache");
     response.setDateHeader("Expires", 1L);
 
-    String path21 = request.getContextPath();
+    String path48 = request.getContextPath();
 %>
 <%
     String id = (String) session.getAttribute("id");
@@ -97,16 +97,16 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path21 %>/css/google.css">
-    <link rel="stylesheet" href="<%=path21 %>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path21 %>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path48 %>/css/google.css">
+    <link rel="stylesheet" href="<%=path48 %>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path48 %>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path21 %>/css/common.css">
-    <link rel="stylesheet" href="<%=path21 %>/css/header.css">
-    <link rel="stylesheet" href="<%=path21 %>/css/msboard.css">
-    <link rel="stylesheet" href="<%=path21 %>/css/mgmt.css">
+    <link rel="stylesheet" href="<%=path48 %>/css/common.css">
+    <link rel="stylesheet" href="<%=path48 %>/css/header.css">
+    <link rel="stylesheet" href="<%=path48 %>/css/msboard.css">
+    <link rel="stylesheet" href="<%=path48 %>/css/mgmt.css">
 
     <style>
         .contents { clear:both; min-height:100vh; }
@@ -132,7 +132,7 @@
         #btn_mb1 {background-color: yellowgreen;}
     </style>
 
-    <link rel="stylesheet" href="<%=path21 %>/css/footer.css">
+    <link rel="stylesheet" href="<%=path48 %>/css/footer.css">
 </head>
 <body>
 <div class="wrap">
@@ -142,18 +142,18 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="/">Home</a> &gt; <a href="/mypage/mypage.jsp">마이페이지</a> &gt; <span> 내가 쓴 글 </span> </p>
+                <p><a href="/">Home</a> &gt; <a href="<%=path48 %>/mypage/mypage.jsp">마이페이지</a> &gt; <span> 내가 쓴 글 </span> </p>
                 <h2 class="page_tit"> 내가 쓴 글 </h2>
             </div>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
                 <p class="content_tit">
-                    <a href="/mypage/myBoardListQna.jsp?page=1" class="btn_myboard">QnA </a> &nbsp&nbsp | &nbsp&nbsp
+                    <a href="<%=path48 %>/mypage/myBoardListQna.jsp?page=1" class="btn_myboard">QnA </a> &nbsp&nbsp | &nbsp&nbsp
                     <% if(per == 1){%>
-                    <a href="/mypage/myStudentBoardListComu.jsp?page=1" class="btn_myboard" id="btn_mb1">커뮤니티</a>
+                    <a href="<%=path48 %>/mypage/myStudentBoardListComu.jsp?page=1" class="btn_myboard" id="btn_mb1">커뮤니티</a>
                     <%}else if(per ==2){ %>
-                    <a href="/mypage/myMotherBoardListComu.jsp?page=1" class="btn_myboard" id="btn_mb1">커뮤니티</a>
+                    <a href="<%=path48 %>/mypage/myMotherBoardListComu.jsp?page=1" class="btn_myboard" id="btn_mb1">커뮤니티</a>
                     <%} %>
                 </p>
                 <hr>
@@ -172,7 +172,7 @@
                     <div>
                         <div class="bno"><%=b.getBno() %></div>
                         <div class="qTitle">
-                            <a href="<%=path21 %>/board/studentboard/getStudentBoard.jsp?bno=<%=b.getBno()%>"><%=b.getTitle() %></a>
+                            <a href="<%=path48 %>/board/studentboard/getStudentBoard.jsp?bno=<%=b.getBno()%>"><%=b.getTitle() %></a>
                         </div>
                         <div style="width: 22%"><%=b.getId() %></div>
                         <div class="cnt"> <%=b.getCnt()%> </div>
@@ -181,13 +181,13 @@
                     <%} %>
                     </div>
                     <div class="board_page">
-                        <a href="<%=path21 %>/mypage/myMotherBoardListComu.jsp?page=1" class="bt first"> &lt;&lt; </a>
-                        <a href="<%=path21 %>/mypage/myMotherBoardListComu.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
+                        <a href="<%=path48 %>/mypage/myMotherBoardListComu.jsp?page=1" class="bt first"> &lt;&lt; </a>
+                        <a href="<%=path48 %>/mypage/myMotherBoardListComu.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
                         <%  for(int p : pageList) {  %>
-                        <a href="<%=path21 %>/mypage/myMotherBoardListComu.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                        <a href="<%=path48 %>/mypage/myMotherBoardListComu.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
                         <%  } %>
-                        <a href="<%=path21 %>/mypage/myMotherBoardListComu.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
-                        <a href="<%=path21 %>/mypage/myMotherBoardListComu.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                        <a href="<%=path48 %>/mypage/myMotherBoardListComu.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
+                        <a href="<%=path48 %>/mypage/myMotherBoardListComu.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
                     </div>
                 </div>
             </div>

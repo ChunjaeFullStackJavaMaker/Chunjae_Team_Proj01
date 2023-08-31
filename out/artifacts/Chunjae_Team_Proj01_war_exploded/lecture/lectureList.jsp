@@ -4,6 +4,9 @@
 <%@ page import="com.chunjae_pro01.util.*" %>
 <%@ page import="com.chunjae_pro01.dto.*" %>
 <%@ include file="/setting/encoding.jsp"%>
+<%
+    String path37 = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +19,14 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path%>/css/google.css">
+    <link rel="stylesheet" href="<%=path37%>/css/google.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path%>/css/common.css">
-    <link rel="stylesheet" href="<%=path%>/css/header.css">
-    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path%>/css/lectureList.css">
-    <link rel="stylesheet" href="<%=path%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path37%>/css/common.css">
+    <link rel="stylesheet" href="<%=path37%>/css/header.css">
+    <link rel="stylesheet" href="<%=path37%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path37%>/css/lectureList.css">
+    <link rel="stylesheet" href="<%=path37%>/css/footer.css">
 
     <%
         int lno = request.getParameter("lno") != null ? Integer.parseInt(request.getParameter("lno")) : 0;
@@ -135,7 +138,7 @@
 
             .lecture_wrap .img_wrap {
                 width: 250px;
-                background-image: url("<%=path.concat(lecture.getFilePath())%>");
+                background-image: url("<%=path37.concat(lecture.getFilePath())%>");
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: cover;
@@ -155,7 +158,7 @@
         </style>
         <script>
             function openLecture(vno) {
-                location.href = "<%=path%>/lecture/viewLecture.jsp?vno="+vno;
+                location.href = "<%=path37%>/lecture/viewLecture.jsp?vno="+vno;
             }
         </script>
 </head>
@@ -167,7 +170,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/lecture/lectures.jsp?target=<%=target%>"> <%=target %> 강의 소개 </a> &gt; <span> 강의 상세정보 </span> </p>
+                <p><a href="<%=path37 %>">Home</a> &gt; <a href="<%=path37 %>/lecture/lectures.jsp?target=<%=target%>"> <%=target %> 강의 소개 </a> &gt; <span> 강의 상세정보 </span> </p>
                 <h2 class="page_tit"> 강의 소개 </h2>
             </div>
         </div>
@@ -214,13 +217,13 @@
                         <% } %>
                     </div>
                     <div class="board_page">
-                        <a href="<%=path%>/lecture/lectureList.jsp?lno=<%=lno%>&target=<%=target%>&page=1#page2" class="bt first"> &lt;&lt; </a>
-                        <a href="<%=path%>/lecture/lectureList.jsp?lno=<%=lno%>&target=<%=target%>&page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>#page2" class="bt prev"> &lt; </a>
+                        <a href="<%=path37%>/lecture/lectureList.jsp?lno=<%=lno%>&target=<%=target%>&page=1#page2" class="bt first"> &lt;&lt; </a>
+                        <a href="<%=path37%>/lecture/lectureList.jsp?lno=<%=lno%>&target=<%=target%>&page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>#page2" class="bt prev"> &lt; </a>
                         <%  for(int p : pageList) {  %>
-                        <a href="<%=path%>/lecture/lectureList.jsp?lno=<%=lno%>&target=<%=target%>&page=<%=p%>#page2" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                        <a href="<%=path37%>/lecture/lectureList.jsp?lno=<%=lno%>&target=<%=target%>&page=<%=p%>#page2" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
                         <%  } %>
-                        <a href="<%=path%>/lecture/lectureList.jsp?lno=<%=lno%>&target=<%=target%>&page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>#page2" class="bt next"> &gt; </a>
-                        <a href="<%=path%>/lecture/lectureList.jsp?lno=<%=lno%>&target=<%=target%>&page=<%=totalPage%>#page2" class="bt last"> &gt;&gt; </a>
+                        <a href="<%=path37%>/lecture/lectureList.jsp?lno=<%=lno%>&target=<%=target%>&page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>#page2" class="bt next"> &gt; </a>
+                        <a href="<%=path37%>/lecture/lectureList.jsp?lno=<%=lno%>&target=<%=target%>&page=<%=totalPage%>#page2" class="bt last"> &gt;&gt; </a>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
 <%@ page import="java.util.Date" %>
 
 <%
-    String path5 = request.getContextPath();
+    String path27 = request.getContextPath();
 %>
 
 <<%
@@ -85,14 +85,14 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path5%>/css/google.css">
-    <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path27%>/css/google.css">
+    <link rel="stylesheet" href="<%=path27%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path27%>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <cmtript src="https://code.jquery.com/jquery-latest.js"></cmtript>
-    <link rel="stylesheet" href="<%=path5%>/css/common.css">
-    <link rel="stylesheet" href="<%=path5%>/css/header.css">
+    <link rel="stylesheet" href="<%=path27%>/css/common.css">
+    <link rel="stylesheet" href="<%=path27%>/css/header.css">
     <style>
         /* 본문 영역 스타일 */
         .contents {
@@ -280,7 +280,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="<%=path27%>>/css/footer.css">
 </head>
 <body>
 <div class="wrap">
@@ -289,7 +289,7 @@
     </header>
     <div class="content_header">
         <div class="breadcrumb">
-            <p><a href="<%=path5 %>/">Home</a> &gt; <a href="<%=path5 %>">공지사항</a> &gt; <span> 공지사항 상세보기 </span> </p>
+            <p><a href="<%=path27 %>/">Home</a> &gt; <span>공지사항</span> &gt; <span> 공지사항 상세보기 </span> </p>
             <h2 class="page_tit"> 공지사항 </h2>
         </div>
     </div>
@@ -301,8 +301,8 @@
                 <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                 <tr>
                     <td colspan="3">
-                        <a href="<%= path5%>/cs/board/delBoard.jsp?bno=<%=bno%>&target=board" class="btn"> 삭제 </a>
-                        <a href="<%= path5%>/cs/board/updateBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
+                        <a href="<%= path27%>/cs/board/delBoard.jsp?bno=<%=bno%>&target=board" class="btn"> 삭제 </a>
+                        <a href="<%= path27%>/cs/board/updateBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
                     </td>
                 </tr>
                 <% } %>
@@ -329,7 +329,7 @@
                 </tr>
                 </tbody>
             </table>
-            <form action="<%=path5 %>/comment/addBoardCommentPro.jsp" method="post">
+            <form action="<%=path27 %>/comment/addBoardCommentPro.jsp" method="post">
                 <table class="comment_detail">
                     <tbody>
                     <tr>
@@ -351,7 +351,7 @@
                     <p class="resdate"><%=cmt.getResdate()%></p>
                     <p class="content"><%=cmt.getContent()%></p>
                     <% if(cmt.getAuthor().equals(sid) || sid.equals("admin")) { %>
-                    <a href="<%=path5 %>/comment/delBoardCommentPro.jsp?bno=<%=bno%>&cno=<%=cmt.getCno()%>" class="btn"> [ 삭제 ] </a>
+                    <a href="<%=path27 %>/comment/delBoardCommentPro.jsp?bno=<%=bno%>&cno=<%=cmt.getCno()%>" class="btn"> [ 삭제 ] </a>
                     <% } %>
                     <span class="line"></span>
                     <% } %>

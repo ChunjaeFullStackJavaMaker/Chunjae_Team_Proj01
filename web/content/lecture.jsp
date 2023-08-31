@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%
+    String path23 = request.getContextPath();
+%>
 <style>
     <!--추천 강의 목록 스타일 -->
     .box_tit { text-align: center; padding : 10px; margin-top:20px; margin-bottom : 20px;}
@@ -16,28 +19,28 @@
         <!--추천 강의 목록 박스(이미지,제목, 내용순)로 정렬-->
         <div class="box_group">
             <div class="box">
-                <div class="image"><img src="/images/math01.png" alt="수학Ⅰ 썸네일"></div>
+                <div class="image"><img src="<%=path23%>/images/math01.png" alt="수학Ⅰ 썸네일"></div>
                 <div class="box_com">
                     <h4> [2024 수능] 수학Ⅰ </h4><br>
                     <p> 김이름 </p>
                 </div>
             </div>
             <div class="box">
-                <div class="image"><img src="/images/math02.jpg" alt="수학Ⅱ 썸네일"></div>
+                <div class="image"><img src="<%=path23%>/images/math02.jpg" alt="수학Ⅱ 썸네일"></div>
                 <div class="box_com">
                     <h4> [2024 수능] 수학Ⅱ </h4><br>
                     <p> 이하나 </p>
                 </div>
             </div>
             <div class="box">
-                <div class="image"><img src="/images/english01.jpg"></div>
+                <div class="image"><img src="<%=path23%>/images/english01.jpg"></div>
                 <div class="box_com">
                     <h4> 영어구문 </h4><br>
                     <p> 박지영 </p>
                 </div>
             </div>
             <div class="box">
-                <div class="image"><img src="/images/english02.jpg"></div>
+                <div class="image"><img src="<%=path23%>/images/english02.jpg"></div>
                 <div class="box_com">
                     <h4> 영어독해연습 </h4><br>
                     <p> 박지영 </p>

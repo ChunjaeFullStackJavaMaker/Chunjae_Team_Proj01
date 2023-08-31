@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
-    String path5 = request.getContextPath();
+    String path44 = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,17 +14,17 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path5%>/css/google.css">
-    <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path44%>/css/google.css">
+    <link rel="stylesheet" href="<%=path44%>/css/fonts.css">
 
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path5%>/css/common.css">
-    <link rel="stylesheet" href="<%=path5%>/css/header.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path5%>/css/footer.css">
-    <link rel="stylesheet" href="<%=path5%>/css/term.css">
+    <link rel="stylesheet" href="<%=path44%>/css/common.css">
+    <link rel="stylesheet" href="<%=path44%>/css/header.css">
+    <link rel="stylesheet" href="<%=path44%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path44%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path44%>/css/term.css">
 </head>
 <body>
 <div class="wrap">
@@ -34,7 +34,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="/">Home</a> &gt; <span> 회원 약관 </span> </p>
+                <p><a href="<%=path44%>">Home</a> &gt; <span> 회원 약관 </span> </p>
                 <h2 class="page_tit"> 회원 약관 </h2>
             </div>
         </div>
@@ -196,7 +196,7 @@
                     var ck_item1 = document.getElementById("ck_item1");
                     in_btn1.addEventListener("click", function(){
                         if(ck_item1.checked) {
-                            location.href = "<%=path5%>/member/join.jsp";
+                            location.href = "<%=path44%>/member/join.jsp";
                         } else {
                             alert("약관에 동의하지 않으셨습니다.");
                             return;

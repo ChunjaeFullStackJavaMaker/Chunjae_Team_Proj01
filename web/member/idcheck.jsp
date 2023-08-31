@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%
+    String path41 = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +35,7 @@
     String id = request.getParameter("id");
 %>
 <div class="container">
-    <form name="child" action="idload.jsp" method="post" onsubmit="return invalidCheck(this)">
+    <form name="child" action="<%=path41%>/member/idload.jsp" method="post" onsubmit="return invalidCheck(this)">
         <label for="id">아이디</label>
         <input type="text" name="id" id="id" value="<%=id %>" placeholder="12글자 이내">
         <br>

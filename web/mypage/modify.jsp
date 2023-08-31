@@ -6,7 +6,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="/setting/encoding.jsp" %>
 <%
-    String path6 = request.getContextPath();
+    String path45 = request.getContextPath();
 %>
 <%
     String id = (String) session.getAttribute("id");
@@ -69,15 +69,15 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path6 %>/css/google.css">
-    <link rel="stylesheet" href="<%=path6 %>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path45 %>/css/google.css">
+    <link rel="stylesheet" href="<%=path45 %>/css/fonts.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path6 %>/css/common.css">
-    <link rel="stylesheet" href="<%=path6 %>/css/header.css">
-    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path%>/css/mgmt.css">
+    <link rel="stylesheet" href="<%=path45 %>/css/common.css">
+    <link rel="stylesheet" href="<%=path45 %>/css/header.css">
+    <link rel="stylesheet" href="<%=path45%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path45%>/css/mgmt.css">
     <style>
         .contents { clear:both; min-height:100vh; }
         .contents::after { content:""; clear:both; display:block; width:100%; }
@@ -101,7 +101,7 @@
             background-color: #8CB964;border: #8CB964;color: #fff;font-weight: bold;}
     </style>
 
-    <link rel="stylesheet" href="<%=path6 %>/css/footer.css">
+    <link rel="stylesheet" href="<%=path45 %>/css/footer.css">
 </head>
 <body>
 <div class="wrap">
@@ -111,7 +111,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="/">Home</a> &gt; <a href="/mypage/mypage.jsp">마이페이지</a> &gt; <span> 개인정보 변경 </span> </p>
+                <p><a href="/">Home</a> &gt; <a href="<%=path45 %>/mypage/mypage.jsp">마이페이지</a> &gt; <span> 개인정보 변경 </span> </p>
                 <h2 class="page_tit"> 개인정보 변경 </h2>
             </div>
         </div>
@@ -119,7 +119,7 @@
             <div class="page_wrap">
                 <h2 class="content_tit"> 개인 정보 변경 </h2>
                 <hr>
-                <form action="modifypro.jsp" method="post">
+                <form action="<%=path45 %>/mypage/modifypro.jsp" method="post">
                     <table class="tb1">
                         <tbody>
                         <tr>

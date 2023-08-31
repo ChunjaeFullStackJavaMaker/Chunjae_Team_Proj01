@@ -6,6 +6,9 @@
 <%@ page import="com.chunjae_pro01.dto.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="/setting/encoding.jsp"%>
+<%
+    String path10 = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +21,14 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path%>/css/google.css">
+    <link rel="stylesheet" href="<%=path10%>/css/google.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path%>/css/common.css">
-    <link rel="stylesheet" href="<%=path%>/css/header.css">
-    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path%>/css/mgmt.css">
-    <link rel="stylesheet" href="<%=path%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path10%>/css/common.css">
+    <link rel="stylesheet" href="<%=path10%>/css/header.css">
+    <link rel="stylesheet" href="<%=path10%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path10%>/css/mgmt.css">
+    <link rel="stylesheet" href="<%=path10%>/css/footer.css">
 
     <style>
         .contents {
@@ -135,7 +138,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/admin/adminPage.jsp">관리자 페이지</a> &gt; <span> 학생 커뮤니티 관리 </span> </p>
+                <p><a href="<%=path10 %>">Home</a> &gt; <a href="<%=path10 %>/admin/adminPage.jsp">관리자 페이지</a> &gt; <span> 학생 커뮤니티 관리 </span> </p>
                 <h2 class="page_tit"> 관리자 페이지 </h2>
             </div>
         </div>
@@ -159,8 +162,8 @@
                             <div class="title"> <%=sBoard.getTitle()%> </div>
                             <div class="author"> <%=sBoard.getAuthor()%> </div>
                             <div class="resdate"> <%=sBoard.getResdate()%></div>
-                            <div class="modify"><button onclick="javascript:location.href='<%=path%>/board/studentboard/updateStudentBoard.jsp?bno=<%=sBoard.getBno()%>'"> 수정 </button></div>
-                            <div class="delete"><button onclick="javascript:location.href='<%=path%>/board/studentboard/delStudentBoard.jsp?bno=<%=sBoard.getBno()%>&target=admin'"> 삭제 </button></div>
+                            <div class="modify"><button onclick="javascript:location.href='<%=path10%>/board/studentboard/updateStudentBoard.jsp?bno=<%=sBoard.getBno()%>'"> 수정 </button></div>
+                            <div class="delete"><button onclick="javascript:location.href='<%=path10%>/board/studentboard/delStudentBoard.jsp?bno=<%=sBoard.getBno()%>&target=admin'"> 삭제 </button></div>
                         </div>
                         <% } %>
                         <% if(count == 0) { %>
@@ -170,13 +173,13 @@
                         <% } %>
                     </div>
                     <div class="board_page">
-                        <a href="<%=path%>/admin/studentboardMgmt.jsp?page=1" class="bt first"> &lt;&lt; </a>
-                        <a href="<%=path%>/admin/studentboardMgmt.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
+                        <a href="<%=path10%>/admin/studentboardMgmt.jsp?page=1" class="bt first"> &lt;&lt; </a>
+                        <a href="<%=path10%>/admin/studentboardMgmt.jsp?page=<%=pageNo-1 < 1 ? 1 : pageNo-1%>" class="bt prev"> &lt; </a>
                         <%  for(int p : pageList) {  %>
-                        <a href="<%=path%>/admin/studentboardMgmt.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
+                        <a href="<%=path10%>/admin/studentboardMgmt.jsp?page=<%=p%>" class="num <%=(p==pageNo) ? "on" : ""%>"> <%=p%> </a>
                         <%  } %>
-                        <a href="<%=path%>/admin/studentboardMgmt.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
-                        <a href="<%=path%>/admin/studentboardMgmt.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
+                        <a href="<%=path10%>/admin/studentboardMgmt.jsp?page=<%=pageNo+1 > totalPage ? totalPage : pageNo+1%>" class="bt next"> &gt; </a>
+                        <a href="<%=path10%>/admin/studentboardMgmt.jsp?page=<%=totalPage%>" class="bt last"> &gt;&gt; </a>
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@
 <%@ page import="com.chunjae_pro01.util.MariaDBCon" %>
 <%-- 2. 인코딩 및 보내온 데이터 받기 --%>
 <%
+
     request.setCharacterEncoding("UTF-8");
     response.setContentType("text/html; charset=UTF-8");
     response.setCharacterEncoding("UTF-8");

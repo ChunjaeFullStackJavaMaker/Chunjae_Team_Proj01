@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
-    String path4 = request.getContextPath();
+    String path42 = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,18 +14,18 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path4%>/css/google.css">
-    <link rel="stylesheet" href="<%=path4%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path42%>/css/google.css">
+    <link rel="stylesheet" href="<%=path42%>/css/fonts.css">
 
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="./jquery-1.12.4.js"></script>
-    <link rel="stylesheet" href="<%=path4%>/css/common.css">
-    <link rel="stylesheet" href="<%=path4%>/css/header.css">
-    <link rel="stylesheet" href="<%=path4%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path4%>/css/footer.css">
-    <link rel="stylesheet" href="<%=path4%>/css/join.css">
+    <link rel="stylesheet" href="<%=path42%>/css/common.css">
+    <link rel="stylesheet" href="<%=path42%>/css/header.css">
+    <link rel="stylesheet" href="<%=path42%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path42%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path42%>/css/join.css">
 </head>
 <body>
 <div class="wrap">
@@ -35,13 +35,13 @@
         <div class="contents" id="contents">
             <div class="content_header">
                 <div class="breadcrumb">
-                    <p><a href="/">Home</a> &gt; <span> 회원 가입 </span> </p>
+                    <p><a href="<%=path42%>">Home</a> &gt; <span> 회원 가입 </span> </p>
                     <h2 class="page_tit"> 회원 가입 </h2>
                 </div>
             </div>
             <section class="page" id="page1">
                 <div class="join-wrapper">
-                    <form name="frm1" action="joinpro.jsp" method="post" onsubmit="return inform(this)" >
+                    <form name="frm1" action="<%=path42%>/member/joinpro.jsp" method="post" onsubmit="return inform(this)" >
                         <table class="tb1">
                             <tbody>
                             <tr>

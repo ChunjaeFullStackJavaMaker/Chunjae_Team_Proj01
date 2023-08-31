@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%
+    String path3 = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +14,13 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path%>/css/google.css">
+    <link rel="stylesheet" href="<%=path3%>/css/google.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path%>/css/common.css">
-    <link rel="stylesheet" href="<%=path%>/css/header.css">
-    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path3%>/css/common.css">
+    <link rel="stylesheet" href="<%=path3%>/css/header.css">
+    <link rel="stylesheet" href="<%=path3%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path3%>/css/footer.css">
     <style>
         .contents {
             clear:both;
@@ -97,7 +100,7 @@
         <div class="contents" id="contents">
             <div class="content_header">
                 <div class="breadcrumb">
-                    <p><a href="<%=path %>">Home</a> &gt; <span> 관리자 페이지 </span> </p>
+                    <p><a href="<%=path3 %>">Home</a> &gt; <span> 관리자 페이지 </span> </p>
                     <h2 class="page_tit"> 관리자 페이지 </h2>
                 </div>
             </div>
@@ -106,11 +109,11 @@
                     <p class="content_tit"> 안녕하세요, 관리자님! </p>
                     <hr>
                     <div class="item_wrap">
-                        <a href="<%=path%>/admin/modifyInfo.jsp" class="item"><img src="/images/admin_page.jpg" alt="개인정보 변경 이미지"><br> 개인정보 변경 </a>
-                        <a href="<%=path%>/admin/memberMgmt.jsp?page=1" class="item"><img src="/images/admin_page.jpg" alt="회원 관리 이미지"><br> 회원 관리 </a>
-                        <a href="<%=path%>/admin/qnaMgmt.jsp?page=1" class="item"><img src="/images/admin_page.jpg" alt="고객지원 관리 이미지"><br> 고객지원 관리 </a>
-                        <a href="<%=path%>/admin/motherboardMgmt.jsp?page=1" class="item"><img src="/images/admin_page.jpg" alt="학부모 게시판 관리 이미지"><br> 학부모 게시판 관리 </a>
-                        <a href="<%=path%>/admin/studentboardMgmt.jsp?page=1" class="item"><img src="/images/admin_page.jpg" alt="학생 게시판 관리 이미지"><br> 학생 게시판 관리 </a>
+                        <a href="<%=path3%>/admin/modifyInfo.jsp" class="item"><img src="<%=path3%>/images/admin_page.jpg" alt="개인정보 변경 이미지"><br> 개인정보 변경 </a>
+                        <a href="<%=path3%>/admin/memberMgmt.jsp?page=1" class="item"><img src="<%=path3%>/images/admin_page.jpg" alt="회원 관리 이미지"><br> 회원 관리 </a>
+                        <a href="<%=path3%>/admin/qnaMgmt.jsp?page=1" class="item"><img src="<%=path3%>/images/admin_page.jpg" alt="고객지원 관리 이미지"><br> 고객지원 관리 </a>
+                        <a href="<%=path3%>/admin/motherboardMgmt.jsp?page=1" class="item"><img src="<%=path3%>/images/admin_page.jpg" alt="학부모 게시판 관리 이미지"><br> 학부모 게시판 관리 </a>
+                        <a href="<%=path3%>/admin/studentboardMgmt.jsp?page=1" class="item"><img src="<%=path3%>/images/admin_page.jpg" alt="학생 게시판 관리 이미지"><br> 학생 게시판 관리 </a>
                     </div>
                 </div>
             </section>

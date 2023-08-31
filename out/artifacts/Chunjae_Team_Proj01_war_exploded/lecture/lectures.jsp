@@ -8,7 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 <%
-    String path52 = request.getContextPath();
+    String path38 = request.getContextPath();
     String target = request.getParameter("target");
 
     Connection conn = null;
@@ -45,15 +45,15 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path52%>/css/google.css">
-    <link rel="stylesheet" href="<%=path52%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path52%>/css/login.css">
+    <link rel="stylesheet" href="<%=path38%>/css/google.css">
+    <link rel="stylesheet" href="<%=path38%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path38%>/css/login.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path52%>/css/common.css">
-    <link rel="stylesheet" href="<%=path52%>/css/header.css">
-    <link rel="stylesheet" href="<%=path52%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path38%>/css/common.css">
+    <link rel="stylesheet" href="<%=path38%>/css/header.css">
+    <link rel="stylesheet" href="<%=path38%>/css/footer.css">
 
     <style>
         /*breadcrumb*/
@@ -151,11 +151,11 @@
                 <% for(Lecture lec : lecList) { %>
                 <li class="col-3">
                     <div class="card">
-                        <img src="<%=path52.concat(lec.getFilePath())%>" class="card-img-top" alt="강의소개">
+                        <img src="<%=path38.concat(lec.getFilePath())%>" class="card-img-top" alt="강의소개">
                         <div class="card-body">
                             <h5 class="card-title"><%=lec.getLectureName()%></h5>
                             <p class="card-text"><%=lec.getContent()%></p>
-                            <a href="<%=path52%>/lecture/lectureList.jsp?lno=<%=lec.getLno()%>&target=<%=target%>&page=1" class="btn btn-primary"><%=lec.getTeacher()%> 선생님 </a>
+                            <a href="<%=path38%>/lecture/lectureList.jsp?lno=<%=lec.getLno()%>&target=<%=target%>&page=1" class="btn btn-primary"><%=lec.getTeacher()%> 선생님 </a>
                         </div>
                     </div>
                 </li>

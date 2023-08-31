@@ -6,6 +6,7 @@
 <%@ include file="/setting/encoding.jsp"%>
 
 <%
+    String path39 = request.getContextPath();
     int vno = request.getParameter("vno") != null ? Integer.parseInt(request.getParameter("vno")) : 0;
 
     Connection conn = null;
@@ -39,7 +40,7 @@
         if(sid == null) { %>
     <script>
         alert("로그인 후 강의를 수강할 수 있습니다.");
-        location.href="<%=path%>/member/login.jsp";
+        location.href="<%=path39%>/member/login.jsp";
     </script>
     <%  } %>
 
@@ -47,11 +48,11 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path%>/css/google.css">
+    <link rel="stylesheet" href="<%=path39%>/css/google.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path%>/css/common.css">
-    <link rel="stylesheet" href="<%=path%>/css/vdo.css">
+    <link rel="stylesheet" href="<%=path39%>/css/common.css">
+    <link rel="stylesheet" href="<%=path39%>/css/vdo.css">
 
     <style>
         .contents {
@@ -106,9 +107,9 @@
         <div class="player">
             <div class="vdo_fr">
                 <video id="video" autoplay>
-                    <source src="<%=path.concat(info.getFilePath())%>.mp4" type="video/mp4" />
-                    <source src="<%=path.concat(info.getFilePath())%>.ogv" type="video/ogg" />
-                    <source src="<%=path.concat(info.getFilePath())%>.webm" type="video/webm" />
+                    <source src="<%=path39.concat(info.getFilePath())%>.mp4" type="video/mp4" />
+                    <source src="<%=path39.concat(info.getFilePath())%>.ogv" type="video/ogg" />
+                    <source src="<%=path39.concat(info.getFilePath())%>.webm" type="video/webm" />
                 </video>
             </div>
             <div id="progress">
@@ -123,7 +124,7 @@
                 <button id="volTxt">50%</button>
             </div>
         </div>
-        <script src="<%=path%>/js/vdo.js"></script>
+        <script src="<%=path39%>/js/vdo.js"></script>
     </div>
 </div>
 </body>

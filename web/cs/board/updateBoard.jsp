@@ -12,7 +12,7 @@
 <%@ page import="com.chunjae_pro01.dto.*" %>
 
 <%
-    String path5 = request.getContextPath();
+    String path28 = request.getContextPath();
 %>
 
 <%
@@ -57,15 +57,15 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path5%>/css/google.css">
-    <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path%>/css/header.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path28%>/css/google.css">
+    <link rel="stylesheet" href="<%=path28%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path28%>/css/header.css">
+    <link rel="stylesheet" href="<%=path28%>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path5%>/css/common.css">
-    <link rel="stylesheet" href="<%=path5%>/css/header.css">
+    <link rel="stylesheet" href="<%=path28%>/css/common.css">
+    <link rel="stylesheet" href="<%=path28%>/css/header.css">
     <style>
         /* 본문 영역 스타일 */
         .contents { clear:both; min-height:100vh;
@@ -106,7 +106,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="<%=path5%>/css/ft.css">
+    <link rel="stylesheet" href="<%=path28%>/css/ft.css">
     <style>
 
     </style>
@@ -118,7 +118,7 @@
     </header>
     <div class="content_header">
         <div class="breadcrumb">
-            <p><a href="<%=path %>/">Home</a> &gt; <a href="<%=path %>">공지사항</a> &gt; <span> 공지사항 수정하기 </span> </p>
+            <p><a href="<%=path28%>/">Home</a> &gt; <span>공지사항</span> &gt; <span> 공지사항 수정하기 </span> </p>
             <h2 class="page_tit"> 공지사항 </h2>
         </div>
     </div>
@@ -126,7 +126,7 @@
             <div class="page_wrap">
                 <hr>
                 <!-- 5. Board 객체의 내용을 폼의 각 컨트롤(input/textarea)에 바인딩하여 출력 -->
-                <form action="updateBoardPro.jsp" method="post">
+                <form action="<%=path28%>/cs/board/updateBoardPro.jsp" method="post">
                     <table class="tb1">
                         <tbody>
                         <tr>
@@ -144,10 +144,10 @@
                         <tr>
                             <td colspan="2">
                                 <%-- 6. 수정하기(submit)을 누르면, 수정처리로 넘기기 --%>
-                                <a href="/cs/board/boardList.jsp" class="inbtn">글 목록</a>
+                                <a href="<%=path28%>/cs/board/boardList.jsp" class="inbtn">글 목록</a>
                                 <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                                 <input type="submit" value="글수정" class="inbtn">
-                                <a href="/cs/board/delBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 삭제</a>
+                                <a href="<%=path28%>/cs/board/delBoard.jsp?bno=<%=bd.getBno() %>" class="inbtn">글 삭제</a>
                                 <% } %>
                             </td>
                         </tr>

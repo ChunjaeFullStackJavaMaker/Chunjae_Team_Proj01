@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
-    String path46 = request.getContextPath();
+    String path40 = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,14 +13,14 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path46%>/css/google.css">
-    <link rel="stylesheet" href="<%=path46%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path46%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path40%>/css/google.css">
+    <link rel="stylesheet" href="<%=path40%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path40%>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path46%>/css/common.css">
-    <link rel="stylesheet" href="<%=path46%>/css/header.css">
+    <link rel="stylesheet" href="<%=path40%>/css/common.css">
+    <link rel="stylesheet" href="<%=path40%>/css/header.css">
     <style>
         /* 본문 영역 스타일 */
         .contents { clear:both; min-height:100vh;
@@ -70,7 +70,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="<%=path46%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path40%>/css/footer.css">
     <link rel="stylesheet" type="text/css" href="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.css">
     <style>
         body { background:white; }
@@ -92,7 +92,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path46 %>">Home</a> &gt; <span> 오시는 길 </span> </p>
+                <p><a href="<%=path40 %>">Home</a> &gt; <span> 오시는 길 </span> </p>
                 <h2 class="page_tit"> 오시는 길 </h2>
             </div>
         </div>
@@ -100,7 +100,6 @@
             <div class="page_wrap">
                 <h2 class="page_tit">오시는 길</h2>
                 <div class="maparea">
-                    <div id="map" style="margin-left:120px;	margin-top:50px; width:500px;height:700px; background:white; ">                        </div>
                     <script>
                         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                             mapOption = {

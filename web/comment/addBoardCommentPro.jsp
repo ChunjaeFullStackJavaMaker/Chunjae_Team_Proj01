@@ -2,9 +2,7 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae_pro01.util.*" %>
 <%@ include file="/setting/encoding.jsp" %>
-<%
-    String path76 = request.getContextPath();
-%>
+
 <%
     int bno = Integer.parseInt(request.getParameter("bno"));
     String author = (String)session.getAttribute("id");

@@ -6,6 +6,9 @@
 <%@ page import="com.chunjae_pro01.vo.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="/setting/encoding.jsp"%>
+<%
+    String path1 = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +21,14 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="<%=path%>/css/google.css">
+    <link rel="stylesheet" href="<%=path1%>/css/google.css">
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="<%=path%>/css/common.css">
-    <link rel="stylesheet" href="<%=path%>/css/header.css">
-    <link rel="stylesheet" href="<%=path%>/css/content_header.css">
-    <link rel="stylesheet" href="<%=path%>/css/mgmt.css">
-    <link rel="stylesheet" href="<%=path%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path1%>/css/common.css">
+    <link rel="stylesheet" href="<%=path1%>/css/header.css">
+    <link rel="stylesheet" href="<%=path1%>/css/content_header.css">
+    <link rel="stylesheet" href="<%=path1%>/css/mgmt.css">
+    <link rel="stylesheet" href="<%=path1%>/css/footer.css">
 
     <style>
         .contents {
@@ -182,7 +185,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path %>">Home</a> &gt; <a href="<%=path %>/qnaList.jsp"> QnA </a> &gt; <span> 답변 추가하기 </span> </p>
+                <p><a href="<%=path1 %>">Home</a> &gt; <a href="<%=path1 %>/qnaList.jsp"> QnA </a> &gt; <span> 답변 추가하기 </span> </p>
                 <h2 class="page_tit"> 관리자 페이지 </h2>
             </div>
         </div>
@@ -211,7 +214,7 @@
         <section class="page" id="page2">
             <div class="page_wrap">
                 <p class="content_tit"> 답변 작성 </p>
-                <form action="addAnswerPro.jsp" method="post">
+                <form action="<%=path1%>/admin/addAnswerPro.jsp" method="post">
                     <table class="tb2">
                         <tbody>
                         <tr>

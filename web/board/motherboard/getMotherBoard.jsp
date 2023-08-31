@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ include file="/setting/encoding.jsp" %>
 <%
-    String path5 = request.getContextPath();
+    String path12 = request.getContextPath();
 %>
 <%-- 1. 필요한 라이브러리 가져오기 --%>
 <%@ page import="java.sql.*" %>
@@ -76,14 +76,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-cmtale=1.0">
     <title> 학부모 커뮤니티 상세보기 </title>
-    <%@ include file="/setting/head.jsp" %>    <link rel="stylesheet" href="<%=path5%>/css/google.css">
-    <link rel="stylesheet" href="<%=path5%>/css/fonts.css">
-    <link rel="stylesheet" href="<%=path5%>/css/content_header.css">
+    <%@ include file="/setting/head.jsp" %>    <link rel="stylesheet" href="<%=path12%>/css/google.css">
+    <link rel="stylesheet" href="<%=path12%>/css/fonts.css">
+    <link rel="stylesheet" href="<%=path12%>/css/content_header.css">
 
     <!-- 필요한 플러그인 연결 -->
     <cmtript src="https://code.jquery.com/jquery-latest.js"></cmtript>
-    <link rel="stylesheet" href="<%=path5%>/css/common.css">
-    <link rel="stylesheet" href="<%=path5%>/css/header.css">
+    <link rel="stylesheet" href="<%=path12%>/css/common.css">
+    <link rel="stylesheet" href="<%=path12%>/css/header.css">
     <style>
         /* 본문 영역 스타일 */
         /* 본문 영역 스타일 */
@@ -272,7 +272,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="<%=path5%>/css/footer.css">
+    <link rel="stylesheet" href="<%=path12%>/css/footer.css">
     <style>
 
     </style>
@@ -285,7 +285,7 @@
     <div class="contents" id="contents">
         <div class="content_header">
             <div class="breadcrumb">
-                <p><a href="<%=path5 %>">Home</a> &gt; <a href="<%=path5 %>/board/motherboard/MotherBoardList.jsp"> 학부모 커뮤니티  </a> > <span> 학부모 커뮤니티 상세보기 </span> </p>
+                <p><a href="<%=path12 %>">Home</a> &gt; <a href="<%=path12 %>/board/motherboard/MotherBoardList.jsp"> 학부모 커뮤니티  </a> > <span> 학부모 커뮤니티 상세보기 </span> </p>
                 <h2 class="page_tit"> 학부모 커뮤니티 상세보기 </h2>
             </div>
         </div>
@@ -297,8 +297,8 @@
                     <% if(sid.equals("admin") || sid.equals(bd.getAuthor())) { %>
                     <tr>
                         <td colspan="3">
-                            <a href="/board/motherboard/delMotherBoard.jsp?bno=<%=bno%>&target=board" class="btn"> 삭제 </a>
-                            <a href="/board/motherboard/updateMotherBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
+                            <a href="<%=path12 %>/board/motherboard/delMotherBoard.jsp?bno=<%=bno%>&target=board" class="btn"> 삭제 </a>
+                            <a href="<%=path12 %>/board/motherboard/updateMotherBoard.jsp?bno=<%=bno%>" class="btn"> 수정 </a>
                         </td>
                     </tr>
                     <% } %>
@@ -325,7 +325,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <form action="<%=path5 %>/comment/addMotherCommentPro.jsp" method="post">
+                <form action="<%=path12 %>/comment/addMotherCommentPro.jsp" method="post">
                     <table class="comment_detail">
                         <tbody>
                         <tr>
@@ -347,7 +347,7 @@
                         <p class="resdate"><%=cmt.getResdate()%></p>
                         <p class="content"><%=cmt.getContent()%></p>
                         <% if(cmt.getAuthor().equals(sid) || sid.equals("admin")) { %>
-                        <a href="<%=path5 %>/comment/delMotherCommentPro.jsp?bno=<%=bno%>&cno=<%=cmt.getCno()%>" class="btn"> [ 삭제 ] </a>
+                        <a href="<%=path12 %>/comment/delMotherCommentPro.jsp?bno=<%=bno%>&cno=<%=cmt.getCno()%>" class="btn"> [ 삭제 ] </a>
                         <% } %>
                         <span class="line"></span>
                         <% } %>

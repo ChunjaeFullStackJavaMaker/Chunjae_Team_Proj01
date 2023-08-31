@@ -3,11 +3,11 @@ package com.chunjae_pro01.util;
 import java.sql.*;
 public class MariaDBCon implements DBC {
     final String DRIVER = "org.mariadb.jdbc.Driver"; //클래스이름
-    final String DNS = "localhost";
+    final String DNS = "10.41.1.198";
     final String PORT = "3306";
     final String NAME = "cornedu";
-    final String USER = "root";
-    final String PASS = "1234";
+    final String USER = "team3";
+    final String PASS = "chunjae33";
     final String URL = "jdbc:mariadb://"+DNS+":"+PORT+"/"+NAME;
     Connection conn = null;
     @Override
