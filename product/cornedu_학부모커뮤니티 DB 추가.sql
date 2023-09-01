@@ -3,7 +3,7 @@ CREATE DATABASE cornedu;
 -- 윈도우 노트북 안될 때 사용
 ALTER DATABASE cornedu DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-USE cornedu;
+USE team31;
 
 -- per에는 관리자, 학생, 학부모만 INSERT 가능
 CREATE TABLE member(

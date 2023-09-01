@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<link rel="stylesheet" href="../css/content.css">
+<%
+String path49 = request.getContextPath();
+%>
+<link rel="stylesheet" href="<%=path49%>/css/content.css">
 <div class="contents" id="contents">
     <figure class="vs">
         <ul class="img_box">
